@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://elit.druzi.biz/images/icon.png" />
+<meta name="keywords" content="" />
+<meta http-equiv="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="description" content="" />
+<title>ІТ-Еліт</title>
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/template/css/style.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.css" />
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.js"></script>
+<script>
+    jQuery(function($){
+            $.datepicker.regional['uk'] = {
+                closeText: "Закрити",
+                prevText: '&#x3C;',
+                nextText: '&#x3E;',
+                currentText: "Сьогодні",
+                monthNames: ["Січень",
+                    "Лютий",
+                    "Березень",
+                    "Квітень",
+                    "Травень",
+                    "Червень",
+                    "Липень",
+                    "Серпень",
+                    "Вересень",
+                    "Жовтень",
+                    "Листопад",
+                    "Грудень"],
+                monthNamesShort: ["Січ",
+                    "Лют",
+                    "Бер",
+                    "Кві",
+                    "Тра",
+                    "Чер",
+                    "Лип",
+                    "Сер",
+                    "Вер",
+                    "Жов",
+                    "Лис",
+                    "Гру"],
+                dayNames: ["неділя",
+                    "понеділок",
+                    "вівторок",
+                    "середа",
+                    "четвер",
+                    "п’ятниця",
+                    "субота"],
+                dayNamesShort: ["нед",
+                    "пнд",
+                    "вів",
+                    "срд",
+                    "чтв",
+                    "птн",
+                    "суб"],
+                dayNamesMin: ["Нд",
+                    "Пн",
+                    "Вт",
+                    "Ср",
+                    "Чт",
+                    "Пт",
+                    "Сб"],
+                weekHeader: "Тиж",
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+            yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['uk']);
+    });
+
+    var $datepicker={ 
+        dateFormat: "dd.mm.y",
+        language: 'uk'
+    };
+    var $datepicker2={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2050"
+    };
+    var $datepicker3={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk'
+    };
+    $(document).ready(function(){
+                
+        //$.datepicker.regional[ "uk" ];
+        $( ".dateMask" ).datepicker($datepicker);
+        $( ".dateMaskAll" ).datepicker($datepicker2);
+        $( ".dateMaskYear" ).datepicker($datepicker3);
+        
+        $.mask.definitions['#'] = "[0-9]";
+        $('.phoneMask').mask("+38 (0##) ###-##-##");
+        $('.timeMask').mask("##:##:##");
+        $('.timeMaskMin').mask("##:##");
+    });
+    function window_profile(){
+        window_profile_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=journal_window_profile",
+            success: function(data){
+                $('body').append(data);
+                window_profile_start();
+            }
+        });
+    }
+    function window_profile_close(){
+        $(".window_profile").dialog('destroy');
+        $(".window_profile").remove();
+    }
+    function window_statistic($type,$day,$month,$year){
+        window_statistic_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=window_statistic",
+            data: ({type : $type, day : $day, month : $month, year : $year}),
+            success: function(data){
+                $('body').append(data);
+                window_statistic_start();
+            }
+        });
+    }
+    function window_statistic_close(){
+        $(".window_statistic").dialog('destroy');
+        $(".window_statistic").remove();
+    }
+</script>    </head>
+    <body>
+        <script>
+    $(document).ready(function(){
+            });
+</script>
+<style>
+     body{
+        padding: 0px;
+        margin: 0px;
+        font-size:12px; 
+        font-family:Verdana, Helvetica, sans-serif;
+        line-height:21px;
+        text-align:left;
+        color: black;
+    }
+    img{
+        border: 0px;
+    }
+    p{
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    a{
+        color: #1D335C;
+        text-decoration: none;
+    }
+    input{
+        line-height: 0.8;
+    }
+    a:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    a.black{
+        color: #000000;
+        text-decoration: none;
+    }
+    a.black:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    .text{
+        margin: 0 auto;
+        width: auto;
+        height: auto;
+        color: black;
+        width: 900px;
+        word-wrap: break-word;
+        line-height: 18px;
+        font-size: 14px;
+    }
+    a.submit{
+        background-color: #00ACF0;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 2px 10px 3px;
+        text-decoration: none;
+    }
+    a.submit:hover{
+        background-color: #39C6F5;
+        text-decoration: none;
+    }
+    .return{
+        background-color: #fd5204;
+        display: block;
+        width: auto;
+        margin: 0 auto;
+        text-align: center;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 5px 0px;
+        font-weight: bold;
+        width: 900px;
+    }
+    .return:hover{
+        background-color: #031fff;
+        color: #FFFFFF;
+    }
+    .course-list{
+        margin: 0px 0px 20px;
+        width: 900px;
+    }                
+    .course-list-link{
+        display: block;
+        width: auto; 
+    }                
+    .course-list-name{
+        color: #022984;
+        font-size: 22px;
+        line-height: 22px;
+    }                
+    .course-list-author{
+        color: #fd5204;
+        font-size: 11px;
+        line-height: 10px;
+    }                
+    .course-list-edit{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+        margin-bottom: 10px;
+    }                
+    .course-list-edit:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-edit img{
+        width: 16px; 
+        height: 16px;
+    }                
+    .course-list-delete{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+    }                
+    .course-list-delete:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-delete img{
+        width: 16px; 
+        height: 16px;
+    }
+    .course-list-add{
+        display: block;
+        width: 16px;
+        height: 16px;
+        padding: 2px;
+    }
+    .course-list-add:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }
+    .course-list-add img{
+        width: 16px;
+        height: 16px;
+    }
+    .lessons-link{
+        color: #031fff;
+        font-weight: bold;
+    }
+    .lessons-link-hide{
+        color: #d8d7d5;
+        font-weight: bold;
+    }
+    .lessons-link:hover{
+        color: #ff0000;
+    }
+    .lessons-link-hide:hover{
+        color: #d8d7d5;
+    }
+    a.course-lessons{
+        color: #3697ff;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        margin: 10px auto;
+        text-align: center;
+        font-size: 18px;
+    }
+    a.course-page{
+        color: #ff0000;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        text-align: center;
+        margin: 40px 0px 20px;
+        font-size: 14px;
+    }
+    .course-lessons-plan{
+        width: auto;
+    }
+    .course-lessons-plan b{
+        color: #3697ff;
+        font-size: 14px;
+    }
+    .course-lessons-plan ol{
+        margin: 5px 0px 0px 15px;
+    }
+    .course-lessons-plan ol li{
+        margin-left: 20px;
+        color: #3697ff;
+    }
+    .course-lessons-plan ol li a{
+        color: #3697ff;
+        padding: 1px 0px;
+        display: block;
+    }
+    .course-lessons-plan ol li a:hover{
+        color: #ff0000;
+    }
+</style>
+            <a href="lessons.html" class="return">
+                Список уроків            </a>
+                            <a href="#" class="course-lessons" name="course-lessons-198">Тема 11. Використання зображень в якості гіперпосилань. Створення кнопок. ЗАВДАННЯ</a>
+                <div class="text">
+                    <br>
+                            <a href="https://docs.google.com/document/d/1Ip3OcCLKJBNm7qyECjVbla3gO7SMMT4-EdknS1kRRSg/edit?usp=sharing" target="_blank" style="color: red; font-weight: 900; border: 1px solid red; padding: 5px; ">КОНСПЕКТ ДО ЗАНЯТТЯ</a>
+                        <br><br>
+                    <div class="course-lessons-plan">
+                        
+                        <b>План:</b>
+                        <ol>
+                                                                                                <li><a href="#course-page-1035">Матеріали до уроку.</a></li>
+                                                                                                                                <li><a href="#course-page-1036">ЗАВДАННЯ 11.1.</a></li>
+                                                                                                                                <li><a href="#course-page-1037">ЗАВДАННЯ 11.2.</a></li>
+                                                                                                                                <li><a href="#course-page-1038">ЗАВДАННЯ 11.3.</a></li>
+                                                                                    </ol>
+                    </div>
+                                                                        <a href="#course-lessons-198" class="course-page" name="course-page-1035">
+                                Матеріали до уроку.                            </a>
+                            <p><a href="https://drive.google.com/drive/folders/1GoZZwqR6bcT4tl3g9hOuaxe8LNwUGN-V?usp=sharing" target="_blank"><span style="font-size: small;">Все необхідне для виконання завдань завантажте за посиланням.</span></a></p>                                                                                                <a href="#course-lessons-198" class="course-page" name="course-page-1036">
+                                ЗАВДАННЯ 11.1.                            </a>
+                            <p style="text-align: justify;"><span style="font-family: 'book antiqua', palatino; font-size: medium; color: #993366;">У створеній на минулому занятті Web-сторінці "Періоди розвитку Землі" замінити текстові посилання "Палеозойська ера", "Мезозойська ера" і "Кайнозойська ера" на відповідні зображення кнопок.</span></p>
+<p style="text-align: justify;"><span style="font-family: 'book antiqua', palatino; font-size: medium; color: #993366;">Зображен</span><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">ня кнопок необхідно створити самостійно, врахувавши наступне:</span></p>
+<ul style="text-align: justify;">
+<li><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">розміри кнопки: <span style="color: #000080;">200</span>х<span style="color: #000080;">50</span>;</span></li>
+<li><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">шрифт: <span style="color: #000080;">Bookman Old Style</span>, <strong><span style="color: #000080;">жирний</span></strong>, <span style="color: #000080;">18</span> pt;</span></li>
+<li><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">стиль шару, що містить основу кнопки: "<span style="color: #000080;">Bevel and Emboss</span>";</span></li>
+<li><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">стиль шару, що містить текст: "<span style="color: #000080;">Bevel and Emboss</span>", стиль - "<span style="color: #000080;">Emboss</span>" (Рельеф), "Direction" (Напрямок) - "<span style="color: #000080;">Down</span>" (Вниз);</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-family: 'book antiqua', palatino; font-size: medium; color: #993366;">Усі гіперпосилання-кнопки повинні містити підказки "<span style="color: #000080;">Читати статтю</span>".</span></p>
+<p style="text-align: justify;"><span style="font-family: 'book antiqua', palatino; font-size: medium; color: #993366;">Зображення гірського узбережжя потрібно перетворити на гіперпосилання, яке буде відкривати його збільшену копію у новому вікні броузера. Створити для даного гіперпосилання підказку "<span style="color: #000080;">Збільшити</span>".</span></p>
+<p style="text-align: justify;"><span style="font-family: 'book antiqua', palatino; font-size: medium; color: #993366;"><img class="shrinkToFit" src="http://new.druzi.biz/file/user/2/files/db048a8a9ae6bd4456a18ad8222dfe97.jpg" alt="http://new.druzi.biz/file/user/2/files/db048a8a9ae6bd4456a18ad8222dfe97.jpg" width="800" height="539" /></span></p>                                                                                                <a href="#course-lessons-198" class="course-page" name="course-page-1037">
+                                ЗАВДАННЯ 11.2.                            </a>
+                            <p style="text-align: justify;"><span style="font-family: 'book antiqua', palatino; font-size: medium; color: #993366;">Відкрийте створену на минулому уроці Web-сторінку, яка містить інформацію про принтери і замініть текстові посилання "матричний", "струменевий" і "лазерний" на відповідні зображення кнопок. Зображення кнопок створіть самостійно, врахувавши такі вимоги:</span></p>
+<ul style="text-align: justify;">
+<li><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">розміри кнопки: <span style="color: #000080;">120</span>х<span style="color: #000080;">30</span>;</span></li>
+<li><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">шрифт: <span style="color: #000080;">Arial Narrow</span>, <span style="color: #000080;"><strong>жирний</strong></span>, <span style="color: #000080;">22</span> pt;</span></li>
+<li><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">стиль шару кнопки: "<span style="color: #000080;">Bevel and Emboss</span>";</span></li>
+<li><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">стиль шару тексту: "<span style="color: #000080;">Bevel and Emboss</span>", стиль - "<span style="color: #000080;">Embos</span>" (Рельеф).</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-family: 'book antiqua', palatino; font-size: medium; color: #993366;">Зображення принтерів потрібно перетворити на гіперпосилання, які будуть відкривати у нових вікнах збільшені зображення (файли "<span style="color: #000080;">pr_1_big.jpg</span>", "<span style="color: #000080;">pr_2_big.jpg</span>", "<span style="color: #000080;">pr_3_big.jpg</span>").</span></p>
+<p style="text-align: justify;"><span style="font-family: 'book antiqua', palatino; font-size: medium; color: #993366;">Для всіх гіперпосилань потрібно створити підказки.</span><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">&nbsp;</span></p>
+<p style="text-align: justify;"><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;"><img class="shrinkToFit" src="http://new.druzi.biz/file/user/2/files/189ecca22186cbe272292ec73084afb7.jpg" alt="http://new.druzi.biz/file/user/2/files/189ecca22186cbe272292ec73084afb7.jpg" width="800" height="582" /></span></p>                                                                                                <a href="#course-lessons-198" class="course-page" name="course-page-1038">
+                                ЗАВДАННЯ 11.3.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: medium; font-family: 'book antiqua', palatino; color: #993366;">Відкрийте створений на минулому занятті. Поруч із назвами <strong><em><span style="color: #000080;">3</span></em></strong>, <span style="color: #000080;"><em><strong>7</strong></em></span> і <span style="color: #000080;"><em><strong>9</strong></em></span> пісень створіть гіперпосилання у вигляді блокноту&nbsp;для переходу до файлів ("<span style="color: #000080;">song_3.html</span>", "<span style="color: #000080;">song_7.html</span>", "<span style="color: #000080;">song_9.html</span>"), які містять тексти відповідних пісень. Фотографія <span style="color: #000080;">gloria.jpg</span> має стати гіперпосиланням на&nbsp;<span style="color: #000080;">gloria_big.jpg</span> з підказкою "<span style="color: #000080;">Збільшити</span>"</span></p>
+<p style="text-align: justify;"><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">У файлі song_3.html після назви пісні створіть посилання у вигляді скрипічного ключу (файл&nbsp;</span><em style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">"</em><span style="color: #000080; font-size: large; font-family: 'book antiqua', palatino;">key.gif</span><em style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">"</em><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">), що дозволить прослухати фрагмент даної пісні (файл&nbsp;</span><em style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">"</em><span style="color: #000080; font-size: large; font-family: 'book antiqua', palatino;">okean-elzy.mp3</span><em style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">"</em><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;">).</span></p>
+<p style="text-align: justify;"><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;"><span>В кінці кожного тексту пісні створіть гіперпосилання у вигляді стрілки (зображення стрілки створити&nbsp;<span>самостійно розміром <span style="color: #000080;">80</span>х<span style="color: #000080;">50</span></span>), яке дозволить повернутися до Web-сторінки із списком пісень.</span></span></p>
+<p style="text-align: justify;"><span style="color: #993366; font-family: 'book antiqua', palatino; font-size: medium;"><span><img src="http://new.druzi.biz/file/user/2/files/c3f1475dc88b0801b93baa481526f92c.jpg" alt="http://new.druzi.biz/file/user/2/files/c3f1475dc88b0801b93baa481526f92c.jpg" /></span></span></p>                                                            </div>
+                </body>
+</html>

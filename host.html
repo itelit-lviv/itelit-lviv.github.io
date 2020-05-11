@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://elit.druzi.biz/images/icon.png" />
+<meta name="keywords" content="" />
+<meta http-equiv="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="description" content="" />
+<title>ІТ-Еліт</title>
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/template/css/style.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.css" />
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.js"></script>
+<script>
+    jQuery(function($){
+            $.datepicker.regional['uk'] = {
+                closeText: "Закрити",
+                prevText: '&#x3C;',
+                nextText: '&#x3E;',
+                currentText: "Сьогодні",
+                monthNames: ["Січень",
+                    "Лютий",
+                    "Березень",
+                    "Квітень",
+                    "Травень",
+                    "Червень",
+                    "Липень",
+                    "Серпень",
+                    "Вересень",
+                    "Жовтень",
+                    "Листопад",
+                    "Грудень"],
+                monthNamesShort: ["Січ",
+                    "Лют",
+                    "Бер",
+                    "Кві",
+                    "Тра",
+                    "Чер",
+                    "Лип",
+                    "Сер",
+                    "Вер",
+                    "Жов",
+                    "Лис",
+                    "Гру"],
+                dayNames: ["неділя",
+                    "понеділок",
+                    "вівторок",
+                    "середа",
+                    "четвер",
+                    "п’ятниця",
+                    "субота"],
+                dayNamesShort: ["нед",
+                    "пнд",
+                    "вів",
+                    "срд",
+                    "чтв",
+                    "птн",
+                    "суб"],
+                dayNamesMin: ["Нд",
+                    "Пн",
+                    "Вт",
+                    "Ср",
+                    "Чт",
+                    "Пт",
+                    "Сб"],
+                weekHeader: "Тиж",
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+            yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['uk']);
+    });
+
+    var $datepicker={ 
+        dateFormat: "dd.mm.y",
+        language: 'uk'
+    };
+    var $datepicker2={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2050"
+    };
+    var $datepicker3={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk'
+    };
+    $(document).ready(function(){
+                
+        //$.datepicker.regional[ "uk" ];
+        $( ".dateMask" ).datepicker($datepicker);
+        $( ".dateMaskAll" ).datepicker($datepicker2);
+        $( ".dateMaskYear" ).datepicker($datepicker3);
+        
+        $.mask.definitions['#'] = "[0-9]";
+        $('.phoneMask').mask("+38 (0##) ###-##-##");
+        $('.timeMask').mask("##:##:##");
+        $('.timeMaskMin').mask("##:##");
+    });
+    function window_profile(){
+        window_profile_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=journal_window_profile",
+            success: function(data){
+                $('body').append(data);
+                window_profile_start();
+            }
+        });
+    }
+    function window_profile_close(){
+        $(".window_profile").dialog('destroy');
+        $(".window_profile").remove();
+    }
+    function window_statistic($type,$day,$month,$year){
+        window_statistic_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=window_statistic",
+            data: ({type : $type, day : $day, month : $month, year : $year}),
+            success: function(data){
+                $('body').append(data);
+                window_statistic_start();
+            }
+        });
+    }
+    function window_statistic_close(){
+        $(".window_statistic").dialog('destroy');
+        $(".window_statistic").remove();
+    }
+</script>    </head>
+    <body>
+        <script>
+    $(document).ready(function(){
+            });
+</script>
+<style>
+    body{
+        padding: 0px;
+        width: 60%;
+        margin: 0px auto;
+        font-size:12px; 
+    	font-family:Verdana, Helvetica, sans-serif;
+    	line-height:21px;
+    	text-align:left;
+        color: black;
+        word-wrap: break-word;
+        line-height: 18px;
+        font-size: 14px;
+    }
+    img{
+        border: 0px;
+    }
+    p{
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    a{
+        color: #1D335C;
+        text-decoration: none;
+    }
+    input{
+        line-height: 0.8;
+    }
+    a:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    a.black{
+        color: #000000;
+        text-decoration: none;
+    }
+    a.black:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    a.submit{
+        background-color: #00ACF0;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 2px 10px 3px;
+        text-decoration: none;
+    }
+    a.submit:hover{
+        background-color: #39C6F5;
+        text-decoration: none;
+    }
+</style>
+		<div>
+		    <h2 style="font-size:2em; display: inline-block;">FTP</h2>
+		
+		 <a href="https://drive.google.com/open?id=1DV4QkguBC0DhAnsqWKVG6DyC26T_n6X-" target="_blank" style="display: inline-block; color:red; font-size: 1.2em; font-weight: 900; border: 1px solid red; padding: 4px; margin:30px;">
+                                                            Завантажити Notepad++                                                  </a>
+		</div>
+            
+        <br /><br />
+        <table cellpadding="3" cellspacing="0" border="1" width="100%">
+        <tr>
+                          
+                        <th align="center" valign="top">
+                Закріплено за            </th>
+            <th align="center" valign="top">
+                Сайт            </th>
+            <th align="center" valign="top">
+                Хост            </th>
+            <th align="center" valign="top">
+                Логін            </th>
+            <th align="center" valign="top">
+                Пароль            </th>
+                           
+                            </tr>
+                                                <tr>
+                        
+                        <td align="left" valign="top">
+                            Борисенко Руслан
+                        </td>
+                        <td align="center" valign="top">
+                            host2326.itelit.pro                        </td>
+                        <td align="center" valign="top">
+                            193.169.80.21                        </td>
+                        <td align="center" valign="top">
+                            host2326                        </td>
+                        <td align="center" valign="top">
+                            UVpFRtNE                        </td>
+                                                  
+                                    <tr>
+                        
+                        <td align="left" valign="top">
+                           Вентик Кирило
+                       </td>
+                        <td align="center" valign="top">
+                            host2418.itelit.pro                        </td>
+                        <td align="center" valign="top">
+                            193.169.80.21                        </td>
+                        <td align="center" valign="top">
+                            host2418                        </td>
+                        <td align="center" valign="top">
+                            kMe/IEOi                        </td>
+                                                   
+                                            </tr>
+                                    <tr>
+                        
+                        <td align="left" valign="top">
+                            Зінчук Тетяна
+                   </td>
+                        <td align="center" valign="top">
+                            host2485.itelit.pro                        </td>
+                        <td align="center" valign="top">
+                            193.169.80.21                        </td>
+                        <td align="center" valign="top">
+                            host2485                        </td>
+                        <td align="center" valign="top">
+                            S8NhCCX9                        </td>
+                                                   
+                                            </tr>
+                                    <tr>
+                        
+                        <td align="left" valign="top">
+                            Ханас Христина
+                     </td>
+                        <td align="center" valign="top">
+                            host2465.itelit.pro                        </td>
+                        <td align="center" valign="top">
+                            193.169.80.21                        </td>
+                        <td align="center" valign="top">
+                            host2465                        </td>
+                        <td align="center" valign="top">
+                            arg5+pLQ                        </td>
+                                                  
+                                            </tr>
+                                    <tr>
+                       
+                        <td align="left" valign="top">
+                           Пришляк Остап
+                     </td>
+                        <td align="center" valign="top">
+                            host2473.itelit.pro                        </td>
+                        <td align="center" valign="top">
+                            193.169.80.21                        </td>
+                        <td align="center" valign="top">
+                            host2473                        </td>
+                        <td align="center" valign="top">
+                            Gamz42mX                        </td>
+                                                 
+                                            </tr>
+                    </table>
+    <br />
+    
+    </body>
+</html>
