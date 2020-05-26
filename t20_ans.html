@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://elit.druzi.biz/images/icon.png" />
+<meta name="keywords" content="" />
+<meta http-equiv="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="description" content="" />
+<title>ІТ-Еліт</title>
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/template/css/style.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.css" />
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.js"></script>
+<script>
+    jQuery(function($){
+            $.datepicker.regional['uk'] = {
+                closeText: "Закрити",
+                prevText: '&#x3C;',
+                nextText: '&#x3E;',
+                currentText: "Сьогодні",
+                monthNames: ["Січень",
+                    "Лютий",
+                    "Березень",
+                    "Квітень",
+                    "Травень",
+                    "Червень",
+                    "Липень",
+                    "Серпень",
+                    "Вересень",
+                    "Жовтень",
+                    "Листопад",
+                    "Грудень"],
+                monthNamesShort: ["Січ",
+                    "Лют",
+                    "Бер",
+                    "Кві",
+                    "Тра",
+                    "Чер",
+                    "Лип",
+                    "Сер",
+                    "Вер",
+                    "Жов",
+                    "Лис",
+                    "Гру"],
+                dayNames: ["неділя",
+                    "понеділок",
+                    "вівторок",
+                    "середа",
+                    "четвер",
+                    "п’ятниця",
+                    "субота"],
+                dayNamesShort: ["нед",
+                    "пнд",
+                    "вів",
+                    "срд",
+                    "чтв",
+                    "птн",
+                    "суб"],
+                dayNamesMin: ["Нд",
+                    "Пн",
+                    "Вт",
+                    "Ср",
+                    "Чт",
+                    "Пт",
+                    "Сб"],
+                weekHeader: "Тиж",
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+            yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['uk']);
+    });
+
+    var $datepicker={ 
+        dateFormat: "dd.mm.y",
+        language: 'uk'
+    };
+    var $datepicker2={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2050"
+    };
+    var $datepicker3={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk'
+    };
+    $(document).ready(function(){
+                
+        //$.datepicker.regional[ "uk" ];
+        $( ".dateMask" ).datepicker($datepicker);
+        $( ".dateMaskAll" ).datepicker($datepicker2);
+        $( ".dateMaskYear" ).datepicker($datepicker3);
+        
+        $.mask.definitions['#'] = "[0-9]";
+        $('.phoneMask').mask("+38 (0##) ###-##-##");
+        $('.timeMask').mask("##:##:##");
+        $('.timeMaskMin').mask("##:##");
+    });
+    function window_profile(){
+        window_profile_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=journal_window_profile",
+            success: function(data){
+                $('body').append(data);
+                window_profile_start();
+            }
+        });
+    }
+    function window_profile_close(){
+        $(".window_profile").dialog('destroy');
+        $(".window_profile").remove();
+    }
+    function window_statistic($type,$day,$month,$year){
+        window_statistic_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=window_statistic",
+            data: ({type : $type, day : $day, month : $month, year : $year}),
+            success: function(data){
+                $('body').append(data);
+                window_statistic_start();
+            }
+        });
+    }
+    function window_statistic_close(){
+        $(".window_statistic").dialog('destroy');
+        $(".window_statistic").remove();
+    }
+</script>    </head>
+    <body>
+        <script>
+    $(document).ready(function(){
+            });
+</script>
+<style>
+     body{
+        padding: 0px;
+        margin: 0px;
+        font-size:12px; 
+        font-family:Verdana, Helvetica, sans-serif;
+        line-height:21px;
+        text-align:left;
+        color: black;
+    }
+    img{
+        border: 0px;
+    }
+    p{
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    a{
+        color: #1D335C;
+        text-decoration: none;
+    }
+    input{
+        line-height: 0.8;
+    }
+    a:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    a.black{
+        color: #000000;
+        text-decoration: none;
+    }
+    a.black:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    .text{
+        margin: 0 auto;
+        width: auto;
+        height: auto;
+        color: black;
+        width: 900px;
+        word-wrap: break-word;
+        line-height: 18px;
+        font-size: 14px;
+    }
+    a.submit{
+        background-color: #00ACF0;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 2px 10px 3px;
+        text-decoration: none;
+    }
+    a.submit:hover{
+        background-color: #39C6F5;
+        text-decoration: none;
+    }
+    .return{
+        background-color: #fd5204;
+        display: block;
+        width: auto;
+        margin: 0 auto;
+        text-align: center;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 5px 0px;
+        font-weight: bold;
+        width: 900px;
+    }
+    .return:hover{
+        background-color: #031fff;
+        color: #FFFFFF;
+    }
+    .course-list{
+        margin: 0px 0px 20px;
+        width: 900px;
+    }                
+    .course-list-link{
+        display: block;
+        width: auto; 
+    }                
+    .course-list-name{
+        color: #022984;
+        font-size: 22px;
+        line-height: 22px;
+    }                
+    .course-list-author{
+        color: #fd5204;
+        font-size: 11px;
+        line-height: 10px;
+    }                
+    .course-list-edit{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+        margin-bottom: 10px;
+    }                
+    .course-list-edit:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-edit img{
+        width: 16px; 
+        height: 16px;
+    }                
+    .course-list-delete{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+    }                
+    .course-list-delete:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-delete img{
+        width: 16px; 
+        height: 16px;
+    }
+    .course-list-add{
+        display: block;
+        width: 16px;
+        height: 16px;
+        padding: 2px;
+    }
+    .course-list-add:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }
+    .course-list-add img{
+        width: 16px;
+        height: 16px;
+    }
+    .lessons-link{
+        color: #031fff;
+        font-weight: bold;
+    }
+    .lessons-link-hide{
+        color: #d8d7d5;
+        font-weight: bold;
+    }
+    .lessons-link:hover{
+        color: #ff0000;
+    }
+    .lessons-link-hide:hover{
+        color: #d8d7d5;
+    }
+    a.course-lessons{
+        color: #3697ff;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        margin: 10px auto;
+        text-align: center;
+        font-size: 18px;
+    }
+    a.course-page{
+        color: #ff0000;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        text-align: center;
+        margin: 40px 0px 20px;
+        font-size: 14px;
+    }
+    .course-lessons-plan{
+        width: auto;
+    }
+    .course-lessons-plan b{
+        color: #3697ff;
+        font-size: 14px;
+    }
+    .course-lessons-plan ol{
+        margin: 5px 0px 0px 15px;
+    }
+    .course-lessons-plan ol li{
+        margin-left: 20px;
+        color: #3697ff;
+    }
+    .course-lessons-plan ol li a{
+        color: #3697ff;
+        padding: 1px 0px;
+        display: block;
+    }
+    .course-lessons-plan ol li a:hover{
+        color: #ff0000;
+    }
+	img{
+		width: 1000px;
+	}
+</style>
+            <a href="lessons.html" class="return">
+                Список уроків            </a>
+                            <a href="#" class="course-lessons" name="course-lessons-201">Тема 20. Форми. РІШЕННЯ</a>
+
+                        <br>            
+			  <div class="text">
+							 
+                            <a href="../sendfiles.php" target="_blank" style="color: red; font-weight: 900; border: 1px solid red; padding: 5px; ">ЗДАТИ ВИКОНАНЕ ЗАВДАННЯ</a>
+							
+                        <br><br>
+                    <div class="course-lessons-plan">
+                        <b>План:</b>
+                        <ol>
+                                                                                                <li><a href="#course-page-1158">ЗАВДАННЯ 20.1.</a></li>
+                                                                                                                                <li><a href="#course-page-1159">ЗАВДАННЯ 20.2.</a></li>
+                                                                                                                                <li><a href="#course-page-1160">ЗАВДАННЯ 20.3.</a></li>
+                                                                                    </ol>
+                    </div>
+                                                                        <a href="#course-lessons-225" class="course-page" name="course-page-1158">
+                                ЗАВДАННЯ 20.1.                            </a>
+                            <p>&nbsp;</p>
+<p><img src="http://new.druzi.biz/file/user/2/files/5fd8c9e00a82de7e6809247bf95bc8f5.png" alt="" /></p>
+<p>&nbsp;</p>                                                                                                <a href="#course-lessons-225" class="course-page" name="course-page-1159">
+                                ЗАВДАННЯ 20.2.                            </a>
+                            <p>&nbsp;</p>
+<p><img src="http://new.druzi.biz/file/user/2/files/854cc98159888dfb11a439cf98f5b6d0.png" alt="" /></p>
+<p>&nbsp;&nbsp;</p>
+<p><img src="http://new.druzi.biz/file/user/2/files/a27b32d3e77e6b40bd23894c20b9f36e.png" alt="" /></p>
+<p>&nbsp;</p>                                                                                                <a href="#course-lessons-225" class="course-page" name="course-page-1160">
+                                ЗАВДАННЯ 20.3.                            </a>
+                            <p>&nbsp;</p>
+<p><img src="http://new.druzi.biz/file/user/2/files/4b50622bd0898b7ddcd958d378b61a4b.png" alt="" /></p>
+<p>&nbsp;&nbsp;</p>
+<p><img src="http://new.druzi.biz/file/user/2/files/8066a7231805a3079908af72b0bf7fd1.png" alt="" /></p>
+<p>&nbsp;</p>                                                            </div>
+                </body>
+</html>
