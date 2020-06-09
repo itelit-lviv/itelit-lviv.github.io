@@ -95,6 +95,7 @@ a.conf-button:hover{
 }
 .tab-pane{
 	margin-top: 70px;
+	margin-bottom: 70px;
 	min-height: 500px;
 }
 #tasks .task{
