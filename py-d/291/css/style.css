@@ -1,0 +1,115 @@
+body{
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+
+}
+.navbar{
+	background-color: cornflowerblue;
+}
+.navbar-nav{
+	margin-left: 10%;
+}
+.nav-link{
+	margin-left: 5%;
+}
+.container-xl{
+	position: relative;
+}
+.viber-link{
+	position: absolute;
+	right: 10px;
+}
+.viber-icon{
+	height: 35px;
+	margin-right: 0;
+}
+
+a.logo{
+	font-family: 'Ruda';
+	font-weight: bold;
+	font-size: 23px;
+}
+a.logo>span{
+	color:#ffbf00;
+	font-weight: 900;
+	font-size: 25px;
+}
+.nav-link{
+	font-weight: 600;
+}
+a.conf-button{
+	
+	border-radius: 10px;
+	background-color:#ffbf00;
+}
+a.conf-button:hover{
+	box-shadow: 0 0 8px 1px #333;
+}
+
+.header-baner{
+	width: 100%;
+	max-height: 140px;
+	background-image: url('../img/python-header-baner.jpg');
+	background-size: cover;
+	padding: 100px 10px 110px 10px;
+	flex-direction: column;
+}
+.header-baner h1{
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.8em;
+	text-shadow: 0px 0px 30px #000;
+	padding-bottom: 20px;
+}
+/*---modal -----*/
+
+
+/*------------------*/
+/* .tabs-container {
+	max-width: 400px;
+	position: absolute;
+	bottom: 0;
+	
+} */
+.tabs-container .nav-item{
+	max-width: 115	px;
+	font-size: 17px;
+	
+}
+.tabs-container .nav-link{
+	border: 2px solid #fff;
+	color: #fff;
+	text-shadow: 0px 0px 10px #000;
+	background-color: rgba(107, 107, 107, 0.5);
+}
+.tabs-container .nav-link.active{
+	border: 2px solid #fff;
+	color: #2d4164;
+	text-shadow: none;
+}
+/*-----------*/
+
+.tabs-container .nav{
+	justify-content: center;
+}
+.tab-pane{
+	margin-top: 70px;
+	min-height: 500px;
+}
+#tasks .task{
+	text-align: justify;
+}
+#tasks .task h3{
+	text-align: center;
+	color:  #2d4164;
+}
+#theory h3{
+	color:  #2d4164;
+ }
+#theory .answer{
+ margin-bottom: 40px;
+}
+.footer{
+	background: #333;
+}
