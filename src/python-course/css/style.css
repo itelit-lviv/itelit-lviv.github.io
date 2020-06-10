@@ -45,7 +45,7 @@ a.conf-button:hover{
 .header-baner{
 	width: 100%;
 	max-height: 140px;
-	background-image: url('../img/python-header-baner.jpg');
+	background-image: url('https://web-teach.pp.ua/src/python-course/python-header-baner.jpg');
 	background-size: cover;
 	padding: 90px 10px 110px 10px;
 	flex-direction: column;
