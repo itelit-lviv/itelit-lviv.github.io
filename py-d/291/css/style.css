@@ -4,25 +4,22 @@ body{
 
 }
 .navbar{
-	background-color: cornflowerblue;
+	background: linear-gradient(90deg, #375381 0%,#6495ed  100%);
 }
-.navbar-nav{
-	margin-left: 10%;
+.navbar-brand{
+	margin-right: 60px;
 }
+
 .nav-link{
-	margin-left: 5%;
+	font-size: 16px;
+	max-width: 170px;
+	margin-left:  20px;
 }
-.container-xl{
-	position: relative;
+
+.nav-phone .nav-link{
+	 color: rgba(0,0,0,.5);
 }
-.viber-link{
-	position: absolute;
-	right: 10px;
-}
-.viber-icon{
-	height: 35px;
-	margin-right: 0;
-}
+
 
 a.logo{
 	font-family: 'Ruda';
@@ -38,9 +35,8 @@ a.logo>span{
 	font-weight: 600;
 }
 a.conf-button{
-	
 	border-radius: 10px;
-	background-color:#ffbf00;
+	background: linear-gradient(90deg, #ffbf00  0%, rgb(251, 135, 26) 100%);
 }
 a.conf-button:hover{
 	box-shadow: 0 0 8px 1px #333;
@@ -51,7 +47,7 @@ a.conf-button:hover{
 	max-height: 140px;
 	background-image: url('../img/python-header-baner.jpg');
 	background-size: cover;
-	padding: 100px 10px 110px 10px;
+	padding: 90px 10px 110px 10px;
 	flex-direction: column;
 }
 .header-baner h1{
@@ -62,16 +58,7 @@ a.conf-button:hover{
 	text-shadow: 0px 0px 30px #000;
 	padding-bottom: 20px;
 }
-/*---modal -----*/
 
-
-/*------------------*/
-/* .tabs-container {
-	max-width: 400px;
-	position: absolute;
-	bottom: 0;
-	
-} */
 .tabs-container .nav-item{
 	max-width: 115	px;
 	font-size: 17px;
@@ -100,6 +87,7 @@ a.conf-button:hover{
 }
 #tasks .task{
 	text-align: justify;
+	margin-top: 50px;
 }
 #tasks .task h3{
 	text-align: center;
