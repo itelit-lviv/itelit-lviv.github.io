@@ -100,6 +100,10 @@ a.conf-button:hover{
 #theory .answer{
  margin-bottom: 40px;
 }
+#answers .task h3{
+	text-align: center;
+	color:  #2d4164;
+}
 .footer{
 	background: #333;
 }
