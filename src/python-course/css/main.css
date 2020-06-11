@@ -83,7 +83,7 @@ nav.navbar{
   position: absolute;
   width: 65px;
   height: 65px;
-  background: #fff url('/src/python-course/video-icon.svg')  center no-repeat;
+  background: #fff url('../video-icon.svg')  center no-repeat;
   background-size: 30px;
   border-radius: 50%;
   right: 0;
