@@ -1,29 +1,32 @@
 html, body {
   height: 100%;
   margin: 0;
+  width: 100%;
 }
 .header-wrapper{
   background: linear-gradient(90deg,#375381 0%,#6495ed 100%),#6495ed;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 .page-header{
   height: 700px;
   background: url('../img/header-baner.png') no-repeat;
   background-size: contain;
   background-position: bottom center;
+  width: 100%;
 }
 nav.navbar{
   background: transparent;
 }
 .header-title {
   display: block;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .header-title h1{
   font-weight: 700;
-  font-size: 3em;
+  font-size: 3.5em;
   padding: 0px;
   line-height: 1em;
   text-align: center;
