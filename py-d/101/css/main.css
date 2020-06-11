@@ -1,0 +1,127 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.header-wrapper{
+  background: linear-gradient(90deg,#375381 0%,#6495ed 100%),#6495ed;
+  padding: 0;
+  margin: 0;
+}
+.page-header{
+  height: 700px;
+  background: url('../img/header-baner.png') no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+}
+nav.navbar{
+  background: transparent;
+}
+.header-title {
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.header-title h1{
+  font-weight: 700;
+  font-size: 3em;
+  padding: 0px;
+  line-height: 1em;
+  text-align: center;
+
+}
+.header-title .py-title{
+  font-weight: 900;
+  display: block;
+  font-size: 5em;
+  color:  #ffbf00;
+  
+}
+.header-title .py-answer{
+  text-align-last: left;
+  font-weight: 900;
+  display: block;
+  padding: 0;
+  font-size: 11em;
+  color:  #ffbf00;
+  line-height: 0.8em;
+}
+.course-button{
+  margin: 30px 0;
+}
+.course-button button{
+  border-radius: 300px;
+  font-weight: 500;
+  padding: 15px 25px;
+
+}
+.course-button button:hover{
+  background:  linear-gradient(90deg, #ffbf00  0%, rgb(255, 125, 4) 100%);
+  /* box-shadow: 0 0 10px 1px #333; */
+  color: #212529;
+}
+.video-button button:hover{
+  box-shadow: 0 0 15px 1px #333;
+}
+.button-play{
+  position: relative;
+  border: none;
+  background:  linear-gradient(90deg, #ffbf00  0%, rgb(255, 125, 4) 100%);
+  border-radius: 300px;
+  padding: 25px 35px;
+  padding-right: 80px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #212529;
+}
+.button-play:after{
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background: #fff url('../img/video-icon.svg')  center no-repeat;
+  background-size: 30px;
+  border-radius: 50%;
+  right: 0;
+  top: 0;
+}
+.button-play:before{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 81px;
+  height: 81px;
+  background-color:  rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  right: -7px;
+  top: -8px;
+}
+
+main{
+  min-height: 90%;
+}
+#course{
+  padding-top: 70px;
+  padding-bottom: 70px;
+  
+}
+#course h2{
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+.lesson-list li{
+  display: block;
+  padding: 5px;
+}
+.lesson-list ol{
+  padding-left: 0;
+}
+.lesson-link{
+  color: #375381;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 500;
+}
