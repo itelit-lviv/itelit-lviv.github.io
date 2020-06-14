@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://web-teach.pp.ua/src/python-course/css/style.css">
+    <link rel="stylesheet" href="/src/python-course/css/style.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
@@ -27,14 +27,14 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav mr-auto mt-2 mt-lg-0" >
           <a class="nav-item nav-link" href="../index.html#course" title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link conf-button active" title="Перейти до онлайн-уроку" href="https://meet.jit.si/python-Ehretskyi-Danylo" target="_blank">
+          <a class="nav-item nav-link conf-button active" title="Перейти до онлайн-уроку" href="https://meet.jit.si/python-w-teach" target="_blank">
             <svg class="bi bi-camera-video-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.667 3h6.666C10.253 3 11 3.746 11 4.667v6.666c0 .92-.746 1.667-1.667 1.667H2.667C1.747 13 1 12.254 1 11.333V4.667C1 3.747 1.746 3 2.667 3z"/>
               <path d="M7.404 8.697l6.363 3.692c.54.313 1.233-.066 1.233-.697V4.308c0-.63-.693-1.01-1.233-.696L7.404 7.304a.802.802 0 0 0 0 1.393z"/>
             </svg>
             Онлайн-урок</a>
           <a class="nav-item nav-link" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
-          <a class="nav-item nav-link" href="../journal.html" data-toggle="tooltip" data-placement="bottom" title="Сторінка в розробці, скоро оцінки будуть доступні :)" >Журнал</a>
+          <a class="nav-item nav-link" href="../journal.html" data-toggle="tooltip" data-placement="bottom">Журнал</a>
           <a class="nav-item nav-link" href="#openModal" data-toggle="modal" data-target="#exampleModal">Реквізити</a>
           
         </div>
@@ -53,7 +53,7 @@
         <div class="col-md-auto col-sm-12 align-self-center">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#theory" role="tab" aria-controls="home" aria-selected="true">Конспект</a>
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#theory" role="tab" aria-controls="home" aria-selected="true">Теорія</a>
             </li>
             <li class="nav-item" role="presentation">
               <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="profile" aria-selected="false">Завдання</a>
@@ -109,9 +109,14 @@
             Ввід відбувається за допомогою функції <b>input()</b><br><br>
             <i>name = input('Enter your name:')</i><br><br>
             <div class="alert alert-success" role="alert">
-              <b>Зауваження!</b> Тип змінної отриманої за допомогою input() - <b>STR</b><i><u><br>(а отже, якщо ви виконуєте математичні дії, змінну необхідно перевести до типу числа)</i></u><br></div></div>
+              <b>Зауваження!</b> Тип змінної отриманої за допомогою input() - <b>STR</b><i><u><br>(а отже, якщо ви виконуєте математичні дії, змінну необхідно перевести до типу числа)</i></u><br></div>
             </div>
-
+            <!-- <div class="alert alert-primary" role="alert">
+              <b>Залишилися запитання?</b>
+              <p>Переглянь запис заняття:</p>
+              <iframe width="100%" style="max-width: 560px;" height="315" src="https://www.youtube.com/embed/KPrArsaznh4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div> -->
+          </div>
                     </div>
         <div class="tab-pane fade" id="tasks" role="tabpanel" aria-labelledby="profile-tab">                                                       
           <div class='task'> <h3> ЗАВДАННЯ 1.1. </h3>                           
@@ -138,6 +143,7 @@
           <div class="sendform">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/viewform?embedded=true" width="100%" height="820" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" seamless>Завантаження…</iframe>
           </div>
+
         </div>
         <div class="tab-pane fade" id="answers" role="tabpanel" aria-labelledby="contact-tab">
           <div class="alert alert-danger" role="alert">
