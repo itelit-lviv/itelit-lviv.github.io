@@ -103,7 +103,7 @@ a.conf-button:hover{
 #tasks .sendform{
 	width: 100%;
 	padding: 0;
-	margin-top: 100px;
+	margin-top: 50px;
 	background: transparent;
 }
 #theory h3{
@@ -116,7 +116,10 @@ a.conf-button:hover{
 	text-align: center;
 	color:  #2d4164;
 }
-
+#tasks img, #answers img{
+	max-width: 600px;
+	width: 90%;
+}
 h1.journal-header{
 	font-size: 2em;
 }
