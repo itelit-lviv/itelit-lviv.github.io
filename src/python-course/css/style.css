@@ -104,7 +104,7 @@ a.conf-button:hover{
 	width: 100%;
 	padding: 0;
 	margin-top: 100px;
-	background: #2d4164;
+	background: transparent;
 }
 #theory h3{
 	color:  #2d4164;
@@ -114,7 +114,7 @@ a.conf-button:hover{
 }
 #answers .task h3{
 	text-align: center;
-	color:  transparent;
+	color:  #2d4164;
 }
 
 h1.journal-header{
