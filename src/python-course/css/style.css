@@ -100,6 +100,11 @@ a.conf-button:hover{
 	text-align: center;
 	color:  #2d4164;
 }
+#tasks .sendform{
+	width: 100%;
+	padding: 0;
+	margin-top: 100px;
+}
 #theory h3{
 	color:  #2d4164;
  }
