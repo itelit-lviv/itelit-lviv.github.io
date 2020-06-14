@@ -117,7 +117,7 @@ a.conf-button:hover{
 	color:  #2d4164;
 }
 #tasks img, #answers img{
-	max-width: 600px;
+	max-width: 500px;
 	width: 90%;
 }
 h1.journal-header{
