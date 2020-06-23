@@ -120,6 +120,10 @@ a.conf-button:hover{
 	max-width: 500px;
 	width: 90%;
 }
+code{
+	font-size: 17px;
+	color:  #3d00ea;
+}
 h1.journal-header{
 	font-size: 2em;
 }
