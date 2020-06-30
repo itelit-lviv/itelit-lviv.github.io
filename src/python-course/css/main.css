@@ -3,6 +3,8 @@ html, body {
   margin: 0;
   width: 100%;
 }
+
+
 .header-wrapper{
   background: linear-gradient(90deg,#375381 0%,#6495ed 100%),#6495ed;
   padding: 0;
