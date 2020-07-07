@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Курс Python - WebTeach">
+    <meta property="og:site_name" content="WebTeach">
+    <meta property="og:url" content="https://web-teach.pp.ua/py-d/101/index.html">
+    <meta property="og:description" content="Вивчаємо мову програмування Python онлайн!">
+    <meta property="og:image" content="https://web-teach.pp.ua/src/python-course/python-preview.jpg">
+    <!-- /Required meta tags -->
+    <title>Курс Python - WebTeach</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/python-course/css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-xl">
+      <a class="navbar-brand logo" href="../index.html"><span>Web</span>Teach</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mr-auto mt-2 mt-lg-0" >
+          <a class="nav-item nav-link" href="../index.html#course" title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link conf-button active" title="Перейти до онлайн-уроку" href="https://meet.jit.si/python-Ehretskyi-Danylo" target="_blank">
+            <svg class="bi bi-camera-video-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.667 3h6.666C10.253 3 11 3.746 11 4.667v6.666c0 .92-.746 1.667-1.667 1.667H2.667C1.747 13 1 12.254 1 11.333V4.667C1 3.747 1.746 3 2.667 3z"/>
+              <path d="M7.404 8.697l6.363 3.692c.54.313 1.233-.066 1.233-.697V4.308c0-.63-.693-1.01-1.233-.696L7.404 7.304a.802.802 0 0 0 0 1.393z"/>
+            </svg>
+            Онлайн-урок</a>
+          <a class="nav-item nav-link" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
+          <a class="nav-item nav-link" href="../journal.html" data-toggle="tooltip" data-placement="bottom" title="Сторінка в розробці, скоро оцінки будуть доступні :)" >Журнал</a>
+          <a class="nav-item nav-link" href="#openModal" data-toggle="modal" data-target="#exampleModal">Реквізити</a>
+          
+        </div>
+        <div class="nav-phone my-2 my-lg-0">
+          <a href="tel:+380662719785" class="nav-item nav-link">+380995638685</a>
+        </div>
+        </div>
+     </div> 
+     </nav>
+     <!-- nav end -->
+     <div class="header-baner container-fluid d-flex justify-content-xl-space-between">       
+      <h1 >Тема 7. Функції.</h1>
+      
+      <div class="row tabs-container d-flex align-items-end">
+        <div class="col"></div>
+        <div class="col-md-auto col-sm-12 align-self-center">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#theory" role="tab" aria-controls="home" aria-selected="true">Теорія</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="profile" aria-selected="false">Завдання</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#answers" role="tab" aria-controls="contact" aria-selected="false">Відповіді</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col"></div>
+      </div>
+     </div>
+     <div class="lesson container-xl">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="theory" role="tabpanel" aria-labelledby="home-tab">
+          
+        
+          <div class='theory'>
+            <h3>Визначення функції</h3>
+            <div class='answer'>
+            <p><b>Функція</b> (програмування) — частина програми, яка реалізує певний алгоритм і дозволяє звернення до неї з різних частин загальної (головної) програми. (Вікіпедія)</p>
+            <ul>
+            <li>
+            У функції є зазвичай ім'я.
+            </li><br>
+            <li>
+            Функції можна створювати і без імен.
+            </li><br>
+            </ul>
+            </div>
+            
+            <h3>Для чого потрібні функції?</h3>
+            <div class='answer'>
+            <ul>
+            <li>
+            Для повторного використання коду.
+            </li><br>
+            <li>
+            Для створення більш логічної структури програми.
+            </li><br>
+            <li>
+            Для об'єднання декількох дій в одну.
+            </li><br>
+            </ul>
+            </div>
+            
+            <h3>Корисні вбудовані функції</h3>
+            <div class='answer'>
+            <ul>
+            <li>
+            <code>abs</code> - модуль числа
+            </li><br>
+            <li>
+            <code>min, max</code> - мінімальне, максимальне значення
+            
+            </li><br>
+            <li>
+            <code>round</code> - заокруглення числа
+            </li><br>
+            <li>
+            <code>sum</code> - сума елементів послідовності
+            </li><br>
+            <li>
+            <code>enumerate</code> - нумерація послідовності
+            </li><br>
+            </ul>
+            </div>
+            
+            <h3>Приклади: </h3>
+            <div class='answer'>
+            <code>
+            <span class="comment">#модуль числа</span>
+            <br><br>
+            print(abs(-7))     <span class="comment"> #result: 7</span>
+            <br><br>
+            <span class="comment">#min, max</span>
+            <br><br>
+            numbers = [-15, 9 ,1 ,0, 123, 11]
+            <br>print(min(numbers))      <span class="comment">#result: -15</span>
+            <br>print(max(numbers))      <span class="comment">#result: 123</span>
+            <br><br>
+            <span class="comment"># round</span>
+            <br><br>
+            print(round(10.981931248, 2))     <span class="comment"> #result: 10.99</span>
+            <br><br>
+            <span class="comment"># sum</span>
+            <br><br>
+            print(sum(numbers))      <span class="comment">#result: 129</span>
+            <br><br>
+            <span class="comment"># enumerate</span>
+            <br><br>
+            winners = ['Dany', 'Alex', 'Hew']<br>
+            for number, winners in enumerate(winners, 1):<br>
+            <span style='margin-left:20px;'></span>	print(number, winners)<br>
+              <br><br>
+                  <span class="comment">
+                    #result: 1 Dany<br>
+                      <span style='margin-left:65px;'></span> 2 Alex<br>
+                      <span style='margin-left:65px;'></span> 3 Hew<br>
+                  </span>
+            </code>
+            </div>
+            
+            <h3>Для чого створювати свої функції?</h3>
+            <div class='answer'>
+            <ul>
+            <li>Для повторного використання коду.</li>
+            <li>Для створення функціоналу, якого ще нема в стандартній бібліотеці.</li>
+            
+            </ul></div>
+            
+            <h3>Як створити свою функцію?</h3>
+            <div class='answer'>
+             Створюється функція за допомогою ключового слова <code> def</code> після чого йде назва функції <code> name_function</code>, вона обов'язково записується з дужками. Після цього ставиться двокрапка і в блок функції записується код. Далі для виклику функції необхідно записати її ім'я з дужками.
+            </div>
+            
+            <h3>Приклад</h3>
+            <div class='answer'>
+            <code>
+            def name_function():<br>
+            <span style='margin-left:20px;'></span>print('Hello' * 2)
+            <br><br>
+            name_function() <span class="comment"># result: HelloHello</span>
+            </code>
+            </div>
+            <h3>Параметри і результат</h3>
+            <div class='answer'><ul>
+            <li>Функції можна створювати без параметрів і без результату.</li><br>
+            <li>Можна також в функції сторити безліч параметрів і жодного результату.</li><br>
+            <li>Також можна створити функцію з результатом і параметрами або без параметрів.</li><br>
+            <li>Параметри слід записувати в дужках функції через кому. А при виклику функції, значення параметрів також записувати через кому.</li><br>
+            </div>
+            <h3>Функція з параметрами і результатом</h3>
+            <div class='answer'>
+            <code>
+            def name_function(age, rist):<br>
+            <span style='margin-left:20px;'></span>rik = 2020 - age * rist<br>
+            <span style='margin-left:20px;'></span>return rik
+            <br><br>
+            print(name_function(20, 175)) <span class="comment"># result: 35000</span>
+            </code>
+            </div>
+            <h3>Параметри функції</h3>
+            <div class='answer'>
+            <ul>
+            <li>Параметри функції при її виклику можуть записуватись у вигляді - <code>name_function(name, surname)</code>. Тоді параметрами функції стануть дані записані в змінні <code>name, surname</code>. </li><br><li>Наступний варіант запису це - <code>name_function('Danylo', 'Ehretskyi')</code>. Тут ми одразу передаємо дані в нашу функцію без додаткових змінних. </li><br><li>Ми також можемо поміняти порядок передачі даних. Для цього необхідно при виклику функції вказати ім'я змінної в яку ми передаємо значення: <code>name_function(surname='Ehretskyi', name='Danylo')</code>. </li><br><li>Також, якщо при визначенні функції (<u>не при виклику</u>) ми задамо в нашу функцію наступне - <code> def name_function(surname, name='Danylo'):</code>, тоді, якщо ми не передамо в нашу функцію параметр <b>name</b>, він автоматично визначиться як 'Danylo'.</li><br>
+            </ul></div>
+            <h3>Змінні та область видимості</h3>
+            <div class='answer'>
+            <li>Змінні, створені в функції не можна викликати поза межами функції. Вони діють тільки всередині функції.</li><br>
+            <li>Наприклад:
+            <br><br><code>
+            def name_function(name):<br>
+            <span style='margin-left:20px;'></span>full_name = name + 'Батькович'<br>
+            <span style='margin-left:20px;'></span>return full_name<br>
+            print(name_function('Zhora ')) <span class="comment"><b># result: Zhora Батькович</b></span><br>
+            print(full_name) <br>
+             <span class="comment">
+               <b># result: Traceback (most recent call last):<br>
+                File "main.py", line 5, in <module><br>
+                  print(full_name) <br>
+              NameError: name 'full_name' is not defined<br></b>
+             </span>
+            </code>
+            
+            </li><br>
+            <li>Змінні, створені в блоці програми (не циклу, не іншої функції) можна використати в функції.</li><br>
+            <li>Наприклад:
+            <br><br><code>
+            a = 'Mama'<br>
+            def name_function(name):<br>
+            <span style='margin-left:20px;'></span>full_name = name + 'Батькович'<br>
+            <span style='margin-left:20px;'></span>return full_name+a<br>
+            print(name_function('Zhora ')) <span class="comment"><b># result: Zhora БатьковичMama</b></span><br>
+            </code>
+            
+            </li><br>
+            </div>
+            </div>
+                                      
+          
+      
+        </div>    
+        <div class="tab-pane fade" id="tasks" role="tabpanel" aria-labelledby="profile-tab">                                                       
+                                                                            
+                                                                          
+          <div class='task'> <h3> ЗАВДАННЯ 7.1. </h3>                           
+            <p>Створіть функцію, яка приймає на вхід ім'я, вік і місто проживання людини. Функція має повертати рядок - «Василь, 21 рік (років), проживає в місті Київ»<p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t7_1.PNG" alt="" /></p></div>
+            <br />                                                                                              
+                        <div class='task'>  <h3> ЗАВДАННЯ 7.2. </h3>
+                        <p>Створити функцію <b>sqr(x)</b>. Функція <b>sqr(x)</b>  повинна повернути площу квадрату з стороною x.</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t7_2.PNG" alt="" /></p></div>
+                <div class='task'>  <h3>        ЗАВДАННЯ 7.3.                            </h3>
+                        <p>Створити програму, що обраховує площу кола по її радіусу (радіус вводиться користувачем). Програма повинна використовувати функцію <b>area_circle(x)</b>, що повертає площу кола, де x – радіус кола.</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t7_3.PNG" alt="" /></p>
+            </div>
+            <div class='task'><h3>                                ЗАВДАННЯ 7.4.                            </h3>
+                        <p>Створити функцію <b>this_triangle(x,y,z)</b>, що визначає можливість побудови трикутника з сторін у яких довжини рівні x, y, z. Функція повинна повертати логічну константну <b>true</b>, якщо побудова трикутника можлива, у іншому випадку функція повинна повертати <b>false</b>. </p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t7_4.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 7.5.                            </h3>
+                        <p>Створіть функцію <b>area_triangle(x, y, z)</b> яка обчислює площу трикутника по довжинам його трьох сторін. Площа трикутника обчислюється по <i>формулі Герона</i>.
+
+            Створіть програму, яка обчислює площу трикутника по введеним довжинам сторін. Якщо з введених сторін трикутника збудувати не можливо, тоді програма видає повідомлення: «З введених вами довжин трикутника збудувати неможливо». Використати функцію з попереднього завдання <b>this_triangle(x,y,z)</b></p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t7_5.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 7.6.                            </h3>
+                        <p>Створити функцію <b>arithmetic(a,b,oper)</b>, яка приймає 3 аргумента: перші 2 - числа, третій - операція, яка має виконуватись над ними. Якщо третій аргумент +, додати їх; якщо —, то відняти; * — помножити; / — розділити (перше на друге). В інших випадках вивести "ПОМИЛКА ВВЕДЕННЯ".</p>
+            <p><img src="/src/python-course/t7_6.PNG" alt="" /></p></div>
+
+            <div class='task'><h3>                                ЗАВДАННЯ 7.7.                            </h3>
+                        <p>Створити функцію <b>is_year_leap(rik)</b>, яка приймає 1 аргумент — рік, і повертає <b>True</b>, якщо рік високосний, і <b>False</b> інакше.
+
+            </p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t7_7.PNG" alt="" /></p></div>
+
+            <div class='task'><h3>                                ЗАВДАННЯ 7.8.                            </h3>
+                        <p>Створити функцію <b>square(x)</b>, яка приймає 1 аргумент — сторону квадрата, і повертає 3 значення (за допомогою списку): периметр квадрата, площу квадрата и діагональ квадрата.</p>
+            <p><img src="/src/python-course/t7_8.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 7.9.                            </h3>
+                        <p>Створити функцію <b>season(month)</b>, яка приймає 1 аргумент — номер місяця (від 1 до 12), і повертає пору року, котрому цей місяць належить (зима, весна, літо або осінь).</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t7_9.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 7.10.                            </h3>
+                        <p>Створіть функцію, яка створює комбінацію двох списків таким чином:
+
+            [1, 2, 3] (+) [11, 22, 33] -> [1, 11, 2, 22, 3, 33]</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t7_10.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 7.11.                            </h3>
+                        <p>Опишіть декілька сутностей player і enemy через словник, який буде мати ключі та значення:<br>
+            name - рядок,отриманий від користувача,<br>
+            health = 100,<br>
+            damage = 50.<br>
+            Тепер потрібно створити функцію attack(person1, person2). Функція в якості аргумента буде приймати атакуючого та того, якого атакують. В блоці функція має отримати параметр damage атакуючого і відняти цю кількість від health того, якого атакують. Функція має сама працювати зі словниками і змінювати їх значення.</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t7_11.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 7.12.                            </h3>
+                        <p>Давайте ускладнимо попереднє завданне. Змініть сутності, додавши новий параметр - armor = 1.2 (величина бронювання персонажа)
+            Тепер потрібно додати нову функцію, яка буде вираховувати і повертати отриманий урон за формулою damage / armor
+            Отже, у вас має бути 2 функції:<br>
+            1) Наносить урон. Цу покращена версія функції з завдання 7.11.<br>
+            2) Визначає урон по відношенню до броні.<br>
+
+            <div class="alert alert-info" role="alert">
+              Зауваження. Функція номер 2 використовується всередині функції номер 1 для визначення урону і віднімання його з здоров'я персонажа. </p>
+
+            </div>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t7_12.PNG" alt="" /></p></div>
+
+
+                                                  
+        </div>
+        <div class="tab-pane fade" id="answers" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="alert alert-danger" role="alert">
+            Відповіді будуть доступні після заняття
+            </div>
+             <!-- <div class='task'> <h3> ЗАВДАННЯ 7.1. </h3>            
+
+            <p><img src="/src/python-course/images_answer/t7_1.PNG" alt="" /></p></div>
+            <br />                                                                                              
+                                         <div class='task'>  <h3> ЗАВДАННЯ 7.2. </h3>
+                                       
+            <p><img src="/src/python-course/images_answer/t7_2.PNG" alt="" /></p></div>
+                                 
+            <div class='task'><h3>                                ЗАВДАННЯ 7.4.                            </h3>
+                                        
+            <p><img src="/src/python-course/images_answer/t7_4.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 7.5.                            </h3>
+                                        
+            
+            <p><img src="/src/python-course/images_answer/t7_5.PNG" alt="" /></p></div> 
+            <div class='task'><h3>                                ЗАВДАННЯ 7.6.                            </h3>
+                                        
+            
+              <p><img src="/src/python-course/images_answer/t7_6.PNG" alt="" /></p></div> 
+              <div class='task'><h3>                                ЗАВДАННЯ 7.7.                            </h3>
+                            
+
+                <p><img src="/src/python-course/images_answer/t7_7.PNG" alt="" /></p></div>
+                <div class='task'><h3>                                ЗАВДАННЯ 7.8.                            </h3>
+                                            
+                
+                <p><img src="/src/python-course/images_answer/t7_8.PNG" alt="" /></p></div>
+                <div class='task'><h3>                                ЗАВДАННЯ 7.9.                            </h3>
+                                            
+                
+                <p><img src="/src/python-course/images_answer/t7_9.PNG" alt="" /></p></div>
+                <div class='task'><h3>                                ЗАВДАННЯ 7.10.                            </h3>
+                                           
+                
+                <p><img src="/src/python-course/images_answer/t7_10.PNG" alt="" /></p></div>
+                <div class='task'><h3>                                ЗАВДАННЯ 7.11.                            </h3>
+                                            
+                
+                <p><img src="/src/python-course/images_answer/t7_11.PNG" alt="" /></p></div>
+                <div class='task'><h3>                                ЗАВДАННЯ 7.12.                            </h3>
+                                            
+                
+                <p><img src="/src/python-course/images_answer/t7_12.PNG" alt="" style="max-width: 750px;" /></p></div> -->
+                
+        </div>
+      </div>
+      </div>
+          <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Реквізити для оплати</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title">Егрецький Данило Романович</h5>
+        <p><i>ПриватБанк</i><br>	  
+          5168 7554 3620 3455</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Закрити</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <footer class="footer  mt-auto py-3">
+        <div class="container">
+          <span class="text-muted">	©   WebTeach 2020. Всі права застережено</span>
+        </div>
+      </footer>
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      
+  </body>
+</html>

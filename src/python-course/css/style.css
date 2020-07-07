@@ -124,6 +124,9 @@ code{
 	font-size: 19px;
 	color:  #3d00ea;
 }
+code .comment{
+	color:  rgb(87, 87, 87);
+}
 h1.journal-header{
 	font-size: 2em;
 }
