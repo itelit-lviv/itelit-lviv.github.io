@@ -128,18 +128,19 @@
             <p>Це означає: створити об'єкт класу Tigers і присвоїти його змінній <code>alex</code>. Після імені класу ставляться дужки, як і після імені функції.</p>
             
             </div>
-            
-            <h3>Визначення функцій класу</h3>
+            <h3>Визначення  атрибутів та методів класу</h3>
             <div class='answer'>
-            <p>Ось декілька функій, які належать класу: </p>
-            <p><code>class Thisismyclass:<br>
-            <span style='margin-left:20px'></span>def this_is_function():<br>
-            <span style='margin-left:40px'></span>print('I am function')<br><br>
-            <span style='margin-left:20px'></span>def this_is_function_too():<br>
-            <span style='margin-left:40px'></span>print('I am function too')
+            <p>Всередині класу можна визначити змінні, або <b>атрибути</b> класу. Вони описують певні <b>характеристики</b> (вік, ріст, вагу, розміри, ім'я, тощо) об'єкта цього класу і можуть використовуватися всередині методів (функцій) класу та його нащадків. <b>Методи</b> (тобто функції, що створені <i><b>всередині класу</b></i>) задають дії, які може виконувати об'єкт цього класу та його нащадки.</p>
+            <p><code>class Animals(Animate):<br>
+            <span style='margin-left:20px'></span>age = 10<br>
+            <span style='margin-left:20px'></span>weight = 20<br><br>
+            <span style='margin-left:20px'></span>def eat(self):<br>
+            <span style='margin-left:40px'></span>print('їсть')<br>
+            <span style='margin-left:40px'></span>weight+=2
             
             </code></p>
             </div>
+            
             
             <h3>Використовуємо функції для задання характеристик класу</h3>
             <div class='answer'>
