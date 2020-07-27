@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Курс Python - WebTeach</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://web-teach.pp.ua/src/python-course/css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-xl">
+      <a class="navbar-brand logo" href="../"><span>Web</span>Teach</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mr-auto mt-2 mt-lg-0" >
+          <a class="nav-item nav-link" href="../index.html#course" title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link conf-button active" title="Перейти до онлайн-уроку" href="https://meet.jit.si/python-w-teach" target="_blank">
+            <svg class="bi bi-camera-video-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.667 3h6.666C10.253 3 11 3.746 11 4.667v6.666c0 .92-.746 1.667-1.667 1.667H2.667C1.747 13 1 12.254 1 11.333V4.667C1 3.747 1.746 3 2.667 3z"/>
+              <path d="M7.404 8.697l6.363 3.692c.54.313 1.233-.066 1.233-.697V4.308c0-.63-.693-1.01-1.233-.696L7.404 7.304a.802.802 0 0 0 0 1.393z"/>
+            </svg>
+            Онлайн-урок</a>
+          <a class="nav-item nav-link" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
+          <a class="nav-item nav-link" href="../journal.html" data-toggle="tooltip" data-placement="bottom">Журнал</a>
+          
+          
+        </div>
+        <div class="nav-phone my-2 my-lg-0">
+          <a href="tel:+380956774158" class="nav-item nav-link">+380956774158</a>
+        </div>
+        </div>
+     </div> 
+     </nav>
+     <!-- nav end -->
+     <div class="header-baner container-fluid d-flex justify-content-xl-space-between">       
+      <h1 >Тема 9. Корисні модулі Python</h1>
+      
+      <div class="row tabs-container d-flex align-items-end">
+        <div class="col"></div>
+        <div class="col-md-auto col-sm-12 align-self-center">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#theory" role="tab" aria-controls="home" aria-selected="true">Теорія</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="profile" aria-selected="false">Завдання</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#answers" role="tab" aria-controls="contact" aria-selected="false">Відповіді</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col"></div>
+      </div>
+     </div>
+     <div class="lesson container-xl">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="theory" role="tabpanel" aria-labelledby="home-tab">
+          <div class='theory'>
+            <h3>Робота з файлами</h3>
+            <div class='answer'>
+            В Пайтон можна відкривати будь-які файли та працювати з ними.
+            </div>
+            
+            <h3>Відкриття файла в Python</h3>
+            <div class='answer'>
+            За допомогою функції <code>open</code> можна відкривати файл в середі Пайтон і виводити його вміст на екран. 
+            <p>Для відкриття файла <i>test.txt</i> напишіть наступне:
+            <p><code>
+            test_file = open('test.txt')<br>
+            text = test_file.read()<br>
+            print(text)
+            </code>
+            </div>
+            
+            <h3>Запис в файл</h3>
+            <div class='answer'>
+            Функція <code>open</code> відкриває файл тільки для читання, тому для запису інформації в файл необідно писати уточнення 'w', наступним чином:
+            <p><code>
+            text_file = open('test.txt','w')
+            </code>
+            <p>Якщо такого файлу не існує, то він створиться. Далі записати інформацію в файл можна за допомогою функції:
+            <p><code>
+            text_file = open('test.txt','w')<br>
+            text_file.write('Some text')
+            </code>
+            <p>Після чого файл обов'язково треба файл закрити:
+            <p><code>
+            text_file = open('test.txt','w')<br>
+            text_file.write('Some text')<br>
+            test_file.close()
+            </code>
+            </div>
+            
+            <h3>Модуль Copy та його використання</h3>
+            <div class='answer'>
+            Уявимо, що у нас є клас Animals, з ініціалізацією:
+            <p><code>class Animals:<br>
+            <span style='margin-left:20px'></span>def __init__(self, vid, lapy, color):<br>
+            <span style='margin-left:40px'></span>self.vid_an = vid<br>
+            <span style='margin-left:40px'></span>self.lapy_an = lapy<br>
+            <span style='margin-left:40px'></span>self.color_an = color<br></code>
+            <p>Тепер ми можемо створити об'єкт цього класу. Нехай це буде Стів. 
+            <p><code>steve = Animals('pauk', 6, 'silver')</code>
+            <p>Тепер для того, щоб створити зграю пауків, краще буде не створювати нові об'єкти, а скопіювати цей:
+            <p><code>
+            import copy<br>
+            class Animals:<br>
+            <span style='margin-left:20px'></span>def __init__(self, vid, lapy, color):<br>
+            <span style='margin-left:40px'></span>self.vid_an = vid<br>
+            <span style='margin-left:40px'></span>self.lapy_an = lapy<br>
+            <span style='margin-left:40px'></span>self.color_an = color<br>
+            steve = Animals('pauk', 6, 'silver')<br>
+            albert = <b>copy.copy(steve)</b><br>
+            anton = <b>copy.copy(steve)</b>
+            
+            </code>
+            <p>Але якщо ми захоемо скопіювати список з нашими об'єктами, то при зміні першого списку, буде змінюватись і другий. Для того, щоб цьому запобігти, необхідно використати функцію <b>deepcopy</b>. При використанні цієї функції при зміні першого списку, другий буде незмінним.
+            </div>
+            
+            <h3>Модуль sys</h3>
+            <div class='answer'>
+            Модуль sys містить засоби для керування та взаємодії з самим інтерпертатором Python.
+            </div>
+            <h3>Об'єкт stdin</h3>
+            <div class='answer'>
+            У об'єкта stdin є функція readline(), за допомогою якої можна брати інформацію від користувача. Вона прцює так само, як і input, головна відмінність їх в тому, що в readline() можна вказувати кількість символів, яку вона отримає:
+            <p><code>
+            import sys<br>
+            print('Enter your str:')<br>
+            v = sys.stdin.readline(15)<br>
+            print(v)<br>
+            <span class="comment">
+            #result:<br>
+            Enter your str:<br>
+            Hello, my name is Danylo Romanovych!<br>
+            Hello, my name 
+            </span>
+            </code>
+            </div>
+            <h3>Об'єкт stdout</h3>
+            <div class='answer'>
+            На відміну від stdin, stdout призначений для виводу інформації. Він дозволяє робити те, що й print, але stdout - файловий об'єкт, у якого є функції, наприклад write():
+            <p><code>
+            import sys<br>
+            sys.stdout.write('Hi, my name is Danylo.')<br>
+            <span class='comment'>
+            #result:<br>
+            Hi, my name is Danylo.23
+            </span>
+            </code>
+            <p>Функція write() повертає кількість символів, які вивели. Саме тому в кінці є цифра 23. Це можна використовувати для того, щоб рахувати скільки взагалі символів ми вже вивели користувачу.
+            </div>
+            <h3>Модуль time</h3>
+            <div class='answer'>
+            Функція time() повертає кількість секунд, які пройшли від півночі 1 січня 1970 року. Це можна використовувати для визначення часу роботи програми. Засікаємо час до виконання і після. Далі виводимо різницю цих значень і отримуємо час роботи програми.
+            <p><code>
+            import time<br>
+            t1 = time.time()<br>
+            for i in range(0,1000):<br>
+            <span style='margin-left:20px;'></span>print(i)<br>
+            t2 = time.time()<br>
+            print(t2-t1)<br>
+            </code>
+            </div>
+            <h3>Отримуємо дату й час за допомогою localtime()</h3>
+            <div class='answer'>
+            Функція localtime() повертає дату й час у вигляді кортежу.Для того, щоб надрукувати час або рік. Необхідно записувати наступним чином:<p><code>
+            import time<br>
+            t = time.localtime()<br>
+            print(t[0])<br>
+            print(t[3])<br>
+            </code>
+            <p> Кортеж формується наступним чином - (рік, місяць, день, година, хвилина, секунда, який день тижня[неділя - 0, далі 1,2...6], який день року від 1 до 366.)
+            </div>
+            <h3>Функція sleep()</h3>
+            <div class='answer'>
+            Функція sleep() потрібна для того, щоб заповільнити час виконання програми. Наприклад для виведення чисел від 1 до 60 можна використати такий цикл: <p><code>
+            import time<br>
+            for i in range(1,61):<br>
+            <span style='margin-left:20px;'></span>print(i)<br>
+            <span style='margin-left:20px;'></span>time.sleep(1)<br>
+            </code>
+            <p>Таким чином ми зробили секундомір, який рахує від 1 до 60.
+            </div>
+            <h3>Модуль pickle</h3>
+            <div class='answer'>
+            Модуль pickle використовується для запису даних в файли в більш зручний формат для запису і чистання. Наприклад pickle знадобиться, якщо розробляєте гру і хочете записувати її дані на диск. Нехай у вас є словник з даними про персонажа, його місце на карті, кількість грошей і тд. Тепер цей словник можна зберегти в файлі за допомогою функції dump(). 
+            <p><code>
+            import pickle<br>
+            game_data = {'side': 'A50,B123',<br>
+            'pockets':['keys','knife','rock'],<br>
+            'backpack':['humer', 'apple', 'juice'],<br>
+            'money': 1231.123 
+            }<br>
+            save_file = open('data.dat', 'wb')<br>
+            pickle.dump(game_data, save_file)<br>
+            save_file.close()<br>
+            </code>
+            <p>В 6 рядку в функції open() аргумент 'wb' означає, що ми відкриваємо фал для запису в двійковому(бінарному) форматі.
+            <p>Об'єкти створені за допомогою pickle можна знову завантажити і прочитати за допомогою функції load():
+            <p><code>
+            import pickle<br>
+            
+            load_file = open('data.dat', 'rb')<br>
+            text = pickle.load(load_file)<br>
+            load_file.close()<br>
+            </code>
+            </div>
+            
+            <h3>Третій метод форматування рядків</h3>
+            <div class='answer'>
+            Якщо вам необхідно вписати у ваш рядок інші змінні числові або рядкові, то можна використовувати цей метод:
+            <p><code>
+            a = 3<br>
+            b = 'apple'<br>
+            c = 'I find %s %s'%(a,b)<br>
+            print(c)<br>
+            <span class='comment'>#result: I find 3 apple</span>
+            </code>
+            <p>Для виведення інформації краще використовувати метод через f, якщо необхідно створити новий рядок, який включає інші змінні, то краще цей.
+            </div>
+            </div>
+           
+            <!-- <div class="alert alert-primary" role="alert">
+              <h4 class="alert-heading">Залишилися запитання?</h4>
+              <p>Переглянь запис заняття:</p>
+              <iframe width="100%" style="max-width: 500px;" height="300" src="https://www.youtube.com/embed/jOav9-Y_Cm0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="100%" style="max-width: 500px;" height="300" src="https://www.youtube.com/embed/B5wOtsVtu6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div> -->
+      </div>
+              
+        <div class="tab-pane fade" id="tasks" role="tabpanel" aria-labelledby="profile-tab">                                                       
+                                                                            
+          <div class='task'> <h3> ЗАВДАННЯ 9.1. </h3>                           
+            <p>Виконати перше, друге і четверте завдання з першої теми новим способом виведення інформації.</p></div>
+<br />                                                                                              
+            <div class='task'>  <h3> ЗАВДАННЯ 9.2. </h3>
+            <p>Створити програму, яка буде підраховувати суму чисел від числа і до числа, які введе користувач. Запис результату має відбутись у файл z2.txt, в командному рядку нічого виводитись не має. Також, перед обчисленням в файл має записатись "Зараз буде виконуватись обчислення суми від А до Б", А і Б це числа, які введе користувач.		</p>
+<p>Результат вивести на екран у вигляді:</p>
+<p><img src="/src/python-course/t9_2.PNG" alt="" /></p></div>
+    <div class='task'>  <h3>        ЗАВДАННЯ 9.3.                            </h3>
+            <p>Створити програму яка буде копіювати вміст файлу з попереднього завдання і вставляти в новостворений файл.</p>
+<p><img src="/src/python-course/t9_3.PNG" alt="" /></p>
+</div>
+<div class='task'><h3>                                ЗАВДАННЯ 9.4.                            </h3>
+            <p>Змінити завдання 8.7. Нічого виводитись в командний рядок не має. Програма має створити файл в який записати хто переміг.</p>
+<p>Результат вивести на екран у вигляді:</p>
+<p><img src="/src/python-course/t9_4.PNG" alt="" /></p></div>
+<div class='task'><h3>                                ЗАВДАННЯ 9.5.                            </h3>
+            <p>Створити ієрархію таку, як в теорії до 8ї теми, про тигрів. Замінити тигрів на котів. Доповнити клас Котів ініціалізацією, за допомогою якої, будете визначати кількість лап кота, колір і породу. Створити один об'єкт цього класу та двічі скопіювати. До всіх трьох об'єктів викликати однаковий метод і викликати змінну "порода".</p>
+<p><img src="/src/python-course/t9_5.PNG" alt="" /></p></div>
+<div class='task'><h3>                                ЗАВДАННЯ 9.6.                            </h3>
+            <p>За допомогою модуля sys взяти від користувача відгук про магазин. Цей відгук не має бути довшим за 30 символів. Після чого записати його в файл. Закрити файл. Зачекати 10 секунд і відкрити файл і вивести на екран відгук.</p>
+<p><img src="/src/python-course/t9_6.PNG" alt="" /></p></div>
+
+<div class='task'><h3>                                ЗАВДАННЯ 9.7.                            </h3>
+            <p>Створити гру, де випадковим чином створюється змінна. Користувачу дається змога її вгадати. Кожного разу програма має запитувати число, якщо його ще не вгадали. Програма має підказувати користувачу чи число більше чи менше. Як тільки користувач вгадує, цикл завершується. Програма ,також ,має підраховувати скільки секунд ви витратили на вгадування числа.</p>
+<p><img src="/src/python-course/t9_71.PNG" alt="" /></p><p><img src="/src/python-course/t9_72.PNG" alt="" /></p></div>
+<div class='task'><h3>                                ЗАВДАННЯ 9.8.                            </h3>
+            <p>За допомогою модуля time програма має вираховувати скільки місяців залишилось до дня народження користувача. Та вивести на екран скільки місяців залишилось. Використати функцію <b>split()</b>.</p>
+<p><img src="/src/python-course/t9_8.PNG" alt="" /></p></div>
+<div class='task'><h3>                                ЗАВДАННЯ 9.9.                            </h3>
+            <p>За допомогою модуля pickle та модуля sys користувач має ввести короткий опис себе. Після чого програма записує ці данні в файл z9.dat. Закриває файл. Чекає 15 секунд. Після чого відкриває файл та зчитує інформацію</p>
+<p><img src="/src/python-course/t9_9.PNG" alt="" /></p></div>
+
+            <div class="sendform">
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/viewform?embedded=true" width="100%" height="820" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" seamless>Завантаження…</iframe>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="answers" role="tabpanel" aria-labelledby="contact-tab">
+         <div class='task'>  <h3> ЗАВДАННЯ 9.2. </h3>
+                           
+              <p><img src="/src/python-course/images_answer-d/t9_2.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 9.3.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t9_3.PNG" alt="" /></p></div>
+                                   
+              <div class='task'><h3>                                ЗАВДАННЯ 9.4.                            </h3>
+                                          
+              <p><img src="/src/python-course/images_answer-d/t9_4.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 9.5.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t9_5.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 9.6.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t9_6.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 9.7.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t9_7.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 9.8.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t9_8.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 9.9.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t9_9.PNG" alt="" /></p></div>
+            
+        </div>
+      </div>
+      </div>
+          
+      <footer class="footer  mt-auto py-3">
+        <div class="container">
+          <span class="text-muted">\t©   WebTeach 2020. Всі права застережено</span>
+        </div>
+      </footer>
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      
+  </body>
+</html>
