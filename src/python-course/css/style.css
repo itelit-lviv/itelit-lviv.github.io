@@ -103,7 +103,8 @@ a.conf-button:hover{
 #tasks .sendform{
 	width: 100%;
 	padding: 0;
-	margin-top: 50px;
+	margin:0;df
+	margin-top: 25px;
 	background: transparent;
 }
 #theory h3{

@@ -79,6 +79,7 @@ nav.navbar{
   line-height: 16px;
   text-transform: uppercase;
   color: #212529;
+  
 }
 .button-play:after{
   content: "";
