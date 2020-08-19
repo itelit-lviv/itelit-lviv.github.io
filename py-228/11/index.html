@@ -136,7 +136,6 @@ class Ball:
         self.canvas=canvas
         self.paddle1 = paddle1
         self.paddle2 = paddle2
-        
         self.id = self.canvas.create_oval(10,10, 50,50, fill=color)
         self.canvas.move(self.id, 360, 310)
         start = [-3, 3,-2,2,1,-1]
@@ -161,48 +160,51 @@ class Ball:
             self.hit_left = True
         if pos[2] >= self.canvas_width:
             self.hit_right = True
-            
-        if self.hit_paddle1(pos):
-            self.x = 3
-        if self.hit_paddle2(pos):
-            self.x = -3   
 
+        if self.hit_paddle1(pos):
+            self.x=3
+        if self.hit_paddle2(pos):
+            self.x=-3
+        
     def hit_paddle1(self, pos):
         paddle1_pos = self.canvas.coords(self.paddle1.id)
-        if pos[3] >= paddle1_pos[1] and pos[0]<=paddle1_pos[2]:
-            if pos[2]>=paddle1_pos[0] and pos[0]<=paddle1_pos[2]:
+        if pos[3] >= paddle1_pos[1] and pos[1] <= paddle1_pos[3]:
+            if pos[2] >= paddle1_pos[0] and pos[0] <= paddle1_pos[2]:
                 return True
             return False
     def hit_paddle2(self, pos):
         paddle2_pos = self.canvas.coords(self.paddle2.id)
-        if pos[3] >= paddle2_pos[1] and pos[0]<=paddle2_pos[2]:
-            if pos[2]>=paddle2_pos[0] and pos[0]<=paddle2_pos[2]:
+        if pos[3] >= paddle2_pos[1] and pos[1] <= paddle2_pos[3]:
+            if pos[2] >= paddle2_pos[0] and pos[0] <= paddle2_pos[2]:
                 return True
             return False
+        
 class Paddle:
     def __init__(self, canvas, color, move_x, key_up, key_down):
         self.canvas=canvas
+        self.canvas_height = self.canvas.winfo_height()
+        self.y = 0
         self.move_x = move_x
         self.key_up = key_up
         self.key_down = key_down
-        self.id = self.canvas.create_rectangle(0,0, 25,120, fill=color)
-        self.canvas.move(self.id, self.move_x, 290)
-        self.y = 0
-        self.canvas_height = self.canvas.winfo_height()
-        self.canvas.bind_all( self.key_up, self.turn_up)
+        self.id = self.canvas.create_rectangle(10,10, 35,130, fill=color)
+        self.canvas.move(self.id,self.move_x, 290)
+        self.canvas.bind_all(self.key_up, self.turn_up)
         self.canvas.bind_all(self.key_down, self.turn_down)
+
     def move(self):
         self.canvas.move(self.id, 0, self.y)
         pos = self.canvas.coords(self.id)
-        if pos[1] <=0:
+        if pos[1]<=0:
             self.y = 0
         if pos[3] >= self.canvas_height:
             self.y = 0
+
     def turn_up(self, event):
         self.y = -3
     def turn_down(self, event):
-        self.y = 3
-    
+        self.y = 3    
+      
 tk = Tk()
 tk.title('Гра для двох "Пінг-понг"')
 tk.resizable(0,0)
@@ -210,8 +212,9 @@ tk.wm_attributes('-topmost', 1)
 canvas = Canvas(tk, width=800, height=700, bd=0, highlightthickness=0)
 canvas.pack()
 tk.update()
-paddle_left = Paddle(canvas, 'red', 15, '<KeyPress-w>', '<KeyPress-s>')
-paddle_right = Paddle(canvas, 'blue', 750,  '<KeyPress-Up>', '<KeyPress-Down>')
+
+paddle_left = Paddle(canvas, 'red', 5, '<KeyPress-w>', '<KeyPress-s>')
+paddle_right = Paddle(canvas, 'blue', 750,'<KeyPress-Up>', '<KeyPress-Down>')
 ball = Ball(canvas, 'green', paddle_left, paddle_right)
 
 while True:
@@ -224,9 +227,8 @@ while True:
         time.sleep(0.007)
     else:
         canvas.delete('all')
-                
         break
-
+    
 tk.mainloop()  
 </pre>
               </div>
