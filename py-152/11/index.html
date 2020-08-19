@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://web-teach.pp.ua/src/python-course/css/style.css">
+    <link rel="stylesheet" href="/src/python-course/css/style.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
@@ -45,26 +45,26 @@
       <div class="container-xl mt-5">
         
            
-        <div class="alert alert-primary m-auto" style="max-width: 650px;  " role="alert">
+        <div class="alert alert-primary m-auto"  " role="alert">
           <h4 class="alert-heading">Робимо гру разом</h4>
           <p>Запис заняття:</p>
-          <iframe width="100%" style="min-height: 350px;" height="100%" src="https://www.youtube.com/embed/HYSHuVd5FyY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="100%" style="min-height: 300px; max-width: 500px;"  height="100%" src="https://www.youtube.com/embed/HYSHuVd5FyY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <!-- <iframe width="100%" style="max-width: 500px;" height="300" src="https://www.youtube.com/embed/2HyJaVitGkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         </div>
   
-        <div class="accordion" id="accordionExample" style="max-width: 650px; margin: 50px auto">
+        <div class="accordion" id="accordionExample" style=" margin: 50px auto">
           <div class="card">
             <div class="card-header" id="headingOne">
               <h5 class="mb-0">
                 <button class="btn btn-link" type="button"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  Код першого заняття
+                  Код з першого заняття
                 </button>
               </h5>
             </div>
         
             <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
-                <pre><code> 
+<pre>
 from tkinter import *
 import random
 import time
@@ -111,14 +111,131 @@ while True:
 
 
 tk.mainloop()
+</pre>
+              </div>
+            </div>
+            
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Код з другого заняття
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+<pre>
+from tkinter import *
+import random
+import time
+
+class Ball:
+    def __init__(self, canvas, color, paddle1, paddle2):
+        self.canvas=canvas
+        self.paddle1 = paddle1
+        self.paddle2 = paddle2
+        self.id = self.canvas.create_oval(10,10, 50,50, fill=color)
+        self.canvas.move(self.id, 360, 310)
+        start = [-3, 3,-2,2,1,-1]
+        self.x = random.choice(start)
+        self.y = random.choice(start)
+        
+        self.canvas_height = self.canvas.winfo_height()
+        self.canvas_width = self.canvas.winfo_width()
+
+        self.hit_left = False
+        self.hit_right = False
+        
+    def move(self):
+        self.canvas.move(self.id, self.x, self.y)
+        pos = self.canvas.coords(self.id)
+        if pos[1]<=0:
+            self.y = 3
+        if pos[3] >= self.canvas_height:
+            self.y = -3
+        
+        if pos[0]<=0:
+            self.hit_left = True
+        if pos[2] >= self.canvas_width:
+            self.hit_right = True
+
+        if self.hit_paddle1(pos):
+            self.x=3
+        if self.hit_paddle2(pos):
+            self.x=-3
+        
+    def hit_paddle1(self, pos):
+        paddle1_pos = self.canvas.coords(self.paddle1.id)
+        if pos[3] >= paddle1_pos[1] and pos[1] <= paddle1_pos[3]:
+            if pos[2] >= paddle1_pos[0] and pos[0] <= paddle1_pos[2]:
+                return True
+            return False
+    def hit_paddle2(self, pos):
+        paddle2_pos = self.canvas.coords(self.paddle2.id)
+        if pos[3] >= paddle2_pos[1] and pos[1] <= paddle2_pos[3]:
+            if pos[2] >= paddle2_pos[0] and pos[0] <= paddle2_pos[2]:
+                return True
+            return False
+        
+class Paddle:
+    def __init__(self, canvas, color, move_x, key_up, key_down):
+        self.canvas=canvas
+        self.canvas_height = self.canvas.winfo_height()
+        self.y = 0
+        self.move_x = move_x
+        self.key_up = key_up
+        self.key_down = key_down
+        self.id = self.canvas.create_rectangle(10,10, 35,130, fill=color)
+        
+        self.canvas.move(self.id,self.move_x, 290)
+        self.canvas.bind_all(self.key_up, self.turn_up)
+        self.canvas.bind_all(self.key_down, self.turn_down)
+
+        
+    def move(self):
+        self.canvas.move(self.id, 0, self.y)
+        pos = self.canvas.coords(self.id)
+        if pos[1]<=0:
+            self.y = 0
+        if pos[3] >= self.canvas_height:
+            self.y = 0
+    def turn_up(self, event):
+        self.y = -3
+    def turn_down(self, event):
+        self.y = 3    
+    
+        
+tk = Tk()
+tk.title('Гра для двох "Пінг-понг"')
+tk.resizable(0,0)
+tk.wm_attributes('-topmost', 1)
+canvas = Canvas(tk, width=800, height=700, bd=0, highlightthickness=0)
+canvas.pack()
+tk.update()
+
+paddle_left = Paddle(canvas, 'red', 5, '<KeyPress-w>', '<KeyPress-s>')
+paddle_right = Paddle(canvas, 'blue', 750,'<KeyPress-Up>', '<KeyPress-Down>')
+ball = Ball(canvas, 'green', paddle_left, paddle_right)
 
 
-                </code></pre>
+while True:
+    if ball.hit_left == False and ball.hit_right == False:
+        ball.move()
+        paddle_left.move()
+        paddle_right.move()
+        tk.update()
+        tk.update_idletasks()
+        time.sleep(0.007)
+    else:
+        break
+    
+tk.mainloop()
+</pre>
               </div>
             </div>
           </div>
-          
-         
         </div>
 
         <div class="sendform mt-5">

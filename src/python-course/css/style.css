@@ -125,6 +125,10 @@ code{
 	font-size: 19px;
 	color:  #3d00ea;
 }
+pre{
+	font-size: 19px;
+	color:  #3d00ea;
+}
 code .comment{
 	color:  rgb(87, 87, 87);
 }
