@@ -52,9 +52,77 @@
           <!-- <iframe width="100%" style="max-width: 500px;" height="300" src="https://www.youtube.com/embed/2HyJaVitGkA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         </div>
   
+        <div class="accordion" id="accordionExample" style="max-width: 650px; margin: 50px auto">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  Код першого заняття
+                </button>
+              </h5>
+            </div>
+        
+            <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <pre><code> 
+from tkinter import *
+import random
+import time
+
+class Ball:
+    def __init__(self, canvas, color):
+        self.canvas=canvas
+        self.id = self.canvas.create_oval(10,10, 50,50, fill=color)
+        self.canvas.move(self.id, 360, 310)
+        start = [-3, 3,-2,2,1,-1]
+        self.x = random.choice(start)
+        self.y = random.choice(start)
+        
+        self.canva_height = self.canvas.winfo_height()
+        self.canva_width = self.canvas.winfo_width()
+    def move(self):
+        self.canvas.move(self.id, self.x, self.y)
+        pos = self.canvas.coords(self.id)
+        if pos[1]<=0:
+            self.y = 3
+        if pos[3] >= self.canva_height:
+            self.y = -3
+        
+        if pos[0]<=0:
+            self.x = 3
+        if pos[2] >= self.canva_width:
+            self.x = -3
+tk = Tk()
+tk.title('Гра для двох "Пінг-понг"')
+tk.resizable(0,0)
+tk.wm_attributes('-topmost', 1)
+canvas = Canvas(tk, width=800, height=700, bd=0, highlightthickness=0)
+canvas.pack()
+tk.update()
+
+
+ball = Ball(canvas, 'green')
+
+while True:
+    ball.move()
+    tk.update()
+    tk.update_idletasks()
+    time.sleep(0.007)
+
+
+tk.mainloop()
+
+
+                </code></pre>
+              </div>
+            </div>
+          </div>
+          
+         
+        </div>
 
         <div class="sendform mt-5">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/viewform?embedded=true" width="100%" height="980" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" seamless>Завантаження…</iframe>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/viewform?embedded=true" width="100%" height="680" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" seamless>Завантаження…</iframe>
         </div>
       </div>
      
