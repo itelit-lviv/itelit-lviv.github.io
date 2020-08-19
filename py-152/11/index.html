@@ -188,12 +188,10 @@ class Paddle:
         self.key_up = key_up
         self.key_down = key_down
         self.id = self.canvas.create_rectangle(10,10, 35,130, fill=color)
-        
         self.canvas.move(self.id,self.move_x, 290)
         self.canvas.bind_all(self.key_up, self.turn_up)
         self.canvas.bind_all(self.key_down, self.turn_down)
 
-        
     def move(self):
         self.canvas.move(self.id, 0, self.y)
         pos = self.canvas.coords(self.id)
@@ -201,12 +199,12 @@ class Paddle:
             self.y = 0
         if pos[3] >= self.canvas_height:
             self.y = 0
+
     def turn_up(self, event):
         self.y = -3
     def turn_down(self, event):
         self.y = 3    
-    
-        
+      
 tk = Tk()
 tk.title('Гра для двох "Пінг-понг"')
 tk.resizable(0,0)
@@ -218,7 +216,6 @@ tk.update()
 paddle_left = Paddle(canvas, 'red', 5, '<KeyPress-w>', '<KeyPress-s>')
 paddle_right = Paddle(canvas, 'blue', 750,'<KeyPress-Up>', '<KeyPress-Down>')
 ball = Ball(canvas, 'green', paddle_left, paddle_right)
-
 
 while True:
     if ball.hit_left == False and ball.hit_right == False:
