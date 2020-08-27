@@ -140,10 +140,21 @@ main{
 }
 .journal iframe{
 	border: none;
+	margin: 0;
+	width: 100%;
+	
+}
+.journal h5 b{
+	color: #395787;
+}
+.journal>iframe{
+	border: none;
 	margin: 50px 0;
 	width: 100%;
 	height: 270px;
 }
+
+
 .footer{
 	background: #333;
 }
