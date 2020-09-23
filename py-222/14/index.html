@@ -40,7 +40,7 @@
      </nav>
      <!-- nav end -->
      <div class="header-baner container-fluid d-flex justify-content-xl-space-between">       
-      <h1 >Тема 14. Сервіс бронювання квитків в кіно. Початок.</h1>
+      <h1 >Тема 14. Сервіс бронювання квитків в кіно.</h1>
     </div>
       <div class="container-xl mt-5" style='min-height: 100vh;'>
         <div class='theory'>
@@ -55,6 +55,23 @@
         
          
          </div>
+         <div class='theory'>
+          <h3>Використанні команди в командному рядку</h3><br>
+         <div class='answer'>
+         <ul>
+         <li><i>pip install pymysql</i> - <b>Встановити бібліотека PyMySQL.</b></li><br>
+         <li><i>python.exe -m pip install --upgrade pip</i> - <b>Якщо не виходить встановити і пише, що застарілий pip. Оновлюємо.</b></li><br></ul></div>
+
+         <h3>Мова SQL</h3><br>
+         <div class='answer'>
+         <ul>
+         <li><i>SELECT pass</i> - <b>Вибрати колонку.</b></li><br>
+         <li><i>FROM table</i> - <b>З таблиці.</b></li><br>
+         <li><i>SELECT * FROM table</i> - <b>Повний вираз. Означає - ВИБРАТИ УСЕ З ТАБЛИЦІ.</b></li><br>
+         <li><i>INSERT INTO table(pass, name)</i> - <b>Вставити в таблицю в рядки pass та name.</b></li><br>
+         <li><i>VALUES(%s,%s)</i> - <b>Значення. <u>%s</u> - означає, що замість них, ми будемо вставляти якісь данні з пайтону. Просто змінну, якщо треба передати одне значення. Кортеж, якщо треба передати декілька значень.</b></li><br>
+         <li><i>INSERT INTO table(pass, name) VALUES(%s,%s)</i> - <b>Повний вираз. Означає - ВСТАВИТИ В ТАБЛИЦЮ В РЯДКИ pass та name ЗНАЧЕННЯ %s та %s, які потім будуть передаватись кодом.</b></li><br>
+         </ul></div>
 
         <div class="accordion" id="accordionExample" style=" margin: 50px auto">
           <div class="card">
