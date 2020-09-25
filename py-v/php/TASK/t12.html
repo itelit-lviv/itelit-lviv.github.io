@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://elit.druzi.biz/images/icon.png" />
+<meta name="keywords" content="" />
+<meta http-equiv="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="description" content="" />
+<title>ІТ-Еліт</title>
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/template/css/style.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.css" />
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.js"></script>
+<script src="http://elit.druzi.biz/plugin/tinymce2/tinymce.min.js"></script>
+<script src="http://elit.druzi.biz/plugin/tinymce2/jquery.tinymce.min.js"></script>
+<style type="text/css">
+    html, body {
+        margin:0;
+        padding:0;
+        display:table;
+    }
+    </style>
+<script type="text/javascript">
+    window.onload = function()
+    {
+        parent.document.getElementById('ourframe').style.height = document.body.clientHeight+5+'px';
+        parent.document.getElementById('ourframe').style.width = document.body.clientWidth+18+'px';
+    };
+    </script>
+<script>
+    jQuery(function($){
+            $.datepicker.regional['uk'] = {
+                closeText: "Закрити",
+                prevText: '&#x3C;',
+                nextText: '&#x3E;',
+                currentText: "Сьогодні",
+                monthNames: ["Січень",
+                    "Лютий",
+                    "Березень",
+                    "Квітень",
+                    "Травень",
+                    "Червень",
+                    "Липень",
+                    "Серпень",
+                    "Вересень",
+                    "Жовтень",
+                    "Листопад",
+                    "Грудень"],
+                monthNamesShort: ["Січ",
+                    "Лют",
+                    "Бер",
+                    "Кві",
+                    "Тра",
+                    "Чер",
+                    "Лип",
+                    "Сер",
+                    "Вер",
+                    "Жов",
+                    "Лис",
+                    "Гру"],
+                dayNames: ["неділя",
+                    "понеділок",
+                    "вівторок",
+                    "середа",
+                    "четвер",
+                    "п’ятниця",
+                    "субота"],
+                dayNamesShort: ["нед",
+                    "пнд",
+                    "вів",
+                    "срд",
+                    "чтв",
+                    "птн",
+                    "суб"],
+                dayNamesMin: ["Нд",
+                    "Пн",
+                    "Вт",
+                    "Ср",
+                    "Чт",
+                    "Пт",
+                    "Сб"],
+                weekHeader: "Тиж",
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+            yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['uk']);
+    });
+
+    var $datepicker={ 
+        dateFormat: "dd.mm.y",
+        language: 'uk'
+    };
+    var $datepicker2={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2050"
+    };
+    var $datepicker3={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk'
+    };
+    $(document).ready(function(){
+                
+        //$.datepicker.regional[ "uk" ];
+        $( ".dateMask" ).datepicker($datepicker);
+        $( ".dateMaskAll" ).datepicker($datepicker2);
+        $( ".dateMaskYear" ).datepicker($datepicker3);
+        
+        $.mask.definitions['#'] = "[0-9]";
+        $('.phoneMask').mask("+38 (0##) ###-##-##");
+        $('.timeMask').mask("##:##:##");
+        $('.timeMaskMin').mask("##:##");
+        
+        /*$('textarea.tinymce').tinymce({
+            theme : "modern",
+            plugins : "advlist,autolink,autosave,link,lists,charmap,print,preview,searchreplace,wordcount,visualblocks,visualchars,code,nonbreaking,contextmenu,directionality,emoticons,textcolor,paste,textcolor,colorpicker,textpattern",
+            
+            toolbar1: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | forecolor backcolor | link unlink",
+            toolbar2: "cut copy paste | searchreplace | bullist numlist | undo redo | preview code",
+            toolbar3: "removeformat | subscript superscript | charmap emoticons | print | visualchars visualblocks nonbreaking",
+            
+            language : 'uk',
+            menubar: false,
+            toolbar_items_size: 'small',
+            statusbar: false,
+            relative_urls : false,
+           	convert_urls : false,
+            object_resizing : false
+        });
+        $('textarea.tinymceText').tinymce({
+            theme : "modern",
+            plugins : [
+                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools'
+            ],
+            
+            toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            toolbar2: 'print preview media | forecolor backcolor emoticons',
+            
+            language : 'uk',
+            image_advtab: true,
+            relative_urls : false,
+           	convert_urls : true,
+            
+            file_browser_callback: function(field_name, url, type, win) {
+                if($('#forms-iframe').length==0){
+                    $('body').append('<iframe class="forms-iframe" name="forms-iframe" id="forms-iframe" src=""></iframe>');
+                }
+                if($('#forms-iframe-image').length==0){
+                    $('body').append('<form id="forms-iframe-image" action="http://elit.druzi.biz/action.page?f=tinymce_upload" target="forms-iframe" method="post" enctype="multipart/form-data" class="forms-iframe-image">'
+                                    +'<input name="image" type="file" id="forms-iframe-image-submit" onchange="$(\'#forms-iframe-image\').submit();this.value=\'\';">'
+                                    +'</form>');
+                    
+                }
+                if(type=='image') $('#forms-iframe-image-submit').click();
+            },
+            
+            //content_css: [
+            //    'http://elit.druzi.biz/plugin/tinymce/skins/lightgray/content2.min.css'
+            //],
+            
+            extended_valid_elements : 'a[class|title|name|onclick|href|target|accesskey]'
+        });*/
+    });
+    function window_profile(){
+        window_profile_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=journal_window_profile",
+            success: function(data){
+                $('body').append(data);
+                window_profile_start();
+            }
+        });
+    }
+    function window_profile_close(){
+        $(".window_profile").dialog('destroy');
+        $(".window_profile").remove();
+    }
+    function window_statistic($type,$day,$month,$year){
+        window_statistic_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=window_statistic",
+            data: ({type : $type, day : $day, month : $month, year : $year}),
+            success: function(data){
+                $('body').append(data);
+                window_statistic_start();
+            }
+        });
+    }
+    function window_statistic_close(){
+        $(".window_statistic").dialog('destroy');
+        $(".window_statistic").remove();
+    }
+</script><script>
+    $(document).ready(function(){        
+        $('textarea.tinymce').tinymce({
+            theme : "modern",
+            plugins : "advlist,autolink,autosave,link,lists,charmap,print,preview,searchreplace,wordcount,visualblocks,visualchars,code,nonbreaking,contextmenu,directionality,emoticons,textcolor,paste,textcolor,colorpicker,textpattern",
+            
+            toolbar1: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | forecolor backcolor | link unlink",
+            toolbar2: "cut copy paste | searchreplace | bullist numlist | undo redo | preview code",
+            toolbar3: "removeformat | subscript superscript | charmap emoticons | print | visualchars visualblocks nonbreaking",
+            
+            language : 'uk',
+            menubar: false,
+            toolbar_items_size: 'small',
+            statusbar: false,
+            relative_urls : false,
+           	convert_urls : false,
+            object_resizing : false
+        });
+        $('textarea.tinymceText').tinymce({
+            theme : "modern",
+            plugins : [
+                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools'
+            ],
+            
+            toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            toolbar2: 'print preview media | forecolor backcolor emoticons',
+            
+            language : 'uk',
+            image_advtab: true,
+            relative_urls : false,
+           	convert_urls : true,
+            
+            file_browser_callback: function(field_name, url, type, win) {
+                if($('#forms-iframe').length==0){
+                    $('body').append('<iframe class="forms-iframe" name="forms-iframe" id="forms-iframe" src=""></iframe>');
+                }
+                if($('#forms-iframe-image').length==0){
+                    $('body').append('<form id="forms-iframe-image" action="http://elit.druzi.biz/action.page?f=tinymce_upload" target="forms-iframe" method="post" enctype="multipart/form-data" class="forms-iframe-image">'
+                                    +'<input name="image" type="file" id="forms-iframe-image-submit" onchange="$(\'#forms-iframe-image\').submit();this.value=\'\';">'
+                                    +'</form>');
+                    
+                }
+                if(type=='image') $('#forms-iframe-image-submit').click();
+            },
+            
+            extended_valid_elements : 'a[class|title|name|onclick|href|target|accesskey]'
+        });
+    });
+</script>    </head>
+    <body>
+        <script>
+    $(document).ready(function(){
+            });
+</script>
+<style>
+    body{
+        padding: 0px;
+        margin: 0px;
+        font-size:12px; 
+    	font-family:Verdana, Helvetica, sans-serif;
+    	line-height:21px;
+    	text-align:left;
+        color: black;
+    }
+    img{
+        border: 0px;
+    }
+    p{
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    a{
+        color: #1D335C;
+        text-decoration: none;
+    }
+    input{
+        line-height: 0.8;
+    }
+    a:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    a.black{
+        color: #000000;
+        text-decoration: none;
+    }
+    a.black:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    .text{
+        position: relative;
+        left: 0px;
+        top: 0px;
+        width: auto;
+        height: auto;
+        color: black;
+        width: 900px;
+        word-wrap: break-word;
+        line-height: 18px;
+        font-size: 14px;
+    }
+    a.submit{
+        background-color: #00ACF0;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 2px 10px 3px;
+        text-decoration: none;
+    }
+    a.submit:hover{
+        background-color: #39C6F5;
+        text-decoration: none;
+    }
+    .return{
+        background-color: #fd5204;
+        display: block;
+        width: auto;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 5px 0px;
+        font-weight: bold;
+        width: 900px;
+    }
+    .return:hover{
+        background-color: #031fff;
+        color: #FFFFFF;
+    }
+    .course-list{
+        margin: 0px 0px 20px;
+        width: 900px;
+    }                
+    .course-list-link{
+        display: block;
+        width: auto; 
+    }                
+    .course-list-name{
+        color: #022984;
+        font-size: 22px;
+        line-height: 22px;
+    }                
+    .course-list-author{
+        color: #fd5204;
+        font-size: 11px;
+        line-height: 10px;
+    }                
+    .course-list-edit{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+        margin-bottom: 10px;
+    }                
+    .course-list-edit:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-edit img{
+        width: 16px; 
+        height: 16px;
+    }                
+    .course-list-delete{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+    }                
+    .course-list-delete:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-delete img{
+        width: 16px; 
+        height: 16px;
+    }
+    .course-list-add{
+        display: block;
+        width: 16px;
+        height: 16px;
+        padding: 2px;
+    }
+    .course-list-add:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }
+    .course-list-add img{
+        width: 16px;
+        height: 16px;
+    }
+    .lessons-link{
+        color: #031fff;
+        font-weight: bold;
+    }
+    .lessons-link-hide{
+        color: #d8d7d5;
+        font-weight: bold;
+    }
+    .lessons-link:hover{
+        color: #ff0000;
+    }
+    .lessons-link-hide:hover{
+        color: #d8d7d5;
+    }
+    a.course-lessons{
+        color: #3697ff;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        margin: 10px 0px;
+        font-size: 18px;
+    }
+    a.course-page{
+        color: #ff0000;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        text-align: center;
+        margin: 40px 0px 20px;
+        font-size: 14px;
+    }
+    .course-lessons-plan{
+        width: auto;
+    }
+    .course-lessons-plan b{
+        color: #3697ff;
+        font-size: 14px;
+    }
+    .course-lessons-plan ol{
+        margin: 5px 0px 0px 15px;
+    }
+    .course-lessons-plan ol li{
+        margin-left: 20px;
+        color: #3697ff;
+    }
+    .course-lessons-plan ol li a{
+        color: #3697ff;
+        padding: 1px 0px;
+        display: block;
+    }
+    .course-lessons-plan ol li a:hover{
+        color: #ff0000;
+    }
+</style>
+                                                                        <a href="#course-lessons-271" class="course-page" name="course-page-1357">
+                                ЗАВДАННЯ 12.1.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Створення таблиць у базі даних, експорт, імпорт таблиць.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small;"><strong>1. Зайдіть на сайт доступу до баз даних</strong>. </span></p>
+<p style="text-align: justify;"><span style="font-size: small;"><strong>2. Введіть свій логін і пароль</strong>.</span></p>
+<p style="text-align: justify;"><span style="font-size: small;"><strong>3. <span style="color: #3366ff;">Відкрийте свою базу даних</span></strong><span style="color: #3366ff;"><strong style="color: #3366ff;"> і у ній створіть таблицю </strong><strong>&ldquo;firma&rdquo;</strong><strong> з такими полями:</strong></span></span></p>
+<table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="top" width="128">
+<p><span style="font-size: small;"><strong>id</strong> <strong></strong></span></p>
+</td>
+<td valign="top" width="746">
+<p><span style="font-size: small;"><strong>ціле,&nbsp; додатнє число, яке автоматично збільшується на 1 при додаванні нового запису у таблицю. Поле </strong><strong>id&nbsp; </strong><strong>є первинним&nbsp; ключем.</strong><strong></strong></span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="128">
+<p><span style="font-size: small;">name<strong></strong></span></p>
+</td>
+<td valign="top" width="746">
+<p><span style="font-size: small;">рядок у який можна ввести до 40 символів<strong></strong></span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="128">
+<p><span style="font-size: small;">lastname<strong></strong></span></p>
+</td>
+<td valign="top" width="746">
+<p><span style="font-size: small;">рядок у який можна ввести до 40 символів<strong></strong></span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="128">
+<p><span style="font-size: small;">post<strong></strong></span></p>
+</td>
+<td valign="top" width="746">
+<p><span style="font-size: small;">рядок з максимальною довжиною 255<strong></strong></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-size: small;"><strong>4. <span style="color: #3366ff;">Заповніть таблицю </span></strong><span style="color: #3366ff;"><strong>&ldquo;firma</strong><strong>&rdquo; такими даними:</strong></span></span></p>
+<table style="width: 100%;" border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Володимир</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Постернак</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">директор</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Діма</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Доронін</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">програміст</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Андрій</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Семчук</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">методист</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Роман</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Павлюс</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">менеджер</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Богдан</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Зозуляк</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Ігор</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Німий</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Стас</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Сорба</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Ігор</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Кудінов</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Соломія</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Прокопів</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Альона</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Іващук</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">вчитель</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Богдан</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Охрімчук</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Тарас</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Постернак</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">вчитель</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Вероніка</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Романко</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Володя</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Костецький</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Олег</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Марчук</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Олег</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Козич</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">методист</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Галина</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Шевченко</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">вчитель</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Андрій</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Закопець</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Андрій</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Бинда</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Микола</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Мудрий</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Андрій</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Щегель</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">учень</span></p>
+</td>
+</tr>
+<tr>
+<td valign="top" width="154">
+<p><span style="font-size: small;">Володимир</span></p>
+</td>
+<td valign="top" width="165">
+<p><span style="font-size: small;">Шевчук</span></p>
+</td>
+<td valign="top" width="200">
+<p><span style="font-size: small;">вчитель</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Покажіть роботу вчителю, якщо ви зробили все правильно, тоді збережіть (експортуйте) таблицю </strong><span style="color: #993366;"><strong>&ldquo;</strong></span></span><span style="font-size: small; color: #993366;"><strong>firma</strong></span><span style="font-size: small; color: #3366ff;"><span style="color: #993366;"><strong>&rdquo; </strong></span><strong>на диск свого комп&rsquo;ютера.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small;"><strong>Завантажте файл </strong><strong>&ldquo;<span style="color: #993366;">firma.sql</span>&rdquo;</strong><strong> на власний хостинг у папку </strong><strong>&ldquo;<span style="color: #993366;">sql</span>&rdquo;</strong><strong>.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small;"><strong>Видаліть таблицю </strong><strong>&ldquo;<span style="color: #993366;">firma</span>&rdquo;</strong><strong> з своєї бази даних.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small;"><strong>Імпортуйте таблицю </strong><strong>&ldquo;<span style="color: #993366;">firma</span>&rdquo; </strong><strong>з комп&rsquo;ютера до своєї бази даних.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: medium; color: #ff0000;"><strong>!!! <span style="text-decoration: underline;">Надалі всі таблиці, які ви створите, експортуватимете на ваш комп&rsquo;ютер у *.sql файли.&nbsp; Ці файли зберігатимете&nbsp; на вашому хостінгу у папці sql.</span></strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #808080;"><strong>В кінці заняття таблиці з бази даних видаляєте. На початку наступного заняття свої таблиці імпортуєте до своєї бази даних і тоді з ними працюєте.</strong></span></p>                                                                                                <a href="#course-lessons-271" class="course-page" name="course-page-1358">
+                                ЗАВДАННЯ 12.2.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small;"><strong>Створити програму, яка виводить на екран імена, прізвища і посади людей, що записані в таблицю </strong><strong>&ldquo;<span style="color: #993366;">firma</span>&rdquo;</strong><strong>.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small;"><strong>&nbsp;</strong></span></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/43cf2cf49a1df60888062ba45a7a03b9.png" alt="" /></p>
+<p style="text-align: justify;">&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: small;"><strong><br /></strong></span></p>                                                                                                <a href="#course-lessons-271" class="course-page" name="course-page-1359">
+                                ЗАВДАННЯ 12.3.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Створити програму, яка у вікно браузера виводить інформацію про учнів, що записані в таблицю </strong><strong>&ldquo;<span style="color: #993366;">firma</span>&rdquo;</strong><strong>, рахує кількість учнів. При створенні програми враховуйте такі моменти:</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">За допомогою команди include "<span style="color: #993366;">start.php</span>"; підключіть файли <span style="color: #993366;">start.php</span> до вашої програми.</span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">Виведіть список учнів, за допомогою циклу &ldquo;<span style="color: #993366;">while</span>&rdquo;.</span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">&nbsp;</span></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/d8dc3ea4bedecc1b470adb6747cc2006.png" alt="" /></p>
+<p>&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><br /></span></p>                                                                                                <a href="#course-lessons-271" class="course-page" name="course-page-1360">
+                                ЗАВДАННЯ 12.4.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Створити програму, яка у вікно браузера, з таблиці </strong><strong>&ldquo;<span style="color: #993366;">firma</span>&rdquo;</strong><strong> виводить імена і прізвища учнів у зворотному порядку, тобто </strong><strong>&ndash; </strong><strong>останній введений у базу, передостанній введений у базу</strong><strong>, і т.д.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>&nbsp;</strong></span></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/11344caaf460229aa73805f1108081ab.png" alt="" /></p>
+<p>&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong><br /></strong></span></p>                                                                                                <a href="#course-lessons-271" class="course-page" name="course-page-1361">
+                                ЗАВДАННЯ 12.5.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Створити програму, яка у вікно браузера, з таблиці </strong><strong>&ldquo;<span style="color: #993366;">firma</span>&rdquo;</strong><strong> виводить</strong><strong>:</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>a</strong><strong>)</strong> імена і прізвища всіх учнів у яких прізвища, відсортовані по алфавіту;</span></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/52e5dde442d4b4a2cd5756b1b10b48e9.png" alt="" /></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>b) </strong>шість останніх імен і прізвищ учнів.</span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">&nbsp;</span></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/81c32cbec94290cc8bb94fec0a933a9f.png" alt="" /></p>
+<p>&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><br /></span></p>                                                                                                <a href="#course-lessons-271" class="course-page" name="course-page-1362">
+                                ЗАВДАННЯ 12.6.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Створити програму, яка у двовимірний масив </strong><span style="color: #993366;"><strong>$students</strong></span><strong> копіює дані про всіх учнів таблиці </strong><strong>&ldquo;<span style="color: #993366;">firma</span>&rdquo;</strong><strong>. Програма повинна вивести у вікно браузера масив </strong><span style="color: #993366;"><strong>$students</strong></span><strong>. Масив матиме такі комірки:</strong><strong></strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">$students[1][&ldquo;id&rdquo;] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <strong>id</strong> першого учня,</span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">$students[1][&ldquo;name&rdquo;] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ім&rsquo;я першого учня,</span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">$students[1][&ldquo;lastname&rdquo;] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - прізвище першого учня,</span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">$students[2][&ldquo;id&rdquo;] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - <strong>id</strong> другого учня,</span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">$students[2][&ldquo;name&rdquo;]&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - ім&rsquo;я першого учня,</span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">$students[2][&ldquo;lastname&rdquo;]&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - прізвище першого учня</span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">...</span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">&nbsp;</span></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/a3f8a405b2336e4d45a8bf86d72016a1.png" alt="" /></p>
+<p>&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><br /></span></p>                                                                                                <a href="#course-lessons-271" class="course-page" name="course-page-1363">
+                                ЗАВДАННЯ 12.7.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Користувач у поле для пошуку вводить прізвище.&nbsp; Програма повинна знайти працівника чи учня у таблиці </strong><strong>&ldquo;<span style="color: #993366;">firma</span>&rdquo;</strong><strong> з таким же прізвищем. Якщо прізвище не знайдене, тоді програма видати повідомлення: </strong>&ldquo;Нікого не знайдено&rdquo;<strong>. Якщо прізвище знайдено, тоді вивести всі дані про цього працівника чи учня на екран.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>При створенні програми потрібно врахувати:</strong></span></p>
+<ul style="text-align: justify;">
+<li><span style="font-size: small; color: #3366ff;"><strong>З бази даних потрібно витягнути тільки ті рядки, у яких прізвище відповідає введеному.</strong></span></li>
+<li><span style="font-size: small; color: #3366ff;"><strong>Користувач може помилитись і&nbsp; написати прізвище з маленької літери, також ввести пропуски з початку чи кінця рядка. Тому у цій програмі потрібно видалити зайві прогалини і створити функцію </strong><span style="color: #993366;"><strong>big_first_char_str($r)</strong></span><strong>,&nbsp; яка перетворить перший символ рядка </strong><span style="color: #993366;"><strong>$r</strong></span><strong> у&nbsp;&nbsp; велику літеру.</strong></span></li>
+<li><span style="font-size: small; color: #3366ff;"><strong>Людей з однаковими прізвищами може бути декілька.</strong></span></li>
+</ul>
+<p>&nbsp;</p>
+<p><img src="http://new.druzi.biz/file/user/2/files/504396a746b1f98a215fc73dcfafd0ed.png" alt="" /></p>
+<p>&nbsp;</p>                                                                                                <a href="#course-lessons-271" class="course-page" name="course-page-1364">
+                                ЗАВДАННЯ 12.8.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Створити програму, яка на екран виводить інформацію про учнів, що записані у таблиці &ldquo;<span style="color: #993366;">firma</span>&rdquo;, у яких прізвище закінчується на &ldquo;чук&rdquo;, наприклад Марчук.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>&nbsp;</strong></span></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/e6e354e6338d18c8a18d4749898fe650.png" alt="" /></p>
+<p>&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong><br /></strong></span></p>                                                                                                <a href="#course-lessons-271" class="course-page" name="course-page-1365">
+                                ЗАВДАННЯ 12.9.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Користувач у поле для пошуку вводить послідовність символів (частину імені).&nbsp; Програма повинна у таблиці &ldquo;<span style="color: #993366;">firma</span>&rdquo; знайти працівників чи учнів у імені яких є така послідовність символів. Якщо таких імен не знайдено, тоді програма видати повідомлення: </strong>&ldquo;Нікого не знайдено&rdquo;<strong>.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>&nbsp;</strong></span></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/26e123e2fd52a98afc1fe7f7de2df41b.png" alt="" /></p>
+<p>&nbsp;</p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong><br /></strong></span></p>                                                            </div>
+                </body>
+</html>
