@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://elit.druzi.biz/images/icon.png" />
+<meta name="keywords" content="" />
+<meta http-equiv="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="description" content="" />
+<title>ІТ-Еліт</title>
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/template/css/style.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.css" />
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.js"></script>
+<script src="http://elit.druzi.biz/plugin/tinymce2/tinymce.min.js"></script>
+<script src="http://elit.druzi.biz/plugin/tinymce2/jquery.tinymce.min.js"></script>
+<style type="text/css">
+    html, body {
+        margin:0;
+        padding:0;
+        display:table;
+    }
+    </style>
+<script type="text/javascript">
+    window.onload = function()
+    {
+        parent.document.getElementById('ourframe').style.height = document.body.clientHeight+5+'px';
+        parent.document.getElementById('ourframe').style.width = document.body.clientWidth+18+'px';
+    };
+    </script>
+<script>
+    jQuery(function($){
+            $.datepicker.regional['uk'] = {
+                closeText: "Закрити",
+                prevText: '&#x3C;',
+                nextText: '&#x3E;',
+                currentText: "Сьогодні",
+                monthNames: ["Січень",
+                    "Лютий",
+                    "Березень",
+                    "Квітень",
+                    "Травень",
+                    "Червень",
+                    "Липень",
+                    "Серпень",
+                    "Вересень",
+                    "Жовтень",
+                    "Листопад",
+                    "Грудень"],
+                monthNamesShort: ["Січ",
+                    "Лют",
+                    "Бер",
+                    "Кві",
+                    "Тра",
+                    "Чер",
+                    "Лип",
+                    "Сер",
+                    "Вер",
+                    "Жов",
+                    "Лис",
+                    "Гру"],
+                dayNames: ["неділя",
+                    "понеділок",
+                    "вівторок",
+                    "середа",
+                    "четвер",
+                    "п’ятниця",
+                    "субота"],
+                dayNamesShort: ["нед",
+                    "пнд",
+                    "вів",
+                    "срд",
+                    "чтв",
+                    "птн",
+                    "суб"],
+                dayNamesMin: ["Нд",
+                    "Пн",
+                    "Вт",
+                    "Ср",
+                    "Чт",
+                    "Пт",
+                    "Сб"],
+                weekHeader: "Тиж",
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+            yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['uk']);
+    });
+
+    var $datepicker={ 
+        dateFormat: "dd.mm.y",
+        language: 'uk'
+    };
+    var $datepicker2={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2050"
+    };
+    var $datepicker3={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk'
+    };
+    $(document).ready(function(){
+                
+        //$.datepicker.regional[ "uk" ];
+        $( ".dateMask" ).datepicker($datepicker);
+        $( ".dateMaskAll" ).datepicker($datepicker2);
+        $( ".dateMaskYear" ).datepicker($datepicker3);
+        
+        $.mask.definitions['#'] = "[0-9]";
+        $('.phoneMask').mask("+38 (0##) ###-##-##");
+        $('.timeMask').mask("##:##:##");
+        $('.timeMaskMin').mask("##:##");
+        
+        /*$('textarea.tinymce').tinymce({
+            theme : "modern",
+            plugins : "advlist,autolink,autosave,link,lists,charmap,print,preview,searchreplace,wordcount,visualblocks,visualchars,code,nonbreaking,contextmenu,directionality,emoticons,textcolor,paste,textcolor,colorpicker,textpattern",
+            
+            toolbar1: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | forecolor backcolor | link unlink",
+            toolbar2: "cut copy paste | searchreplace | bullist numlist | undo redo | preview code",
+            toolbar3: "removeformat | subscript superscript | charmap emoticons | print | visualchars visualblocks nonbreaking",
+            
+            language : 'uk',
+            menubar: false,
+            toolbar_items_size: 'small',
+            statusbar: false,
+            relative_urls : false,
+           	convert_urls : false,
+            object_resizing : false
+        });
+        $('textarea.tinymceText').tinymce({
+            theme : "modern",
+            plugins : [
+                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools'
+            ],
+            
+            toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            toolbar2: 'print preview media | forecolor backcolor emoticons',
+            
+            language : 'uk',
+            image_advtab: true,
+            relative_urls : false,
+           	convert_urls : true,
+            
+            file_browser_callback: function(field_name, url, type, win) {
+                if($('#forms-iframe').length==0){
+                    $('body').append('<iframe class="forms-iframe" name="forms-iframe" id="forms-iframe" src=""></iframe>');
+                }
+                if($('#forms-iframe-image').length==0){
+                    $('body').append('<form id="forms-iframe-image" action="http://elit.druzi.biz/action.page?f=tinymce_upload" target="forms-iframe" method="post" enctype="multipart/form-data" class="forms-iframe-image">'
+                                    +'<input name="image" type="file" id="forms-iframe-image-submit" onchange="$(\'#forms-iframe-image\').submit();this.value=\'\';">'
+                                    +'</form>');
+                    
+                }
+                if(type=='image') $('#forms-iframe-image-submit').click();
+            },
+            
+            //content_css: [
+            //    'http://elit.druzi.biz/plugin/tinymce/skins/lightgray/content2.min.css'
+            //],
+            
+            extended_valid_elements : 'a[class|title|name|onclick|href|target|accesskey]'
+        });*/
+    });
+    function window_profile(){
+        window_profile_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=journal_window_profile",
+            success: function(data){
+                $('body').append(data);
+                window_profile_start();
+            }
+        });
+    }
+    function window_profile_close(){
+        $(".window_profile").dialog('destroy');
+        $(".window_profile").remove();
+    }
+    function window_statistic($type,$day,$month,$year){
+        window_statistic_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=window_statistic",
+            data: ({type : $type, day : $day, month : $month, year : $year}),
+            success: function(data){
+                $('body').append(data);
+                window_statistic_start();
+            }
+        });
+    }
+    function window_statistic_close(){
+        $(".window_statistic").dialog('destroy');
+        $(".window_statistic").remove();
+    }
+</script><script>
+    $(document).ready(function(){        
+        $('textarea.tinymce').tinymce({
+            theme : "modern",
+            plugins : "advlist,autolink,autosave,link,lists,charmap,print,preview,searchreplace,wordcount,visualblocks,visualchars,code,nonbreaking,contextmenu,directionality,emoticons,textcolor,paste,textcolor,colorpicker,textpattern",
+            
+            toolbar1: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | forecolor backcolor | link unlink",
+            toolbar2: "cut copy paste | searchreplace | bullist numlist | undo redo | preview code",
+            toolbar3: "removeformat | subscript superscript | charmap emoticons | print | visualchars visualblocks nonbreaking",
+            
+            language : 'uk',
+            menubar: false,
+            toolbar_items_size: 'small',
+            statusbar: false,
+            relative_urls : false,
+           	convert_urls : false,
+            object_resizing : false
+        });
+        $('textarea.tinymceText').tinymce({
+            theme : "modern",
+            plugins : [
+                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools'
+            ],
+            
+            toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            toolbar2: 'print preview media | forecolor backcolor emoticons',
+            
+            language : 'uk',
+            image_advtab: true,
+            relative_urls : false,
+           	convert_urls : true,
+            
+            file_browser_callback: function(field_name, url, type, win) {
+                if($('#forms-iframe').length==0){
+                    $('body').append('<iframe class="forms-iframe" name="forms-iframe" id="forms-iframe" src=""></iframe>');
+                }
+                if($('#forms-iframe-image').length==0){
+                    $('body').append('<form id="forms-iframe-image" action="http://elit.druzi.biz/action.page?f=tinymce_upload" target="forms-iframe" method="post" enctype="multipart/form-data" class="forms-iframe-image">'
+                                    +'<input name="image" type="file" id="forms-iframe-image-submit" onchange="$(\'#forms-iframe-image\').submit();this.value=\'\';">'
+                                    +'</form>');
+                    
+                }
+                if(type=='image') $('#forms-iframe-image-submit').click();
+            },
+            
+            extended_valid_elements : 'a[class|title|name|onclick|href|target|accesskey]'
+        });
+    });
+</script>    </head>
+    <body>
+        <script>
+    $(document).ready(function(){
+            });
+</script>
+<style>
+    body{
+        padding: 0px;
+        margin: 0px;
+        font-size:12px; 
+    	font-family:Verdana, Helvetica, sans-serif;
+    	line-height:21px;
+    	text-align:left;
+        color: black;
+    }
+    img{
+        border: 0px;
+    }
+    p{
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    a{
+        color: #1D335C;
+        text-decoration: none;
+    }
+    input{
+        line-height: 0.8;
+    }
+    a:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    a.black{
+        color: #000000;
+        text-decoration: none;
+    }
+    a.black:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    .text{
+        position: relative;
+        left: 0px;
+        top: 0px;
+        width: auto;
+        height: auto;
+        color: black;
+        width: 900px;
+        word-wrap: break-word;
+        line-height: 18px;
+        font-size: 14px;
+    }
+    a.submit{
+        background-color: #00ACF0;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 2px 10px 3px;
+        text-decoration: none;
+    }
+    a.submit:hover{
+        background-color: #39C6F5;
+        text-decoration: none;
+    }
+    .return{
+        background-color: #fd5204;
+        display: block;
+        width: auto;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 5px 0px;
+        font-weight: bold;
+        width: 900px;
+    }
+    .return:hover{
+        background-color: #031fff;
+        color: #FFFFFF;
+    }
+    .course-list{
+        margin: 0px 0px 20px;
+        width: 900px;
+    }                
+    .course-list-link{
+        display: block;
+        width: auto; 
+    }                
+    .course-list-name{
+        color: #022984;
+        font-size: 22px;
+        line-height: 22px;
+    }                
+    .course-list-author{
+        color: #fd5204;
+        font-size: 11px;
+        line-height: 10px;
+    }                
+    .course-list-edit{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+        margin-bottom: 10px;
+    }                
+    .course-list-edit:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-edit img{
+        width: 16px; 
+        height: 16px;
+    }                
+    .course-list-delete{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+    }                
+    .course-list-delete:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-delete img{
+        width: 16px; 
+        height: 16px;
+    }
+    .course-list-add{
+        display: block;
+        width: 16px;
+        height: 16px;
+        padding: 2px;
+    }
+    .course-list-add:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }
+    .course-list-add img{
+        width: 16px;
+        height: 16px;
+    }
+    .lessons-link{
+        color: #031fff;
+        font-weight: bold;
+    }
+    .lessons-link-hide{
+        color: #d8d7d5;
+        font-weight: bold;
+    }
+    .lessons-link:hover{
+        color: #ff0000;
+    }
+    .lessons-link-hide:hover{
+        color: #d8d7d5;
+    }
+    a.course-lessons{
+        color: #3697ff;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        margin: 10px 0px;
+        font-size: 18px;
+    }
+    a.course-page{
+        color: #ff0000;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        text-align: center;
+        margin: 40px 0px 20px;
+        font-size: 14px;
+    }
+    .course-lessons-plan{
+        width: auto;
+    }
+    .course-lessons-plan b{
+        color: #3697ff;
+        font-size: 14px;
+    }
+    .course-lessons-plan ol{
+        margin: 5px 0px 0px 15px;
+    }
+    .course-lessons-plan ol li{
+        margin-left: 20px;
+        color: #3697ff;
+    }
+    .course-lessons-plan ol li a{
+        color: #3697ff;
+        padding: 1px 0px;
+        display: block;
+    }
+    .course-lessons-plan ol li a:hover{
+        color: #ff0000;
+    }
+</style>
+            
+                                                                        <a href="#course-lessons-247" class="course-page" name="course-page-1236">
+                                ЗАВДАННЯ 4.1.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Створіть запитання до тесту з перевіркою чи вірно відповів користувач.</strong></span></p>
+<p style="text-align: center;"><strong><span style="font-size: small;"><br /></span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">Відображення 1 файлу повинно бути таким: </span></strong><img src="http://new.druzi.biz/file/user/2/files/fdd0e657780d9e1f4752928ff59d903e.png" alt="" /></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">Результат вивести на екран у вигляді:</span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">&nbsp;</span></strong></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/b3de16b6457424c5bd2f0f5d1959d927(1).png" alt="" /></p>
+<p>&nbsp;</p>                                                                                                <a href="#course-lessons-247" class="course-page" name="course-page-1237">
+                                ЗАВДАННЯ 4.2.                            </a>
+                            <p><span style="font-size: small; color: #3366ff;"><strong>Визначити агрегатний стан води по її температурі. </strong></span></p>
+<p><span style="font-size: small; color: #3366ff;"><strong><br /></strong></span></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">Відображення 1 файлу повинно бути таким:</span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">&nbsp;</span></strong></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/bc76e1e6b36bd7217cd50a899756400c.png" alt="" /></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;<strong><span style="font-size: small;">Результат вивести на екран у вигляді:</span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">&nbsp;</span></strong></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/15d292f6891e5446967778a098614e00.png" alt="" /></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><strong><span style="font-size: small;"><br /></span></strong></p>                                                                                                <a href="#course-lessons-247" class="course-page" name="course-page-1238">
+                                ЗАВДАННЯ 4.3.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>За перший товар ви заплатили гривнями, за другий товар заплатили доларами. Визначити який товар коштує дорожче,</strong><strong> </strong><strong>якщо один долар коштує 25.6 грн.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong><br /></strong></span></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">Відображення 1 файлу повинно бути таким:</span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">&nbsp;</span></strong></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/3f9a33fb00e5b3d33793b6d00d4ddfc6.png" alt="" /></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;<strong><span style="font-size: small;">Результат вивести на екран у вигляді:</span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">&nbsp;</span></strong></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/feba8ef3f1d2111474c3ebc2ba063162.png" alt="" /></p>
+<p style="text-align: center;">&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><strong><span style="font-size: small;"><br /></span></strong></p>                                                                                                <a href="#course-lessons-247" class="course-page" name="course-page-1239">
+                                ЗАВДАННЯ 4.4.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Власник магазину по продажі молока платить зарплату продавцю в залежності від кількості проданих літрів. Якщо продавець продав менше 1000л то він отримує 20</strong><strong> </strong><strong>відсотків зарплати від суми проданого молока,</strong><strong> </strong><strong>якщо продавець продав +=1000л</strong><strong>,</strong><strong> але менше 2000л</strong><strong>,</strong><strong> то отримає 25 відсотків зарплати, якщо +=2000л</strong><strong>,</strong><strong> то отримає 30 відсотків. Створити програму яка рахує зарплату продавцю 1л=6грн.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small;"><strong>&nbsp;</strong></span></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">Відображення 1 файлу повинно бути таким:</span></strong></p>
+<p style="text-align: center;">&nbsp;&nbsp;</p>
+<p><img src="http://new.druzi.biz/file/user/2/files/827dea5cf894c5ee8e603ed7353ab7e3.png" alt="" /></p>
+<p style="text-align: center;">&nbsp;<strong><span style="font-size: small;">Результат вивести на екран у вигляді:</span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">&nbsp;</span></strong></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/2a0d72936659bc7a6d347cec335cb676.png" alt="" /></p>
+<p style="text-align: center;">&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><strong><span style="font-size: small;"><br /></span></strong></p>                                                                                                <a href="#course-lessons-247" class="course-page" name="course-page-1240">
+                                ЗАВДАННЯ 4.5.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small;"><strong><span style="color: #3366ff;">Створити програму &laquo;Ваша вага&raquo;. Вхідні дані: ваша вага, ваш ріст. Дія програми:</span></strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small;">1. Якщо ваша вага є нормою, тоді на екран виводиться повідомлення: &laquo;Ваша вага нормальна.&raquo;</span></p>
+<p style="text-align: justify;"><span style="font-size: small;">2. Якщо ваша вага більше норми, тоді на екран виводиться повідомлення: &laquo;Ви важите більше норми, вам необхідно похудати на &hellip; кг.&raquo;</span></p>
+<p style="text-align: justify;"><span style="font-size: small;">3. Якщо ваша вага менше норми, тоді на екран виводиться повідомлення: &laquo;Ви важите менше норми, вам необхідно поправитись&nbsp; на &hellip; кг.&raquo;</span></p>
+<p style="text-align: justify;"><span style="font-size: small;">Нормальна вага обчислюється за формулою:</span></p>
+<p style="text-align: center;"><strong><span style="font-size: small;"><em>Норма = ріст у сантиметрах &ndash; 100</em></span></strong></p>
+<p style="text-align: justify;"><span style="font-size: small;">Нормою є теж вага більша і менша на 10% від норми.</span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;">Наприклад:</span></p>
+<p style="text-align: justify;"><span style="font-size: small;"><span style="color: #3366ff;">Якщо ви маєте ріст 160 см. і важите 51 кг., тоді нормою є 60кг (160-100). 10% від норми є 6кг (1/10 від 60 кг), тому норма є від 54 кг. до 66 кг, якщо ваша вага 51 кг, тоді ви важите менше норми на 3 кг. Отже відповідь комп&rsquo;ютера: &laquo;Ви важите менше норми, вам необхідно набрати 3 кг. ваги&raquo;</span><strong></strong></span></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">Відображення 1 файлу повинно бути таким:</span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">&nbsp;</span></strong></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/d16f99f045b88f98a1787385ffc06a46.png" alt="" /></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;<strong><span style="font-size: small;">Результат вивести на екран у вигляді:</span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">&nbsp;</span></strong></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/19ae6026e1f268ff9885a8428499b0f6.png" alt="" /></p>
+<p style="text-align: center;">&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><strong><span style="font-size: small;"><br /></span></strong></p>                                                                                                <a href="#course-lessons-247" class="course-page" name="course-page-1241">
+                                ЗАВДАННЯ 4.6.                            </a>
+                            <p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong>Створити програму, що визначає тип трикутника (різносторонній, рівносторонній, прямокутний) по введених трьох сторонах.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: small; color: #3366ff;"><strong><br /></strong></span></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">Відображення 1 файлу повинно бути таким:</span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">&nbsp;</span></strong></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/8292f2f3c23d497683708529756cf6b2.png" alt="" /></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;">&nbsp;<strong><span style="font-size: small;">Результат вивести на екран у вигляді:</span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: small;">&nbsp;</span></strong></p>
+<p><img src="http://new.druzi.biz/file/user/2/files/255f98a15a32ddbd69766ad06171c9bc.png" alt="" /></p>
+<p style="text-align: center;">&nbsp;</p>
+<p>&nbsp;</p>
+<p style="text-align: center;"><strong><span style="font-size: small;"><br /></span></strong></p>                                                            </div>
+                </body>
+</html>

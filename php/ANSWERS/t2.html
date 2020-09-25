@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://elit.druzi.biz/images/icon.png" />
+<meta name="keywords" content="" />
+<meta http-equiv="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="description" content="" />
+<title>ІТ-Еліт</title>
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/template/css/style.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.css" />
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.js"></script>
+<script src="http://elit.druzi.biz/plugin/tinymce2/tinymce.min.js"></script>
+<script src="http://elit.druzi.biz/plugin/tinymce2/jquery.tinymce.min.js"></script>
+<style type="text/css">
+    html, body {
+        margin:0;
+        padding:0;
+        display:table;
+    }
+    </style>
+<script type="text/javascript">
+    window.onload = function()
+    {
+        parent.document.getElementById('ourframe').style.height = document.body.clientHeight+5+'px';
+        parent.document.getElementById('ourframe').style.width = document.body.clientWidth+18+'px';
+    };
+    </script>
+<script>
+    jQuery(function($){
+            $.datepicker.regional['uk'] = {
+                closeText: "Закрити",
+                prevText: '&#x3C;',
+                nextText: '&#x3E;',
+                currentText: "Сьогодні",
+                monthNames: ["Січень",
+                    "Лютий",
+                    "Березень",
+                    "Квітень",
+                    "Травень",
+                    "Червень",
+                    "Липень",
+                    "Серпень",
+                    "Вересень",
+                    "Жовтень",
+                    "Листопад",
+                    "Грудень"],
+                monthNamesShort: ["Січ",
+                    "Лют",
+                    "Бер",
+                    "Кві",
+                    "Тра",
+                    "Чер",
+                    "Лип",
+                    "Сер",
+                    "Вер",
+                    "Жов",
+                    "Лис",
+                    "Гру"],
+                dayNames: ["неділя",
+                    "понеділок",
+                    "вівторок",
+                    "середа",
+                    "четвер",
+                    "п’ятниця",
+                    "субота"],
+                dayNamesShort: ["нед",
+                    "пнд",
+                    "вів",
+                    "срд",
+                    "чтв",
+                    "птн",
+                    "суб"],
+                dayNamesMin: ["Нд",
+                    "Пн",
+                    "Вт",
+                    "Ср",
+                    "Чт",
+                    "Пт",
+                    "Сб"],
+                weekHeader: "Тиж",
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+            yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['uk']);
+    });
+
+    var $datepicker={ 
+        dateFormat: "dd.mm.y",
+        language: 'uk'
+    };
+    var $datepicker2={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2050"
+    };
+    var $datepicker3={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk'
+    };
+    $(document).ready(function(){
+                
+        //$.datepicker.regional[ "uk" ];
+        $( ".dateMask" ).datepicker($datepicker);
+        $( ".dateMaskAll" ).datepicker($datepicker2);
+        $( ".dateMaskYear" ).datepicker($datepicker3);
+        
+        $.mask.definitions['#'] = "[0-9]";
+        $('.phoneMask').mask("+38 (0##) ###-##-##");
+        $('.timeMask').mask("##:##:##");
+        $('.timeMaskMin').mask("##:##");
+        
+        /*$('textarea.tinymce').tinymce({
+            theme : "modern",
+            plugins : "advlist,autolink,autosave,link,lists,charmap,print,preview,searchreplace,wordcount,visualblocks,visualchars,code,nonbreaking,contextmenu,directionality,emoticons,textcolor,paste,textcolor,colorpicker,textpattern",
+            
+            toolbar1: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | forecolor backcolor | link unlink",
+            toolbar2: "cut copy paste | searchreplace | bullist numlist | undo redo | preview code",
+            toolbar3: "removeformat | subscript superscript | charmap emoticons | print | visualchars visualblocks nonbreaking",
+            
+            language : 'uk',
+            menubar: false,
+            toolbar_items_size: 'small',
+            statusbar: false,
+            relative_urls : false,
+           	convert_urls : false,
+            object_resizing : false
+        });
+        $('textarea.tinymceText').tinymce({
+            theme : "modern",
+            plugins : [
+                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools'
+            ],
+            
+            toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            toolbar2: 'print preview media | forecolor backcolor emoticons',
+            
+            language : 'uk',
+            image_advtab: true,
+            relative_urls : false,
+           	convert_urls : true,
+            
+            file_browser_callback: function(field_name, url, type, win) {
+                if($('#forms-iframe').length==0){
+                    $('body').append('<iframe class="forms-iframe" name="forms-iframe" id="forms-iframe" src=""></iframe>');
+                }
+                if($('#forms-iframe-image').length==0){
+                    $('body').append('<form id="forms-iframe-image" action="http://elit.druzi.biz/action.page?f=tinymce_upload" target="forms-iframe" method="post" enctype="multipart/form-data" class="forms-iframe-image">'
+                                    +'<input name="image" type="file" id="forms-iframe-image-submit" onchange="$(\'#forms-iframe-image\').submit();this.value=\'\';">'
+                                    +'</form>');
+                    
+                }
+                if(type=='image') $('#forms-iframe-image-submit').click();
+            },
+            
+            //content_css: [
+            //    'http://elit.druzi.biz/plugin/tinymce/skins/lightgray/content2.min.css'
+            //],
+            
+            extended_valid_elements : 'a[class|title|name|onclick|href|target|accesskey]'
+        });*/
+    });
+    function window_profile(){
+        window_profile_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=journal_window_profile",
+            success: function(data){
+                $('body').append(data);
+                window_profile_start();
+            }
+        });
+    }
+    function window_profile_close(){
+        $(".window_profile").dialog('destroy');
+        $(".window_profile").remove();
+    }
+    function window_statistic($type,$day,$month,$year){
+        window_statistic_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=window_statistic",
+            data: ({type : $type, day : $day, month : $month, year : $year}),
+            success: function(data){
+                $('body').append(data);
+                window_statistic_start();
+            }
+        });
+    }
+    function window_statistic_close(){
+        $(".window_statistic").dialog('destroy');
+        $(".window_statistic").remove();
+    }
+</script><script>
+    $(document).ready(function(){        
+        $('textarea.tinymce').tinymce({
+            theme : "modern",
+            plugins : "advlist,autolink,autosave,link,lists,charmap,print,preview,searchreplace,wordcount,visualblocks,visualchars,code,nonbreaking,contextmenu,directionality,emoticons,textcolor,paste,textcolor,colorpicker,textpattern",
+            
+            toolbar1: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | forecolor backcolor | link unlink",
+            toolbar2: "cut copy paste | searchreplace | bullist numlist | undo redo | preview code",
+            toolbar3: "removeformat | subscript superscript | charmap emoticons | print | visualchars visualblocks nonbreaking",
+            
+            language : 'uk',
+            menubar: false,
+            toolbar_items_size: 'small',
+            statusbar: false,
+            relative_urls : false,
+           	convert_urls : false,
+            object_resizing : false
+        });
+        $('textarea.tinymceText').tinymce({
+            theme : "modern",
+            plugins : [
+                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools'
+            ],
+            
+            toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            toolbar2: 'print preview media | forecolor backcolor emoticons',
+            
+            language : 'uk',
+            image_advtab: true,
+            relative_urls : false,
+           	convert_urls : true,
+            
+            file_browser_callback: function(field_name, url, type, win) {
+                if($('#forms-iframe').length==0){
+                    $('body').append('<iframe class="forms-iframe" name="forms-iframe" id="forms-iframe" src=""></iframe>');
+                }
+                if($('#forms-iframe-image').length==0){
+                    $('body').append('<form id="forms-iframe-image" action="http://elit.druzi.biz/action.page?f=tinymce_upload" target="forms-iframe" method="post" enctype="multipart/form-data" class="forms-iframe-image">'
+                                    +'<input name="image" type="file" id="forms-iframe-image-submit" onchange="$(\'#forms-iframe-image\').submit();this.value=\'\';">'
+                                    +'</form>');
+                    
+                }
+                if(type=='image') $('#forms-iframe-image-submit').click();
+            },
+            
+            extended_valid_elements : 'a[class|title|name|onclick|href|target|accesskey]'
+        });
+    });
+</script>    </head>
+    <body>
+        <script>
+    $(document).ready(function(){
+            });
+</script>
+<style>
+    body{
+        padding: 0px;
+        margin: 0px;
+        font-size:12px; 
+    	font-family:Verdana, Helvetica, sans-serif;
+    	line-height:21px;
+    	text-align:left;
+        color: black;
+    }
+    img{
+        border: 0px;
+    }
+    p{
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    a{
+        color: #1D335C;
+        text-decoration: none;
+    }
+    input{
+        line-height: 0.8;
+    }
+    a:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    a.black{
+        color: #000000;
+        text-decoration: none;
+    }
+    a.black:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    .text{
+        position: relative;
+        left: 0px;
+        top: 0px;
+        width: auto;
+        height: auto;
+        color: black;
+        width: 900px;
+        word-wrap: break-word;
+        line-height: 18px;
+        font-size: 14px;
+    }
+    a.submit{
+        background-color: #00ACF0;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 2px 10px 3px;
+        text-decoration: none;
+    }
+    a.submit:hover{
+        background-color: #39C6F5;
+        text-decoration: none;
+    }
+    .return{
+        background-color: #fd5204;
+        display: block;
+        width: auto;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 5px 0px;
+        font-weight: bold;
+        width: 900px;
+    }
+    .return:hover{
+        background-color: #031fff;
+        color: #FFFFFF;
+    }
+    .course-list{
+        margin: 0px 0px 20px;
+        width: 900px;
+    }                
+    .course-list-link{
+        display: block;
+        width: auto; 
+    }                
+    .course-list-name{
+        color: #022984;
+        font-size: 22px;
+        line-height: 22px;
+    }                
+    .course-list-author{
+        color: #fd5204;
+        font-size: 11px;
+        line-height: 10px;
+    }                
+    .course-list-edit{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+        margin-bottom: 10px;
+    }                
+    .course-list-edit:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-edit img{
+        width: 16px; 
+        height: 16px;
+    }                
+    .course-list-delete{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+    }                
+    .course-list-delete:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-delete img{
+        width: 16px; 
+        height: 16px;
+    }
+    .course-list-add{
+        display: block;
+        width: 16px;
+        height: 16px;
+        padding: 2px;
+    }
+    .course-list-add:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }
+    .course-list-add img{
+        width: 16px;
+        height: 16px;
+    }
+    .lessons-link{
+        color: #031fff;
+        font-weight: bold;
+    }
+    .lessons-link-hide{
+        color: #d8d7d5;
+        font-weight: bold;
+    }
+    .lessons-link:hover{
+        color: #ff0000;
+    }
+    .lessons-link-hide:hover{
+        color: #d8d7d5;
+    }
+    a.course-lessons{
+        color: #3697ff;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        margin: 10px 0px;
+        font-size: 18px;
+    }
+    a.course-page{
+        color: #ff0000;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        text-align: center;
+        margin: 40px 0px 20px;
+        font-size: 14px;
+    }
+    .course-lessons-plan{
+        width: auto;
+    }
+    .course-lessons-plan b{
+        color: #3697ff;
+        font-size: 14px;
+    }
+    .course-lessons-plan ol{
+        margin: 5px 0px 0px 15px;
+    }
+    .course-lessons-plan ol li{
+        margin-left: 20px;
+        color: #3697ff;
+    }
+    .course-lessons-plan ol li a{
+        color: #3697ff;
+        padding: 1px 0px;
+        display: block;
+    }
+    .course-lessons-plan ol li a:hover{
+        color: #ff0000;
+    }
+</style>
+            
+                                                                        <a href="#course-lessons-243" class="course-page" name="course-page-1225">
+                                ЗАВДАННЯ 2.1.                            </a>
+                            <p>&nbsp;</p>
+<p><img src="http://new.druzi.biz/file/user/2/files/547289c5c79a131f93bafe39e9d182fa.png" alt="" /></p>
+<p>&nbsp;</p>                                                                                                <a href="#course-lessons-243" class="course-page" name="course-page-1226">
+                                ЗАВДАННЯ 2.2.                            </a>
+                            <p>&nbsp;</p>
+<p><img src="http://new.druzi.biz/file/user/2/files/b0b026dcffc5c33ac081441939b1ac01.png" alt="" /></p>
+<p>&nbsp;</p>                                                                                                <a href="#course-lessons-243" class="course-page" name="course-page-1227">
+                                ЗАВДАННЯ 2.3.                            </a>
+                            <p>&nbsp;</p>
+<p><img src="http://new.druzi.biz/file/user/2/files/178107c52419d405244a47dbcf629fa9.png" alt="" /></p>
+<p>&nbsp;</p>                                                            </div>
+                </body>
+</html>
