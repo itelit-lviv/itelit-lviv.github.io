@@ -13,12 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/python-course/css/style.css">
   </head>
-  <style>
-    iframe {
-      width: 1px;
-      min-width: 100%;
-    }
-  </style>
+
     
   <body>
     <nav class="navbar navbar-expand-lg navbar-light ">
@@ -48,52 +43,52 @@
      </nav>
      <!-- nav end -->
      <div class="header-baner container-fluid d-flex justify-content-xl-space-between">       
-      <h1 >Тема 1. Числові і рядкові змінні. Математичні операції.</h1>
-      
-      <div class="row tabs-container d-flex align-items-end">
-        <div class="col"></div>
-        <div class="col-md-auto col-sm-12 align-self-center">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            
-            <li class="nav-item" role="presentation">
-              <a class="nav-link  active" id="profile-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="profile" aria-selected="true">Завдання</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="home-tab" data-toggle="tab" href="#theory" role="tab" aria-controls="home" aria-selected="false">Відео</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#answers" role="tab" aria-controls="contact" aria-selected="false">Відповіді</a>
-            </li>
-            
-          </ul>
-        </div>
-        <div class="col"></div>
-      </div>
-     </div>
-     <div class="lesson container-xl">
-      <div class="tab-content" id="myTabContent">
-        
-        
-        
-        <div class="tab-pane fade show active" id="tasks" role="tabpanel" aria-labelledby="profile-tab">                                                       
-          <iframe id="ourframe" class="iframe-class" class='tasks' src="/php/TASK/t3.html" width='100%'  scrolling='no' frameborder="0" ></iframe>
-
-        </div>
-        <div class="tab-pane fade" id="theory" role="tabpanel" aria-labelledby="home-tab">
-          <!-- <iframe id="frame" src="/php/VIDEO/t3.html" width='100%' height='3000px' scrolling='auto'   frameborder="0" ></iframe> -->
-          
-            <iframe id="ourframe2" class="iframe-class"  height='2000px' scrolling="auto" frameborder="0" src='/php/VIDEO/t3.html'></iframe>
-            
-             
-                    </div>
-        
-        <div class="tab-pane fade" class='answers' id="answers" role="tabpanel" aria-labelledby="contact-tab">
-          <iframe id="ourframe3" class="iframe-class" height='2000px' src="/php/ANSWERS/t3.html" width='100%'  scrolling='auto' frameborder="0" ></iframe>
-      </div>
-      </div>
+      <h1 >Тема 3. Створення простої форми. Метод передачі даних POST.</h1>
     </div>
+      <div class="container-xl mt-5" style='min-height: 100vh;'>
+        <iframe id="ourframe" class="iframe-class" class='tasks' src="/php/TASK/t3.html" width='100%'  scrolling='no' frameborder="0" ></iframe>
+        <div class="accordion" id="accordionExample" style=" margin: 50px auto">
+          <div class="card">
+            <div class="card-header d-flex justify-content-xl-space-between" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <h5>ВІДЕО-ПОЯCНЕННЯ ↓</h5> 
+                </button>
+              </h5>
+              <!-- <a href="https://drive.google.com/file/d/105v5L9AFQLavaZkB9giQbisGDS56XrK3/view?usp=sharing" target="_blank" class="btn btn-primary btn-lg ml-auto" role="button" aria-pressed="true">Завантажити</a> -->
+            </div>
+            <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <iframe id="if2" class="iframe-class" width='100%'  height='1000px' scrolling="auto" frameborder="0" src='/php/VIDEO/t3.html'></iframe>
+              </div>
+            </div>       
+          </div>  
+          <div class="card">
+            <div class="card-header d-flex justify-content-xl-space-between" id="heading2">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button"  data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                  <h5>ВІДПОВІДІ ДО ЗАВДАНЬ↓</h5> 
+                </button>
+              </h5>
+              <!-- <a href="https://drive.google.com/file/d/105v5L9AFQLavaZkB9giQbisGDS56XrK3/view?usp=sharing" target="_blank" class="btn btn-primary btn-lg ml-auto" role="button" aria-pressed="true">Завантажити</a> -->
+            </div>
+            <div id="collapse2" class="collapse " aria-labelledby="heading2" data-parent="#accordionExample">
+              <div class="card-body">
+                <iframe id="ourframe3" class="iframe-class" height='1000px' src="/php/ANSWERS/t3.html" width='100%'  scrolling='auto' frameborder="0" ></iframe>
+              </div>
+            </div>       
+          </div>  
         
+         
+</div>
+        
+          
 
+
+        </div>
+        
+      </div>
+          
       <footer class="footer  mt-auto py-3">
         <div class="container">
           <span class="text-muted">	©   WebTeach 2020. Всі права застережено</span>
@@ -105,6 +100,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        
+    <script src="/src/js/jquery-iframe-auto-height.min.js"></script>
+   
+   
+      
+      
   </body>
 </html>
