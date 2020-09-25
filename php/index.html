@@ -1,0 +1,1094 @@
+
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://elit.druzi.biz/images/icon.png" />
+<meta name="keywords" content="" />
+<meta http-equiv="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="description" content="" />
+<title>ІТ-Еліт</title>
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/template/css/style.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.css" />
+<link rel="stylesheet" type="text/css" href="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.css" />
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/js/jquery.maskedinput.min.js"></script>
+<script type="text/javascript" src="http://elit.druzi.biz/plugin/jgrowl/jquery.jgrowl.js"></script>
+<script>
+    jQuery(function($){
+            $.datepicker.regional['uk'] = {
+                closeText: "Закрити",
+                prevText: '&#x3C;',
+                nextText: '&#x3E;',
+                currentText: "Сьогодні",
+                monthNames: ["Січень",
+                    "Лютий",
+                    "Березень",
+                    "Квітень",
+                    "Травень",
+                    "Червень",
+                    "Липень",
+                    "Серпень",
+                    "Вересень",
+                    "Жовтень",
+                    "Листопад",
+                    "Грудень"],
+                monthNamesShort: ["Січ",
+                    "Лют",
+                    "Бер",
+                    "Кві",
+                    "Тра",
+                    "Чер",
+                    "Лип",
+                    "Сер",
+                    "Вер",
+                    "Жов",
+                    "Лис",
+                    "Гру"],
+                dayNames: ["неділя",
+                    "понеділок",
+                    "вівторок",
+                    "середа",
+                    "четвер",
+                    "п’ятниця",
+                    "субота"],
+                dayNamesShort: ["нед",
+                    "пнд",
+                    "вів",
+                    "срд",
+                    "чтв",
+                    "птн",
+                    "суб"],
+                dayNamesMin: ["Нд",
+                    "Пн",
+                    "Вт",
+                    "Ср",
+                    "Чт",
+                    "Пт",
+                    "Сб"],
+                weekHeader: "Тиж",
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+            yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['uk']);
+    });
+
+    var $datepicker={ 
+        dateFormat: "dd.mm.y",
+        language: 'uk'
+    };
+    var $datepicker2={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk',
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "1900:2050"
+    };
+    var $datepicker3={ 
+        dateFormat: "dd.mm.yy",
+        language: 'uk'
+    };
+    $(document).ready(function(){
+                
+        //$.datepicker.regional[ "uk" ];
+        $( ".dateMask" ).datepicker($datepicker);
+        $( ".dateMaskAll" ).datepicker($datepicker2);
+        $( ".dateMaskYear" ).datepicker($datepicker3);
+        
+        $.mask.definitions['#'] = "[0-9]";
+        $('.phoneMask').mask("+38 (0##) ###-##-##");
+        $('.timeMask').mask("##:##:##");
+        $('.timeMaskMin').mask("##:##");
+    });
+    function window_profile(){
+        window_profile_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=journal_window_profile",
+            success: function(data){
+                $('body').append(data);
+                window_profile_start();
+            }
+        });
+    }
+    function window_profile_close(){
+        $(".window_profile").dialog('destroy');
+        $(".window_profile").remove();
+    }
+    function window_statistic($type,$day,$month,$year){
+        window_statistic_close();
+        $.ajax({
+            type: "POST",
+            url: "http://elit.druzi.biz/action.page?f=window_statistic",
+            data: ({type : $type, day : $day, month : $month, year : $year}),
+            success: function(data){
+                $('body').append(data);
+                window_statistic_start();
+            }
+        });
+    }
+    function window_statistic_close(){
+        $(".window_statistic").dialog('destroy');
+        $(".window_statistic").remove();
+    }
+</script>  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="shortcut icon" href="http://druzi.biz/images/icon.png" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+        <meta name="keywords" content="Школа програмування" />
+        <meta http-equiv="keywords" content="Школа програмування" />
+        <meta name="description" content="Школа програмування" />
+        <meta http-equiv="description" content="Школа програмування" />
+        <title>ІТ-Еліт</title>
+        <link rel="stylesheet" type="text/css" href="http://druzi.biz/template/css/site.css" />
+        <link rel="stylesheet" type="text/css" href="http://druzi.biz/template/css/site.php" />
+        <link rel="stylesheet" type="text/css" href="http://druzi.biz/template/css/window.css" />
+        <link rel="stylesheet" type="text/css" href="http://druzi.biz/lang/ua.css" />
+        <link rel="stylesheet" type="text/css" href="http://druzi.biz/plugin/jquery-ui-1.12.0.custom/jquery-ui.min.css" />
+        <link rel="stylesheet" type="text/css" href="http://druzi.biz/plugin/jgrowl/jquery.jgrowl.css" />
+        <script type="text/javascript" src="http://druzi.biz/js/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="http://druzi.biz/plugin/jquery-ui-1.12.0.custom/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="http://druzi.biz/js/jquery.maskedinput.min.js"></script>
+        <script type="text/javascript" src="http://druzi.biz/plugin/jgrowl/jquery.jgrowl.js"></script>
+        <script type="text/javascript" src="http://druzi.biz/js/jquery.session.js"></script>
+        <script>
+    $(document).ready(function(){
+                
+        $('a.nolink').click(function(e){
+            e.preventDefault();
+        });
+        
+        $.mask.definitions['#'] = "[0-9]";
+        $('.phoneMask').mask("+38 (0##) ###-##-##");
+        $('.dateTime').mask("##:##:##");
+        
+        //Повернення в вверх скролінга
+        siteUp();
+        $(window).scroll(function(){
+            siteUp();
+        });
+    });
+    function siteUp(){
+        if($(window).scrollTop() > 200){
+            $('.up').show();
+        }else{
+            $('.up').hide();
+        }
+        
+        if($('.header').hasClass('header-background-home')){
+            if($(window).scrollTop() > ($('.header').height() / 1.7)){
+                $('.header').css('background','none');
+                $('.header-fixed').addClass('header-menu-background');
+                $('.header-submit4').hide();
+            }else{
+                $('.header').css('background','');
+                $('.header-fixed').removeClass('header-menu-background');
+                $('.header-submit4').show();
+            }
+            
+            if($(window).scrollTop() > ($('.header').height() / 10)){
+                $('.header-title').hide();
+            }else{
+                $('.header-title').show();
+            }
+            
+            if($(window).scrollTop() > ($('.header').height() / 3.5)){
+                $('.header-submit1').hide();
+            }else{
+                $('.header-submit1').show();
+            }
+            
+            if($(window).scrollTop() > ($('.header').height() / 2.5)){
+                $('.header-submit2').hide();
+            }else{
+                $('.header-submit2').show();
+            }
+            
+            if($(window).scrollTop() > ($('.header').height() / 1.8)){
+                $('.header-submit3').hide();
+            }else{
+                $('.header-submit3').show();
+            }
+        }
+        if($('.header').hasClass('header-background-other')){
+            if($(window).scrollTop() > ($('.header').height() / 3.5)){
+                $('.header-fixed').addClass('header-menu-background');
+                $('.header').css('background','none');
+                $('.body-expanded_contact-header').hide();
+            }else{
+                $('.header-fixed').removeClass('header-menu-background');
+                $('.header').css('background','');
+                $('.body-expanded_contact-header').show();
+            }
+        }
+    }
+    function windowOpen($type,$id){
+        windowClose();
+        $.ajax({
+            type: "POST",
+            url: "http://druzi.biz/window.page",
+            data: ({type : $type, id : $id}),
+            success: function(data){
+                $('body').append(data);
+                $('.phoneMask').mask("+38 (0##) ###-##-##");
+            }
+        });
+    }
+    function windowClose(){
+        $('#window').remove();
+        $('#window-bg').remove();
+    }
+    function windowOpenCapcha($type){
+        windowCloseCapcha();
+        $.ajax({
+            type: "POST",
+            url: "http://druzi.biz/window.page",
+            data: ({type : 'capcha', form : $type}),
+            success: function(data){
+                $('.window').hide();
+                $('.window-bg').hide();
+                $('body').append(data);
+            }
+        });
+    }
+    function windowCloseCapcha(){
+        $('#window-capcha').remove();
+        $('#window-capcha-bg').remove();
+        $('.window').show();
+        $('.window-bg').show();
+    }
+    function capchaForm(){
+        $form=$('#form-capcha');
+        $post=$form.serialize();
+        
+        $.ajax({
+            type: "POST",
+            url: $form.attr('action'),
+            data: $post,
+            dataType: 'json',
+            success: function(data){
+                if(data.type=='true'){
+                    windowCloseCapcha();
+                    $form=$('#'+data.form).append('<input type="hidden" name="capcha" value="'+data.capcha+'" class="capcha" />');
+                    formSave(data.form);
+                }else{
+                    msgShow(data.type,data.text);
+                    capchaRefresh();
+                }
+            }
+        });
+        return true;
+    }
+    function capchaRefresh(){
+        //$ch = Math.floor(Math.random()*9)+''+Math.floor(Math.random()*9)+''+Math.floor(Math.random()*9)+''+Math.floor(Math.random()*9)+''+Math.floor(Math.random()*9)+''+Math.floor(Math.random()*9);
+        $('#capcha-img').attr('src','http://druzi.biz/act.page?modul=capcha&action=img&ch='+Date());
+        $('#capcha-input').val('');
+    }
+    function formSave($id){
+        $form=$('#'+$id);
+        
+                    $capcha=false;
+            if($form.find('input.capcha').length==0){
+                windowOpenCapcha($id);
+            }else{
+                $capcha=true;
+            }
+                
+        if($capcha){
+            $form.find('textarea.tinymce').each(function(){
+                $(this).val($(this).html());
+            });
+            $post=$form.serialize();
+            
+            if($form.hasClass('forms-file')){
+                $form.attr('target','forms-iframe').attr('enctype','multipart/form-data');
+                formFrame();
+                
+                $post=$post+'&frame=yes';
+                $.ajax({
+                    type: "POST",
+                    url: $form.attr('action'),
+                    data: $post,
+                    dataType: 'json',
+                    success: function(data){
+                        $form.find('input.capcha').remove();
+                        formResult($id,data);
+                    }
+                });
+                return false;
+            }else{
+                $.ajax({
+                    type: "POST",
+                    url: $form.attr('action'),
+                    data: $post,
+                    dataType: 'json',
+                    success: function(data){
+                        $form.find('input.capcha').remove();
+                        formResult($id,data);
+                    }
+                });
+                return true;
+            }
+        }
+    }
+    function formFrame(){
+        if($('#forms-iframe').length==0){
+            $('body').append('<iframe class="forms-iframe" name="forms-iframe" id="forms-iframe" src=""></iframe>');
+        }
+    }
+    function formResult($id,$result){
+        if(typeof($result.href) != "undefined" && $result.href !== null){
+            window.location.href=$result.href;
+        }
+        if($result.type=='true'){
+            $form=$('#'+$id);
+            $form.find('.clear-text').val('');
+            $form.find('.clear-textarea').val('');
+            $form.find('.clear-select').val('');
+            $form.find('.clear-checkbox').attr('checked',false);
+            $form.find('.clear-tinymce').val('').html('');
+            $form.find('.clear-select option').attr('selected',false)
+            $form.find('.clear-select option:first').attr('selected',true);
+            $form.find('.clear-file').val('');
+        }
+        msgShow($result.type,$result.text);
+        if(typeof($result.js) != "undefined" && $result.js !== null){
+            setTimeout($result.js,5);
+        }
+    }
+    function msgShow($type,$text){
+        $html='';
+        $html+='<div class="type-'+$type+'" onclick="$(this).remove();">';
+        $html+=$text;
+        $html+='</div>';
+        $('.message').append($html);
+        $('.message > div:last').animate({width: 'auto'},5000)
+                                .animate({right: "-100%"}, 3000, function() { $(this).remove(); });
+    }
+    function filterToggle(){
+        $('.filter').toggle();
+    }
+    function filterSave(){
+        $filter=$('#filter-form').serialize();
+        $href=$('#filter-form').attr('action')+$filter;
+        window.location.href=$href;
+    }
+</script>    </head>
+    <body>  
+        <script>
+    $(document).ready(function(){
+            });
+</script>
+<style>
+    body{
+        padding: 0px;
+        margin: 0px;
+        font-size:12px; 
+    	font-family:Verdana, Helvetica, sans-serif;
+    	line-height:21px;
+    	text-align:left;
+        color: black;
+        background-color: white;
+        zoom: 130%;
+    }
+    .header-submit3{
+        width: 20em;
+        height: 1.5em;
+        padding-top: 2% ;
+        position: absolute;
+        left: 40%;
+        top:30%;
+    }
+    
+    img{
+        border: 0px;
+    }
+    p{
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    a{
+        color: #a8feff;
+        text-decoration: none;
+    }
+    input{
+        line-height: 0.8;
+    }
+    a:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    a.black{
+        color: #000000;
+        text-decoration: none;
+    }
+    a.black:hover{
+        color: #ff0000;
+        text-decoration: none;
+    }
+    .text{
+        position: relative;
+        left: 0px;
+        top: 0px;
+        width: auto;
+        height: auto;
+        color: black;
+        width: 900px;
+        word-wrap: break-word;
+        line-height: 18px;
+        font-size: 14px;
+    }
+    a.submit{
+        background-color: #00ACF0;
+        color: #FFFFFF;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 2px 10px 3px;
+        text-decoration: none;
+    }
+    a.submit:hover{
+        background-color: #39C6F5;
+        text-decoration: none;
+    }
+    .return{
+        margin: 0 auto;
+        background-color: #fd5204;
+        display: block;
+        width: auto;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 5px 0px;
+        font-weight: bold;
+        width: 900px;
+    }
+    table{
+        position: relative;
+        left: 20%;
+        
+    }
+    .return:hover{
+        background-color: #031fff;
+        color: #FFFFFF;
+    }
+    .course-list{
+        margin: 0px 0px 20px;
+        width: 900px;
+    }                
+    .course-list-link{
+        display: block;
+        width: auto; 
+    }                
+    .course-list-name{
+        color: #022984;
+        font-size: 22px;
+        line-height: 22px;
+    }                
+    .course-list-author{
+        color: #fd5204;
+        font-size: 11px;
+        line-height: 10px;
+    }                
+    .course-list-edit{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+        margin-bottom: 10px;
+    }                
+    .course-list-edit:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-edit img{
+        width: 16px; 
+        height: 16px;
+    }                
+    .course-list-delete{
+        display: block;
+        width: 16px; 
+        height: 16px;
+        padding: 2px;
+    }                
+    .course-list-delete:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }                
+    .course-list-delete img{
+        width: 16px; 
+        height: 16px;
+    }
+    .course-list-add{
+        display: block;
+        width: 16px;
+        height: 16px;
+        padding: 2px;
+    }
+    .course-list-add:hover{
+        -webkit-box-shadow: 0 0 7px #666;
+        box-shadow: 0 0 7px #666;
+        -moz-box-shadow: 0 0 7px #666;
+    }
+    .course-list-add img{
+        width: 16px;
+        height: 16px;
+    }
+    .lessons-link{
+       
+        color: #143284;
+        font-weight: bold;
+    }
+    .lessons-link-hide{
+        color: #d8d7d5;
+        font-weight: bold;
+    }
+    .lessons-link:hover{
+        color: #ff0000;
+    }
+    .lessons-link-hide:hover{
+        color: #d8d7d5;
+    }
+    a.course-lessons{
+        color: #3697ff;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        margin: 10px 0px;
+        text-align: center;
+        font-size: 18px;
+    }
+    a.course-page{
+        color: #ff0000;
+        font-weight: bold;
+        display: block;
+        width: auto;
+        text-align: center;
+        margin: 40px 0px 20px;
+        font-size: 14px;
+    }
+    .course-lessons-plan{
+        width: auto;
+    }
+    .course-lessons-plan b{
+        color: #3697ff;
+        font-size: 14px;
+    }
+    .course-lessons-plan ol{
+        margin: 5px 0px 0px 15px;
+    }
+    .course-lessons-plan ol li{
+        margin-left: 20px;
+        color: #3697ff;
+    }
+    .course-lessons-plan ol li a{
+        color: #3697ff;
+        padding: 1px 0px;
+        display: block;
+    }
+    .course-lessons-plan ol li a:hover{
+        color: #ff0000;
+    }
+	.modal {
+    position: fixed; /* фиксированное положение */
+    top: 20;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5); /* цвет фона */
+    z-index: 1050;
+    opacity: 0; /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 200ms ease-in; 
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in; /* анимация перехода */
+    pointer-events: none; /* элемент невидим для событий мыши */
+    margin: 0;
+    padding: 0;
+}
+/* при отображении модального окно */
+.modal:target {
+    opacity: 1; /* делаем окно видимым */
+	  pointer-events: auto; /* элемент видим для событий мыши */
+    overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
+/* ширина модального окна и его отступы от экрана */
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+      max-width: 500px;
+      margin: 30px auto; /* для отображения модального окна по центру */
+  }
+}
+/* свойства для блока, содержащего контент модального окна */ 
+.modal-content {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+@media (min-width: 768px) {
+  .modal-content {
+      -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+      box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  }
+}
+/* свойства для заголовка модального окна */
+.modal-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #eceeef;
+}
+.modal-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+/* свойства для кнопки "Закрыть" */
+.close {
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    text-decoration: none;
+}
+/* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+.close:focus, .close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .75;
+}
+/* свойства для блока, содержащего основное содержимое окна */
+.modal-body {
+  position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 15px;
+    overflow: auto;
+}
+
+</style>
+<div class="header header-background-home">
+    <div class="header-fixed">
+        <div class="header-logo">
+            <img src="http://druzi.biz/images/logo.png" />
+            <div>
+                <div class="header-logo-header">
+                    IT-ELIT                </div>
+                <div class="header-logo-footer">
+                    школа програмування                </div>
+            </div>
+        </div>
+        <div class="header-menu" name="home" style="right: 0em;">
+            <ul>
+                                    
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li><li >
+                        <a href="#openModal">Реквізити для оплати</a>
+                                            </li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                                    <li >
+                        <a href="https://repl.it/languages/php7" target="_blank" >
+                                                           Онлайн редактор                                                 </a>
+                                            </li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+					  <li >
+                        <a href="theory.html" target="_blank" >
+                                                            Теорія                                                </a>
+                                            </li>
+                                            <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li >
+                        <a href="host.html" target="_blank" >
+                                                            Хостинги                                                 </a>
+                                            </li>
+                                            <li>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                                   
+                    <li class="action">
+                        <a href="https://meet.jit.si/php-it" target="_blank">
+                                                            ВІДЕОКОНФЕРЕНЦІЯ  </a>
+                                            </li>
+                            </ul>
+                             </div>
+                    </div>
+        </div>
+                    </div>
+                      <div class="header-title" style="margin: 25px;font-size: 2.5em;">Привіт! Тут усе необхідне для заняття.</div>
+                      <a href="https://meet.jit.si/php-it"  class="header-submit3" target="_blank">ОНЛАЙН-УРОК</a>
+        </div>  
+                   
+       
+                                    <a href="TASK/t1.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        1                                    </td>
+                                    <td align="left" valign="top">
+                                        Тема 1. Числові і рядкові змінні. Математичні операції. ЗАВДАННЯ                                     </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            
+                                            
+                                            <a href="ANSWERS/t1.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        2                                    </td>
+                                    <td align="left" valign="top">
+                                        Тема 1. Числові і рядкові змінні. Математичні операції. РІШЕННЯ                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t2.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        3                                </td>
+                                    <td align="left" valign="top">
+                                       Тема 2. Математичні функції. ЗАВДАННЯ                                 </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            
+                                            
+                                            <a href="ANSWERS/t2.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        4                                  </td>
+                                    <td align="left" valign="top">
+                                        Тема 2. Математичні функції. РІШЕННЯ                               </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t3.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        5                                </td>
+                                    <td align="left" valign="top">
+                                        Тема 3. Створення простої форми. Метод передачі даних POST. ЗАВДАННЯ                                     </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            
+                                           
+                                            <a href="ANSWERS/t3.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        6                                   </td>
+                                    <td align="left" valign="top">
+                                        Тема 3. Створення простої форми. Метод передачі даних POST. РІШЕННЯ                                       </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t4.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        7                                  </td>
+                                    <td align="left" valign="top">
+                                        Тема 4. Робота з командами рогалуження  (if , else). ЗАВДАННЯ                                   </td>
+                                </tr>
+                            </table>
+                        </a>
+                                           
+                                           
+                                            <a href="ANSWERS/t4.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        8                                   </td>
+                                    <td align="left" valign="top">
+                                        Тема 4. Робота з командами рогалуження  (if , else). РІШЕННЯ                                   </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t5.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        9                                   </td>
+                                    <td align="left" valign="top">
+                                        Тема 5. Елементи форми, практичне застосування команд розгалуження. ЗАВДАННЯ                                     </td>
+                                </tr>
+                            </table>
+                        </a>
+                                         
+                                            <a href="ANSWERS/t5.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        10                                  </td>
+                                    <td align="left" valign="top">
+                                        Тема 5. Елементи форми, практичне застосування команд розгалуження. РІШЕННЯ                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t6.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        11                                  </td>
+                                    <td align="left" valign="top">
+                                        Тема 6. Цикли "for", "while". ЗАВДАННЯ                                       </td>
+                                </tr>
+                            </table>
+                        </a>
+                                           
+                                            <a href="ANSWERS/t6.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        12                                  </td>
+                                    <td align="left" valign="top">
+                                        Тема 6. Цикли "for", "while". РІШЕННЯ     	                              </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t7.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        13                                  </td>
+                                    <td align="left" valign="top">
+                                         Тема 7. Одновимірні масиви. ЗАВДАННЯ                                   </td>
+                                </tr>
+                            </table>
+                        </a>
+                                           
+                                          
+                                            <a href="ANSWERS/t7.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        14                                  </td>
+                                    <td align="left" valign="top">
+                                        Тема 7. Одновимірні масиви. РІШЕННЯ                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t8.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                           15                               </td>
+                                    <td align="left" valign="top">
+                                        Тема 8. Одновимірні масиви. ЗАВДАННЯ                                     </td>
+                                </tr>
+                            </table>
+                        </a>
+                                           
+                                           
+                                            <a href="ANSWERS/t8.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        16                                   </td>
+                                    <td align="left" valign="top">
+                                        Тема 8. Одновимірні масиви. РІШЕННЯ                                 </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t9.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        17                                  </td>
+                                    <td align="left" valign="top">
+                                        Тема 9. Двовимірні масиви. ЗАВДАННЯ                                       </td>
+                                </tr>
+                            </table>
+                        </a>
+                                           
+                                           
+                                            <a href="ANSWERS/t9.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        18                                  </td>
+                                    <td align="left" valign="top">
+                                       Тема 9. Двовимірні масиви. РІШЕННЯ                                  </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t10.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        19                                 </td>
+                                    <td align="left" valign="top">
+                                       Тема 10. Функції. ЗАВДАННЯ                                   </td>
+                                </tr>
+                            </table>
+                        </a>
+                                           
+                                            <a href="ANSWERS/t10.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        20                                  </td>
+                                    <td align="left" valign="top">
+                                      Тема 10. Функції. РІШЕННЯ                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t11.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        21                                  </td>
+                                    <td align="left" valign="top">
+                                        Тема 11. Робота з рядковими змінними. ЗАВДАННЯ                                      </td>
+                                </tr>
+                            </table>
+                        </a>
+                                           
+                                            <a href="ANSWERS/t11.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        22                                  </td>
+                                    <td align="left" valign="top">
+                                       Тема 11. Робота з рядковими змінними. РІШЕННЯ                                     </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t12.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        23                                  </td>
+                                    <td align="left" valign="top">
+                                     Тема 12. Робота з базою даних. ЗАВДАННЯ                                    </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            
+                                            <a href="ANSWERS/t12.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        24                                   </td>
+                                    <td align="left" valign="top">
+                                                 Тема 12. Робота з базою даних. РІШЕННЯ                                     </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t13.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        25                                  </td>
+                                    <td align="left" valign="top">
+                                       Тема 13. Метод передачі даних GET. Створення сайтів з використанням баз даних і метода GET. ЗАВДАННЯ                                  </td>
+                                </tr>
+                            </table>
+                        </a>
+                                           
+                                            <a href="ANSWERS/t13.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        26                                  </td>
+                                    <td align="left" valign="top">
+                                       Тема 13. Метод передачі даних GET. Створення сайтів з використанням баз даних і метода GET. РІШЕННЯ                                   </td>
+                                </tr>
+                            </table>
+                        </a>
+                                            <a href="TASK/t14.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        27                                   </td>
+                                    <td align="left" valign="top">
+                                        Тема 14. Створення сайтів з використанням функцій. ЗАВДАННЯ                                   </td>
+                                </tr>
+                            </table>
+                        </a>
+                                           
+                                            <a href="ANSWERS/t14.html" class="lessons-link">
+                            <table cellpadding="0" cellspacing="5" border="0" width="100%">
+                                <tr>
+                                    <td align="left" valign="top" width="30">
+                                        28                                   </td>
+                                    <td align="left" valign="top">
+                                          Тема 14. Створення сайтів з використанням функцій. РІШЕННЯ                                      </td>
+                                </tr>
+                            </table>
+                        </a>
+						
+                        <br><br>
+                        <div class="footer">
+    <div class="footer-logo">
+        <img src="http://druzi.biz/images/icon.png" />
+        <div>
+            <div class="footer-logo-header">
+                IT-ELIT            </div>
+            <div class="footer-logo-footer">
+                школа програмування            </div>
+        </div>
+    </div><div id="openModal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Реквізити для оплати</h3>
+        <a href="#close" title="Close" class="close">×</a>
+      </div>
+      <div class="modal-body"> 
+	  <p><b>Егрецький Данило Романович</b></p>
+<p><i>ПриватБанк</i><br>	  
+        4149 4991 1283 8444</p>
+		
+		
+      </div>
+    </div>
+  </div>
+</div>
+    IT-Elit © 2016-2020 Всі права захищені</div>        <div class="message"></div>
+        <a href="#" class="up">
+            <img src="http://druzi.biz/images/up.png" class="up-img" />
+            <img src="http://druzi.biz/images/up-action.png" class="up-img-action" />
+        </a>
+                        </body>
+</html>

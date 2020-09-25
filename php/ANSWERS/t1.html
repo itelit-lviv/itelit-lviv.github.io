@@ -19,6 +19,15 @@
 <script src="http://elit.druzi.biz/plugin/tinymce2/tinymce.min.js"></script>
 <script src="http://elit.druzi.biz/plugin/tinymce2/jquery.tinymce.min.js"></script>
 
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("#IDofControlFiringResizeEvent").click(function () {
+            var frame = $('#IDofiframeInMainWindow', window.parent.document);
+            var height = jQuery("#IDofContainerInsideiFrame").height();
+            frame.height(height + 15);
+        });
+    });
+</script>
 <script>
     jQuery(function($){
             $.datepicker.regional['uk'] = {
