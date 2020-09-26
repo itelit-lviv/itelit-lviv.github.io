@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Курс Python - WebTeach">
+    <meta property="og:site_name" content="WebTeach">
+    <meta property="og:url" content="https://web-teach.pp.ua/py-d/101/index.html">
+    <meta property="og:description" content="Вивчаємо мову програмування Python онлайн!">
+    <meta property="og:image" content="https://web-teach.pp.ua/src/python-course/python-preview.jpg">
+    <!-- /Required meta tags -->
+    <title>Курс Python - WebTeach</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://web-teach.pp.ua/src/python-course/css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-xl">
+      <a class="navbar-brand logo" href="../index.html"><span>Web</span>Teach</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mr-auto mt-2 mt-lg-0" >
+          <a class="nav-item nav-link" href="../index.html#course" title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link conf-button active" title="Перейти до онлайн-уроку" href="https://meet.google.com/dtc-kbdg-tbu" target="_blank">
+            <svg class="bi bi-camera-video-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.667 3h6.666C10.253 3 11 3.746 11 4.667v6.666c0 .92-.746 1.667-1.667 1.667H2.667C1.747 13 1 12.254 1 11.333V4.667C1 3.747 1.746 3 2.667 3z"/>
+              <path d="M7.404 8.697l6.363 3.692c.54.313 1.233-.066 1.233-.697V4.308c0-.63-.693-1.01-1.233-.696L7.404 7.304a.802.802 0 0 0 0 1.393z"/>
+            </svg>
+            Онлайн-урок</a>
+          <a class="nav-item nav-link" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
+          <a class="nav-item nav-link" href="../journal.html" data-toggle="tooltip" data-placement="bottom" title="Сторінка в розробці, скоро оцінки будуть доступні :)" >Журнал</a>
+          <a class="nav-item nav-link" href="#openModal" data-toggle="modal" data-target="#exampleModal">Реквізити</a>
+          
+        </div>
+        <div class="nav-phone my-2 my-lg-0">
+          <a href="tel:+380662719785" class="nav-item nav-link">+380995638685</a>
+        </div>
+        </div>
+     </div> 
+     </nav>
+     <!-- nav end -->
+     <div class="header-baner container-fluid d-flex justify-content-xl-space-between">       
+      <h1 >Тема 1. Змінні. Типи даних. Ввід/вивід</h1>
+      
+      <div class="row tabs-container d-flex align-items-end">
+        <div class="col"></div>
+        <div class="col-md-auto col-sm-12 align-self-center">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#theory" role="tab" aria-controls="home" aria-selected="true">Конспект</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="profile" aria-selected="false">Завдання</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#answers" role="tab" aria-controls="contact" aria-selected="false">Відповіді</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col"></div>
+      </div>
+     </div>
+      <div class="lesson container-xl">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="theory" role="tabpanel" aria-labelledby="home-tab">
+          <div class='theory'>
+            <h3>Які прості арифметичні операції існують в Python?</h3>
+            <div class='answer'>
+            <p><b>+</b>  – додавання</p>
+            <p><b>-</b>  – віднімання</p>
+            <p><b>*</b>  – множення</p>
+            <p><b>/</b>  – ділення</p>
+            <p><b>//</b>  – ціла частина від ділення <i>(7 // 2 = 3)</i></p>
+            <p><b>**</b>   – піднесення до степеня <i>(2 ** 3 = 8)</i></p>
+            <p><b>%</b>   – остача від ділення <i>(7 % 2 = 1)</i></p>
+            </div>
+
+            <h3>Що таке логічні операції і які вони бувають?</h3>
+            <div class='answer'>Логічні операції - це операції при викнанні яких результатом є ПРАВДА або БРЕХНЯ (тобто 3>4 = БРЕХНЯ)<br>
+            <p><b>==</b>  – дорівнює</p>
+            <p><b>!=</b>  – не дорівнює</p>
+            <p><b>></b>  – більше</p>
+            <p><b>>=</b>  – більше рівно</p>
+            <p><b><</b>  – менше</p>
+            <p><b><=</b>  – менше рівно</p></div>
+
+            <h3>Більш складні логічні вирази:</h3>
+            <div class='answer'><p><b>and</b>  – застосовується між двома простими логічними виразами, якщо і перший і другий вираз <b>ПРАВДА</b>, то результат <b>ПРАВДА</b> <i>(3<4 and 4<5 = <b>ПРАВДА</b>; 3==2 and 3<4 = <b>БРЕХНЯ</b>)</i></p>
+            <p><b>or</b>  – застосовується між двома простими логічними виразами, якщо хоча б один <b>ПРАВДА</b>, то результат <b>ПРАВДА</b> <i>(3<4 or 4<5 = <b>ПРАВДА</b>; 3==2 or 3<4 = <b>ПРАВДА</b>; 3==2 or 2==5 = <b>БРЕХНЯ</b>)</i></p>
+            <p><b>not</b>  – якщо результатом внутрішньої логічної операції є <b>ПРАВДА</b>, то результат <b>БРЕХНЯ</b> і навпаки <i>(NOT(3>4) = <b>ПРАВДА</b>; NOT(3==2) = <b>ПРАВДА</b>)</i></p>
+            </div>
+
+            <h3>Як підключити якусь бібліотеку?</h3>
+            <div class='answer'>
+            Бібліотеку можна підключити виразом - <b>import <i>library</i></b><br>
+            Також, якщо вам потрібна якась одна або декілька фукцій з бібліотеки то потрібно використати - <b>from <i>library</i> improt <i>function</i></b><br>
+            Також для виклику всієї бібліотеки можна використати - <b>from <i>library</i> import *</b></div>
+
+            <h3>Що таке бібліотека MATH?</h3>
+            <div class='answer'><p>Модуль math – один из наиважнейших в Python. Этот модуль предоставляет обширный функционал для работы с числами.</p></div>
+
+            <h3>Які функції містить бібліотека MATH?</h3>
+            <div class='answer'>
+            <p><b>math.ceil</b>(X) – заокруглення до більшого числа</p>
+            <p><b>math.copysign</b>(X, Y) - повертає число, яке за модулем таке, як і X, а знак - як у числа Y.</p>
+            <p><b>math.fabs</b>(X) - модуль X.</p>
+            <p><b>math.floor</b>(X) - заокруглееня до меншого числа.</p>
+            <p><b>math.fmod</b>(X, Y) - Остача від ділення X на Y.</p>
+            <p><b>math.modf</b>(X) - повертає дробну і цілу частину числа X. Обидва числа мають той же знак, що й X.</p>
+            <p><b>math.pow</b>(X, Y) - X<sup>Y</sup>.</p>
+            <p><b>math.sqrt</b>(X) - квадратний корінь з X.</p>
+            <p><b>math.cos</b>(X) - косинус X (X вказується в радіанах).</p>
+            <p><b>math.sin</b>(X) - синус X (X указуєтся в радіанах).</p>
+            <p><b>math.tan</b>(X) - тангенс X (X указувєтся в радіанах).</p>
+            <p><b>math.hypot</b>(X, Y) - вираховує гіпотенузу триктника з катетами X и Y (math.sqrt(x * x + y * y)).</p>
+            <p><b>math.degrees</b>(X) - конвертує радіни в градуси.</p>
+            <p><b>math.radians</b>(X) - конвертує градуси в радіани.</p>
+            <p><b>math.pi</b> - pi = 3,1415926...</p>
+            <p><b>math.e</b> - e = 2,718281...</p>
+            <div class="alert alert-success" role="alert">
+              <p><i><u>УВАГА!</u> Для того щоб знайти інші функції використовуйте google!</i></p></div>
+            </div>
+            
+          </div>
+        </div>  
+        <div class="tab-pane fade" id="tasks" role="tabpanel" aria-labelledby="profile-tab">                                                       
+                                                                            
+            <div class='task'> <h3> ЗАВДАННЯ 2.1. </h3>                           
+             <p>Створити змінні: вік(age), ріст(height), вага(weight), рік народження(year_of_born), день місяця(today). В результат записати результат формули - <b>ріст // вік + рік народження % вага<sup>день місяця</sup></b>, де // - ціла частина від ділення, % - остача від ділення</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="https://web-teach.pp.ua/src/python-course/t2_1.PNG" alt="" /></p></div>
+            <br />                                                                                              
+           <div class='task'>  <h3> ЗАВДАННЯ 2.2. </h3>
+             <p> За допомогою бібліотеки <b>math</b> порахувати гіпотенузу трикутника. Катети створити довільні.</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="https://web-teach.pp.ua/src/python-course/t2_2.PNG" alt="" /></p></div>
+                <div class='task'>  <h3>        ЗАВДАННЯ 2.3.                            </h3>
+                        <p>За допомогою бібліотеки <b>math</b> обрахувати площу трикутника за формулою герона(знайти її можна в інтернеті). Сторони трикутника користувач має вводити самостійно.</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="https://web-teach.pp.ua/src/python-course/t2_3.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 2.4.                            </h3>
+                        <p>За допомогою бібліотеки <b>math</b> обрахувати площу кола і об'єм кулі(формулу можна знайти в інтернеті). Радіус користувач має ввести самостійно. Площу і об'єм заокруглити до більшого числа.</p>
+            <p><img src="https://web-teach.pp.ua/src/python-course/t2_4.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 2.5.                            </h3>
+                        <p>За допомогою бібліотеки <b>math</b> обрахувати площу трикутника за формулою <b>(a * b * sin(<i>a</i>))/2</b>, де а - одна сторона трикутника, b - друга, а <i>a</i> - кут між ними. Кут та сторони користувач має вводити самостійно. <u>Всередині функції <b>math.sin(<i>a</i>)</b> необхідно конвертувати градуси в радіани.</u></p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="https://web-teach.pp.ua/src/python-course/t2_5.PNG" alt="" /></p></div>
+
+        </div>
+        <div class="tab-pane fade" id="answers" role="tabpanel" aria-labelledby="contact-tab">
+		<div class="alert alert-danger" role="alert">
+            Відповіді будуть доступні після заняття
+            </div>
+          <!-- <div class='task'> <h3> ЗАВДАННЯ 2.1. </h3>             -->
+
+            <!-- <p><img src="/src/python-course/images_answer/t2_1.PNG" alt="" /></p></div> -->
+            <!-- <br />                                                                                               -->
+                                         <!-- <div class='task'>  <h3> ЗАВДАННЯ 2.2. </h3> -->
+                                       
+            <!-- <p><img src="/src/python-course/images_answer/t2_2.PNG" alt="" /></p></div> -->
+                                 <!-- <div class='task'>  <h3>        ЗАВДАННЯ 2.3.                            </h3> -->
+            
+            <!-- <p><img src="/src/python-course/images_answer/t2_3.PNG" alt="" /></p></div> -->
+            <!-- <div class='task'><h3>                                ЗАВДАННЯ 2.4.                            </h3> -->
+                                        
+            <!-- <p><img src="/src/python-course/images_answer/t2_4.PNG" alt="" /></p></div> -->
+            <!-- <div class='task'><h3>                                ЗАВДАННЯ 2.5.                            </h3> -->
+                                        
+            
+            <!-- <p><img src="/src/python-course/images_answer/t2_5.PNG" alt="" /></p></div>         -->
+        </div>
+      </div>
+      </div>
+          <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Реквізити для оплати</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title">Егрецький Данило Романович</h5>
+        <p><i>МоноБанк</i><br>	  
+          5375 4141 0098 2189</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Закрити</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <footer class="footer  mt-auto py-3">
+        <div class="container">
+          <span class="text-muted">	©   WebTeach 2020. Всі права застережено</span>
+        </div>
+      </footer>
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      
+  </body>
+</html>
