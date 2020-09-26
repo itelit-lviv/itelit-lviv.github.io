@@ -62,6 +62,19 @@
          <li><i>pip install pymysql</i> - <b>Встановити бібліотека PyMySQL.</b></li><br>
          <li><i>python.exe -m pip install --upgrade pip</i> - <b>Якщо не виходить встановити і пише, що застарілий pip. Оновлюємо.</b></li><br></ul></div>
 
+          <h3>Підключення до бази даних</h3>
+        <div class="answer">
+          <code><pre><b>
+conn = pymysql.connect(
+    host='91.239.233.38',
+    user='fmewmhwr_student1',
+    password='aFDE5dk2uMa2HJ9',
+    db='fmewmhwr_cinema',
+    cursorclass=DictCursor)
+</b></pre>
+          </code>
+        </div>
+
          <h3>Мова SQL</h3><br>
          <div class='answer'>
          <ul>
