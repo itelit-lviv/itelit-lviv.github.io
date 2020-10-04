@@ -70,9 +70,9 @@
          <h3>SQL нові запити</h3><br>
             <div class='answer'>
 			<code>
-			UPDATE users<br>
-			SET login = %s,<br>
-			password = %s
+			UPDATE users #оновити таблицю users<br>
+			SET password = %s #поставити данні в поле password<br>
+			WHERE id = %s #де id дорівнює даному
 			</code>
 			</div>
 			<h3>Посилання на файли</h3><br>
