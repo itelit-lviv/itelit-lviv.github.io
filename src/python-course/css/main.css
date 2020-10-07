@@ -12,7 +12,8 @@ html, body {
   width: 100%;
 }
 .page-header{
-  height: 700px;
+  /* min-height: 400px; */
+  height: 100vh;
   background: url('/src/python-course/header-baner.png') no-repeat;
   background-size: contain;
   background-position: bottom center;
@@ -22,9 +23,10 @@ nav.navbar{
   background: transparent;
 }
 .header-title {
+  
   display: block;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 10px;
 }
 .header-title h1{
   font-weight: 700;
