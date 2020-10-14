@@ -185,356 +185,356 @@ root.iconphoto(False,PhotoImage(file='icon.ico')) </i> - <b>Додали іко�
             <div id="collapse6" class="collapse " aria-labelledby="heading6" data-parent="#accordionExample">
               <div class="card-body">
 <code><pre>
-  #CAFFF8	- фон 
-  #E7C246 - yellow
-  #00ACEA - blue
-  #01EFD1 - sea blue
+#CAFFF8	- фон 
+#E7C246 - yellow
+#00ACEA - blue
+#01EFD1 - sea blue
+
+#vova - login
+#vova123 - password
   
-  #vova - login
-  #vova123 - password
-   
-  from tkinter import *
-  import pymysql
-  from pymysql.cursors import DictCursor
+from tkinter import *
+import pymysql
+from pymysql.cursors import DictCursor
+
+USER_ID = '1'
+
+class MainWindow:
+    def __init__(self, root):
+        self.root = root
+        #Визначення робочого вікна
+        self.w = self.root.winfo_screenwidth()//2-500
+        self.h = self.root.winfo_screenheight()//2-350
+        self.root.geometry(f'1000x700+{self.w}+{self.h}') #задаємо розміри та позицію вікна
+        self.root.configure(bg='#CAFFF8')
+        self.root.overrideredirect(1)
+        self.close_btn = Button(self.root, command=self.close, text='X', bg='#fa5c5c', fg='#360707', bd=0, font=('Roboto', -20), activebackground='#c71e1e')
+        self.close_btn.place(x=975, y=0)
+        self.logoico = PhotoImage(file='logo.gif')
+        self.title = PhotoImage(file='title.gif')
+        self.logoico_lbl = Label(self.root, image=self.logoico, bg='#CAFFF8' )
+        self.logoico_lbl.place(x=100,y=50)
+        self.title_lbl = Label(self.root, image=self.title, bg='#CAFFF8' )
+        self.title_lbl.place(x=230,y=25)
+    def close(self):
+        self.root.destroy()
   
-  USER_ID = '1'
+class LoginWindow(MainWindow):
+    def __init__(self, root, conn, cursor):
+        self.root = root
+        self.conn = conn
+        self.cursor = cursor
+    def drawWindow(self):
+        
+        self.log_lbl = Label(self.root, text='ВХІД',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
+        self.log_lbl.place(x=440,y=230)
   
-  class MainWindow:
-      def __init__(self, root):
-          self.root = root
-          #Визначення робочого вікна
-          self.w = self.root.winfo_screenwidth()//2-500
-          self.h = self.root.winfo_screenheight()//2-350
-          self.root.geometry(f'1000x700+{self.w}+{self.h}') #задаємо розміри та позицію вікна
-          self.root.configure(bg='#CAFFF8')
-          self.root.overrideredirect(1)
-          self.close_btn = Button(self.root, command=self.close, text='X', bg='#fa5c5c', fg='#360707', bd=0, font=('Roboto', -20), activebackground='#c71e1e')
-          self.close_btn.place(x=975, y=0)
-          self.logoico = PhotoImage(file='logo.gif')
-          self.title = PhotoImage(file='title.gif')
-          self.logoico_lbl = Label(self.root, image=self.logoico, bg='#CAFFF8' )
-          self.logoico_lbl.place(x=100,y=50)
-          self.title_lbl = Label(self.root, image=self.title, bg='#CAFFF8' )
-          self.title_lbl.place(x=230,y=25)
-      def close(self):
-          self.root.destroy()
-   
-  class LoginWindow(MainWindow):
-      def __init__(self, root, conn, cursor):
-          self.root = root
-          self.conn = conn
-          self.cursor = cursor
-      def drawWindow(self):
-          
-          self.log_lbl = Label(self.root, text='ВХІД',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
-          self.log_lbl.place(x=440,y=230)
-   
-          self.login_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
-          self.login_entry.place(x=130,y=300)
-   
-          self.login_lbl = Label(self.root, text='Введіть логін:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.login_lbl.place(x=130,y=270)
-   
-          self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
-          self.password_entry.place(x=130,y=380)
-   
-          self.password_lbl = Label(self.root, text='Введіть пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.password_lbl.place(x=130,y=350)
-          
-          
-          self.warning_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
-          self.warning_lbl.place(x=180,y=420)
-          
-          self.login_btn = Button(self.root, command = self.login, bd=0, width=20, height=2, text='Увійти', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
-          self.login_btn.place(x=155,y=450)
-   
-          self.ans_lbl = Label(self.root, text='Немаєте акаунту?',font=('Roboto', 20), fg='#006E98', bg='#CAFFF8')
-          self.ans_lbl.place(x=580,y=300)
-   
-          self.reg_btn = Button(self.root, command=lambda:reg_show(self, reg), bd=0, width=30, height=2, text='Зареєструватися', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
-          self.reg_btn.place(x=520,y=400)
-      def deleteWindow(self):
-          self.log_lbl.destroy()
-          self.login_lbl.destroy()
-          self.login_entry.destroy()
-          self.password_entry.destroy()
-          self.password_lbl.destroy()
-          self.login_btn.destroy()
-          self.reg_btn.destroy()
-          self.ans_lbl.destroy()
-      
-      def isEmpty(self):
-          if self.login_entry.get().strip()=='' or self.password_entry.get().strip()=='' :
-              return True
-          else:
-              return False
+        self.login_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
+        self.login_entry.place(x=130,y=300)
   
-      def isUserExist(self):
-          self.cursor.execute('SELECT * FROM Users WHERE login=%s', self.login_entry.get())
-          if self.cursor.fetchall()==():
-              return False
-          else:
-              return True
-              
-              
-      def login(self):
-          if self.isEmpty():
-              self.warning_lbl.config(fg='#c90d00', text='*заповніть всі поля')
-          else:
-              self.warning_lbl.config(text='')
-              self.userlogin = self.login_entry.get().strip()
-              self.password = self.password_entry.get().strip()
-              self.logindata = (self.userlogin,self.password)
-              if self.isUserExist():
-                  self.warning_lbl.config(text='')
-                  self.cursor.execute('SELECT id FROM Users WHERE login=%s AND password=%s', self.logindata)
-                  self.user = self.cursor.fetchone()
-                  if self.user!=():
-                      global USER_ID
-                      USER_ID = self.user['id']
-                      self.warning_lbl.config(text='')
-                      print("Вхід виконано")
-                      home_show(self,home)
-                  else:
-                      self.warning_lbl.config(fg='#c90d00',text='Неправильний логін або пароль!')
-              else:
-                  self.warning_lbl.config(fg='#c90d00', text='Неіснуючий логін!')
-   
-  class RegisterWindow(MainWindow):
-      def __init__(self, root, conn, cursor):
-          self.root = root
-          self.conn = conn
-          self.cursor = cursor
-      def drawWindow(self):
-   
-          self.reg_lbl = Label(self.root, text='РЕЄСТРАЦІЯ',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
-          self.reg_lbl.place(x=410,y=230)
-   
-          self.error_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
-          self.error_lbl.place(x=380,y=530)
-          self.name_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
-          self.name_entry.place(x=130,y=350)
-          self.name_lbl = Label(self.root, text='Введіть ім\'я та прізвище:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.name_lbl.place(x=130,y=320)
-   
-          self.email_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center')
-          self.email_entry.place(x=130,y=430)
-          self.email_lbl = Label(self.root, text='Введіть свій e-mail:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.email_lbl.place(x=130,y=400)
-   
-          self.login_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
-          self.login_entry.place(x=600,y=350)
-          self.login_lbl = Label(self.root, text='Придумайте логін:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.login_lbl.place(x=600,y=320)
-   
-          self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
-          self.password_entry.place(x=600,y=430)
-          self.password_lbl = Label(self.root, text='Придумайте пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.password_lbl.place(x=600,y=400)
-   
-          self.age_lbl = Label(self.root,text="Ваш вік:",font=('Roboto',15),fg='#006E98', bg='#CAFFF8')
-          self.age_lbl.place(x=420,y=490)
-          self.age_entry = Entry(self.root,font=('Roboto',20),bd=0,justify='center',width=3)
-          self.age_entry.place(x=520,y=482)
-   
-          self.reg_btn = Button(self.root, command=self.registration, bd=0, width=30, height=2, text='Зареєструватися', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
-          self.reg_btn.place(x=320,y=565)
-   
-      def deleteWindow(self):
-          self.reg_lbl.destroy()
-          self.name_entry.destroy()
-          self.name_lbl.destroy()
-          self.email_entry.destroy()
-          self.email_lbl.destroy()
-          self.login_entry.destroy()
-          self.reg_btn.destroy()
-          self.login_lbl.destroy()
-          self.password_entry.destroy()
-          self.password_lbl.destroy()
-          self.age_lbl.destroy()
-          self.age_entry.destroy()
-          self.reg_btn.destroy()
-          self.error_lbl.destroy()
-   
-      def is_empty(self):
-          if self.name_entry.get().strip()=='' or self.login_entry.get().strip()=='' or self.email_entry.get().strip()=='' or self.password_entry.get().strip()=='' or self.age_entry.get().strip()=='':
-              return True
-          else:
-              return False
-   
-      def registration(self):
-          if self.is_empty():
-              self.error_lbl.config(fg='#c90d00', text='Будь ласка, заповніть всі поля!', font=('Roboto Black', 12) )
-              self.error_lbl.place(x=380,y=530)
-          else:
-              self.error_lbl.config(fg='#CAFFF8')
-              self.name = self.name_entry.get()
-              self.email = self.email_entry.get()
-              self.login = self.login_entry.get()
-              self.password = self.password_entry.get()
-              self.age = self.age_entry.get()
-   
-              self.data = (self.login, self.password, self.name, self.email, self.age)
-   
-              sql = '''INSERT INTO Users(login, password, name, email, age) VALUES(%s,%s,%s,%s,%s)''' 
-   
-              self.cursor.execute('SELECT login FROM Users WHERE login=%s', self.login)
-   
-              if self.cursor.fetchall() != ():
-                  self.error_lbl.config(fg='#c90d00', text='Такий логін уже інує!', font=('Roboto Black', 12) )
-                  self.error_lbl.place(x=410,y=530)
-   
-              if self.cursor.execute(sql, self.data): #надсилання запиту до Бази Даних
-                  self.conn.commit() #підтвердження запиту
-                  self.error_lbl.config(fg='#006E98', text='Вас зареєстровано!', font=('Roboto', 15) )
-                  self.error_lbl.place(x=410,y=530)
-                  self.reg_btn.config(text='Увійти в акаунт', bg='#01EFD1', command=lambda:login_show(login, self))
-              else:
-                  self.error_lbl.config(fg='#c90d00', text='Невідома помилка', font=('Roboto Black', 12) )
-                  self.error_lbl.place(x=410,y=530)
-                  
-                  
-  class HomeWindow(MainWindow):
-      def __init__(self, root, conn, cursor):
-          self.root = root
-          self.conn = conn
-          self.cursor = cursor       
-      def drawWindow(self):
-          
-          global USER_ID
-          self.cursor.execute('SELECT name FROM Users WHERE id=%s', USER_ID)
-          self.user = self.cursor.fetchone()['name']
-          self.acc_btn  = Button(self.root, bd=0, command=self.drawEditProfile, width=20, height=1, text=self.user, font=('Roboto', 15), fg='#007099', bg='#E7C246', activebackground='#D0A334')
-          self.acc_btn.place(x=650,y=0)
-          self.top_btn  = Button(self.root, bd=0, height=1, text='Популярне', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
-          self.top_btn.place(x=70,y=250)
-          self.shedule_btn  = Button(self.root, bd=0, height=1, text='Розклад сеансів', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
-          self.shedule_btn.place(x=70,y=300)
-          self.tickets_btn  = Button(self.root, bd=0, height=1, text='Мої квитки', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
-          self.tickets_btn.place(x=70,y=350)
-          self.city_btn  = Button(self.root, bd=0, height=1, text='Львів', font=('Roboto Black', 15), fg='#E7C246', bg='#CAFFF8', activebackground='#D0A334')
-          self.city_btn.place(x=70,y=600)
-          
-      def drawEditProfile(self):
-          
-          global USER_ID
-          self.cursor.execute('SELECT email FROM Users WHERE id=%s', USER_ID)
-          self.email = self.cursor.fetchone()['email']
-          
-          self.reg_lbl = Label(self.root, text='Ваші дані',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
-          self.reg_lbl.place(x=550,y=230)
-   
-          self.error_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
-          self.error_lbl.place(x=480,y=500)
-          self.name_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
-          self.name_entry.place(x=280,y=350)
-          self.name_entry.insert(0,self.user)
-          self.name_lbl = Label(self.root, text='Змінити ім\'я та прізвище:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.name_lbl.place(x=280,y=320)
-   
-          self.email_entry = Entry(self.root,width=25,  font=('Roboto', 15),bd=0, justify='center')
-          self.email_entry.place(x=280,y=430)
-          self.email_entry.insert(0,self.email)
-          self.email_lbl = Label(self.root, text='Змінити свій e-mail:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.email_lbl.place(x=280,y=400)
-   
-          self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
-          self.password_entry.place(x=600,y=350)
-          self.password_lbl = Label(self.root, text='Змінити пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.password_lbl.place(x=600,y=320)
-          
-          self.pass_commit_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
-          self.pass_commit_entry.place(x=600,y=430)
-          self.pass_commit_lbl = Label(self.root, text='Підтвердити пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.pass_commit_lbl.place(x=600,y=400)
-   
-          self.reg_btn = Button(self.root, command = self.changeUserData, bd=0, width=30, height=2, text='Зберегти зміни', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
-          self.reg_btn.place(x=420,y=565)
-          
-      def changeUserData(self):
-          global USER_ID
-          if self.name_entry.get()!="":
-              if self.name_entry.get()!= self.user:
-                  self.error_lbl.config(text='')
-                  self.new_email = self.email_entry.get()
-                  
-                  if self.cursor.execute('''UPDATE Users SET email = %s WHERE id=%s''', (self.new_email, USER_ID)):
-                      self.conn.commit()
-                      self.error_lbl.config(fg='#c90d00', text='Дані оновлено')
-                      print('Зміни внесено')
-                  else: 
-                      print('Помилка')
-          
-          if self.email_entry.get()!="":
-              if self.email_entry.get()!= self.email:
-                  self.error_lbl.config(text='')
-                  self.new_name = self.name_entry.get()
-                  
-                  if self.cursor.execute('''UPDATE Users SET name = %s WHERE id=%s''', (self.new_name, USER_ID)):
-                      self.conn.commit()
-                      self.error_lbl.config(fg='#c90d00', text='Дані оновлено')
-                      print('Зміни внесено')
-                  else: 
-                      print('Помилка')
+        self.login_lbl = Label(self.root, text='Введіть логін:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.login_lbl.place(x=130,y=270)
+  
+        self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
+        self.password_entry.place(x=130,y=380)
+  
+        self.password_lbl = Label(self.root, text='Введіть пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.password_lbl.place(x=130,y=350)
+        
+        
+        self.warning_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
+        self.warning_lbl.place(x=180,y=420)
+        
+        self.login_btn = Button(self.root, command = self.login, bd=0, width=20, height=2, text='Увійти', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
+        self.login_btn.place(x=155,y=450)
+  
+        self.ans_lbl = Label(self.root, text='Немаєте акаунту?',font=('Roboto', 20), fg='#006E98', bg='#CAFFF8')
+        self.ans_lbl.place(x=580,y=300)
+  
+        self.reg_btn = Button(self.root, command=lambda:reg_show(self, reg), bd=0, width=30, height=2, text='Зареєструватися', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
+        self.reg_btn.place(x=520,y=400)
+    def deleteWindow(self):
+        self.log_lbl.destroy()
+        self.login_lbl.destroy()
+        self.login_entry.destroy()
+        self.password_entry.destroy()
+        self.password_lbl.destroy()
+        self.login_btn.destroy()
+        self.reg_btn.destroy()
+        self.ans_lbl.destroy()
+    
+    def isEmpty(self):
+        if self.login_entry.get().strip()=='' or self.password_entry.get().strip()=='' :
+            return True
+        else:
+            return False
+
+    def isUserExist(self):
+        self.cursor.execute('SELECT * FROM Users WHERE login=%s', self.login_entry.get())
+        if self.cursor.fetchall()==():
+            return False
+        else:
+            return True
+            
+            
+    def login(self):
+        if self.isEmpty():
+            self.warning_lbl.config(fg='#c90d00', text='*заповніть всі поля')
+        else:
+            self.warning_lbl.config(text='')
+            self.userlogin = self.login_entry.get().strip()
+            self.password = self.password_entry.get().strip()
+            self.logindata = (self.userlogin,self.password)
+            if self.isUserExist():
+                self.warning_lbl.config(text='')
+                self.cursor.execute('SELECT id FROM Users WHERE login=%s AND password=%s', self.logindata)
+                self.user = self.cursor.fetchone()
+                if self.user!=():
+                    global USER_ID
+                    USER_ID = self.user['id']
+                    self.warning_lbl.config(text='')
+                    print("Вхід виконано")
+                    home_show(self,home)
+                else:
+                    self.warning_lbl.config(fg='#c90d00',text='Неправильний логін або пароль!')
+            else:
+                self.warning_lbl.config(fg='#c90d00', text='Неіснуючий логін!')
+  
+class RegisterWindow(MainWindow):
+    def __init__(self, root, conn, cursor):
+        self.root = root
+        self.conn = conn
+        self.cursor = cursor
+    def drawWindow(self):
+  
+        self.reg_lbl = Label(self.root, text='РЕЄСТРАЦІЯ',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
+        self.reg_lbl.place(x=410,y=230)
+  
+        self.error_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
+        self.error_lbl.place(x=380,y=530)
+        self.name_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
+        self.name_entry.place(x=130,y=350)
+        self.name_lbl = Label(self.root, text='Введіть ім\'я та прізвище:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.name_lbl.place(x=130,y=320)
+  
+        self.email_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center')
+        self.email_entry.place(x=130,y=430)
+        self.email_lbl = Label(self.root, text='Введіть свій e-mail:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.email_lbl.place(x=130,y=400)
+  
+        self.login_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
+        self.login_entry.place(x=600,y=350)
+        self.login_lbl = Label(self.root, text='Придумайте логін:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.login_lbl.place(x=600,y=320)
+  
+        self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
+        self.password_entry.place(x=600,y=430)
+        self.password_lbl = Label(self.root, text='Придумайте пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.password_lbl.place(x=600,y=400)
+  
+        self.age_lbl = Label(self.root,text="Ваш вік:",font=('Roboto',15),fg='#006E98', bg='#CAFFF8')
+        self.age_lbl.place(x=420,y=490)
+        self.age_entry = Entry(self.root,font=('Roboto',20),bd=0,justify='center',width=3)
+        self.age_entry.place(x=520,y=482)
+  
+        self.reg_btn = Button(self.root, command=self.registration, bd=0, width=30, height=2, text='Зареєструватися', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
+        self.reg_btn.place(x=320,y=565)
+  
+    def deleteWindow(self):
+        self.reg_lbl.destroy()
+        self.name_entry.destroy()
+        self.name_lbl.destroy()
+        self.email_entry.destroy()
+        self.email_lbl.destroy()
+        self.login_entry.destroy()
+        self.reg_btn.destroy()
+        self.login_lbl.destroy()
+        self.password_entry.destroy()
+        self.password_lbl.destroy()
+        self.age_lbl.destroy()
+        self.age_entry.destroy()
+        self.reg_btn.destroy()
+        self.error_lbl.destroy()
+  
+    def is_empty(self):
+        if self.name_entry.get().strip()=='' or self.login_entry.get().strip()=='' or self.email_entry.get().strip()=='' or self.password_entry.get().strip()=='' or self.age_entry.get().strip()=='':
+            return True
+        else:
+            return False
+  
+    def registration(self):
+        if self.is_empty():
+            self.error_lbl.config(fg='#c90d00', text='Будь ласка, заповніть всі поля!', font=('Roboto Black', 12) )
+            self.error_lbl.place(x=380,y=530)
+        else:
+            self.error_lbl.config(fg='#CAFFF8')
+            self.name = self.name_entry.get()
+            self.email = self.email_entry.get()
+            self.login = self.login_entry.get()
+            self.password = self.password_entry.get()
+            self.age = self.age_entry.get()
+  
+            self.data = (self.login, self.password, self.name, self.email, self.age)
+  
+            sql = '''INSERT INTO Users(login, password, name, email, age) VALUES(%s,%s,%s,%s,%s)''' 
+  
+            self.cursor.execute('SELECT login FROM Users WHERE login=%s', self.login)
+  
+            if self.cursor.fetchall() != ():
+                self.error_lbl.config(fg='#c90d00', text='Такий логін уже інує!', font=('Roboto Black', 12) )
+                self.error_lbl.place(x=410,y=530)
+  
+            if self.cursor.execute(sql, self.data): #надсилання запиту до Бази Даних
+                self.conn.commit() #підтвердження запиту
+                self.error_lbl.config(fg='#006E98', text='Вас зареєстровано!', font=('Roboto', 15) )
+                self.error_lbl.place(x=410,y=530)
+                self.reg_btn.config(text='Увійти в акаунт', bg='#01EFD1', command=lambda:login_show(login, self))
+            else:
+                self.error_lbl.config(fg='#c90d00', text='Невідома помилка', font=('Roboto Black', 12) )
+                self.error_lbl.place(x=410,y=530)
                 
-          if self.password_entry.get().strip()!="" or self.pass_commit_entry.get().strip()!="":
-              if self.password_entry.get().strip() == self.pass_commit_entry.get().strip():
-                  self.error_lbl.config(text='')
-                  self.new_pass = self.password_entry.get().strip()
-                  
-                  if self.cursor.execute('''UPDATE Users SET password = %s WHERE id=%s''', (self.new_pass, USER_ID)):
-                      self.conn.commit()
-                      self.error_lbl.config(text='Дані оновлено')
-                      print('Зміни внесено')
-                  else: 
-                      print('Помилка')
-              else:
-                  self.error_lbl.config(fg='#c90d00', text='Паролі не співпадають!')
+                
+class HomeWindow(MainWindow):
+    def __init__(self, root, conn, cursor):
+        self.root = root
+        self.conn = conn
+        self.cursor = cursor       
+    def drawWindow(self):
+        
+        global USER_ID
+        self.cursor.execute('SELECT name FROM Users WHERE id=%s', USER_ID)
+        self.user = self.cursor.fetchone()['name']
+        self.acc_btn  = Button(self.root, bd=0, command=self.drawEditProfile, width=20, height=1, text=self.user, font=('Roboto', 15), fg='#007099', bg='#E7C246', activebackground='#D0A334')
+        self.acc_btn.place(x=650,y=0)
+        self.top_btn  = Button(self.root, bd=0, height=1, text='Популярне', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
+        self.top_btn.place(x=70,y=250)
+        self.shedule_btn  = Button(self.root, bd=0, height=1, text='Розклад сеансів', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
+        self.shedule_btn.place(x=70,y=300)
+        self.tickets_btn  = Button(self.root, bd=0, height=1, text='Мої квитки', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
+        self.tickets_btn.place(x=70,y=350)
+        self.city_btn  = Button(self.root, bd=0, height=1, text='Львів', font=('Roboto Black', 15), fg='#E7C246', bg='#CAFFF8', activebackground='#D0A334')
+        self.city_btn.place(x=70,y=600)
+        
+    def drawEditProfile(self):
+        
+        global USER_ID
+        self.cursor.execute('SELECT email FROM Users WHERE id=%s', USER_ID)
+        self.email = self.cursor.fetchone()['email']
+        
+        self.reg_lbl = Label(self.root, text='Ваші дані',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
+        self.reg_lbl.place(x=550,y=230)
+  
+        self.error_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
+        self.error_lbl.place(x=480,y=500)
+        self.name_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
+        self.name_entry.place(x=280,y=350)
+        self.name_entry.insert(0,self.user)
+        self.name_lbl = Label(self.root, text='Змінити ім\'я та прізвище:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.name_lbl.place(x=280,y=320)
+  
+        self.email_entry = Entry(self.root,width=25,  font=('Roboto', 15),bd=0, justify='center')
+        self.email_entry.place(x=280,y=430)
+        self.email_entry.insert(0,self.email)
+        self.email_lbl = Label(self.root, text='Змінити свій e-mail:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.email_lbl.place(x=280,y=400)
+  
+        self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
+        self.password_entry.place(x=600,y=350)
+        self.password_lbl = Label(self.root, text='Змінити пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.password_lbl.place(x=600,y=320)
+        
+        self.pass_commit_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
+        self.pass_commit_entry.place(x=600,y=430)
+        self.pass_commit_lbl = Label(self.root, text='Підтвердити пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.pass_commit_lbl.place(x=600,y=400)
+  
+        self.reg_btn = Button(self.root, command = self.changeUserData, bd=0, width=30, height=2, text='Зберегти зміни', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
+        self.reg_btn.place(x=420,y=565)
+        
+    def changeUserData(self):
+        global USER_ID
+        if self.name_entry.get()!="":
+            if self.name_entry.get()!= self.user:
+                self.error_lbl.config(text='')
+                self.new_email = self.email_entry.get()
+                
+                if self.cursor.execute('''UPDATE Users SET email = %s WHERE id=%s''', (self.new_email, USER_ID)):
+                    self.conn.commit()
+                    self.error_lbl.config(fg='#c90d00', text='Дані оновлено')
+                    print('Зміни внесено')
+                else: 
+                    print('Помилка')
+        
+        if self.email_entry.get()!="":
+            if self.email_entry.get()!= self.email:
+                self.error_lbl.config(text='')
+                self.new_name = self.name_entry.get()
+                
+                if self.cursor.execute('''UPDATE Users SET name = %s WHERE id=%s''', (self.new_name, USER_ID)):
+                    self.conn.commit()
+                    self.error_lbl.config(fg='#c90d00', text='Дані оновлено')
+                    print('Зміни внесено')
+                else: 
+                    print('Помилка')
               
-              
-  def on_mouse_click(event):
-      global dif_x, dif_y
-   
-      win_position = [int(coord) for coord in root.wm_geometry().split('+')[1:]]
-      dif_x = win_position[0]-event.x_root
-      dif_y = win_position[1]-event.y_root
-   
-  def update_position(event):
-      root.wm_geometry('+%d+%d' %(event.x_root+dif_x, event.y_root + dif_y))
-   
-  def reg_show(login, reg):
-      login.deleteWindow()
-      reg.drawWindow()
-      
-  def login_show(login, reg):
-      reg.deleteWindow()
-      login.drawWindow()
+        if self.password_entry.get().strip()!="" or self.pass_commit_entry.get().strip()!="":
+            if self.password_entry.get().strip() == self.pass_commit_entry.get().strip():
+                self.error_lbl.config(text='')
+                self.new_pass = self.password_entry.get().strip()
+                
+                if self.cursor.execute('''UPDATE Users SET password = %s WHERE id=%s''', (self.new_pass, USER_ID)):
+                    self.conn.commit()
+                    self.error_lbl.config(text='Дані оновлено')
+                    print('Зміни внесено')
+                else: 
+                    print('Помилка')
+            else:
+                self.error_lbl.config(fg='#c90d00', text='Паролі не співпадають!')
+            
+            
+def on_mouse_click(event):
+    global dif_x, dif_y
   
-  def home_show(login, home):
-      login.deleteWindow()
-      home.drawWindow()
+    win_position = [int(coord) for coord in root.wm_geometry().split('+')[1:]]
+    dif_x = win_position[0]-event.x_root
+    dif_y = win_position[1]-event.y_root
   
+def update_position(event):
+    root.wm_geometry('+%d+%d' %(event.x_root+dif_x, event.y_root + dif_y))
   
-  conn = pymysql.connect(
-      host='91.239.233.38',
-      user='fmewmhwr_student1',
-      password='aFDE5dk2uMa2HJ9',
-      db='fmewmhwr_cinema',
-      cursorclass=DictCursor)
-   
-  cursor = conn.cursor()
-   
-  root = Tk()
-  root.bind('<ButtonPress-1>', on_mouse_click )
-  root.bind('<B1-Motion>',update_position )
-  main = MainWindow(root)
-  login = LoginWindow(root, conn, cursor)
-  reg = RegisterWindow(root, conn, cursor)
-  home = HomeWindow(root, conn, cursor)
+def reg_show(login, reg):
+    login.deleteWindow()
+    reg.drawWindow()
+    
+def login_show(login, reg):
+    reg.deleteWindow()
+    login.drawWindow()
+
+def home_show(login, home):
+    login.deleteWindow()
+    home.drawWindow()
+
+
+conn = pymysql.connect(
+    host='91.239.233.38',
+    user='fmewmhwr_student1',
+    password='aFDE5dk2uMa2HJ9',
+    db='fmewmhwr_cinema',
+    cursorclass=DictCursor)
   
-  #login.drawWindow()
-  home.drawWindow()
-  root.mainloop()  
+cursor = conn.cursor()
+  
+root = Tk()
+root.bind('<ButtonPress-1>', on_mouse_click )
+root.bind('<B1-Motion>',update_position )
+main = MainWindow(root)
+login = LoginWindow(root, conn, cursor)
+reg = RegisterWindow(root, conn, cursor)
+home = HomeWindow(root, conn, cursor)
+
+#login.drawWindow()
+home.drawWindow()
+root.mainloop()  
 </pre></code>
               </div>
             </div>       
