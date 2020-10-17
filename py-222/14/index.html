@@ -86,10 +86,14 @@ conn = pymysql.connect(
          <li><i>INSERT INTO table(pass, name) VALUES(%s,%s)</i> - <b>Повний вираз. Означає - ВСТАВИТИ В ТАБЛИЦЮ В РЯДКИ pass та name ЗНАЧЕННЯ %s та %s, які потім будуть передаватись кодом.</b></li><br>
         <li><code> cursor.execute("CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))")</code> - створення таблиці</li>
          </ul></div>
-         <!-- <img src="https://web-teach.pp.ua/py-d/1/6/l6.PNG" alt=""> -->
+         <div class="theory">
+           <h3>Структура бази даних</h3>
+           <div class="answer"><img src="схема_БД.png" width="100%" style="max-width: 900px;" alt=""></div>
+         </div>
          <div class='theory'>
           <h3>Корисне за урок</h3><br>
          <div class='answer'>
+         
          <ul>
          <li><i>tkinter.messagebox</i> - <b>новий клас, для виведення повідомлень у віконечку.</b></li><br>
          <li><i>
@@ -185,361 +189,743 @@ root.iconphoto(False,PhotoImage(file='icon.ico')) </i> - <b>Додали іко�
             <div id="collapse6" class="collapse " aria-labelledby="heading6" data-parent="#accordionExample">
               <div class="card-body">
 <code><pre>
-  #CAFFF8	- фон 
-  #E7C246 - yellow
-  #00ACEA - blue
-  #01EFD1 - sea blue
+#CAFFF8	- фон 
+#E7C246 - yellow
+#00ACEA - blue
+#01EFD1 - sea blue
+
+#vova - login
+#vova123 - password
   
-  #vova - login
-  #vova123 - password
-   
-  from tkinter import *
-  import pymysql
-  from pymysql.cursors import DictCursor
+from tkinter import *
+import pymysql
+from pymysql.cursors import DictCursor
+
+USER_ID = '1'
+
+class MainWindow:
+    def __init__(self, root):
+        self.root = root
+        #Визначення робочого вікна
+        self.w = self.root.winfo_screenwidth()//2-500
+        self.h = self.root.winfo_screenheight()//2-350
+        self.root.geometry(f'1000x700+{self.w}+{self.h}') #задаємо розміри та позицію вікна
+        self.root.configure(bg='#CAFFF8')
+        self.root.overrideredirect(1)
+        self.close_btn = Button(self.root, command=self.close, text='X', bg='#fa5c5c', fg='#360707', bd=0, font=('Roboto', -20), activebackground='#c71e1e')
+        self.close_btn.place(x=975, y=0)
+        self.logoico = PhotoImage(file='logo.gif')
+        self.title = PhotoImage(file='title.gif')
+        self.logoico_lbl = Label(self.root, image=self.logoico, bg='#CAFFF8' )
+        self.logoico_lbl.place(x=100,y=50)
+        self.title_lbl = Label(self.root, image=self.title, bg='#CAFFF8' )
+        self.title_lbl.place(x=230,y=25)
+    def close(self):
+        self.root.destroy()
   
-  USER_ID = '1'
+class LoginWindow(MainWindow):
+    def __init__(self, root, conn, cursor):
+        self.root = root
+        self.conn = conn
+        self.cursor = cursor
+    def drawWindow(self):
+        
+        self.log_lbl = Label(self.root, text='ВХІД',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
+        self.log_lbl.place(x=440,y=230)
   
-  class MainWindow:
-      def __init__(self, root):
-          self.root = root
-          #Визначення робочого вікна
-          self.w = self.root.winfo_screenwidth()//2-500
-          self.h = self.root.winfo_screenheight()//2-350
-          self.root.geometry(f'1000x700+{self.w}+{self.h}') #задаємо розміри та позицію вікна
-          self.root.configure(bg='#CAFFF8')
-          self.root.overrideredirect(1)
-          self.close_btn = Button(self.root, command=self.close, text='X', bg='#fa5c5c', fg='#360707', bd=0, font=('Roboto', -20), activebackground='#c71e1e')
-          self.close_btn.place(x=975, y=0)
-          self.logoico = PhotoImage(file='logo.gif')
-          self.title = PhotoImage(file='title.gif')
-          self.logoico_lbl = Label(self.root, image=self.logoico, bg='#CAFFF8' )
-          self.logoico_lbl.place(x=100,y=50)
-          self.title_lbl = Label(self.root, image=self.title, bg='#CAFFF8' )
-          self.title_lbl.place(x=230,y=25)
-      def close(self):
-          self.root.destroy()
-   
-  class LoginWindow(MainWindow):
-      def __init__(self, root, conn, cursor):
-          self.root = root
-          self.conn = conn
-          self.cursor = cursor
-      def drawWindow(self):
-          
-          self.log_lbl = Label(self.root, text='ВХІД',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
-          self.log_lbl.place(x=440,y=230)
-   
-          self.login_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
-          self.login_entry.place(x=130,y=300)
-   
-          self.login_lbl = Label(self.root, text='Введіть логін:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.login_lbl.place(x=130,y=270)
-   
-          self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
-          self.password_entry.place(x=130,y=380)
-   
-          self.password_lbl = Label(self.root, text='Введіть пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.password_lbl.place(x=130,y=350)
-          
-          
-          self.warning_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
-          self.warning_lbl.place(x=180,y=420)
-          
-          self.login_btn = Button(self.root, command = self.login, bd=0, width=20, height=2, text='Увійти', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
-          self.login_btn.place(x=155,y=450)
-   
-          self.ans_lbl = Label(self.root, text='Немаєте акаунту?',font=('Roboto', 20), fg='#006E98', bg='#CAFFF8')
-          self.ans_lbl.place(x=580,y=300)
-   
-          self.reg_btn = Button(self.root, command=lambda:reg_show(self, reg), bd=0, width=30, height=2, text='Зареєструватися', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
-          self.reg_btn.place(x=520,y=400)
-      def deleteWindow(self):
-          self.log_lbl.destroy()
-          self.login_lbl.destroy()
-          self.login_entry.destroy()
-          self.password_entry.destroy()
-          self.password_lbl.destroy()
-          self.login_btn.destroy()
-          self.reg_btn.destroy()
-          self.ans_lbl.destroy()
-      
-      def isEmpty(self):
-          if self.login_entry.get().strip()=='' or self.password_entry.get().strip()=='' :
-              return True
-          else:
-              return False
+        self.login_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
+        self.login_entry.place(x=130,y=300)
   
-      def isUserExist(self):
-          self.cursor.execute('SELECT * FROM Users WHERE login=%s', self.login_entry.get())
-          if self.cursor.fetchall()==():
-              return False
-          else:
-              return True
-              
-              
-      def login(self):
-          if self.isEmpty():
-              self.warning_lbl.config(fg='#c90d00', text='*заповніть всі поля')
-          else:
-              self.warning_lbl.config(text='')
-              self.userlogin = self.login_entry.get().strip()
-              self.password = self.password_entry.get().strip()
-              self.logindata = (self.userlogin,self.password)
-              if self.isUserExist():
-                  self.warning_lbl.config(text='')
-                  self.cursor.execute('SELECT id FROM Users WHERE login=%s AND password=%s', self.logindata)
-                  self.user = self.cursor.fetchone()
-                  if self.user!=():
-                      global USER_ID
-                      USER_ID = self.user['id']
-                      self.warning_lbl.config(text='')
-                      print("Вхід виконано")
-                      home_show(self,home)
-                  else:
-                      self.warning_lbl.config(fg='#c90d00',text='Неправильний логін або пароль!')
-              else:
-                  self.warning_lbl.config(fg='#c90d00', text='Неіснуючий логін!')
-   
-  class RegisterWindow(MainWindow):
-      def __init__(self, root, conn, cursor):
-          self.root = root
-          self.conn = conn
-          self.cursor = cursor
-      def drawWindow(self):
-   
-          self.reg_lbl = Label(self.root, text='РЕЄСТРАЦІЯ',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
-          self.reg_lbl.place(x=410,y=230)
-   
-          self.error_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
-          self.error_lbl.place(x=380,y=530)
-          self.name_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
-          self.name_entry.place(x=130,y=350)
-          self.name_lbl = Label(self.root, text='Введіть ім\'я та прізвище:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.name_lbl.place(x=130,y=320)
-   
-          self.email_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center')
-          self.email_entry.place(x=130,y=430)
-          self.email_lbl = Label(self.root, text='Введіть свій e-mail:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.email_lbl.place(x=130,y=400)
-   
-          self.login_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
-          self.login_entry.place(x=600,y=350)
-          self.login_lbl = Label(self.root, text='Придумайте логін:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.login_lbl.place(x=600,y=320)
-   
-          self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
-          self.password_entry.place(x=600,y=430)
-          self.password_lbl = Label(self.root, text='Придумайте пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.password_lbl.place(x=600,y=400)
-   
-          self.age_lbl = Label(self.root,text="Ваш вік:",font=('Roboto',15),fg='#006E98', bg='#CAFFF8')
-          self.age_lbl.place(x=420,y=490)
-          self.age_entry = Entry(self.root,font=('Roboto',20),bd=0,justify='center',width=3)
-          self.age_entry.place(x=520,y=482)
-   
-          self.reg_btn = Button(self.root, command=self.registration, bd=0, width=30, height=2, text='Зареєструватися', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
-          self.reg_btn.place(x=320,y=565)
-   
-      def deleteWindow(self):
-          self.reg_lbl.destroy()
-          self.name_entry.destroy()
-          self.name_lbl.destroy()
-          self.email_entry.destroy()
-          self.email_lbl.destroy()
-          self.login_entry.destroy()
-          self.reg_btn.destroy()
-          self.login_lbl.destroy()
-          self.password_entry.destroy()
-          self.password_lbl.destroy()
-          self.age_lbl.destroy()
-          self.age_entry.destroy()
-          self.reg_btn.destroy()
-          self.error_lbl.destroy()
-   
-      def is_empty(self):
-          if self.name_entry.get().strip()=='' or self.login_entry.get().strip()=='' or self.email_entry.get().strip()=='' or self.password_entry.get().strip()=='' or self.age_entry.get().strip()=='':
-              return True
-          else:
-              return False
-   
-      def registration(self):
-          if self.is_empty():
-              self.error_lbl.config(fg='#c90d00', text='Будь ласка, заповніть всі поля!', font=('Roboto Black', 12) )
-              self.error_lbl.place(x=380,y=530)
-          else:
-              self.error_lbl.config(fg='#CAFFF8')
-              self.name = self.name_entry.get()
-              self.email = self.email_entry.get()
-              self.login = self.login_entry.get()
-              self.password = self.password_entry.get()
-              self.age = self.age_entry.get()
-   
-              self.data = (self.login, self.password, self.name, self.email, self.age)
-   
-              sql = '''INSERT INTO Users(login, password, name, email, age) VALUES(%s,%s,%s,%s,%s)''' 
-   
-              self.cursor.execute('SELECT login FROM Users WHERE login=%s', self.login)
-   
-              if self.cursor.fetchall() != ():
-                  self.error_lbl.config(fg='#c90d00', text='Такий логін уже інує!', font=('Roboto Black', 12) )
-                  self.error_lbl.place(x=410,y=530)
-   
-              if self.cursor.execute(sql, self.data): #надсилання запиту до Бази Даних
-                  self.conn.commit() #підтвердження запиту
-                  self.error_lbl.config(fg='#006E98', text='Вас зареєстровано!', font=('Roboto', 15) )
-                  self.error_lbl.place(x=410,y=530)
-                  self.reg_btn.config(text='Увійти в акаунт', bg='#01EFD1', command=lambda:login_show(login, self))
-              else:
-                  self.error_lbl.config(fg='#c90d00', text='Невідома помилка', font=('Roboto Black', 12) )
-                  self.error_lbl.place(x=410,y=530)
-                  
-                  
-  class HomeWindow(MainWindow):
-      def __init__(self, root, conn, cursor):
-          self.root = root
-          self.conn = conn
-          self.cursor = cursor       
-      def drawWindow(self):
-          
-          global USER_ID
-          self.cursor.execute('SELECT name FROM Users WHERE id=%s', USER_ID)
-          self.user = self.cursor.fetchone()['name']
-          self.acc_btn  = Button(self.root, bd=0, command=self.drawEditProfile, width=20, height=1, text=self.user, font=('Roboto', 15), fg='#007099', bg='#E7C246', activebackground='#D0A334')
-          self.acc_btn.place(x=650,y=0)
-          self.top_btn  = Button(self.root, bd=0, height=1, text='Популярне', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
-          self.top_btn.place(x=70,y=250)
-          self.shedule_btn  = Button(self.root, bd=0, height=1, text='Розклад сеансів', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
-          self.shedule_btn.place(x=70,y=300)
-          self.tickets_btn  = Button(self.root, bd=0, height=1, text='Мої квитки', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
-          self.tickets_btn.place(x=70,y=350)
-          self.city_btn  = Button(self.root, bd=0, height=1, text='Львів', font=('Roboto Black', 15), fg='#E7C246', bg='#CAFFF8', activebackground='#D0A334')
-          self.city_btn.place(x=70,y=600)
-          
-      def drawEditProfile(self):
-          
-          global USER_ID
-          self.cursor.execute('SELECT email FROM Users WHERE id=%s', USER_ID)
-          self.email = self.cursor.fetchone()['email']
-          
-          self.reg_lbl = Label(self.root, text='Ваші дані',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
-          self.reg_lbl.place(x=550,y=230)
-   
-          self.error_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
-          self.error_lbl.place(x=480,y=500)
-          self.name_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
-          self.name_entry.place(x=280,y=350)
-          self.name_entry.insert(0,self.user)
-          self.name_lbl = Label(self.root, text='Змінити ім\'я та прізвище:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.name_lbl.place(x=280,y=320)
-   
-          self.email_entry = Entry(self.root,width=25,  font=('Roboto', 15),bd=0, justify='center')
-          self.email_entry.place(x=280,y=430)
-          self.email_entry.insert(0,self.email)
-          self.email_lbl = Label(self.root, text='Змінити свій e-mail:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.email_lbl.place(x=280,y=400)
-   
-          self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
-          self.password_entry.place(x=600,y=350)
-          self.password_lbl = Label(self.root, text='Змінити пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.password_lbl.place(x=600,y=320)
-          
-          self.pass_commit_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
-          self.pass_commit_entry.place(x=600,y=430)
-          self.pass_commit_lbl = Label(self.root, text='Підтвердити пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-          self.pass_commit_lbl.place(x=600,y=400)
-   
-          self.reg_btn = Button(self.root, command = self.changeUserData, bd=0, width=30, height=2, text='Зберегти зміни', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
-          self.reg_btn.place(x=420,y=565)
-          
-      def changeUserData(self):
-          global USER_ID
-          if self.name_entry.get()!="":
-              if self.name_entry.get()!= self.user:
-                  self.error_lbl.config(text='')
-                  self.new_email = self.email_entry.get()
-                  
-                  if self.cursor.execute('''UPDATE Users SET email = %s WHERE id=%s''', (self.new_email, USER_ID)):
-                      self.conn.commit()
-                      self.error_lbl.config(fg='#c90d00', text='Дані оновлено')
-                      print('Зміни внесено')
-                  else: 
-                      print('Помилка')
-          
-          if self.email_entry.get()!="":
-              if self.email_entry.get()!= self.email:
-                  self.error_lbl.config(text='')
-                  self.new_name = self.name_entry.get()
-                  
-                  if self.cursor.execute('''UPDATE Users SET name = %s WHERE id=%s''', (self.new_name, USER_ID)):
-                      self.conn.commit()
-                      self.error_lbl.config(fg='#c90d00', text='Дані оновлено')
-                      print('Зміни внесено')
-                  else: 
-                      print('Помилка')
+        self.login_lbl = Label(self.root, text='Введіть логін:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.login_lbl.place(x=130,y=270)
+  
+        self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
+        self.password_entry.place(x=130,y=380)
+  
+        self.password_lbl = Label(self.root, text='Введіть пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.password_lbl.place(x=130,y=350)
+        
+        
+        self.warning_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
+        self.warning_lbl.place(x=180,y=420)
+        
+        self.login_btn = Button(self.root, command = self.login, bd=0, width=20, height=2, text='Увійти', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
+        self.login_btn.place(x=155,y=450)
+  
+        self.ans_lbl = Label(self.root, text='Немаєте акаунту?',font=('Roboto', 20), fg='#006E98', bg='#CAFFF8')
+        self.ans_lbl.place(x=580,y=300)
+  
+        self.reg_btn = Button(self.root, command=lambda:reg_show(self, reg), bd=0, width=30, height=2, text='Зареєструватися', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
+        self.reg_btn.place(x=520,y=400)
+    def deleteWindow(self):
+        self.log_lbl.destroy()
+        self.login_lbl.destroy()
+        self.login_entry.destroy()
+        self.password_entry.destroy()
+        self.password_lbl.destroy()
+        self.login_btn.destroy()
+        self.reg_btn.destroy()
+        self.ans_lbl.destroy()
+    
+    def isEmpty(self):
+        if self.login_entry.get().strip()=='' or self.password_entry.get().strip()=='' :
+            return True
+        else:
+            return False
+
+    def isUserExist(self):
+        self.cursor.execute('SELECT * FROM Users WHERE login=%s', self.login_entry.get())
+        if self.cursor.fetchall()==():
+            return False
+        else:
+            return True
+            
+            
+    def login(self):
+        if self.isEmpty():
+            self.warning_lbl.config(fg='#c90d00', text='*заповніть всі поля')
+        else:
+            self.warning_lbl.config(text='')
+            self.userlogin = self.login_entry.get().strip()
+            self.password = self.password_entry.get().strip()
+            self.logindata = (self.userlogin,self.password)
+            if self.isUserExist():
+                self.warning_lbl.config(text='')
+                self.cursor.execute('SELECT id FROM Users WHERE login=%s AND password=%s', self.logindata)
+                self.user = self.cursor.fetchone()
+                if self.user!=():
+                    global USER_ID
+                    USER_ID = self.user['id']
+                    self.warning_lbl.config(text='')
+                    print("Вхід виконано")
+                    home_show(self,home)
+                else:
+                    self.warning_lbl.config(fg='#c90d00',text='Неправильний логін або пароль!')
+            else:
+                self.warning_lbl.config(fg='#c90d00', text='Неіснуючий логін!')
+  
+class RegisterWindow(MainWindow):
+    def __init__(self, root, conn, cursor):
+        self.root = root
+        self.conn = conn
+        self.cursor = cursor
+    def drawWindow(self):
+  
+        self.reg_lbl = Label(self.root, text='РЕЄСТРАЦІЯ',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
+        self.reg_lbl.place(x=410,y=230)
+  
+        self.error_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
+        self.error_lbl.place(x=380,y=530)
+        self.name_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
+        self.name_entry.place(x=130,y=350)
+        self.name_lbl = Label(self.root, text='Введіть ім\'я та прізвище:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.name_lbl.place(x=130,y=320)
+  
+        self.email_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center')
+        self.email_entry.place(x=130,y=430)
+        self.email_lbl = Label(self.root, text='Введіть свій e-mail:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.email_lbl.place(x=130,y=400)
+  
+        self.login_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
+        self.login_entry.place(x=600,y=350)
+        self.login_lbl = Label(self.root, text='Придумайте логін:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.login_lbl.place(x=600,y=320)
+  
+        self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
+        self.password_entry.place(x=600,y=430)
+        self.password_lbl = Label(self.root, text='Придумайте пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.password_lbl.place(x=600,y=400)
+  
+        self.age_lbl = Label(self.root,text="Ваш вік:",font=('Roboto',15),fg='#006E98', bg='#CAFFF8')
+        self.age_lbl.place(x=420,y=490)
+        self.age_entry = Entry(self.root,font=('Roboto',20),bd=0,justify='center',width=3)
+        self.age_entry.place(x=520,y=482)
+  
+        self.reg_btn = Button(self.root, command=self.registration, bd=0, width=30, height=2, text='Зареєструватися', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
+        self.reg_btn.place(x=320,y=565)
+  
+    def deleteWindow(self):
+        self.reg_lbl.destroy()
+        self.name_entry.destroy()
+        self.name_lbl.destroy()
+        self.email_entry.destroy()
+        self.email_lbl.destroy()
+        self.login_entry.destroy()
+        self.reg_btn.destroy()
+        self.login_lbl.destroy()
+        self.password_entry.destroy()
+        self.password_lbl.destroy()
+        self.age_lbl.destroy()
+        self.age_entry.destroy()
+        self.reg_btn.destroy()
+        self.error_lbl.destroy()
+  
+    def is_empty(self):
+        if self.name_entry.get().strip()=='' or self.login_entry.get().strip()=='' or self.email_entry.get().strip()=='' or self.password_entry.get().strip()=='' or self.age_entry.get().strip()=='':
+            return True
+        else:
+            return False
+  
+    def registration(self):
+        if self.is_empty():
+            self.error_lbl.config(fg='#c90d00', text='Будь ласка, заповніть всі поля!', font=('Roboto Black', 12) )
+            self.error_lbl.place(x=380,y=530)
+        else:
+            self.error_lbl.config(fg='#CAFFF8')
+            self.name = self.name_entry.get()
+            self.email = self.email_entry.get()
+            self.login = self.login_entry.get()
+            self.password = self.password_entry.get()
+            self.age = self.age_entry.get()
+  
+            self.data = (self.login, self.password, self.name, self.email, self.age)
+  
+            sql = '''INSERT INTO Users(login, password, name, email, age) VALUES(%s,%s,%s,%s,%s)''' 
+  
+            self.cursor.execute('SELECT login FROM Users WHERE login=%s', self.login)
+  
+            if self.cursor.fetchall() != ():
+                self.error_lbl.config(fg='#c90d00', text='Такий логін уже інує!', font=('Roboto Black', 12) )
+                self.error_lbl.place(x=410,y=530)
+  
+            if self.cursor.execute(sql, self.data): #надсилання запиту до Бази Даних
+                self.conn.commit() #підтвердження запиту
+                self.error_lbl.config(fg='#006E98', text='Вас зареєстровано!', font=('Roboto', 15) )
+                self.error_lbl.place(x=410,y=530)
+                self.reg_btn.config(text='Увійти в акаунт', bg='#01EFD1', command=lambda:login_show(login, self))
+            else:
+                self.error_lbl.config(fg='#c90d00', text='Невідома помилка', font=('Roboto Black', 12) )
+                self.error_lbl.place(x=410,y=530)
                 
-          if self.password_entry.get().strip()!="" or self.pass_commit_entry.get().strip()!="":
-              if self.password_entry.get().strip() == self.pass_commit_entry.get().strip():
-                  self.error_lbl.config(text='')
-                  self.new_pass = self.password_entry.get().strip()
-                  
-                  if self.cursor.execute('''UPDATE Users SET password = %s WHERE id=%s''', (self.new_pass, USER_ID)):
-                      self.conn.commit()
-                      self.error_lbl.config(text='Дані оновлено')
-                      print('Зміни внесено')
-                  else: 
-                      print('Помилка')
-              else:
-                  self.error_lbl.config(fg='#c90d00', text='Паролі не співпадають!')
+                
+class HomeWindow(MainWindow):
+    def __init__(self, root, conn, cursor):
+        self.root = root
+        self.conn = conn
+        self.cursor = cursor       
+    def drawWindow(self):
+        
+        global USER_ID
+        self.cursor.execute('SELECT name FROM Users WHERE id=%s', USER_ID)
+        self.user = self.cursor.fetchone()['name']
+        self.acc_btn  = Button(self.root, bd=0, command=self.drawEditProfile, width=20, height=1, text=self.user, font=('Roboto', 15), fg='#007099', bg='#E7C246', activebackground='#D0A334')
+        self.acc_btn.place(x=650,y=0)
+        self.top_btn  = Button(self.root, bd=0, height=1, text='Популярне', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
+        self.top_btn.place(x=70,y=250)
+        self.shedule_btn  = Button(self.root, bd=0, height=1, text='Розклад сеансів', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
+        self.shedule_btn.place(x=70,y=300)
+        self.tickets_btn  = Button(self.root, bd=0, height=1, text='Мої квитки', font=('Roboto Black', 15), fg='#007099', bg='#01EFD1', activebackground='#D0A334')
+        self.tickets_btn.place(x=70,y=350)
+        self.city_btn  = Button(self.root, bd=0, height=1, text='Львів', font=('Roboto Black', 15), fg='#E7C246', bg='#CAFFF8', activebackground='#D0A334')
+        self.city_btn.place(x=70,y=600)
+        
+    def drawEditProfile(self):
+        
+        global USER_ID
+        self.cursor.execute('SELECT email FROM Users WHERE id=%s', USER_ID)
+        self.email = self.cursor.fetchone()['email']
+        
+        self.reg_lbl = Label(self.root, text='Ваші дані',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
+        self.reg_lbl.place(x=550,y=230)
+  
+        self.error_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#CAFFF8', bg='#CAFFF8')
+        self.error_lbl.place(x=480,y=500)
+        self.name_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
+        self.name_entry.place(x=280,y=350)
+        self.name_entry.insert(0,self.user)
+        self.name_lbl = Label(self.root, text='Змінити ім\'я та прізвище:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.name_lbl.place(x=280,y=320)
+  
+        self.email_entry = Entry(self.root,width=25,  font=('Roboto', 15),bd=0, justify='center')
+        self.email_entry.place(x=280,y=430)
+        self.email_entry.insert(0,self.email)
+        self.email_lbl = Label(self.root, text='Змінити свій e-mail:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.email_lbl.place(x=280,y=400)
+  
+        self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
+        self.password_entry.place(x=600,y=350)
+        self.password_lbl = Label(self.root, text='Змінити пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.password_lbl.place(x=600,y=320)
+        
+        self.pass_commit_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
+        self.pass_commit_entry.place(x=600,y=430)
+        self.pass_commit_lbl = Label(self.root, text='Підтвердити пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
+        self.pass_commit_lbl.place(x=600,y=400)
+  
+        self.reg_btn = Button(self.root, command = self.changeUserData, bd=0, width=30, height=2, text='Зберегти зміни', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
+        self.reg_btn.place(x=420,y=565)
+        
+    def changeUserData(self):
+        global USER_ID
+        if self.name_entry.get()!="":
+            if self.name_entry.get()!= self.user:
+                self.error_lbl.config(text='')
+                self.new_email = self.email_entry.get()
+                
+                if self.cursor.execute('''UPDATE Users SET email = %s WHERE id=%s''', (self.new_email, USER_ID)):
+                    self.conn.commit()
+                    self.error_lbl.config(fg='#c90d00', text='Дані оновлено')
+                    print('Зміни внесено')
+                else: 
+                    print('Помилка')
+        
+        if self.email_entry.get()!="":
+            if self.email_entry.get()!= self.email:
+                self.error_lbl.config(text='')
+                self.new_name = self.name_entry.get()
+                
+                if self.cursor.execute('''UPDATE Users SET name = %s WHERE id=%s''', (self.new_name, USER_ID)):
+                    self.conn.commit()
+                    self.error_lbl.config(fg='#c90d00', text='Дані оновлено')
+                    print('Зміни внесено')
+                else: 
+                    print('Помилка')
               
-              
-  def on_mouse_click(event):
-      global dif_x, dif_y
-   
-      win_position = [int(coord) for coord in root.wm_geometry().split('+')[1:]]
-      dif_x = win_position[0]-event.x_root
-      dif_y = win_position[1]-event.y_root
-   
-  def update_position(event):
-      root.wm_geometry('+%d+%d' %(event.x_root+dif_x, event.y_root + dif_y))
-   
-  def reg_show(login, reg):
-      login.deleteWindow()
-      reg.drawWindow()
-      
-  def login_show(login, reg):
-      reg.deleteWindow()
-      login.drawWindow()
+        if self.password_entry.get().strip()!="" or self.pass_commit_entry.get().strip()!="":
+            if self.password_entry.get().strip() == self.pass_commit_entry.get().strip():
+                self.error_lbl.config(text='')
+                self.new_pass = self.password_entry.get().strip()
+                
+                if self.cursor.execute('''UPDATE Users SET password = %s WHERE id=%s''', (self.new_pass, USER_ID)):
+                    self.conn.commit()
+                    self.error_lbl.config(text='Дані оновлено')
+                    print('Зміни внесено')
+                else: 
+                    print('Помилка')
+            else:
+                self.error_lbl.config(fg='#c90d00', text='Паролі не співпадають!')
+            
+            
+def on_mouse_click(event):
+    global dif_x, dif_y
   
-  def home_show(login, home):
-      login.deleteWindow()
-      home.drawWindow()
+    win_position = [int(coord) for coord in root.wm_geometry().split('+')[1:]]
+    dif_x = win_position[0]-event.x_root
+    dif_y = win_position[1]-event.y_root
   
+def update_position(event):
+    root.wm_geometry('+%d+%d' %(event.x_root+dif_x, event.y_root + dif_y))
   
-  conn = pymysql.connect(
-      host='91.239.233.38',
-      user='fmewmhwr_student1',
-      password='aFDE5dk2uMa2HJ9',
-      db='fmewmhwr_cinema',
-      cursorclass=DictCursor)
-   
-  cursor = conn.cursor()
-   
-  root = Tk()
-  root.bind('<ButtonPress-1>', on_mouse_click )
-  root.bind('<B1-Motion>',update_position )
-  main = MainWindow(root)
-  login = LoginWindow(root, conn, cursor)
-  reg = RegisterWindow(root, conn, cursor)
-  home = HomeWindow(root, conn, cursor)
+def reg_show(login, reg):
+    login.deleteWindow()
+    reg.drawWindow()
+    
+def login_show(login, reg):
+    reg.deleteWindow()
+    login.drawWindow()
+
+def home_show(login, home):
+    login.deleteWindow()
+    home.drawWindow()
+
+
+conn = pymysql.connect(
+    host='91.239.233.38',
+    user='fmewmhwr_student1',
+    password='aFDE5dk2uMa2HJ9',
+    db='fmewmhwr_cinema',
+    cursorclass=DictCursor)
   
-  #login.drawWindow()
-  home.drawWindow()
-  root.mainloop()  
+cursor = conn.cursor()
+  
+root = Tk()
+root.bind('<ButtonPress-1>', on_mouse_click )
+root.bind('<B1-Motion>',update_position )
+main = MainWindow(root)
+login = LoginWindow(root, conn, cursor)
+reg = RegisterWindow(root, conn, cursor)
+home = HomeWindow(root, conn, cursor)
+
+#login.drawWindow()
+home.drawWindow()
+root.mainloop()  
 </pre></code>
               </div>
             </div>       
           </div>  
-          
+          <div class="card">
+            <div class="card-header d-flex justify-content-xl-space-between" id="heading8">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button"  data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                  <h5>Код. УРОК 8. ↓</h5> 
+                </button>
+              </h5>
+              
+            </div>
+            <div id="collapse8" class="collapse " aria-labelledby="heading8" data-parent="#accordionExample">
+              <div class="card-body">
+<pre style="background:#fff;color:#000"><span style="color:#919191">#CAFFF8 - фон </span>
+<span style="color:#919191">#E7C246 - yellow</span>
+<span style="color:#919191">#00ACEA - blue</span>
+<span style="color:#919191">#01EFD1 - sea blue</span>
+
+<span style="color:#919191">#vova - login</span>
+<span style="color:#919191">#vova123 - password</span>
+  
+<span style="color:#ff5600">from</span> tkinter <span style="color:#ff5600">import</span> <span style="color:#ff5600">*</span>
+<span style="color:#ff5600">import</span> pymysql
+<span style="color:#ff5600">from</span> pymysql.cursors <span style="color:#ff5600">import</span> DictCursor
+
+USER_ID <span style="color:#ff5600">=</span> <span style="color:#00a33f">'1'</span>
+
+<span style="color:#ff5600">class</span> <span style="color:#21439c">MainWindow</span>:
+    <span style="color:#ff5600">def</span> <span style="color:#21439c"><span style="color:#a535ae">__init__</span></span>(self, root):
+        self.root <span style="color:#ff5600">=</span> root
+        <span style="color:#919191">#Визначення робочого вікна</span>
+        self.w <span style="color:#ff5600">=</span> self.root.winfo_screenwidth()<span style="color:#ff5600">/</span><span style="color:#ff5600">/</span>2<span style="color:#ff5600">-</span>500
+        self.h <span style="color:#ff5600">=</span> self.root.winfo_screenheight()<span style="color:#ff5600">/</span><span style="color:#ff5600">/</span>2<span style="color:#ff5600">-</span>350
+        self.root.geometry(f<span style="color:#00a33f">'1000x700+{self.w}+{self.h}'</span>) <span style="color:#919191">#задаємо розміри та позицію вікна</span>
+        self.root.configure(bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.root.overrideredirect(1)
+        self.close_btn <span style="color:#ff5600">=</span> Button(self.root, command<span style="color:#ff5600">=</span>self.close, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'X'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#fa5c5c'</span>, fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#360707'</span>, bd<span style="color:#ff5600">=</span>0, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, <span style="color:#ff5600">-</span>20), activebackground<span style="color:#ff5600">=</span><span style="color:#00a33f">'#c71e1e'</span>)
+        self.close_btn.place(x<span style="color:#ff5600">=</span>975, y<span style="color:#ff5600">=</span>0)
+        self.logoico <span style="color:#ff5600">=</span> PhotoImage(file<span style="color:#ff5600">=</span><span style="color:#00a33f">'logo.gif'</span>)
+        self.title <span style="color:#ff5600">=</span> PhotoImage(file<span style="color:#ff5600">=</span><span style="color:#00a33f">'title.gif'</span>)
+        self.logoico_lbl <span style="color:#ff5600">=</span> Label(self.root, image<span style="color:#ff5600">=</span>self.logoico, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span> )
+        self.logoico_lbl.place(x<span style="color:#ff5600">=</span>100,y<span style="color:#ff5600">=</span>50)
+        self.title_lbl <span style="color:#ff5600">=</span> Label(self.root, image<span style="color:#ff5600">=</span>self.title, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span> )
+        self.title_lbl.place(x<span style="color:#ff5600">=</span>230,y<span style="color:#ff5600">=</span>25)
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">close</span>(self):
+        self.root.destroy()
+  
+<span style="color:#ff5600">class</span> <span style="color:#21439c">LoginWindow</span>(MainWindow):
+    <span style="color:#ff5600">def</span> <span style="color:#21439c"><span style="color:#a535ae">__init__</span></span>(self, root, conn, cursor):
+        self.root <span style="color:#ff5600">=</span> root
+        self.conn <span style="color:#ff5600">=</span> conn
+        self.cursor <span style="color:#ff5600">=</span> cursor
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">drawWindow</span>(self):
+        
+        self.log_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'ВХІД'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 20), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.log_lbl.place(x<span style="color:#ff5600">=</span>440,y<span style="color:#ff5600">=</span>230)
+  
+        self.login_entry <span style="color:#ff5600">=</span> Entry(self.root, width<span style="color:#ff5600">=</span>25,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15),bd<span style="color:#ff5600">=</span>0, justify<span style="color:#ff5600">=</span><span style="color:#00a33f">'center'</span>)
+        self.login_entry.place(x<span style="color:#ff5600">=</span>130,y<span style="color:#ff5600">=</span>300)
+  
+        self.login_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Введіть логін:'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.login_lbl.place(x<span style="color:#ff5600">=</span>130,y<span style="color:#ff5600">=</span>270)
+  
+        self.password_entry <span style="color:#ff5600">=</span> Entry(self.root,width<span style="color:#ff5600">=</span>25, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15),bd<span style="color:#ff5600">=</span>0, justify<span style="color:#ff5600">=</span><span style="color:#00a33f">'center'</span>, show<span style="color:#ff5600">=</span><span style="color:#00a33f">'•'</span>)
+        self.password_entry.place(x<span style="color:#ff5600">=</span>130,y<span style="color:#ff5600">=</span>380)
+  
+        self.password_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Введіть пароль:'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.password_lbl.place(x<span style="color:#ff5600">=</span>130,y<span style="color:#ff5600">=</span>350)
+        
+        
+        self.warning_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">''</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 12), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.warning_lbl.place(x<span style="color:#ff5600">=</span>180,y<span style="color:#ff5600">=</span>420)
+        
+        self.login_btn <span style="color:#ff5600">=</span> Button(self.root, command <span style="color:#ff5600">=</span> self.login, bd<span style="color:#ff5600">=</span>0, width<span style="color:#ff5600">=</span>20, height<span style="color:#ff5600">=</span>2, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Увійти'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#004A66'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#FADB43'</span>, activebackground<span style="color:#ff5600">=</span><span style="color:#00a33f">'#D0A334'</span>)
+        self.login_btn.place(x<span style="color:#ff5600">=</span>155,y<span style="color:#ff5600">=</span>450)
+  
+        self.ans_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Немаєте акаунту?'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 20), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.ans_lbl.place(x<span style="color:#ff5600">=</span>580,y<span style="color:#ff5600">=</span>300)
+  
+        self.reg_btn <span style="color:#ff5600">=</span> Button(self.root, command<span style="color:#ff5600">=</span><span style="color:#ff5600">lambda</span>:reg_show(self, reg), bd<span style="color:#ff5600">=</span>0, width<span style="color:#ff5600">=</span>30, height<span style="color:#ff5600">=</span>2, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Зареєструватися'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#004A66'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#FADB43'</span>, activebackground<span style="color:#ff5600">=</span><span style="color:#00a33f">'#D0A334'</span>)
+        self.reg_btn.place(x<span style="color:#ff5600">=</span>520,y<span style="color:#ff5600">=</span>400)
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">deleteWindow</span>(self):
+        self.log_lbl.destroy()
+        self.login_lbl.destroy()
+        self.login_entry.destroy()
+        self.password_entry.destroy()
+        self.password_lbl.destroy()
+        self.login_btn.destroy()
+        self.reg_btn.destroy()
+        self.ans_lbl.destroy()
+    
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">isEmpty</span>(self):
+        <span style="color:#ff5600">if</span> self.login_entry.get().strip()<span style="color:#ff5600">==</span><span style="color:#00a33f">''</span> <span style="color:#ff5600">or</span> self.password_entry.get().strip()<span style="color:#ff5600">==</span><span style="color:#00a33f">''</span> :
+            <span style="color:#ff5600">return</span> <span style="color:#a535ae">True</span>
+        <span style="color:#ff5600">else</span>:
+            <span style="color:#ff5600">return</span> <span style="color:#a535ae">False</span>
+
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">isUserExist</span>(self):
+        self.cursor.execute(<span style="color:#00a33f">'<span style="color:#ff5600">SELECT</span> <span style="color:#ff5600">*</span> <span style="color:#ff5600">FROM</span> Users <span style="color:#ff5600">WHERE</span> login<span style="color:#ff5600">=</span>%s'</span>, self.login_entry.get())
+        <span style="color:#ff5600">if</span> self.cursor.fetchall()<span style="color:#ff5600">==</span>():
+            <span style="color:#ff5600">return</span> <span style="color:#a535ae">False</span>
+        <span style="color:#ff5600">else</span>:
+            <span style="color:#ff5600">return</span> <span style="color:#a535ae">True</span>
+            
+            
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">login</span>(self):
+        <span style="color:#ff5600">if</span> self.isEmpty():
+            self.warning_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#c90d00'</span>, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'*заповніть всі поля'</span>)
+        <span style="color:#ff5600">else</span>:
+            self.warning_lbl.config(text<span style="color:#ff5600">=</span><span style="color:#00a33f">''</span>)
+            self.userlogin <span style="color:#ff5600">=</span> self.login_entry.get().strip()
+            self.password <span style="color:#ff5600">=</span> self.password_entry.get().strip()
+            self.logindata <span style="color:#ff5600">=</span> (self.userlogin,self.password)
+            <span style="color:#ff5600">if</span> self.isUserExist():
+                self.warning_lbl.config(text<span style="color:#ff5600">=</span><span style="color:#00a33f">''</span>)
+                self.cursor.execute(<span style="color:#00a33f">'<span style="color:#ff5600">SELECT</span> id <span style="color:#ff5600">FROM</span> Users <span style="color:#ff5600">WHERE</span> login<span style="color:#ff5600">=</span>%s <span style="color:#ff5600">AND</span> password<span style="color:#ff5600">=</span>%s'</span>, self.logindata)
+                self.user <span style="color:#ff5600">=</span> self.cursor.fetchone()
+                <span style="color:#ff5600">if</span> self.user<span style="color:#ff5600">!=</span>():
+                    <span style="color:#ff5600">global</span> USER_ID
+                    USER_ID <span style="color:#ff5600">=</span> self.user[<span style="color:#00a33f">'id'</span>]
+                    self.warning_lbl.config(text<span style="color:#ff5600">=</span><span style="color:#00a33f">''</span>)
+                    <span style="color:#ff5600">print</span>(<span style="color:#00a33f">"Вхід виконано"</span>)
+                    home_show(self,home)
+                <span style="color:#ff5600">else</span>:
+                    self.warning_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#c90d00'</span>,text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Неправильний логін або пароль!'</span>)
+            <span style="color:#ff5600">else</span>:
+                self.warning_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#c90d00'</span>, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Неіснуючий логін!'</span>)
+  
+<span style="color:#ff5600">class</span> <span style="color:#21439c">RegisterWindow</span>(MainWindow):
+    <span style="color:#ff5600">def</span> <span style="color:#21439c"><span style="color:#a535ae">__init__</span></span>(self, root, conn, cursor):
+        self.root <span style="color:#ff5600">=</span> root
+        self.conn <span style="color:#ff5600">=</span> conn
+        self.cursor <span style="color:#ff5600">=</span> cursor
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">drawWindow</span>(self):
+  
+        self.reg_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'РЕЄСТРАЦІЯ'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 20), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.reg_lbl.place(x<span style="color:#ff5600">=</span>410,y<span style="color:#ff5600">=</span>230)
+  
+        self.error_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">''</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 12), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.error_lbl.place(x<span style="color:#ff5600">=</span>380,y<span style="color:#ff5600">=</span>530)
+        self.name_entry <span style="color:#ff5600">=</span> Entry(self.root, width<span style="color:#ff5600">=</span>25,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15),bd<span style="color:#ff5600">=</span>0, justify<span style="color:#ff5600">=</span><span style="color:#00a33f">'center'</span>)
+        self.name_entry.place(x<span style="color:#ff5600">=</span>130,y<span style="color:#ff5600">=</span>350)
+        self.name_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Введіть ім\'я та прізвище:'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.name_lbl.place(x<span style="color:#ff5600">=</span>130,y<span style="color:#ff5600">=</span>320)
+  
+        self.email_entry <span style="color:#ff5600">=</span> Entry(self.root,width<span style="color:#ff5600">=</span>25, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15),bd<span style="color:#ff5600">=</span>0, justify<span style="color:#ff5600">=</span><span style="color:#00a33f">'center'</span>)
+        self.email_entry.place(x<span style="color:#ff5600">=</span>130,y<span style="color:#ff5600">=</span>430)
+        self.email_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Введіть свій e-mail:'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.email_lbl.place(x<span style="color:#ff5600">=</span>130,y<span style="color:#ff5600">=</span>400)
+  
+        self.login_entry <span style="color:#ff5600">=</span> Entry(self.root, width<span style="color:#ff5600">=</span>25,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15),bd<span style="color:#ff5600">=</span>0, justify<span style="color:#ff5600">=</span><span style="color:#00a33f">'center'</span>)
+        self.login_entry.place(x<span style="color:#ff5600">=</span>600,y<span style="color:#ff5600">=</span>350)
+        self.login_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Придумайте логін:'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.login_lbl.place(x<span style="color:#ff5600">=</span>600,y<span style="color:#ff5600">=</span>320)
+  
+        self.password_entry <span style="color:#ff5600">=</span> Entry(self.root,width<span style="color:#ff5600">=</span>25, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15),bd<span style="color:#ff5600">=</span>0, justify<span style="color:#ff5600">=</span><span style="color:#00a33f">'center'</span>, show<span style="color:#ff5600">=</span><span style="color:#00a33f">'•'</span>)
+        self.password_entry.place(x<span style="color:#ff5600">=</span>600,y<span style="color:#ff5600">=</span>430)
+        self.password_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Придумайте пароль:'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.password_lbl.place(x<span style="color:#ff5600">=</span>600,y<span style="color:#ff5600">=</span>400)
+  
+        self.age_lbl <span style="color:#ff5600">=</span> Label(self.root,text<span style="color:#ff5600">=</span><span style="color:#00a33f">"Ваш вік:"</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>,15),fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.age_lbl.place(x<span style="color:#ff5600">=</span>420,y<span style="color:#ff5600">=</span>490)
+        self.age_entry <span style="color:#ff5600">=</span> Entry(self.root,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>,20),bd<span style="color:#ff5600">=</span>0,justify<span style="color:#ff5600">=</span><span style="color:#00a33f">'center'</span>,width<span style="color:#ff5600">=</span>3)
+        self.age_entry.place(x<span style="color:#ff5600">=</span>520,y<span style="color:#ff5600">=</span>482)
+  
+        self.reg_btn <span style="color:#ff5600">=</span> Button(self.root, command<span style="color:#ff5600">=</span>self.registration, bd<span style="color:#ff5600">=</span>0, width<span style="color:#ff5600">=</span>30, height<span style="color:#ff5600">=</span>2, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Зареєструватися'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#004A66'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#FADB43'</span>, activebackground<span style="color:#ff5600">=</span><span style="color:#00a33f">'#D0A334'</span>)
+        self.reg_btn.place(x<span style="color:#ff5600">=</span>320,y<span style="color:#ff5600">=</span>565)
+  
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">deleteWindow</span>(self):
+        self.reg_lbl.destroy()
+        self.name_entry.destroy()
+        self.name_lbl.destroy()
+        self.email_entry.destroy()
+        self.email_lbl.destroy()
+        self.login_entry.destroy()
+        self.reg_btn.destroy()
+        self.login_lbl.destroy()
+        self.password_entry.destroy()
+        self.password_lbl.destroy()
+        self.age_lbl.destroy()
+        self.age_entry.destroy()
+        self.reg_btn.destroy()
+        self.error_lbl.destroy()
+  
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">is_empty</span>(self):
+        <span style="color:#ff5600">if</span> self.name_entry.get().strip()<span style="color:#ff5600">==</span><span style="color:#00a33f">''</span> <span style="color:#ff5600">or</span> self.login_entry.get().strip()<span style="color:#ff5600">==</span><span style="color:#00a33f">''</span> <span style="color:#ff5600">or</span> self.email_entry.get().strip()<span style="color:#ff5600">==</span><span style="color:#00a33f">''</span> <span style="color:#ff5600">or</span> self.password_entry.get().strip()<span style="color:#ff5600">==</span><span style="color:#00a33f">''</span> <span style="color:#ff5600">or</span> self.age_entry.get().strip()<span style="color:#ff5600">==</span><span style="color:#00a33f">''</span>:
+            <span style="color:#ff5600">return</span> <span style="color:#a535ae">True</span>
+        <span style="color:#ff5600">else</span>:
+            <span style="color:#ff5600">return</span> <span style="color:#a535ae">False</span>
+  
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">registration</span>(self):
+        <span style="color:#ff5600">if</span> self.is_empty():
+            self.error_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#c90d00'</span>, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Будь ласка, заповніть всі поля!'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 12) )
+            self.error_lbl.place(x<span style="color:#ff5600">=</span>380,y<span style="color:#ff5600">=</span>530)
+        <span style="color:#ff5600">else</span>:
+            self.error_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+            self.name <span style="color:#ff5600">=</span> self.name_entry.get()
+            self.email <span style="color:#ff5600">=</span> self.email_entry.get()
+            self.login <span style="color:#ff5600">=</span> self.login_entry.get()
+            self.password <span style="color:#ff5600">=</span> self.password_entry.get()
+            self.age <span style="color:#ff5600">=</span> self.age_entry.get()
+  
+            self.data <span style="color:#ff5600">=</span> (self.login, self.password, self.name, self.email, self.age)
+  
+            sql <span style="color:#ff5600">=</span> <span style="color:#00a33f">'''<span style="color:#ff5600">INSERT INTO</span> Users(login, password, name, email, age) <span style="color:#ff5600">VALUES</span>(%s,%s,%s,%s,%s)'''</span> 
+  
+            self.cursor.execute(<span style="color:#00a33f">'<span style="color:#ff5600">SELECT</span> login <span style="color:#ff5600">FROM</span> Users <span style="color:#ff5600">WHERE</span> login<span style="color:#ff5600">=</span>%s'</span>, self.login)
+  
+            <span style="color:#ff5600">if</span> self.cursor.fetchall() <span style="color:#ff5600">!=</span> ():
+                self.error_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#c90d00'</span>, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Такий логін уже інує!'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 12) )
+                self.error_lbl.place(x<span style="color:#ff5600">=</span>410,y<span style="color:#ff5600">=</span>530)
+  
+            <span style="color:#ff5600">if</span> self.cursor.execute(sql, self.data): <span style="color:#919191">#надсилання запиту до Бази Даних</span>
+                self.conn.commit() <span style="color:#919191">#підтвердження запиту</span>
+                self.error_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Вас зареєстровано!'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15) )
+                self.error_lbl.place(x<span style="color:#ff5600">=</span>410,y<span style="color:#ff5600">=</span>530)
+                self.reg_btn.config(text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Увійти в акаунт'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#01EFD1'</span>, command<span style="color:#ff5600">=</span><span style="color:#ff5600">lambda</span>:login_show(login, self))
+            <span style="color:#ff5600">else</span>:
+                self.error_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#c90d00'</span>, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Невідома помилка'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 12) )
+                self.error_lbl.place(x<span style="color:#ff5600">=</span>410,y<span style="color:#ff5600">=</span>530)
+                
+                
+<span style="color:#ff5600">class</span> <span style="color:#21439c">HomeWindow</span>(MainWindow):
+    <span style="color:#ff5600">def</span> <span style="color:#21439c"><span style="color:#a535ae">__init__</span></span>(self, root, conn, cursor):
+        self.root <span style="color:#ff5600">=</span> root
+        self.conn <span style="color:#ff5600">=</span> conn
+        self.cursor <span style="color:#ff5600">=</span> cursor       
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">drawWindow</span>(self):
+        
+        <span style="color:#ff5600">global</span> USER_ID
+        self.cursor.execute(<span style="color:#00a33f">'<span style="color:#ff5600">SELECT</span> name <span style="color:#ff5600">FROM</span> Users <span style="color:#ff5600">WHERE</span> id<span style="color:#ff5600">=</span>%s'</span>, USER_ID)
+        self.user <span style="color:#ff5600">=</span> self.cursor.fetchone()[<span style="color:#00a33f">'name'</span>]
+        self.acc_btn  <span style="color:#ff5600">=</span> Button(self.root, bd<span style="color:#ff5600">=</span>0, command<span style="color:#ff5600">=</span>self.drawEditProfile, width<span style="color:#ff5600">=</span>20, height<span style="color:#ff5600">=</span>1, text<span style="color:#ff5600">=</span>self.user, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#007099'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#E7C246'</span>, activebackground<span style="color:#ff5600">=</span><span style="color:#00a33f">'#D0A334'</span>)
+        self.acc_btn.place(x<span style="color:#ff5600">=</span>650,y<span style="color:#ff5600">=</span>0)
+        self.top_btn  <span style="color:#ff5600">=</span> Button(self.root, bd<span style="color:#ff5600">=</span>0, height<span style="color:#ff5600">=</span>1, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Популярне'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#007099'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#01EFD1'</span>, activebackground<span style="color:#ff5600">=</span><span style="color:#00a33f">'#D0A334'</span>)
+        self.top_btn.place(x<span style="color:#ff5600">=</span>70,y<span style="color:#ff5600">=</span>250)
+        self.shedule_btn  <span style="color:#ff5600">=</span> Button(self.root, bd<span style="color:#ff5600">=</span>0, height<span style="color:#ff5600">=</span>1, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Розклад сеансів'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#007099'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#01EFD1'</span>, activebackground<span style="color:#ff5600">=</span><span style="color:#00a33f">'#D0A334'</span>)
+        self.shedule_btn.place(x<span style="color:#ff5600">=</span>70,y<span style="color:#ff5600">=</span>300)
+        self.tickets_btn  <span style="color:#ff5600">=</span> Button(self.root, bd<span style="color:#ff5600">=</span>0, height<span style="color:#ff5600">=</span>1, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Мої квитки'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#007099'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#01EFD1'</span>, activebackground<span style="color:#ff5600">=</span><span style="color:#00a33f">'#D0A334'</span>)
+        self.tickets_btn.place(x<span style="color:#ff5600">=</span>70,y<span style="color:#ff5600">=</span>350)
+        self.city_btn  <span style="color:#ff5600">=</span> Button(self.root, bd<span style="color:#ff5600">=</span>0, height<span style="color:#ff5600">=</span>1, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Львів'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#E7C246'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>, activebackground<span style="color:#ff5600">=</span><span style="color:#00a33f">'#D0A334'</span>)
+        self.city_btn.place(x<span style="color:#ff5600">=</span>70,y<span style="color:#ff5600">=</span>600)
+        self.drawUserTickets()
+    
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">drawEditProfile</span>(self):
+        
+        <span style="color:#ff5600">global</span> USER_ID
+        self.cursor.execute(<span style="color:#00a33f">'<span style="color:#ff5600">SELECT</span> email <span style="color:#ff5600">FROM</span> Users <span style="color:#ff5600">WHERE</span> id<span style="color:#ff5600">=</span>%s'</span>, USER_ID)
+        self.email <span style="color:#ff5600">=</span> self.cursor.fetchone()[<span style="color:#00a33f">'email'</span>]
+        
+        self.reg_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Ваші дані'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 20), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.reg_lbl.place(x<span style="color:#ff5600">=</span>550,y<span style="color:#ff5600">=</span>230)
+  
+        self.error_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">''</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 12), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.error_lbl.place(x<span style="color:#ff5600">=</span>480,y<span style="color:#ff5600">=</span>500)
+        self.name_entry <span style="color:#ff5600">=</span> Entry(self.root, width<span style="color:#ff5600">=</span>25,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15),bd<span style="color:#ff5600">=</span>0, justify<span style="color:#ff5600">=</span><span style="color:#00a33f">'center'</span>)
+        self.name_entry.place(x<span style="color:#ff5600">=</span>280,y<span style="color:#ff5600">=</span>350)
+        self.name_entry.insert(0,self.user)
+        self.name_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Змінити ім\'я та прізвище:'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.name_lbl.place(x<span style="color:#ff5600">=</span>280,y<span style="color:#ff5600">=</span>320)
+  
+        self.email_entry <span style="color:#ff5600">=</span> Entry(self.root,width<span style="color:#ff5600">=</span>25,  font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15),bd<span style="color:#ff5600">=</span>0, justify<span style="color:#ff5600">=</span><span style="color:#00a33f">'center'</span>)
+        self.email_entry.place(x<span style="color:#ff5600">=</span>280,y<span style="color:#ff5600">=</span>430)
+        self.email_entry.insert(0,self.email)
+        self.email_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Змінити свій e-mail:'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.email_lbl.place(x<span style="color:#ff5600">=</span>280,y<span style="color:#ff5600">=</span>400)
+  
+        self.password_entry <span style="color:#ff5600">=</span> Entry(self.root,width<span style="color:#ff5600">=</span>25, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15),bd<span style="color:#ff5600">=</span>0, justify<span style="color:#ff5600">=</span><span style="color:#00a33f">'center'</span>, show<span style="color:#ff5600">=</span><span style="color:#00a33f">'•'</span>)
+        self.password_entry.place(x<span style="color:#ff5600">=</span>600,y<span style="color:#ff5600">=</span>350)
+        self.password_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Змінити пароль:'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.password_lbl.place(x<span style="color:#ff5600">=</span>600,y<span style="color:#ff5600">=</span>320)
+        
+        self.pass_commit_entry <span style="color:#ff5600">=</span> Entry(self.root,width<span style="color:#ff5600">=</span>25, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15),bd<span style="color:#ff5600">=</span>0, justify<span style="color:#ff5600">=</span><span style="color:#00a33f">'center'</span>, show<span style="color:#ff5600">=</span><span style="color:#00a33f">'•'</span>)
+        self.pass_commit_entry.place(x<span style="color:#ff5600">=</span>600,y<span style="color:#ff5600">=</span>430)
+        self.pass_commit_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Підтвердити пароль:'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.pass_commit_lbl.place(x<span style="color:#ff5600">=</span>600,y<span style="color:#ff5600">=</span>400)
+  
+        self.reg_btn <span style="color:#ff5600">=</span> Button(self.root, command <span style="color:#ff5600">=</span> self.changeUserData, bd<span style="color:#ff5600">=</span>0, width<span style="color:#ff5600">=</span>30, height<span style="color:#ff5600">=</span>2, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Зберегти зміни'</span>, font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 15), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#004A66'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#FADB43'</span>, activebackground<span style="color:#ff5600">=</span><span style="color:#00a33f">'#D0A334'</span>)
+        self.reg_btn.place(x<span style="color:#ff5600">=</span>420,y<span style="color:#ff5600">=</span>565)
+        
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">changeUserData</span>(self):
+        <span style="color:#ff5600">global</span> USER_ID
+        <span style="color:#ff5600">if</span> self.name_entry.get()<span style="color:#ff5600">!=</span><span style="color:#00a33f">""</span>:
+            <span style="color:#ff5600">if</span> self.name_entry.get()<span style="color:#ff5600">!=</span> self.user:
+                self.error_lbl.config(text<span style="color:#ff5600">=</span><span style="color:#00a33f">''</span>)
+                self.new_email <span style="color:#ff5600">=</span> self.email_entry.get()
+                
+                <span style="color:#ff5600">if</span> self.cursor.execute(<span style="color:#00a33f">'''<span style="color:#ff5600">UPDATE</span> Users <span style="color:#ff5600">SET</span> email <span style="color:#ff5600">=</span> %s <span style="color:#ff5600">WHERE</span> id<span style="color:#ff5600">=</span>%s'''</span>, (self.new_email, USER_ID)):
+                    self.conn.commit()
+                    self.error_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#c90d00'</span>, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Дані оновлено'</span>)
+                    <span style="color:#ff5600">print</span>(<span style="color:#00a33f">'Зміни внесено'</span>)
+                <span style="color:#ff5600">else</span>: 
+                    <span style="color:#ff5600">print</span>(<span style="color:#00a33f">'Помилка'</span>)
+        
+        <span style="color:#ff5600">if</span> self.email_entry.get()<span style="color:#ff5600">!=</span><span style="color:#00a33f">""</span>:
+            <span style="color:#ff5600">if</span> self.email_entry.get()<span style="color:#ff5600">!=</span> self.email:
+                self.error_lbl.config(text<span style="color:#ff5600">=</span><span style="color:#00a33f">''</span>)
+                self.new_name <span style="color:#ff5600">=</span> self.name_entry.get()
+                
+                <span style="color:#ff5600">if</span> self.cursor.execute(<span style="color:#00a33f">'''<span style="color:#ff5600">UPDATE</span> Users <span style="color:#ff5600">SET</span> name <span style="color:#ff5600">=</span> %s <span style="color:#ff5600">WHERE</span> id<span style="color:#ff5600">=</span>%s'''</span>, (self.new_name, USER_ID)):
+                    self.conn.commit()
+                    self.error_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#c90d00'</span>, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Дані оновлено'</span>)
+                    <span style="color:#ff5600">print</span>(<span style="color:#00a33f">'Зміни внесено'</span>)
+                <span style="color:#ff5600">else</span>: 
+                    <span style="color:#ff5600">print</span>(<span style="color:#00a33f">'Помилка'</span>)
+              
+        <span style="color:#ff5600">if</span> self.password_entry.get().strip()<span style="color:#ff5600">!=</span><span style="color:#00a33f">""</span> <span style="color:#ff5600">or</span> self.pass_commit_entry.get().strip()<span style="color:#ff5600">!=</span><span style="color:#00a33f">""</span>:
+            <span style="color:#ff5600">if</span> self.password_entry.get().strip() <span style="color:#ff5600">==</span> self.pass_commit_entry.get().strip():
+                self.error_lbl.config(text<span style="color:#ff5600">=</span><span style="color:#00a33f">''</span>)
+                self.new_pass <span style="color:#ff5600">=</span> self.password_entry.get().strip()
+                
+                <span style="color:#ff5600">if</span> self.cursor.execute(<span style="color:#00a33f">'''<span style="color:#ff5600">UPDATE</span> Users <span style="color:#ff5600">SET</span> password <span style="color:#ff5600">=</span> %s <span style="color:#ff5600">WHERE</span> id<span style="color:#ff5600">=</span>%s'''</span>, (self.new_pass, USER_ID)):
+                    self.conn.commit()
+                    self.error_lbl.config(text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Дані оновлено'</span>)
+                    <span style="color:#ff5600">print</span>(<span style="color:#00a33f">'Зміни внесено'</span>)
+                <span style="color:#ff5600">else</span>: 
+                    <span style="color:#ff5600">print</span>(<span style="color:#00a33f">'Помилка'</span>)
+            <span style="color:#ff5600">else</span>:
+                self.error_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#c90d00'</span>, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Паролі не співпадають!'</span>)
+            
+    <span style="color:#ff5600">def</span> <span style="color:#21439c">drawUserTickets</span>(self):
+        self.reg_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'Ваші квитки'</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 20), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#006E98'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.reg_lbl.place(x<span style="color:#ff5600">=</span>550,y<span style="color:#ff5600">=</span>230)
+        <span style="color:#ff5600">global</span> USER_ID
+        self.error_lbl <span style="color:#ff5600">=</span> Label(self.root, text<span style="color:#ff5600">=</span><span style="color:#00a33f">''</span>,font<span style="color:#ff5600">=</span>(<span style="color:#00a33f">'Roboto Black'</span>, 12), fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>, bg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#CAFFF8'</span>)
+        self.error_lbl.place(x<span style="color:#ff5600">=</span>480,y<span style="color:#ff5600">=</span>350)
+        self.cursor.execute(<span style="color:#00a33f">"<span style="color:#ff5600">SELECT</span> <span style="color:#ff5600">*</span> <span style="color:#ff5600">FROM</span> Tickets <span style="color:#ff5600">WHERE</span> userID<span style="color:#ff5600">=</span>%s"</span>, USER_ID )
+        self.tickets <span style="color:#ff5600">=</span> self.cursor.fetchall() 
+        <span style="color:#ff5600">if</span> self.tickets<span style="color:#ff5600">!=</span>():
+            <span style="color:#ff5600">for</span> row <span style="color:#ff5600">in</span> self.tickets:
+                <span style="color:#ff5600">print</span>(<span style="color:#00a33f">"id: "</span>, row[<span style="color:#00a33f">'id'</span>])
+                <span style="color:#ff5600">print</span>(<span style="color:#00a33f">"id_userr: "</span>, row[<span style="color:#00a33f">'userID'</span>])
+                <span style="color:#ff5600">print</span>(<span style="color:#00a33f">"id_session: "</span>, row[<span style="color:#00a33f">'sessionID'</span>])
+                <span style="color:#ff5600">print</span>(<span style="color:#00a33f">"row"</span>, row[<span style="color:#00a33f">'row'</span>])
+                <span style="color:#ff5600">print</span>(<span style="color:#00a33f">"plcae"</span>, row[<span style="color:#00a33f">'place'</span>])
+        <span style="color:#ff5600">else</span>:
+            self.error_lbl.config(fg<span style="color:#ff5600">=</span><span style="color:#00a33f">'#00ACEA'</span>, text<span style="color:#ff5600">=</span><span style="color:#00a33f">'У вас ще немає квитків'</span>)
+            
+<span style="color:#ff5600">def</span> <span style="color:#21439c">on_mouse_click</span>(event):
+    <span style="color:#ff5600">global</span> dif_x, dif_y
+  
+    win_position <span style="color:#ff5600">=</span> [<span style="color:#a535ae">int</span>(coord) <span style="color:#ff5600">for</span> coord <span style="color:#ff5600">in</span> root.wm_geometry().split(<span style="color:#00a33f">'+'</span>)[1:]]
+    dif_x <span style="color:#ff5600">=</span> win_position[0]<span style="color:#ff5600">-</span>event.x_root
+    dif_y <span style="color:#ff5600">=</span> win_position[1]<span style="color:#ff5600">-</span>event.y_root
+  
+<span style="color:#ff5600">def</span> <span style="color:#21439c">update_position</span>(event):
+    root.wm_geometry(<span style="color:#00a33f">'+%d+%d'</span> <span style="color:#ff5600">%</span>(event.x_root<span style="color:#ff5600">+</span>dif_x, event.y_root <span style="color:#ff5600">+</span> dif_y))
+  
+<span style="color:#ff5600">def</span> <span style="color:#21439c">reg_show</span>(login, reg):
+    login.deleteWindow()
+    reg.drawWindow()
+    
+<span style="color:#ff5600">def</span> <span style="color:#21439c">login_show</span>(login, reg):
+    reg.deleteWindow()
+    login.drawWindow()
+
+<span style="color:#ff5600">def</span> <span style="color:#21439c">home_show</span>(login, home):
+    login.deleteWindow()
+    home.drawWindow()
+
+
+conn <span style="color:#ff5600">=</span> pymysql.connect(
+    host<span style="color:#ff5600">=</span><span style="color:#00a33f">'91.239.233.38'</span>,
+    user<span style="color:#ff5600">=</span><span style="color:#00a33f">'fmewmhwr_student1'</span>,
+    password<span style="color:#ff5600">=</span><span style="color:#00a33f">'aFDE5dk2uMa2HJ9'</span>,
+    db<span style="color:#ff5600">=</span><span style="color:#00a33f">'fmewmhwr_cinema'</span>,
+    cursorclass<span style="color:#ff5600">=</span>DictCursor)
+  
+cursor <span style="color:#ff5600">=</span> conn.cursor()
+  
+root <span style="color:#ff5600">=</span> Tk()
+root.bind(<span style="color:#00a33f">'&lt;ButtonPress-1>'</span>, on_mouse_click )
+root.bind(<span style="color:#00a33f">'&lt;B1-Motion>'</span>,update_position )
+main <span style="color:#ff5600">=</span> MainWindow(root)
+login <span style="color:#ff5600">=</span> LoginWindow(root, conn, cursor)
+reg <span style="color:#ff5600">=</span> RegisterWindow(root, conn, cursor)
+home <span style="color:#ff5600">=</span> HomeWindow(root, conn, cursor)
+
+login.drawWindow()
+<span style="color:#919191">#home.drawWindow()</span>
+root.mainloop() 
+</pre>
+              </div>
+            </div>       
+          </div>  
         </div> 
 </div>
 
