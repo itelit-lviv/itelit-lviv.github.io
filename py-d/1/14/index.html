@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Курс Python - WebTeach">
+    <meta property="og:site_name" content="WebTeach">
+    <meta property="og:url" content="https://web-teach.pp.ua/py-d/101/index.html">
+    <meta property="og:description" content="Вивчаємо мову програмування Python онлайн!">
+    <meta property="og:image" content="https://web-teach.pp.ua/src/python-course/python-preview.jpg">
+    <!-- /Required meta tags -->
+    <title>Курс Python - WebTeach</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://web-teach.pp.ua/src/python-course/css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-xl">
+      <a class="navbar-brand logo" href="../index.html"><span>Web</span>Teach</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mr-auto mt-2 mt-lg-0" >
+          <a class="nav-item nav-link" href="../index.html#course" title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link conf-button active" title="Перейти до онлайн-уроку" href="https://meet.jit.si/pdan" target="_blank">
+            <svg class="bi bi-camera-video-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.667 3h6.666C10.253 3 11 3.746 11 4.667v6.666c0 .92-.746 1.667-1.667 1.667H2.667C1.747 13 1 12.254 1 11.333V4.667C1 3.747 1.746 3 2.667 3z"/>
+              <path d="M7.404 8.697l6.363 3.692c.54.313 1.233-.066 1.233-.697V4.308c0-.63-.693-1.01-1.233-.696L7.404 7.304a.802.802 0 0 0 0 1.393z"/>
+            </svg>
+            Онлайн-урок</a>
+          <a class="nav-item nav-link" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
+          <a class="nav-item nav-link" href="../journal.html" data-toggle="tooltip" data-placement="bottom" title="Сторінка в розробці, скоро оцінки будуть доступні :)" >Оплати</a>
+          <a class="nav-item nav-link" href="#openModal" data-toggle="modal" data-target="#exampleModal">Реквізити</a>
+          
+        </div>
+        <div class="nav-phone my-2 my-lg-0">
+          <a href="tel:+380662719785" class="nav-item nav-link">+380995638685</a>
+        </div>
+        </div>
+     </div> 
+     </nav>
+     <!-- nav end -->
+     <div class="header-baner container-fluid d-flex justify-content-xl-space-between">       
+      <h1 >Урок 15-16. Знайомимось з базами даних та починаємо вивчати SQL.</h1>
+      
+      <div class="row tabs-container d-flex align-items-end">
+        <div class="col"></div>
+        <div class="col-md-auto col-sm-12 align-self-center">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#theory" role="tab" aria-controls="home" aria-selected="true">Конспект</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="profile" aria-selected="false">Код</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col"></div>
+      </div>
+     </div>
+     <div class="lesson container-xl">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="theory" role="tabpanel" aria-labelledby="home-tab">
+             <div class='theory'>
+         <h3>Що ми зробили?</h3><br>
+            <div class='answer'>
+            На першому занятті ми ознайомились з теорією про Бази даних. Вихначили, які вони бувають та де які потрібно використовувати. Почали вивчати SQL</div> <img src='z15.png' width='900' height='500'>
+			<h3>SQL запити</h3><br>
+            <div class='answer'>
+            <ul>
+            <li><i>CREATE TABLE name</i> - створити таблицю name</li><br>
+            <li><i>DROP TABLE name</i> - видалити таблицю name</li><br>
+            <li><i>INSERT INTO name VALUES(*values*)</i> - вставити в таблицю name значення values </li><br>
+            <li><i>UPDATE name SET colname = value WHERE colname = value</i> - оновити в таблиці name значення в colname - value, де colname = value</li><br>
+            <li><i>SELECT * FROM name</i> - вибрати все з таблиці name</li><br>
+            <li><i>WHERE colname = value ORDER BY ASC/DESC</i> - де значення в colname = value сортувати за зростанням/спаданням</li><br>
+            <li><i>WHERE colname BETWEEN value AND value</i> - де значення в colname знаходяться в діапазоні між value i value</li><br>
+            <li><i>WHERE colname IN (*values*)</i>де значення в colname знаходяться в списку values</li><br>
+            </ul></div>
+
+			<h3>Посилання на файли</h3><br>
+            <div class='answer'>
+            <ul>
+            <li><i><a href='https://drive.google.com/file/d/14gzqcrgxsbRBY7wbFbJZuqhucBGqFlxY/view?usp=sharing' target='_blank'>Python файл шістнадцятого заняття.</a></i></li><br>
+            </ul></div>
+
+            
+            </div>
+
+                    </div>
+        <div class="tab-pane fade" id="tasks" role="tabpanel" aria-labelledby="profile-tab">                                                       
+          <div class="accordion" id="accordionExample" style=" margin: 50px auto">
+          <div class="card">
+            <div class="card-header d-flex justify-content-xl-space-between" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <h5>Код програми ↓</h5> 
+                </button>
+              </h5>
+              
+            </div>
+            <div id="collapseOne" class="collapse show " aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body"><pre class="python" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff7700;font-weight:bold;">import</span> pymysql</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff7700;font-weight:bold;">from</span> pymysql.<span style="color: black;">cursors</span> <span style="color: #ff7700;font-weight:bold;">import</span> DictCursor</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">conn <span style="color: #66cc66;">=</span> pymysql.<span style="color: black;">connect</span><span style="color: black;">&#40;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    host<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'91.239.233.38'</span><span style="color: #66cc66;">,</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #dc143c;">user</span><span style="color: #66cc66;">=</span><span style="color: #483d8b;">'fmewmhwr_dasdoom'</span><span style="color: #66cc66;">,</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    password<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'danya123@'</span><span style="color: #66cc66;">,</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    db<span style="color: #66cc66;">=</span><span style="color: #483d8b;">'fmewmhwr_dasdoom'</span><span style="color: #66cc66;">,</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    cursorclass<span style="color: #66cc66;">=</span>DictCursor</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cursor <span style="color: #66cc66;">=</span> conn.<span style="color: black;">cursor</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># sql = '''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># CREATE TABLE danya(</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># id int(21),</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># name varchar(12),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># age int(10),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># PRIMARY KEY(id)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># );</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># '''</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># sql = '''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># DROP TABLE name</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># '''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># sql = '''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># INSERT INTO danya VALUES(2,'danya',20),</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (3,'danya',20),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (4,'danya',20),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (5,'danya',20),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (6,'danya',20),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (7,'danya',20),</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (8,'danya',20),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (9,'danya',20),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (10,'danya',20),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (11,'danya',20),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (12,'danya',20),</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (13,'danya',20),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (14,'danya',20),</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># (15,'danya',20)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># '''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># sql = '''</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># UPDATE danya</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #808080; font-style: italic;"># SET name = 'anya'</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #808080; font-style: italic;"># WHERE age = 20</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># '''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># sql = '''</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># SELECT * FROM danya WHERE id BETWEEN 5 AND 10 ORDER BY id DESC</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># '''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># sql = '''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># SELECT * FROM danya WHERE id LIKE ''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># '''</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">sql <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #483d8b;">SELECT * FROM danya WHERE id IN(3,5,1)</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #483d8b;">'''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">cursor.<span style="color: black;">execute</span><span style="color: black;">&#40;</span>sql<span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span>cursor.<span style="color: black;">fetchall</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #808080; font-style: italic;"># conn.commit()</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">conn.<span style="color: black;">close</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span></div></li></ol></pre></div>
+</div>
+</div>
+      </div>
+      </div>
+          <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Реквізити для оплати</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title">Егрецький Данило Романович</h5>
+        <p><i>ПриватБанк</i><br>	  
+          5168 7554 3620 3455</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Закрити</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <footer class="footer  mt-auto py-3">
+        <div class="container">
+          <span class="text-muted">	©   WebTeach 2020. Всі права застережено</span>
+        </div>
+      </footer>
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      
+  </body>
+</html>
