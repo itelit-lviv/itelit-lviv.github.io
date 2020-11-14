@@ -45,320 +45,77 @@
      <div id="videomeet">
       <iframe allow="camera; microphone; fullscreen; display-capture" src="https://meet.jit.si/python-w-teach" style="height: 100%; width: 100%; border: 0px;"></iframe>         
     </div>
-     
-   
+
       <div class="container-xl mt-5" style='min-height: 100vh;'>
-        <div class="sendform mt-5">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/viewform?embedded=true" width="100%" height="680" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" seamless>Завантаження…</iframe>
-        </div>
-        <div class='theory'>
-          <h3>Корисні посилання</h3><br>
-         <div class='answer'>
-         <ul>
-         <li><i><a href='https://www.flaticon.com/' target='_blank'>flaticon.com</a> <b>або</b> <a href='https://www.iconfinder.com/' target='_blank'>iconfinder.com</a></i> - <b>обрати іконку для програми.</b></li><br>
-         <li><i><a href='https://fonttextup.com/' target='_blank'>fonttextup.com</a></i> - <b>зробити гарний підпис для своєї програми.</b></li><br>
-         <li><i><a href='https://sanstv.ru/color' target='_blank'>sanstv.ru/color</a><b>або</b> <a href='https://palettegenerator.com/' target='_blank'>palettegenerator.com</a></i> - <b>визначити кольори із зображення.</b></li><br>
-         <li><i><a href='https://colorscheme.ru/' target='_blank'>colorscheme.ru</a></i> - <b>підібрати кольорову гамму.</b></li><br></ul></div>
-
-         <div class='theory'>
-          <h3>Використані команди в командному рядку</h3><br>
-         <div class='answer'>
-         <ul>
-         <li><i>pip install pymysql</i> - <b>Встановити бібліотека PyMySQL.</b></li><br>
-         <li><i>python.exe -m pip install --upgrade pip</i> - <b>Якщо не виходить встановити і пише, що застарілий pip. Оновлюємо.</b></li><br></ul></div>
-
-         <h3>Підключення до бази даних</h3>
-         <div class="answer">
-           <code><pre><b>
- conn = pymysql.connect(
-     host='91.239.233.38',
-     user='fmewmhwr_student2',
-     password='2Nkr93KhUUQUGBB',
-     db='fmewmhwr_cinema2',
-     cursorclass=DictCursor)
- </b></pre>
-           </code>
-         </div> 
-         <h3>Мова SQL</h3><br>
-         <div class='answer'>
-         <ul>
-         <li><i>SELECT pass</i> - <b>Вибрати колонку.</b></li><br>
-         <li><i>FROM table</i> - <b>З таблиці.</b></li><br>
-         <li><i>SELECT * FROM table</i> - <b>Повний вираз. Означає - ВИБРАТИ УСЕ З ТАБЛИЦІ.</b></li><br>
-         <li><i>INSERT INTO table(pass, name)</i> - <b>Вставити в таблицю в рядки pass та name.</b></li><br>
-         <li><i>VALUES(%s,%s)</i> - <b>Значення. <u>%s</u> - означає, що замість них, ми будемо вставляти якісь данні з пайтону. Просто змінну, якщо треба передати одне значення. Кортеж, якщо треба передати декілька значень.</b></li><br>
-         <li><i>INSERT INTO table(pass, name) VALUES(%s,%s)</i> - <b>Повний вираз. Означає - ВСТАВИТИ В ТАБЛИЦЮ В РЯДКИ pass та name ЗНАЧЕННЯ %s та %s, які потім будуть передаватись кодом.</b></li><br>
-        <li><code> cursor.execute("CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))")</code> - створення таблиці</li>
-         </ul></div>
-         <div class="theory">
-           <h3>Структура бази даних</h3>
-           <div class="answer"><img src="схема_БД.png" width="100%" style="max-width: 900px;" alt=""></div>
-         </div>
-         <div class='theory'>
-          <h3>Додатково</h3><br>
-         <div class='answer'>
-         
-         <ul>
-         <li><i>tkinter.messagebox</i> - <b>клас, для виведення повідомлень у віконечку.</b></li><br>
-         <li><i>
-root.iconphoto(False,PhotoImage(file='icon.ico')) </i> - <b>додати іконку до нашої програми.</b></li><br></ul></div>
 
         <div class="accordion" id="accordionExample" style=" margin: 50px auto">
           <div class="card">
             <div class="card-header d-flex justify-content-xl-space-between" id="headingOne">
               <h5 class="mb-0">
                 <button class="btn btn-link" type="button"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  <h5>Код. Попереднє заняття. ↓</h5> 
+                  <h5>Інформація для роботи ↓</h5> 
                 </button>
-              </h5>
-             
+              </h5>             
             </div>
             <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
               <div class="card-body">
-<pre><code>
-#C0FFF6 - фон
-#00EFD1 -  осн
-#00ACEA - блакитний
-#FCDB42 - жовтий
-
-from tkinter import *
-
-import pymysql
-from pymysql.cursors import DictCursor
-
-class MainWindow:
-  def __init__(self, root):
-      self.root = root
-      self.w =  self.root.winfo_screenwidth()//2-500
-      self.h =  self.root.winfo_screenheight()//2-350
-      self.root.geometry(f'1000x700+{self.w}+{self.h}') #задаємо розміри та позицію вікна
-      self.root.configure(bg='#C0FFF6') #задаємо фоновий колір для вікна
-      self.root.overrideredirect(1) #приховуємо стандартні кнопки керування вікном
-      #створюємо власну кнопку закриття вікна#
-      self.close_btn = Button(self.root, command=self.close, text='X', bg='#fa5c5c', fg='#360707', bd=0, font=('Roboto', -25), activebackground='#c71e1e')
-      self.close_btn.place(x=965, y=0)#розміщення кнопки закриття
-
-      self.ico = PhotoImage(file='ico.gif')
-      self.ico_lbl = Label(self.root, image=self.ico, bg='#C0FFF6' )
-      self.ico_lbl.place(x=100, y=45)
-
-      self.title = PhotoImage(file='title.gif')
-      self.title_lbl = Label(self.root, image=self.title, bg='#C0FFF6' )
-      self.title_lbl.place(x=270, y=50)
-
-  def close(self):
-      self.root.destroy()
-
-class LoginWindow(MainWindow):
-  def __init__(self, root, conn, cursor):
-      self.root = root
-      self.conn = conn
-      self.cursor = cursor
-
-  def drawWindow(self):
-      self.login_lbl = Label(self.root, text='Введіть логін', fg='#00ACEA', bg='#C0FFF6', font=('Roboto', 15))
-      self.login_lbl.place(x=100, y=320)
-      self.login_entry = Entry(self.root, width=25, font=('Roboto', 15), bd=0, justify='center')
-      self.login_entry.place(x=100, y=350)
-      
-      self.error_lbl = Label(self.root, text='',font=('Roboto Black', 13), fg='#a30000', bg='#CAFFF8')
-      self.error_lbl.place(x=80,y=280)
-      
-      self.password_lbl = Label(self.root, text='Введіть пароль', fg='#00ACEA', bg='#C0FFF6', font=('Roboto', 15))
-      self.password_lbl.place(x=100, y=420)
-      self.password_entry = Entry(self.root, width=25, font=('Roboto', 15), bd=0, justify='center', show='*')
-      self.password_entry.place(x=100, y=450)
-
-
-      self.login_btn = Button(self.root, command=self.login, text='УВІЙТИ', width=20, fg='#005473', bd=0, bg='#FCDB42', font=('Roboto', 15))
-      self.login_btn.place(x=120, y=500)
-
-      self.ans_lbl = Label(self.root, text='Немає акаунту?', fg='#00ACEA', bg='#C0FFF6', font=('Roboto', 25))
-      self.ans_lbl.place(x=570, y=350)
-      self.reg_btn = Button(self.root, command=lambda:registr_show(self, reg), text='Створити новий акаунт', width=25, fg='#005473', bd=0, bg='#00ACEA', font=('Roboto', 15))
-      self.reg_btn.place(x=550, y=450)
-
-
-  def deleteWindow(self):
-      self.login_lbl.destroy()
-      self.login_entry.destroy()
-      self.password_lbl.destroy()
-      self.password_entry.destroy()
-      self.login_btn.destroy()
-      self.ans_lbl.destroy()
-      self.reg_btn.destroy()
-      
-  def isEmpty(self):
-      if self.login_entry.get() =='' or self.password_entry.get()=='':
-          return True
-      else:
-          return False
-          
-  def login(self):
-      if self.isEmpty():
-          self.error_lbl.config(text='*Заповніть, будь ласка, всі поля')
-      else:
-          self.error_lbl.config(text='')
-          self.cursor.execute('SELECT * FROM Users WHERE login=%s AND password=%s', (self.login_entry.get(), self.password_entry.get()) )
-          self.userdata = self.cursor.fetchone()
-          if self.userdata:
-              print('Логін успішний!')
-              self.deleteWindow()
-          else:
-              self.error_lbl.config(text='*Неіснуючий логін або пароль')
-
-class RegisterWindow(MainWindow):
-  def __init__(self, root, conn, cursor):
-      self.root = root
-      self.conn = conn
-      self.cursor = cursor
-
-  def drawWindow(self):
-
-      self.reg_lbl = Label(self.root, text='РЕЄСТРАЦІЯ',font=('Roboto Black', 20), fg='#006E98', bg='#CAFFF8')
-      self.reg_lbl.place(x=410,y=230)
-
-      self.error_lbl = Label(self.root, text='',font=('Roboto Black', 12), fg='#a30000', bg='#CAFFF8')
-      self.error_lbl.place(x=380,y=530)
-      self.name_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
-      self.name_entry.place(x=130,y=350)
-      self.name_lbl = Label(self.root, text='Введіть ім\'я та прізвище:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-      self.name_lbl.place(x=130,y=320)
-
-      self.email_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center')
-      self.email_entry.place(x=130,y=430)
-      self.email_lbl = Label(self.root, text='Введіть свій e-mail:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-      self.email_lbl.place(x=130,y=400)
-
-      self.login_entry = Entry(self.root, width=25,font=('Roboto', 15),bd=0, justify='center')
-      self.login_entry.place(x=600,y=350)
-      self.login_lbl = Label(self.root, text='Придумайте логін:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-      self.login_lbl.place(x=600,y=320)
-
-      self.password_entry = Entry(self.root,width=25, font=('Roboto', 15),bd=0, justify='center', show='•')
-      self.password_entry.place(x=600,y=430)
-      self.password_lbl = Label(self.root, text='Придумайте пароль:',font=('Roboto', 15), fg='#006E98', bg='#CAFFF8')
-      self.password_lbl.place(x=600,y=400)
-
-      self.age_lbl = Label(self.root,text="Ваш вік:",font=('Roboto',15),fg='#006E98', bg='#CAFFF8')
-      self.age_lbl.place(x=420,y=490)
-      self.age_entry = Entry(self.root,font=('Roboto',20),bd=0,justify='center',width=3)
-      self.age_entry.place(x=520,y=482)
-
-      self.reg_btn = Button(self.root, command=self.registration,  bd=0, width=30, height=2, text='Зареєструватися', font=('Roboto Black', 15), fg='#004A66', bg='#FADB43', activebackground='#D0A334')
-      self.reg_btn.place(x=320,y=565)
-
-  def deleteWindow(self):
-      self.login_lbl.destroy()
-      self.login_entry.destroy()
-      self.password_lbl.destroy()
-      self.password_entry.destroy()      
-      self.reg_btn.destroy()
-      self.error_lbl.destroy()
-      self.age_entry.destroy()
-      self.age_lbl.destroy()
-      self.name_entry.destroy()
-      self.name_lbl.destroy()
-      self.email_entry.destroy()
-      self.email_lbl.destroy()
-      self.reg_lbl.destroy()
-      
-  def isEmpty(self):
-      if self.login=='' or self.password=='' or self.age =='' or self.name=='' or self.email =='':
-          return True
-      else:
-          return False
-  
-  
-  def isLoginFree(self):
-      
-      self.cursor.execute("SELECT login FROM Users WHERE login=%s",self.login)
-      if self.cursor.fetchall()!=():
-          return False
-      else:
-          return True
-      
-  
-  def registration(self):
-      self.login =  self.login_entry.get().strip()
-      self.password = self.password_entry.get().strip()
-      self.name = self.name_entry.get().strip()
-      self.email = self.email_entry.get().strip()
-      self.age = self.age_entry.get().strip()
-      
-      
-      
-      if self.isEmpty():
-          self.error_lbl.config(text='*Заповніть всі поля')
-      if self.isLoginFree()==False:
-          self.error_lbl.config(text='*Такий логін вже існує!')
-      else:
-          self.error_lbl.config(text='')
-
-          self.data = (self.login,self.password, self.name, self.email, self.age )
-          
-          sql = "INSERT INTO Users(login, password, name, email, age) VALUES(%s, %s, %s, %s, %s)" 
-          
-          if self.cursor.execute(sql, self.data):
-              self.conn.commit()
-              self.error_lbl.config(text='Реєстрація успішна!')
-              self.reg_btn.config(text="Увійти в акаунт", command=lambda:login_show(login,self))
-
-class Ticket():
-  pass
-
-class Film():
-  pass
-
-class Session():
-  pass
-
-class User():
-  pass
-
-
-
-def on_mouse_click(event):
-  global dif_x, dif_y
-
-  win_position = [int(coord) for coord in root.wm_geometry().split('+')[1:]]
-  dif_x = win_position[0]-event.x_root
-  dif_y = win_position[1]-event.y_root
-
-def update_position(event):
-  root.wm_geometry('+%d+%d' %(event.x_root+dif_x, event.y_root + dif_y))
-
-#######
-def registr_show(login, reg):
-  login.deleteWindow()
-  reg.drawWindow()
-#######
-def login_show(login, reg):
-  reg.deleteWindow()
-  login.drawWindow()
-#######
-conn = pymysql.connect(
-    host='91.239.233.38',
-    user='fmewmhwr_student2',
-    password='2Nkr93KhUUQUGBB',
-    db='fmewmhwr_cinema2',
-    cursorclass=DictCursor)
-
-cursor = conn.cursor()
-
-root=Tk()
-main=MainWindow(root)
-login = LoginWindow(root, conn, cursor)
-reg = RegisterWindow(root, conn, cursor) ##########
-login.drawWindow()
-
-root.bind('<ButtonPress-1>', on_mouse_click )
-root.bind('<B1-Motion>',update_position )
-root.mainloop()  
-</code></pre>                
+                <div class='theory'>
+                  <h3>Корисні посилання</h3><br>
+                 <div class='answer'>
+                 <ul>
+                 <li><i><a href='https://www.flaticon.com/' target='_blank'>flaticon.com</a> <b>або</b> <a href='https://www.iconfinder.com/' target='_blank'>iconfinder.com</a></i> - <b>обрати іконку для програми.</b></li><br>
+                 <li><i><a href='https://fonttextup.com/' target='_blank'>fonttextup.com</a></i> - <b>зробити гарний підпис для своєї програми.</b></li><br>
+                 <li><i><a href='https://sanstv.ru/color' target='_blank'>sanstv.ru/color</a><b>або</b> <a href='https://palettegenerator.com/' target='_blank'>palettegenerator.com</a></i> - <b>визначити кольори із зображення.</b></li><br>
+                 <li><i><a href='https://colorscheme.ru/' target='_blank'>colorscheme.ru</a></i> - <b>підібрати кольорову гамму.</b></li><br></ul></div>
+        
+                 <div class='theory'>
+                  <h3>Використані команди в командному рядку</h3><br>
+                 <div class='answer'>
+                 <ul>
+                 <li><i>pip install pymysql</i> - <b>Встановити бібліотека PyMySQL.</b></li><br>
+                 <li><i>python.exe -m pip install --upgrade pip</i> - <b>Якщо не виходить встановити і пише, що застарілий pip. Оновлюємо.</b></li><br></ul></div>
+        
+                 <h3>Підключення до бази даних</h3>
+                 <div class="answer">
+                   <code><pre><b>
+         conn = pymysql.connect(
+             host='91.239.233.38',
+             user='fmewmhwr_student2',
+             password='2Nkr93KhUUQUGBB',
+             db='fmewmhwr_cinema2',
+             cursorclass=DictCursor)
+         </b></pre>
+                   </code>
+                 </div> 
+                 <h3>Мова SQL</h3><br>
+                 <div class='answer'>
+                 <ul>
+                 <li><i>SELECT pass</i> - <b>Вибрати колонку.</b></li><br>
+                 <li><i>FROM table</i> - <b>З таблиці.</b></li><br>
+                 <li><i>SELECT * FROM table</i> - <b>Повний вираз. Означає - ВИБРАТИ УСЕ З ТАБЛИЦІ.</b></li><br>
+                 <li><i>INSERT INTO table(pass, name)</i> - <b>Вставити в таблицю в рядки pass та name.</b></li><br>
+                 <li><i>VALUES(%s,%s)</i> - <b>Значення. <u>%s</u> - означає, що замість них, ми будемо вставляти якісь данні з пайтону. Просто змінну, якщо треба передати одне значення. Кортеж, якщо треба передати декілька значень.</b></li><br>
+                 <li><i>INSERT INTO table(pass, name) VALUES(%s,%s)</i> - <b>Повний вираз. Означає - ВСТАВИТИ В ТАБЛИЦЮ В РЯДКИ pass та name ЗНАЧЕННЯ %s та %s, які потім будуть передаватись кодом.</b></li><br>
+                <li><code> cursor.execute("CREATE TABLE customers (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))")</code> - створення таблиці</li>
+                 </ul></div>
+                 <div class="theory">
+                   <h3>Структура бази даних</h3>
+                   <div class="answer"><img src="схема_БД.png" width="100%" style="max-width: 900px;" alt=""></div>
+                 </div>
+                 <div class='theory'>
+                  <h3>Додатково</h3><br>
+                 <div class='answer'>
+                 
+                 <ul>
+                 <li><i>tkinter.messagebox</i> - <b>клас, для виведення повідомлень у віконечку.</b></li><br>
+                 <li><i>
+        root.iconphoto(False,PhotoImage(file='icon.ico')) </i> - <b>додати іконку до нашої програми.</b></li><br></ul></div>
+      </div>  
               </div>
             </div>       
-          </div>  
+          </div> 
+        </div>  
+      </div>  
           <div class="card">
             <div class="card-header d-flex justify-content-xl-space-between align-items-center" id="heading11">
               <h5 class="mb-0">
@@ -369,30 +126,37 @@ root.mainloop()
             </div>
                
           </div> 
+          <div class="card alert-primary">
+            <div class="card-header d-flex justify-content-xl-space-between" id="heading3">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button"  data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                  <h5>Кодимо разом - ВІДЕОЗАПИСИ ЗАНЯТЬ ↓</h5> 
+                </button>
+              </h5>             
+            </div>
+           
+            <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3">
+              <div class="card-body">
+                  <h4 class="alert-heading">Кодимо разом</h4>
+                  <p>Запис заняття:</p>
+                  <iframe width="100%" style="min-height: 310px; max-width: 530px;"  height="100%" src="https://www.youtube.com/embed/YwVZZlNy-SE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" style="max-width: 530px;" height="310" src="https://www.youtube.com/embed/TP3XHnmdotk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" style="max-width: 530px;" height="310" src="https://www.youtube.com/embed/XdrrBrKwqag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" style="max-width: 530px;" height="310" src="https://www.youtube.com/embed/F9VRXMSU8qk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" style="max-width: 530px;" height="310" src="https://www.youtube.com/embed/l51JiR8PMPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" style="max-width: 530px;" height="310" src="https://www.youtube.com/embed/1J5ZTiKCPs4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+          </div>
+          </div>
         </div>   
-        
-          
-         
- 
-<div class="alert alert-primary m-auto"  " role="alert">
-  <h4 class="alert-heading">Кодимо разом</h4>
-  <p>Запис заняття:</p>
-  <iframe width="100%" style="min-height: 310px; max-width: 530px;"  height="100%" src="https://www.youtube.com/embed/YwVZZlNy-SE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="100%" style="max-width: 530px;" height="310" src="https://www.youtube.com/embed/TP3XHnmdotk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="100%" style="max-width: 500px;" height="310" src="https://www.youtube.com/embed/XdrrBrKwqag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="100%" style="max-width: 530px;" height="310" src="https://www.youtube.com/embed/8YBZLUO9MF4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="100%" style="max-width: 530px;" height="310" src="https://www.youtube.com/embed/F9VRXMSU8qk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <iframe width="100%" style="max-width: 530px;" height="310" src="https://www.youtube.com/embed/l51JiR8PMPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-</div>
-
         </div>
- 
-      </div>
-    </div>
+        <!-- accordion  end -->
+        <div class="sendform mt-4">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/viewform?embedded=true" width="100%" height="680" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" seamless>Завантаження…</iframe>
+        </div>
+<!-- container end -->
   </div>
-          
+ <!-- main end -->
       <footer class="footer  mt-auto py-3">
         <div class="container">
           <span class="text-muted">©   WebTeach 2020. Всі права застережено</span>
