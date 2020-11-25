@@ -73,6 +73,7 @@
                  <li><code>python -m venv venv</code><b> або </b> <code>python3 -m venv venv</code>- <b>створити віртуальне середовище.</b></li><br>
                  <li><code>venv\Scripts\activate</code> - <b>активувати віртуальне середовище.</b></li><br>
                  <li> <code>pip install Flask </code> <b> або </b> <code>pip3 install Flask </code>- <b>встановити модуль Flask.</b></li><br>
+                 <li> <code>pip install flask-login</code> <b> або </b> <code>pip3 install flask-login </code>- <b>встановити модуль FlaskLogin.</b></li><br>
                 
         
                  </div>
@@ -86,7 +87,10 @@ from flask import Flask, render_template, url_for,  request, flash, session, red
 from werkzeug.security import generate_password_hash, check_password_hash
 import pymysql
 from pymysql.cursors import DictCursor
-from classes import *</code>
+from classes import *
+
+from flask_login import LoginManager, login_required, login_user
+from UserLogin import UserLogin</code>
                     </pre>
                    </div>
                  
