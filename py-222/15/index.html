@@ -105,7 +105,130 @@ from UserLogin import UserLogin</code>
               </div> 
         </div> 
       </div>  
-    </div> 
+            </div> 
+            <div class="card">
+              <div class="card-header d-flex justify-content-xl-space-between" id="heading2">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button"  data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    <h5><b>Flask-Login</b> ↓</h5> 
+                  </button>
+                </h5>             
+              </div>
+              <div id="collapse2" class="collapse " aria-labelledby="heading2" data-parent="#accordionExample">
+                <div class="card-body">
+                  <h3>Порядок дій для реалізації логіну за допомогою Flask-Login</h3>
+                      <p>Підключення необхідних імпортів <br><code>from flask_login import LoginManager, login_required, login_user,logout_user, current_user</code></p>
+                      <p>Створення об'єкту класу <b>LoginManager</b><br>
+                        <code>login_manager = LoginManager(app)</code>
+                      </p>
+                      <p>Створення класу представлення користувача - <b>UserLogin</b><br>
+<div class="answer"><code>
+<pre>
+class UserLogin:
+  def fromDB(self, userID, cursor): <span style="color: rgb(0, 107, 0); font-style: italic;"># додаткова функція  для отримання інформації про користувача з бази даних </span>
+     self.userID = userID
+     self.cursor = cursor
+     self.cursor.execute('SELECT * FROM Users WHERE id=%s',self.userID)
+     self.__user = self.cursor.fetchone()
+     return self
+
+  def create(self, user): <span style="color: rgb(0, 107, 0); font-style: italic;"># функція створення користувача </span>
+     self.__user = user
+     return self
+  
+  def is_authenticated(self): <span style="color: rgb(0, 107, 0); font-style: italic;"># функція перевірки авторизації користувача </span>
+     return True
+  
+  def is_active(self): <span style="color: rgb(0, 107, 0); font-style: italic;"># функція перевірки активності користувача</span>
+     return True
+  
+  def is_anonymous(self):<span style="color: rgb(0, 107, 0); font-style: italic;"># функція перевірки неавторизованих користувачів </span>
+     return False
+  
+  def get_id(self):<span style="color: rgb(0, 107, 0); font-style: italic;"># функція, що повертає унікальний ідентифікатор користувача (у вигляді рядка)</span>
+     return str(self.__user['id'])
+     
+</pre>
+</code>
+</div>
+</p>
+<p>
+  Далі, в обробнику процесу логіну користувача створюється об'єкт класу UserLogin і передається спеціальній функції <code>login_user</code>, яка визначена в модулі Flask-Login: <br>
+  <div class="answer"><code>
+<pre>
+@app.route('/login', methods=["POST", "GET"])
+def login():
+  if request.method == "POST":
+      ...#отримання даних про користувача
+        userLogin = UserLogin().create(user_db)
+        <b>login_user(userLogin)</b> <span style="color: rgb(0, 107, 0); font-style: italic;"># функція вносить інформацію про залогіненого користувача в сесії браузера</span>
+      ...#вивід відповіді (перенаправлення, флеш повідомлення)
+</pre>
+</code>
+</div>
+</p>
+                
+                <p>
+                  Ця функція заносить в сесію інформацію про залогіненого користувача, використовуючи певні методи класу. Після цього сесійна інформація буде присутня у всіх запитах до сервера. Для її обробки у Flask-Login визначено спеціальний декоратор: <br>
+  <div class="answer"><code>
+<pre>
+@login_manager.user_loader
+def load_user(user_id):
+    print("load_user")
+    return UserLogin().fromDB(user_id, cursor)
+</pre>
+</code>
+Причому функції load_user цього декоратора буде переданий ідентифікатор користувача, який присутній в сесії запиту. Фактично, це буде user_id, який повертається методом get_id класу UserLogin.</div> 
+</p>
+<p>
+  Коли весь цей механізм реалізований, ми дуже легко можемо обмежувати доступ до різних сторінок сайту. Наприклад, зробимо так, щоб сеанси на фільм можна було переглядати тільки авторизованим користувачам. Для цього перед функцією представлення додається декоратор <b>@login_required</b>: <br>
+<code>
+<pre>
+@app.route('/films/<filmID>/session/<sessionID>')
+@login_required
+def sessionView(filmID, sessionID):
+      ...    
+</pre>
+</code>
+</p>     
+<p>
+  Функція <b>logout_user()</b> очищає сесію і робить користувача неавторизованим. Потім, формується миттєве повідомлення і перенаправлення на форму авторизації.<br>
+  <div class="answer"><code>
+<pre>
+@app.route('/logout')
+def logout():
+    <b>logout_user()</b>
+    flash('Ви вийшли з профілю', category='alert-warning')
+    return redirect(url_for('login'))
+</pre>
+</code>
+</div>
+</p>
+<p>
+  Припустимо, що ми не авторизовані і намагаємося відвідати закриту сторінку. У цьому випадку сервер поверне код 401 - сторінка недоступна. Але це не найкраща поведінка сайту. Більш дружній інтерфейс повинен перенаправляти користувача, наприклад, на форму авторизації. Це робиться наступними рядками: <br>
+  <div class="answer"><code>
+<pre>
+login_manager.login_view = 'login'
+login_manager.login_message = 'Авторизуйтесь, щоб переглядати цю сторінку'
+login_manager.login_category = 'alert-warning'
+</pre>
+</code>
+<b>login_view</b> перенаправляє на сторінку логіну, а <b>login_message</b> та <b>login_category</b> задають параметри флеш-повідомлення для таких ситуацій.
+</div>
+</p>
+<p>
+  Нарешті, останній важливий штрих. Якщо авторизований користувач перейде за адресою /login, то він побачить форму авторизації, що якось неприродно, адже він же вже увійшов на сайт! Тому в обробнику login на самому початку можна зробити таку перевірку:
+  <div class="answer"><code>
+<pre>
+  if current_user.is_authenticated:
+    return redirect(url_for('index'))
+</pre>
+</code>
+</div>
+</p>
+          </div> 
+        </div>  
+             
           <div class="card">
             <div class="card-header d-flex justify-content-xl-space-between align-items-center" id="heading11">
               <h5 class="mb-0">
