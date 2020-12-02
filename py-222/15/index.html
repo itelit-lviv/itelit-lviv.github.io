@@ -100,9 +100,26 @@ from UserLogin import UserLogin</code>
                  <ul>
                  <li> <a href="https://bootstrap-4.ru/docs/4.5/" target="_blank"><b>bootstrap-4.ru</b>/</a>  - <b>CSS-фреймворк Bootstrap.</b></li><br>
                  <li> <a href="https://fancyapps.com/fancybox/3/" target="_blank"><b>fancyapps.com/fancybox/3/</b>/</a>  - <b>плагін для відкриття відео з ютубу</b></li><br>
-                 
+                 <li> <a href="https://hackerthemes.com/bootstrap-cheatsheet/" target="_blank"><b>hackerthemes.com/bootstrap-cheatsheet/</b>/</a>  - <b>Наочна таблиця з класами Bootstrap4</b></li><br>
+                 <li> <a href="https://id.heroku.com/login" target="_blank"><b>heroku.com</b>/</a>  - <b>сервіс для безкоштовного деплою та розміщення веб-додатків</b></li><br>
+
+                 </div>
+                 <div class='theory'>
+                  <h3>Публікація на сервер за допомогою <a href="https://id.heroku.com/login" target="_blank">heroku.com</a></h3><br>
+                 <div class='answer'>
+                 <ul>
+                 <li>1. <code>heroku login</code> авторизація в heroku (в командному рядку)</li>
+                 <li>2. <code>pip install gunicorn</code></li>
+                 <li>3. <code>pip freeze> requirements.txt</code></li>
+                 <li>4. Створити файл <b>Procfile</b> з командою: <code>web: gunicorn app:app</code></li>
+                 <li>5.  У venv  створити файл <b>.gitignore</b></li>
+                 <li>6. <code>git add .</code> фіксація всіх файлів</li>
+                 <li>7. <code>git commit -am "add all files"</code> збереження всіх змін</li>
+                 <li>8. <code>git push heroku master </code> - надсилання в heroku</li>
+
                  </div>
               </div> 
+            </div> 
         </div> 
       </div>  
             </div> 
