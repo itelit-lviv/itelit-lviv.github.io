@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Курс Python - WebTeach">
+    <meta property="og:site_name" content="WebTeach">
+    <meta property="og:url" content="https://web-teach.pp.ua/py-d/101/index.html">
+    <meta property="og:description" content="Вивчаємо мову програмування Python онлайн!">
+    <meta property="og:image" content="https://web-teach.pp.ua/src/python-course/python-preview.jpg">
+    <!-- /Required meta tags -->
+    <title>Курс Python - WebTeach</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://web-teach.pp.ua/src/python-course/css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-xl">
+      <a class="navbar-brand logo" href="../index.html"><span>Web</span>Teach</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mr-auto mt-2 mt-lg-0" >
+          <a class="nav-item nav-link" href="../index.html#course" title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link conf-button active" title="Перейти до онлайн-уроку" href="https://meet.google.com/dtc-kbdg-tbu" target="_blank">
+            <svg class="bi bi-camera-video-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.667 3h6.666C10.253 3 11 3.746 11 4.667v6.666c0 .92-.746 1.667-1.667 1.667H2.667C1.747 13 1 12.254 1 11.333V4.667C1 3.747 1.746 3 2.667 3z"/>
+              <path d="M7.404 8.697l6.363 3.692c.54.313 1.233-.066 1.233-.697V4.308c0-.63-.693-1.01-1.233-.696L7.404 7.304a.802.802 0 0 0 0 1.393z"/>
+            </svg>
+            Онлайн-урок</a>
+          <a class="nav-item nav-link" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
+          <a class="nav-item nav-link" href="../journal.html" data-toggle="tooltip" data-placement="bottom" title="Сторінка в розробці, скоро оцінки будуть доступні :)" >Журнал</a>
+          <a class="nav-item nav-link" href="#openModal" data-toggle="modal" data-target="#exampleModal">Реквізити</a>
+          
+        </div>
+        <div class="nav-phone my-2 my-lg-0">
+          <a href="tel:+380662719785" class="nav-item nav-link">+380995638685</a>
+        </div>
+        </div>
+     </div> 
+     </nav>
+     <!-- nav end -->
+     <div class="header-baner container-fluid d-flex justify-content-xl-space-between">       
+      <h1 >Тема 8. Корисні модулі в Python.</h1>
+      
+      <div class="row tabs-container d-flex align-items-end">
+        <div class="col"></div>
+        <div class="col-md-auto col-sm-12 align-self-center">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#theory" role="tab" aria-controls="home" aria-selected="true">Конспект</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="profile" aria-selected="false">Завдання</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#answers" role="tab" aria-controls="contact" aria-selected="false">Відповіді</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col"></div>
+      </div>
+     </div>
+      <div class="lesson container-xl">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="theory" role="tabpanel" aria-labelledby="home-tab">
+          
+        
+          <div class='theory'>
+		  <h3>Робота з файлами</h3>
+            <div class='answer'>
+            В Пайтон можна відкривати будь-які файли та працювати з ними.
+            </div>
+            
+            <h3>Відкриття файла в Python</h3>
+            <div class='answer'>
+            За допомогою функції <code>open</code> можна відкривати файл в середі Пайтон і виводити його вміст на екран. 
+            <p>Для відкриття файла <i>test.txt</i> напишіть наступне:
+            <p><code>
+            test_file = open('test.txt')<br>
+            text = test_file.read()<br>
+            print(text)
+            </code>
+            </div>
+            
+            <h3>Запис в файл</h3>
+            <div class='answer'>
+            Функція <code>open</code> відкриває файл тільки для читання, тому для запису інформації в файл необідно писати уточнення 'w', наступним чином:
+            <p><code>
+            text_file = open('test.txt','w')
+            </code>
+            <p>Якщо такого файлу не існує, то він створиться. Далі записати інформацію в файл можна за допомогою функції:
+            <p><code>
+            text_file = open('test.txt','w')<br>
+            text_file.write('Some text')
+            </code>
+            <p>Після чого файл обов'язково треба файл закрити:
+            <p><code>
+            text_file = open('test.txt','w')<br>
+            text_file.write('Some text')<br>
+            test_file.close()
+            </code>
+            </div>
+            <h3>Функції модуля random</h3>
+            <div class='answer'>
+            <ul>
+            <li><code>random.randint(A, B)</code> - випадкове ціле число N, A ≤ N ≤ B.</li>
+            
+            <li><code>random.choice(list)</code> - випадковий елемент непустого масиву (список, кортеж, бібліотека).</li>
+            
+            
+            <li><code>random.random()</code> - випадкове число від 0 до 1.</li>
+            
+            <li><code>random.uniform(A, B)</code> - випадкове неціле число <b>float</b>, A ≤ N ≤ B (або B ≤ N ≤ A).</li>
+            
+            </ul>
+            <div class="alert alert-success" role="alert">
+              <p><i><u>УВАГА!</u> Для того щоб знайти інші функції використовуйте google!</i></p>
+            </div></div>
+			<h3>Модуль time</h3>
+            <div class='answer'>
+            Функція time() повертає кількість секунд, які пройшли від півночі 1 січня 1970 року. Це можна використовувати для визначення часу роботи програми. Засікаємо час до виконання і після. Далі виводимо різницю цих значень і отримуємо час роботи програми.
+            <p><code>
+            import time<br>
+            t1 = time.time()<br>
+            for i in range(0,1000):<br>
+            <span style='margin-left:20px;'></span>print(i)<br>
+            t2 = time.time()<br>
+            print(t2-t1)<br>
+            </code>
+            </div>
+            <h3>Отримуємо дату й час за допомогою localtime()</h3>
+            <div class='answer'>
+            Функція localtime() повертає дату й час у вигляді кортежу.Для того, щоб надрукувати час або рік. Необхідно записувати наступним чином:<p><code>
+            import time<br>
+            t = time.localtime()<br>
+            print(t[0])<br>
+            print(t[3])<br>
+            </code>
+            <p> Кортеж формується наступним чином - (рік, місяць, день, година, хвилина, секунда, який день тижня[неділя - 0, далі 1,2...6], який день року від 1 до 366.)
+            </div>
+            <h3>Функція sleep()</h3>
+            <div class='answer'>
+            Функція sleep() потрібна для того, щоб заповільнити час виконання програми. Наприклад для виведення чисел від 1 до 60 можна використати такий цикл: <p><code>
+            import time<br>
+            for i in range(1,61):<br>
+            <span style='margin-left:20px;'></span>print(i)<br>
+            <span style='margin-left:20px;'></span>time.sleep(1)<br>
+            </code>
+            <p>Таким чином ми зробили секундомір, який рахує від 1 до 60.
+            </div>
+			<h3>Третій метод форматування рядків</h3>
+            <div class='answer'>
+            Якщо вам необхідно вписати у ваш рядок інші змінні числові або рядкові, то можна використовувати цей метод:
+            <p><code>
+            a = 3<br>
+            b = 'apple'<br>
+            c = 'I find %s %s'%(a,b)<br>
+            print(c)<br>
+            <span class='comment'>#result: I find 3 apple</span>
+            </code>
+            <p>Для виведення інформації краще використовувати метод через f, якщо необхідно створити новий рядок, який включає інші змінні, то краще цей.
+            </div>
+            </div>
+                  
+        </div>    
+        <div class="tab-pane fade" id="tasks" role="tabpanel" aria-labelledby="profile-tab">                                                       
+                                                                            
+                <div class='task'>  <h3> ЗАВДАННЯ 8.1. </h3>                           
+                      <p>Виконати перше, друге і четверте завдання з першої теми новим способом виведення інформації.</p></div>
+          <br />                                                                                              
+                      <div class='task'>  <h3> ЗАВДАННЯ 8.2. </h3>
+                      <p>Створити програму, яка буде підраховувати суму чисел від числа і до числа, які введе користувач. Запис результату має відбутись у файл z2.txt, в командному рядку нічого виводитись не має. Також, перед обчисленням в файл має записатись "Зараз буде виконуватись обчислення суми від А до Б", А і Б це числа, які введе користувач.		</p>
+          <p>Результат вивести на екран у вигляді:</p>
+          <p><img src="/src/python-course/t9_2.PNG" alt="" /></p></div>                                                             
+          <div class='task'>  <h3>        ЗАВДАННЯ 8.3.                            </h3>
+                      <p>Створити програму яка буде копіювати вміст файлу з попереднього завдання і вставляти в новостворений файл.</p>
+          <p><img src="/src/python-course/t9_3.PNG" alt="" /></p>
+          </div>
+		<div class='task'><h3>                                ЗАВДАННЯ 8.4.                            </h3>
+                      <p>Змінити завдання 8.7. Нічого виводитись в командний рядок не має. Програма має створити файл в який записати хто переміг.</p>
+          <p>Результат вивести на екран у вигляді:</p>
+          <p><img src="/src/python-course/t9_4.PNG" alt="" /></p></div>
+		<div class='task'><h3>                                ЗАВДАННЯ 8.5.                            </h3>
+                      <p>Створити гру, де випадковим чином створюється змінна. Користувачу дається змога її вгадати. Кожного разу програма має запитувати число, якщо його ще не вгадали. Програма має підказувати користувачу чи число більше чи менше. Як тільки користувач вгадує, цикл завершується. Програма ,також ,має підраховувати скільки секунд ви витратили на вгадування числа.</p>
+          <p><img src="/src/python-course/t9_71.PNG" alt="" /></p><p><img src="/src/python-course/t9_72.PNG" alt="" /></p></div>
+		  <div class='task'><h3>                                ЗАВДАННЯ 8.6.                            </h3>
+                      <p>За допомогою модуля time програма має вираховувати скільки місяців залишилось до дня народження користувача. Та вивести на екран скільки місяців залишилось. Використати функцію <b>split()</b>.</p>
+          <p><img src="/src/python-course/t9_8.PNG" alt="" /></p></div>
+
+                                                  
+        </div>
+        <div class="tab-pane fade" id="answers" role="tabpanel" aria-labelledby="contact-tab">
+            <!-- <div class="alert alert-danger" role="alert"> -->
+            <!-- Відповіді будуть доступні після заняття -->
+            <!-- </div> -->
+             <div class='task'>  <h3> ЗАВДАННЯ 8.2. </h3>
+                           
+              <p><img src="/src/python-course/images_answer-d/t9_2.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 8.3.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t9_3.PNG" alt="" /></p></div>
+                                   
+              <div class='task'><h3>                                ЗАВДАННЯ 8.4.                            </h3>
+                                          
+              <p><img src="/src/python-course/images_answer-d/t9_4.PNG" alt="" /></p></div>
+			  <div class='task'><h3>                                ЗАВДАННЯ 8.5.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t9_7.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 8.6.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t9_8.PNG" alt="" /></p></div>
+              
+        </div>
+      </div>
+      </div>
+          <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Реквізити для оплати</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title">Егрецький Данило Романович</h5>
+        <p><i>МоноБанк</i><br>	  
+          5375 4141 0098 2189</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Закрити</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <footer class="footer  mt-auto py-3">
+        <div class="container">
+          <span class="text-muted">	©   WebTeach 2020. Всі права застережено</span>
+        </div>
+      </footer>
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      
+  </body>
+</html>
