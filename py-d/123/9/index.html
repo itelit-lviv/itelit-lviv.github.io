@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Курс Python - WebTeach">
+    <meta property="og:site_name" content="WebTeach">
+    <meta property="og:url" content="https://web-teach.pp.ua/py-d/101/index.html">
+    <meta property="og:description" content="Вивчаємо мову програмування Python онлайн!">
+    <meta property="og:image" content="https://web-teach.pp.ua/src/python-course/python-preview.jpg">
+    <!-- /Required meta tags -->
+    <title>Курс Python - WebTeach</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://web-teach.pp.ua/src/python-course/css/style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-xl">
+      <a class="navbar-brand logo" href="../index.html"><span>Web</span>Teach</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mr-auto mt-2 mt-lg-0" >
+          <a class="nav-item nav-link" href="../index.html#course" title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link conf-button active" title="Перейти до онлайн-уроку" href="https://meet.google.com/dtc-kbdg-tbu" target="_blank">
+            <svg class="bi bi-camera-video-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.667 3h6.666C10.253 3 11 3.746 11 4.667v6.666c0 .92-.746 1.667-1.667 1.667H2.667C1.747 13 1 12.254 1 11.333V4.667C1 3.747 1.746 3 2.667 3z"/>
+              <path d="M7.404 8.697l6.363 3.692c.54.313 1.233-.066 1.233-.697V4.308c0-.63-.693-1.01-1.233-.696L7.404 7.304a.802.802 0 0 0 0 1.393z"/>
+            </svg>
+            Онлайн-урок</a>
+          <a class="nav-item nav-link" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
+          <a class="nav-item nav-link" href="../journal.html" data-toggle="tooltip" data-placement="bottom" title="Сторінка в розробці, скоро оцінки будуть доступні :)" >Журнал</a>
+          <a class="nav-item nav-link" href="#openModal" data-toggle="modal" data-target="#exampleModal">Реквізити</a>
+          
+        </div>
+        <div class="nav-phone my-2 my-lg-0">
+          <a href="tel:+380662719785" class="nav-item nav-link">+380995638685</a>
+        </div>
+        </div>
+     </div> 
+     </nav>
+     <!-- nav end -->
+     <div class="header-baner container-fluid d-flex justify-content-xl-space-between">       
+      <h1 >Тема 9. Модуль tkinter</h1>
+      
+      <div class="row tabs-container d-flex align-items-end">
+        <div class="col"></div>
+        <div class="col-md-auto col-sm-12 align-self-center">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#theory" role="tab" aria-controls="home" aria-selected="true">Конспект</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="profile" aria-selected="false">Завдання</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#answers" role="tab" aria-controls="contact" aria-selected="false">Відповіді</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col"></div>
+      </div>
+     </div>
+      <div class="lesson container-xl">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="theory" role="tabpanel" aria-labelledby="home-tab">
+          
+        
+          <div class='theory'>
+            <h3>Створюємо кнопку</h3>
+            <div class='answer'>
+            Давайте для початку використаємо tkinter та створимо програму з кнопкою. Для цього уведіть наступний код:
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            btn = Button(t, text='press')<br>
+            btn.pack()<br>
+            t.mainloop()
+            </code>
+            <p>В першому рядку ми імпортували модуль tkinter. Конструкція <code>from модуль import *</code> дозволяє звертатись до вмісту модуля, не вказуючи його ім'я щоразу.
+            <p>В другому рядку ми створили змінну і зберегли в ній об'єкт класу Тк. Об'єкт t створює пусте вікно, в якому можна добавляти кнопки, рядки вводу і т.п.
+            <p>В третьому рядку ми створили кнопку викликом btn = Button, де першим аргументом передали змінну t, а другим рядок 'press'. Для того, щоб кнопка з'явилась на екрані необхідно написати <code>btn.pack()</code>, яка включає відображення кнопки.
+            <p>Від кнопки 'press' не багато користі. Давайте це змінимо. Створимо функцію, яка в наш командний рядок буде виводити "Привіт" і використаємо її з кнопкою:
+            <p><code>
+            from tkinter import *<br>
+            def hello():<br>
+            <span style='margin-left:20px;'></span>print("Привіт")<br>
+            t = Tk()<br>
+            btn = Button(t, text='press', command=hello)<br>
+            btn.pack()<br>
+            t.mainloop()
+            </code>
+            </div>
+            
+            <h3>Створюємо полотно для малювання</h3>
+            <div class='answer'>
+            Для створення малюнків на екрані, від кнопок сенсу небагато, для цього використовують полотно - об'єкт класу Canvas, який так само входить в наш модуль. Для створення полотна необхідно задати ширину і висоту:
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            canvas = Canvas(t, width=400,height=400)<br>
+            canvas.pack()<br>
+            t.mainloop()
+            </code>
+            </div>
+            
+            <h3>Малюємо лінії</h3>
+            <div class='answer'>
+            В tkinter для малювання ліній на полотні використовуються координати в пікселях. Оскільки наше полотно займає 400 пікселів в ширину і 400 пікселів в висоту, його праий нижній кут має координати(400,400).
+            Отже лінію можна наалювати за допомогою функції <code>create_line</code>:
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            canvas = Canvas(t, width=500, height=500)<br>
+            canvas.pack()<br>
+            canvas.create_line(0,0,400,400)<br>
+            t.mainloop()
+            </code>
+            </div>
+            
+            <h3>Малюємо прямокутники</h3>
+            <div class='answer'>
+            За допомогою <code>tkinter</code> малювати прямокутники набагто простіше ніж за допомогою черепашки. Всьо, що необхідно знати - це координати кутів прямокутника.
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            canvas = Canvas(t, width=500, height=500)<br>
+            canvas.pack()<br>
+            canvas.create_rectangle(10,10,40,40)<br>
+            t.mainloop()
+            </code>
+            <p>Координати, які ми передали цій функції - це координати лівого верхнього кута і правого нижнього.
+            </div>
+            <h3>Кольорове малювання</h3>
+            <div class='answer'>
+            Ми хочем використовувати різні кольори в наших малюнках. Для цього використовується атрибут <code>fill</code>:
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            canvas = Canvas(t,width=400,height=400)<br>
+            canvas.pack()<br>
+            canvas.create_rectangle(10,10,40,40,fill='red')<br>
+            t.mainloop()
+            </code>
+            </div>
+            <h3>Малювання дуг</h3>
+            <div class='answer'>
+            Для того щоб намалювати дугу, необхідно викликати функцію <code>create_arc</code>, передавши їй координати кутів прямокутника, в який вона буде вписана:
+            <p><code>
+            canvas.create_arc(10,10,200,100,extent=180, style=ARC)
+            </code>
+            <p>Лівий верхній кут описаного прямокутника буде розташований в точці з координатами (10,10), а правий нижній в точці (200,100). Далі вказаний аргумент <b>extent</b>, в якому передається кут поворота дуги в градусах. 
+            </div>
+            <h3>Малювання багатокутників</h3>
+            <div class='answer'>
+            Для того, щоб створити багатокутник використовується функція <code>create_polygon</code>, де аргументами виступають точки багатокутника:
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            canvas = Canvas(t,width=400,height=400)<br>
+            canvas.pack()<br>
+            canvas.create_polygon(10,10,100,40,100,140)<br>
+            t.mainloop()
+            </code>
+            </div>
+            <h3>Відображення тексту</h3>
+            <div class='answer'>
+            Для того, щоб вивести текст на полотні, використовується функція <code>create_text</code>, яка приймає дві координати х- та у-позиції напису, а також аргумент з самим текстом.
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            canvas = Canvas(t,width=400,height=400)<br>
+            canvas.pack()<br>
+            canvas.create_text(10,10,text='Hello',fill='red')<br>
+            t.mainloop()
+            </code>
+            <p>В аргументі <b>font</b> можна задати кортеж, в якому будуть назва і розмір шрифту. Розмір шрифту вказується в пунктах<code> font=('Colibri', 20)</code>, для того щоб вказати в пікселях, необхідно задавати від'ємне значення - ('Colibri', -20).
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            canvas = Canvas(t,width=400,height=400)<br>
+            canvas.pack()<br>
+            canvas.create_text(10,10,text='Hello',fill='red',font=('Colibri', -20))<br>
+            t.mainloop()
+            </code>
+            </div>
+            <h3>Зображення</h3>
+            <div class='answer'>
+            Для виведення зображень використовують функцію <b>create_image</b> (Використовується тільки для .gif. Для того, щоб вставити PNG або JPG формати, необхідно використовувати іншу бібліотеку або модуль):
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            canvas = Canvas(t,width=400,height=400)<br>
+            canvas.pack()<br>
+            my_image = PhotoImage(file='test.gif')<br>
+            canvas.create_image(0,0,anchor=NW,image=my_image)<br>
+            t.mainloop()
+            </code>
+            <p>Аргумент <code>anchor=NW</code> означає, що зображення має виводитись з верхнього лівого кута (інакше воно виведеться з центру зображення). Останній аргумент задає саме зображення, тобто вказує на фото.
+            </div>
+            <h3>Створення простої анімації</h3>
+            <div class='answer'>
+            Модуль не розрахований на створення анімації, але щось просте ми зробити можемо.
+            <p><code>
+            import time<br>
+            from tkinter import *<br>
+            tk = Tk()<br>
+            canvas = Canvas(tk, width=400, height=200)<br>
+            canvas.pack()<br>
+            canvas.create_polygon(10, 10, 10, 60, 50, 35)<br>
+            for x in range(0, 60):<br>
+               <span style='margin-left:20px'></span> canvas.move(1, 5, 0)<br>
+               <span style='margin-left:20px'></span> tk.update()<br>
+                <span style='margin-left:20px'></span>time.sleep(0.05)<br>
+            tk.mainloop()
+            </code>
+            <p>Як працює анімація? Задаємо звичайний цикл, який рахує від 0 до 59. Код, який знаходить в блоці цього циклу відповідає за переміщення трикутника. Функція <code>canvas.move(1, 5, 0)</code> рухає об'єкт, ідентифікатор якого дорівнює 1, на 5 пікселів вправо і на 0 пікселів вниз. Функція <code>tk.update()</code> використовується для змушеного оновлення зображення на екрані. Без цієї функції нам в результаті не відобразилось би зміщення, а одразу результат, де буде знаходитись трикутник. І остання функція циклу <code>time.sleep(0.05)</code> задає маленьку паузу.
+            
+            </div>
+            
+            <h3>Реакція об'єктів на події</h3>
+            <div class='answer'>
+            <b>Події</b> - те, що відбувається під час роботи програми: рух миші, натискання на клавішу або робота з вікнами тощо. 
+            
+            <p>Для обробки події необхідно створити функції, а потім повідомити модуль, про те, що її необхідно прив'язати до певної події, інакше кажучи, вона має викликатись, як тільки подія була виконана.
+            <p>Нехай трикутник буде рухатись тільки після натискання на клавішу ENTER. Наша функція буде приймати єдиний аргумент (event), в який модуль буде передавати інформацію про подію. Тепер треба, щоб модуль викликав функцію при натискані клавіші. Для цього використовуємо функцію <code>bind_all</code>:
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            canvas = Canvas(t,width=400,height=400)<br>
+            canvas.pack()<br>
+            canvas.create_polygon(10,10,10,60,50,35)<br>
+            def movetriangle(event):<br>
+            <span style='margin-left:20px'></span>canvas.move(1,5,0)<br>
+            canvas.bind_all('&lt;KeyPress-Return&gt;', movetriangle)<br>
+            t.mainloop()
+            </code>
+            <p>Якщо ми хочемо змінювати напрям руху нашого прикутника в залежності від натискання кнопок, треба змінити код:
+            <p><code>
+            def movetriangle(event):<br>
+            <span style='margin-left:20px'></span>if event.keysym == 'Up':<br>
+            <span style='margin-left:40px'></span>canvas.move(1,0,-3)<br>
+            <span style='margin-left:20px'></span>if event.keysym == 'Down':<br>
+            <span style='margin-left:40px'></span>canvas.move(1,0,3)<br>
+            <span style='margin-left:20px'></span>if event.keysym == 'Left':<br>
+            <span style='margin-left:40px'></span>canvas.move(1,-3,0)<br>
+            <span style='margin-left:20px'></span>else:<br>
+            <span style='margin-left:40px'></span>canvas.move(1,3,0)<br>
+            </code>
+            <p>Об'єкт <b>event</b>, який передається в функцію, має певний набор властивостей, один з яких <b>keysym</b>, в якому зберігається значення відповідної натиснутої клавіші. Тепер об'єднаємо весь код:
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            canvas = Canvas(t,width=400,height=400)<br>
+            canvas.pack()<br>
+            canvas.create_polygon(10,10,10,60,50,35)<br>
+            def movetriangle(event):<br>
+            <span style='margin-left:20px'></span>if event.keysym == 'Up':<br>
+            <span style='margin-left:40px'></span>canvas.move(1,0,-3)<br>
+            <span style='margin-left:20px'></span>elif event.keysym == 'Down':<br>
+            <span style='margin-left:40px'></span>canvas.move(1,0,3)<br>
+            <span style='margin-left:20px'></span>elif event.keysym == 'Left':<br>
+            <span style='margin-left:40px'></span>canvas.move(1,-3,0)<br>
+            <span style='margin-left:20px'></span>else:<br>
+            <span style='margin-left:40px'></span>canvas.move(1,3,0)<br>
+            canvas.bind_all('&lt;KeyPress-Up&gt;', movetriangle)<br>
+            canvas.bind_all('&lt;KeyPress-Down&gt;', movetriangle)<br>
+            canvas.bind_all('&lt;KeyPress-Left&gt;', movetriangle)<br>
+            canvas.bind_all('&lt;KeyPress-Right&gt;', movetriangle)<br>
+            t.mainloop()
+            </code>
+            </div>
+            <h3>Для чого ще потрібні ідентифікатори?</h3>
+            <div class='answer'>
+            Потрібні для визначення фігури на полотні. Після створення фігур, кожній задається свій ідентифікатор 1,2,3,...,100,... . Ці ідентифікатори ми використовуємо для інших функцій, таких як move. Але для того, щоб не гадати де який ідентифікатор, краще всього зробити так:
+            <p><code>
+            from tkinter import *<br>
+            t = Tk()<br>
+            canvas = Canvas(t,width=400,height=400)<br>
+            canvas.pack()<br>
+            a = canvas.create_rectangle(10,10,40,40)<br>
+            move(a, 5, 1)<br>
+            t.mainloop()
+            </code>
+            <p>Також можна за допомогою ідентифікатора і функції можна змінювати значення фігур таких як колір і колір рамки:
+            <p><code>
+            canvas.itemconfig(mytriangle, fill='blue')
+            </code>
+            </div>
+            </div>
+                  
+         
+          
+                  
+                  
+        </div>    
+        <div class="tab-pane fade" id="tasks" role="tabpanel" aria-labelledby="profile-tab">                                                       
+                                                                            
+                                                                              
+                                                                            
+                                                                           
+                <div class='task'> <h3> ЗАВДАННЯ 10.1. </h3>                           
+                  <p>Створити кнопку з довільним текстом на ній.</p>
+
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t10_1.PNG" style="max-width: 300px; width: 90%;" alt="" /></p>
+            </div>
+                                                                                    
+                    <div class='task'>  <h3> ЗАВДАННЯ 10.2. </h3>
+                  <p>Модернізувати попереднє завдання. Зробити так, щоб при натисканні на вашу кнопку в командний рядок виводилось ваше ім'я.</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t10_2.PNG" alt="" /></p></div>
+            <div class='task'>  <h3>        ЗАВДАННЯ 10.3.                            </h3>
+                  <p>Створити полотно довільного розміру, на якому намалювати дві лінії, які будуть діагналями цього полотна.</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t10_3.PNG" alt="" /></p>
+            </div>
+            <div class='task'><h3>                                ЗАВДАННЯ 10.4.                            </h3>
+                  <p>Створити на полотні довільного розміру чотири різних прямокутника. Необхідно зробити так, щоб ці прямокутники заповнили усе полотно та були різних кольорів.</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="/src/python-course/t10_4.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 10.5.                            </h3>
+                  <p>створити довільний багатокутниу(мінімум 6 кутів). Зробити так, щоб він був замальований довільним кольором.</p>
+            <p><img src="/src/python-course/t10_5.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 10.6.                            </h3>
+                  <p>Створити 5 дуг. Початок усіх прямокутників (10,10). Правий нижній кут прямокутників:
+            <ul>
+            <li>Перша дуга: (200,300), кут - 180.</li>
+            <li>Друга дуга: (30,300), кут - 90.</li>
+            <li>Третя дуга: (200,80), кут - 215.</li>
+            <li>Четверта дуга: (400,450), кут - 30.</li>
+            <li>П'ята дуга: (400,38), кут - 150.</li>
+            </ul>
+            </p>
+            <p><img src="/src/python-course/t10_6.PNG" alt="" /></p></div>
+
+            <div class='task'><h3>                                ЗАВДАННЯ 10.7.                            </h3>
+                  <p>Створити 5 написів: Прізвище, Ім'я, По-батькові, вік, 'Років'. Зробити їх в довільному розташуванні але один під одним. Вибрати для кожного довільні колір, шрифт і розмір шрифту.</p>
+            <p><img src="/src/python-course/t10_7.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 10.8.                            </h3>
+                  <p>Створити ромб, який буде занімовано наступним чином:<ul>
+            <li>Рухається з лівого верхнього кута в правий верхній кут.</li>
+            <li>Рухається з правого верхнього кута в правий нижній кут.</li>
+            <li>Рухається з правого нижнього кута в лівий нижній кут.</li>
+            <li>Рухається з лівого нижнього кута в лівий верхній кут.</li>
+            <li>Рухається з лівого верхній кута в правий нижній кут.</li>
+            <li>Рухається з правого нижнього кута в правий верхній кут.</li>
+            <li>Рухається з правого верхнього кута в лівий нижній кут.</li>
+
+            </ul></p>
+            <p><img src="/src/python-course/t10_8.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 10.9.                            </h3>
+                  <p>Створити дві довільні фігури, якими можна буде керувати. Наприклад, ви створили трикутник і квадрат. Трикутником можна керувати клавішами - "вверх", "вниз", "вліво", "вправо". Квадратом тоді - "w","s","a","d".</p>
+            <p><img src="/src/python-course/t10_9.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 10.10.                            </h3>
+                  <p>Створити трикутник, яким можна буде керувати - "вверх", "вниз", "вліво", "вправо". При кожній зміні положення, колір повинен змінюватись на випадковий.</p>
+            <p><img src="/src/python-course/t10_10.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 10.11.                            </h3>
+                  <p>Створити полотно, на якому створити квадрат майже у всю велиину полотна. Зробити так, щоб квадрат переливався кольорами.</p>
+            <p><img src="/src/python-course/t10_11.PNG" alt="" /></p></div>
+            <div class='task'><h3>                                ЗАВДАННЯ 10.12.                            </h3>
+                  <p>Створити полотно та кнопку. При натисканні на кнопку повинен створюватись напис "НІ" в випадковому місці, з випадковим розміром(10-80), з випадковим кольором. </p>
+            <p><img src="/src/python-course/t10_12.PNG" alt="" /></p></div>
+
+                                                  
+        </div>
+        <div class="tab-pane fade" id="answers" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="alert alert-danger" role="alert">
+            Відповіді будуть доступні після заняття
+            </div>
+            <!-- <div class='task'>  <h3> ЗАВДАННЯ 10.1. </h3>
+                           
+              <p><img src="/src/python-course/images_answer-d/t10_1.PNG" alt="" /></p></div>
+              <div class='task'>  <h3> ЗАВДАННЯ 10.2. </h3>
+                                         
+              <p><img src="/src/python-course/images_answer-d/t10_2.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 10.3.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t10_3.PNG" alt="" /></p></div>
+                                   
+              <div class='task'><h3>                                ЗАВДАННЯ 10.4.                            </h3>
+                                          
+              <p><img src="/src/python-course/images_answer-d/t10_4.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 10.5.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t10_5.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 10.6.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t10_6.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 10.7.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t10_7.PNG" style="max-width: 600px; width: 90%;" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 10.8.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t10_8.PNG" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 10.9.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t10_9.PNG" style="max-width: 600px; width: 90%;" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 10.10.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t10_10.PNG" style="max-width: 600px; width: 90%;" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 10.11.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t10_11.PNG" style="max-width: 600px; width: 90%;" alt="" /></p></div>
+              <div class='task'><h3>                                ЗАВДАННЯ 10.12.                            </h3>
+                                          
+              
+              <p><img src="/src/python-course/images_answer-d/t10_12.PNG" style="max-width: 900px; width: 90%;" alt="" /></p></div> -->
+        </div>
+      </div>
+      </div>
+          <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Реквізити для оплати</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title">Егрецький Данило Романович</h5>
+        <p><i>МоноБанк</i><br>	  
+          5375 4141 0098 2189</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Закрити</button>
+      </div>
+    </div>
+  </div>
+</div>
+      <footer class="footer  mt-auto py-3">
+        <div class="container">
+          <span class="text-muted">	©   WebTeach 2020. Всі права застережено</span>
+        </div>
+      </footer>
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      
+  </body>
+</html>
