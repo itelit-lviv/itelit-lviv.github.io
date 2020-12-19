@@ -122,7 +122,23 @@ db = SQLAlchemy(app)
 </code>
 <h3>Створюємо 2 таблиці</h3>
 <img src="https://proproprogs.ru/htm/flask/files/flask-sqlalchemy-ustanovka-sozdanie-tablic-dobavlenie-zapisey.files/image002.jpg" alt="">
-                  </div>
+                  
+<h3>Робота з базою даних за допомогою SQLAlchemy</h3>
+<ul>
+  <li><code>res = Users.query.all()</code> - <b>вибрати всі записи з таблиці 'users'</b></li>
+  <li><code>f = Users.query.first()</code> - <b>вибрати перший запис з таблиці 'users'</b></li>
+  Вибрати дані за фільтром:
+  <li><code>
+    Users.query.filter_by(id = 1).all()   </code></li>
+    <li><code>Users.query.filter(Users.id == 1).all()   </code></li>
+
+  <li><code>Users.query.filter(Users.id > 1).all()</code> </li>
+  <li><code>Users.query.limit(2).all()</code> - <b>вибрати максимум 2 результати з таблиці 'users'</b></li>
+  <li><code>Users.query.order_by(Users.email).all()</code> або <code>Users.query.order_by(Users.email.desc()).all()</code> - <b>вибрати відсортовані за певним полем рядки таблиці</b></li>
+  <li><code>Users.query.get(2)</code> - <b>отримати користувача за допомогою ID</b></li>
+
+</ul>
+</div>
                   <h3>Посилання</h3>
                   <div class='answer'>
                   <ul>
