@@ -128,7 +128,7 @@ db = SQLAlchemy(app)
   
   <li><code>res = Users.query.all()</code> - <b>вибрати всі записи з таблиці 'users'</b></li>
   <li><code>f = Users.query.first()</code> - <b>вибрати перший запис з таблиці 'users'</b></li>
-  Вибрати дані за фільтром:
+<b>  <h5>Вибрати дані за фільтром:</h5></b>
   <li><code>
     Users.query.filter_by(id = 1).all()   </code></li>
     <li><code>Users.query.filter(Users.id == 1).all()   </code></li>
@@ -137,7 +137,24 @@ db = SQLAlchemy(app)
   <li><code>Users.query.limit(2).all()</code> - <b>вибрати максимум 2 результати з таблиці 'users'</b></li>
   <li><code>Users.query.order_by(Users.email).all()</code> або <code>Users.query.order_by(Users.email.desc()).all()</code> - <b>вибрати відсортовані за певним полем рядки таблиці</b></li>
   <li><code>Users.query.get(2)</code> - <b>отримати користувача за допомогою ID</b></li>
+<b><h5>Додавання даних в таблиці</h5></b>
+<code>
+<pre>
+try:
+  hash = generate_password_hash(request.form['psw'])
+  u = Users(email=request.form['email'], psw=hash)
+  db.session.add(u) <span style="color: teal;">#додавання користувача в сесії бази даних (зберігається в пам'яті пристрою)</span>
+  db.session.flush()<span style="color: teal;">#переміщення даних з сесії в базу даних</span>
 
+  p = Profiles(name=request.form['name'], old=request.form['old'], city=request.form['city'], user_id = u.id)
+
+  db.session.add(p) <span style="color: teal;">#додавання профілю в бд</span>
+  db.session.commit() <span style="color: teal;">#підтвердження всіх змін в БД</span>
+except:
+  db.session.rollback() <span style="color: teal;">#у разі помилки - скасування всіх змін в БД</span>
+  print("Помилка додавання в БД")
+</pre>
+</code>
 </ul>
 </div>
                   <h3>Посилання</h3>
