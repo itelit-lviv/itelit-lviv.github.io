@@ -74,7 +74,46 @@
                  <li> <a href="https://fancyapps.com/fancybox/3/" target="_blank"><b>fancyapps.com/fancybox/3/</b>/</a>  - <b>плагін для відкриття відео з ютубу</b></li><br>
                  <li> <a href="https://hackerthemes.com/bootstrap-cheatsheet/" target="_blank"><b>hackerthemes.com/bootstrap-cheatsheet/</b>/</a>  - <b>Наочна таблиця з класами Bootstrap4</b></li><br>
                  <li> <a href="https://fancyapps.com/fancybox/3/" target="_blank"><b>fancyapps.com/fancybox/3/</b>/</a>  - <b>плагін для відкриття відео з ютубу</b></li><br>
-                 
+                 <li> <a href="https://id.heroku.com/login" target="_blank"><b>heroku.com</b>/</a>  - <b>сервіс для безкоштовного деплою та розміщення веб-додатків</b></li><br>
+                  </ul>
+                 </div>
+                 <div class='theory'>
+                  <h3> Додавання адаптивності сайту <a href="https://id.heroku.com/login" target="_blank">heroku.com</a></h3><br>
+                 <div class='answer'>
+                 <code>
+                  <pre>
+@media (max-width: 575px) { ... }
+
+/* sm (>=576 и <=767) */
+@media (min-width: 576px) and (max-width: 767px) { ... }
+
+/* md (>=768 и <=991) */
+@media (min-width: 768px) and (max-width: 991px) { ... }
+
+/* lg (>=992 и <=1199) */
+@media (min-width: 992px) and (max-width: 1199px) { ... }
+
+/* xl (>=1200) */
+@media (min-width: 1200px) { ... } 
+                  </pre>
+                 </code>
+                 </div>
+              </div> 
+                 <div class='theory'>
+                  <h3>Публікація на сервер за допомогою <a href="https://id.heroku.com/login" target="_blank">heroku.com</a></h3><br>
+                 <div class='answer'>
+                 <ul>
+                 <li>1. <code>heroku login</code> авторизація в heroku (в командному рядку)</li>
+                 <li>2. <code>pip install gunicorn</code></li>
+                 <li>3. <code>pip freeze> requirements.txt</code></li>
+                 <li>4. Створити файл <b>Procfile</b> з командою: <code>web: gunicorn app:app</code></li>
+                 <li>5.  У venv  створити файл <b>.gitignore</b></li>
+                 <li>6. <code>git add .</code> фіксація всіх файлів</li>
+                 <li>7. <code>git commit -am "add all files"</code> збереження всіх змін</li>
+                 <li>8. <code>git push heroku master </code> - надсилання в heroku</li>
+
+                 </div>
+
                  <div class='theory'>
                   <h3>Використані команди в командному рядку</h3><br>
                  <div class='answer'>
