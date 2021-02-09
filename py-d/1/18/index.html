@@ -47,72 +47,9 @@
      <!-- nav end -->
      <div class="header-baner container-fluid d-flex justify-content-xl-space-between">       
       <h1 >Урок 23-24. Шаблонізатор Jinja.</h1>
-      
-      <div class="row tabs-container d-flex align-items-end">
-        <div class="col"></div>
-        <div class="col-md-auto col-sm-12 align-self-center">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#theory" role="tab" aria-controls="home" aria-selected="true">Конспект</a>
-            </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="profile" aria-selected="false">Код</a>
-            </li>
-          </ul>
+      <div width="800" height="800" >
+      <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQr3StMRN3BYdIMUOnDxgFV_sQMsoy2BtEgDnCplXI7QrIU0FUIrnNvd0yvhi0_zw04m_TC-0Q9ffCp/embed?start=false&loop=false&delayms=30000" frameborder="0" width="800" height="800" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
         </div>
-        <div class="col"></div>
-      </div>
-     </div>
-     <div class="lesson container-xl">
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="theory" role="tabpanel" aria-labelledby="home-tab">
-             <div class='theory'>
-			<h3>Що ми зробили за два заняття?</h3><br>
-            <div class='answer'>
-				За заняття ми ознайомились з шаблонізотором Jinja та зробили основні шаблони, де все буде відображатись.
-			</div>
-            <h3>Можливості Jinja</h3><br>
-            <div class='answer'>
-			<ul>
-			<li><b><i>{{ name }}</i></b> - вставлення змінної.</li>
-			<li><b><i>{{ super() }}</i></b> - функція випується в блок, для того, щоб зберегти вміст блоку не замінюючи, а доповнюючи.</li>
-			<li><b><i>{% include 'file.html' %}</i></b> - підключити якийсь файл.</li>
-			<li><b><i>{% for w in www %}{% endfor %}</i></b> - цикл for.</li>
-			<li><b><i>{% if smth == smth  %}{% endif %}</i></b> - умовний оператор if.</li>
-			<li><b><i>{% macro name(attribute) %}{% endmacro %}</i></b> - Визначення функції, потім викликається, як змінна.</li>
-			<li><b><i>{% block name %}{% endblock %}</i></b> - створення місця, куди буде підключатись інший файл.</li>
-			<li><b><i>
-			{% extends 'file.html' %}<br>
-			{% block name %}{% endblock %}</i></b> - підключення головного файлу, та вставлення блоку в нього.</li>
-			</ul>
-			</p>
-			</div>
-			<h3>Посилання</h3>
-			<div class='answer'>
-			<ul>
-					<li><b><a href='https://drive.google.com/drive/folders/1HuzZP3_0fCIh1infkW3FOmygOxyacV7O?usp=sharing' target="blank">Ієрархія папок і файлів</a></b></li>
-					
-			</ul></div>
-            </div>
-
-                    </div>
-        <div class="tab-pane fade" id="tasks" role="tabpanel" aria-labelledby="profile-tab">                                                       
-          <div class="accordion" id="accordionExample" style=" margin: 50px auto">
-          <div class="card">
-            <div class="card-header d-flex justify-content-xl-space-between" id="headingOne">
-              <h5 class="mb-0">
-                <button class="btn btn-link" type="button"  data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  <h5>Код програми ↓</h5> 
-                </button>
-              </h5>
-              
-            </div>
-            <div id="collapseOne" class="collapse show " aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body"><pre class="python" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff7700;font-weight:bold;">from</span> flask <span style="color: #ff7700;font-weight:bold;">import</span> Flask<span style="color: #66cc66;">,</span> render_template<span style="color: #66cc66;">,</span> url_for<span style="color: #66cc66;">,</span> request<span style="color: #66cc66;">,</span>redirect</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">app <span style="color: #66cc66;">=</span> Flask<span style="color: black;">&#40;</span>__name__<span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #66cc66;">@</span>app.<span style="color: black;">route</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'/'</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff7700;font-weight:bold;">def</span> index<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>:</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #ff7700;font-weight:bold;">return</span> render_template<span style="color: black;">&#40;</span><span style="color: #483d8b;">'index.html'</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #66cc66;">@</span>app.<span style="color: black;">route</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'/sessions'</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff7700;font-weight:bold;">def</span> sessions<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>:</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #ff7700;font-weight:bold;">return</span> render_template<span style="color: black;">&#40;</span><span style="color: #483d8b;">'sessions.html'</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #66cc66;">@</span>app.<span style="color: black;">route</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'/about'</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff7700;font-weight:bold;">def</span> about<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>:</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #ff7700;font-weight:bold;">return</span> render_template<span style="color: black;">&#40;</span><span style="color: #483d8b;">'about.html'</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #66cc66;">@</span>app.<span style="color: black;">route</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'/login'</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff7700;font-weight:bold;">def</span> login<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>:</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #ff7700;font-weight:bold;">return</span> render_template<span style="color: black;">&#40;</span><span style="color: #483d8b;">'login.html'</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #66cc66;">@</span>app.<span style="color: black;">route</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'/reg'</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff7700;font-weight:bold;">def</span> reg<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>:</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    <span style="color: #ff7700;font-weight:bold;">return</span> render_template<span style="color: black;">&#40;</span><span style="color: #483d8b;">'reg.html'</span><span style="color: black;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff7700;font-weight:bold;">if</span> __name__ <span style="color: #66cc66;">==</span> <span style="color: #483d8b;">'__main__'</span>:</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">    app.<span style="color: black;">run</span><span style="color: black;">&#40;</span>debug<span style="color: #66cc66;">=</span><span style="color: #008000;">True</span><span style="color: black;">&#41;</span></div></li></ol></pre></div>
-</div>
-</div>
-      </div>
-      </div>
           <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
