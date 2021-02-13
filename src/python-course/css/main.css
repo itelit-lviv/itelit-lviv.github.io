@@ -279,3 +279,39 @@ main{
   box-shadow: rgba(202, 203, 206, 0.25) 0px 20px 40px 0px;
   border-radius: 20px;
 }
+
+@media (max-width: 575px) { 
+  .header-title-js h1{
+    font-size: 2em;
+  }
+  .header-title-js .main-title-js{
+    font-size: 3em;
+  }
+  .go-lesson-btn{
+    max-width: 250px;
+  }
+  .lesson-list-js{
+    margin: 30px 0;
+  }
+}
+
+/* sm (>=576 и <=767) */
+@media (min-width: 576px) and (max-width: 767px) { 
+  .header-title-js h1{
+    font-size: 3em;
+  }
+  .header-title-js .main-title-js{
+    font-size: 4em;
+    
+  }
+
+}
+
+/* md (>=768 и <=991) */
+@media (min-width: 768px) and (max-width: 991px) { ... }
+
+/* lg (>=992 и <=1199) */
+@media (min-width: 992px) and (max-width: 1199px) { ... }
+
+/* xl (>=1200) */
+@media (min-width: 1200px) { ... } 
