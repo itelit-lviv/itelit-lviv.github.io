@@ -302,6 +302,31 @@ main{
   position: relative;
   bottom: -35px;
 }
+.body-js-lesson .lesson-list-js{
+  cursor: pointer;
+}
+.collapse-heading{
+  position: relative;
+}
+.collapse-heading::after{
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  margin-right: 9px;
+  
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: url(/src/img/chevron-down.svg) no-repeat center center/17px 17px, -webkit-gradient(linear, left top, left bottom, from(#f6d365), to(#fda085));
+  background: url(/src/img/chevron-down.svg) no-repeat center center/17px 17px, linear-gradient(
+180deg
+, #f6d365 0%, #fda085 100%);
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  -webkit-transform: none;
+  transform: none;
+}
 
 
 
