@@ -1,0 +1,169 @@
+
+<!doctype html>
+<html lang="uk">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Міні-курс по основах JavaScript - WebTeach">
+    <meta property="og:site_name" content="WebTeach">
+    <meta property="og:url" content="https://web-teach.pp.ua/js-3823/index.html">
+    <meta property="og:description" content="Вивчаємо мову програмування JavaScript онлайн!">
+    <meta property="og:image" content="https://web-teach.pp.ua/src/python-course/python-page-preview.jpg">
+    <!-- /Required meta tags -->
+    <title>Міні-курс по основах JavaScript - WebTeach</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/src/python-course/css/style.css">
+    <link rel="SHORTCUT ICON" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/src/python-course/css/main.css">
+    <link rel="stylesheet" href="/src/python-course/css/animate.css">
+  </head>
+  <body class="body-js">
+     <div class="header-wrapper header-wrapper-js">
+      <header class="page-header text-white page-header-js d-flex flex-column justify-content-between container">
+        <nav class="main-navbar navbar navbar-expand-lg navbar-dark wow fadeInDown">
+          <div class="container-xl">
+          <a class="navbar-brand logo" href="./"><span>Web</span>Teach</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav mr-auto mt-2 mt-lg-0" >
+              <a class="nav-item nav-link active" href="#course" onclick="slowScroll('#course')" title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link active" href="https://web-teach.pp.ua/py-222/" title="Курс по Python" target="_blank">Python</a>
+              <a class="nav-item nav-link active" href="https://repl.it/new/html" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
+              
+              <a class="nav-item nav-link disabled"href="journal.html" data-toggle="tooltip" data-placement="bottom" title="Журнал успішності" >Журнал</a>
+              
+            </div>
+            <div class="nav-phone my-2 my-lg-0">
+              <a href="tel:+380956774158" id="phonebtn" class="nav-item nav-link animated" style="color: #f2f7f7;">  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="mr-1 bi bi-telephone" viewBox="0 0 16 16">
+                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+              </svg>+380956774158</a>
+            </div>
+            </div>
+         </div> 
+         </nav>
+         <div class="header-title-js  wow backInDown">
+              
+                <h1 class="main-title-h1 wow fadeInUp">міні-курс</h1>
+                <h1 class="main-title-h1 wow fadeInUp">по основах</h1>
+                <h1 class="main-title-js  wow bounceInUp">JavaScript</h1>
+           </div>
+           
+          <a href="https://meet.jit.si/js-3823-w-teach" target="_blank"  id="lessonBtn" class="go-lesson-btn  wow fadeInUp container" data-wow-delay=".5s" style="width: 300px;">
+            <div class="go-lesson-1 container pt-2 px-4">
+              <div class="row mt-2 d-flex justify-content-center justify-content-end">
+              
+                <h6 class=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi mx-1 bi-calendar-check" viewBox="0 0 16 16">
+                  <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                </svg>щосуботи</h6><h6 class="ml-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                  <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                </svg> 14:00</h6></div>
+                <div class="row p-1 justify-content-center">
+                  <h5  class="font-weight-bolder text-dark">Вивчаємо JS онлайн!</h5>
+                </div>      
+            </div> 
+            <div class="go-lesson-2 container btn btn-block text-uppercase ">
+              Онлайн-урок
+            </div>      
+          </a>
+          <div class="arrow bounce">
+            <a class="fa fa-arrow-down fa-2x" href="#course" onclick="slowScroll('#course')"></a>
+          </div>
+         <!-- <div class="row mt-4 justify-content-center">
+          <a class="video-button " title="Перейти до онлайн-уроку" href="https://meet.jit.si/js-3823-w-teach" target="_blank">
+            <button class="button-play hero__button-play wow backInUp">Онлайн-урок</button>
+          </a>          
+         </div>
+         <div class="row justify-content-center margin-top">
+          <a class="course-button"  href="#course" onclick="slowScroll('#course')">
+            <button type="button" class="btn btn-outline-warning">Перейти до курсу</button>
+          </a>
+         </div> -->
+         
+      </header>
+     </div>
+     <!-- nav end -->
+     <main class="container" >
+        <div class="lesson-list-js container" id="course">
+          <span class="h3 font-weight-light " style="color:#752fc5;">Блок #1</span>
+          <span class="ml-4 text-warning font-weight-light h4"><svg id="laptop" width="20" height="20" fill="#ffbf00" viewBox="0 0 640 512"><path d="M255.03 261.65c6.25 6.25 16.38 6.25 22.63 0l11.31-11.31c6.25-6.25 6.25-16.38 0-22.63L253.25 192l35.71-35.72c6.25-6.25 6.25-16.38 0-22.63l-11.31-11.31c-6.25-6.25-16.38-6.25-22.63 0l-58.34 58.34c-6.25 6.25-6.25 16.38 0 22.63l58.35 58.34zm96.01-11.3l11.31 11.31c6.25 6.25 16.38 6.25 22.63 0l58.34-58.34c6.25-6.25 6.25-16.38 0-22.63l-58.34-58.34c-6.25-6.25-16.38-6.25-22.63 0l-11.31 11.31c-6.25 6.25-6.25 16.38 0 22.63L386.75 192l-35.71 35.72c-6.25 6.25-6.25 16.38 0 22.63zM624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z"></path></svg>
+                4 заняття
+          </span>
+          <h2 class="my-4"><strong style="font-size: larger;">Оcнови </strong>мови програмування JavaScript</h2>
+          <ol>
+            <li><a href="1/" class="lesson-link disabled-js-link"><b>1.</b> Поринаємо в JavaScript. Змінні. Типи даних. Перетворення типів. </a></li>
+            <li><a href="2/" class="lesson-link disabled-js-link" ><b>2.</b> Оператори: логічні, умовні, математичні. Switch. Цикли for, while.</a></li>
+            <li><a href="3/" class="lesson-link disabled-js-link"><b>3.</b> Функції: стандартні та власні.</a></li>
+            <li><a href="4/" class="lesson-link disabled-js-link"><b>4.</b> Масиви та рядки.</a></li>
+          </ol>          
+        </div>
+        
+        <div class="lesson-list-js container">
+          <span class="h3 font-weight-light text-info float-left">Блок #2</span>
+          <h2 class=""><strong style="font-size: larger;">Анімація </strong>веб-додатків за допомогою JavaScript</h2>
+        </div>
+     </main>
+
+     
+          
+      <footer class="footer  mt-auto py-3">
+        <div class="container">
+          <span class="text-muted">	©   WebTeach 2021. Всі права застережено</span>
+        </div>
+      </footer>
+
+     
+    <script
+			  src="https://code.jquery.com/jquery-3.5.1.min.js"
+			  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="/src/js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    function slowScroll(id) { 
+          var offset = 0;
+          $('html, body').animate({ 
+               scrollTop: $(id).offset().top - offset 
+          }, 1000);
+          return false; 
+      } 
+      
+    let phoneBtn = document.getElementById("phonebtn");
+    let lessonBtn = document.getElementById("lessonBtn");
+
+    phoneBtn.addEventListener("mouseenter", function( event ) {
+      // highlight the mouseenter target
+      event.target.classList.add("heartBeat");  
+      event.target.style.color = '#ffbf00';
+      }, false);
+      phoneBtn.addEventListener("mouseleave", function( event ) {
+      // highlight the mouseenter target
+      event.target.classList.remove("heartBeat");  
+      event.target.style.color = '#f2f7f7';
+      
+      }, false);
+
+      lessonBtn.addEventListener("mouseenter", function( event ) {
+      // highlight the mouseenter target
+      event.target.style.transform = 'scale(1.2)';
+      }, false);
+      lessonBtn.addEventListener("mouseleave", function( event ) {
+      // highlight the mouseenter target
+      event.target.style.transform = 'scale(1.1)';
+      }, false);
+
+    </script>
+   
+ 
+</body>
+</html>
