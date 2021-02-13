@@ -293,6 +293,9 @@ main{
   .lesson-list-js{
     margin: 30px 0;
   }
+  .arrow.bounce{
+    margin-bottom: 30px;
+  }
 }
 
 /* sm (>=576 и <=767) */
