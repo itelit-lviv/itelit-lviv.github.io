@@ -1,7 +1,13 @@
 html, body {
+  
   height: 100%;
   margin: 0;
   width: 100%;
+}
+.body-js{
+  
+  background-color: #e9edee;
+  
 }
 
 
@@ -11,22 +17,115 @@ html, body {
   margin: 0;
   width: 100%;
 }
+
+.header-wrapper-js{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: linear-gradient(45deg, #5d9cfc 0%,#752fc5 100%);
+  background-size: 200% 200%;  
+  height: 300px;
+  height: fit-content;
+  width: 100%;
+  animation: background 9s ease infinite;
+}
+.body-js .nav-item.nav-link.active{
+  padding: 6px 16px;
+  color: #f2f7f7;
+}
+.body-js .nav-item.nav-link.active:hover{
+  border: 2px solid #f2f7f7;
+  border-radius: 100px;
+  transition: .2s;
+  
+}
+
+@keyframes background { 
+  0% {
+    background-position: 0% 50%;
+  }
+  
+  50% {
+    background-position: 100% 50%;
+  }
+  
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .page-header{
   /* min-height: 400px; */
   height: 100vh;
+  min-height: fit-content;
   background: url('/src/python-course/header-baner.png') no-repeat;
   background-size: contain;
   background-position: bottom center;
   width: 100%;
 }
+.page-header-js{
+  background: none;
+  
+}
+
+#lessonBtn{
+  transform: scale(1.1);
+}
+
+.go-lesson-btn{
+  padding: 0;
+  display: block;
+  text-decoration: none;
+  box-shadow: 0 3px 20px rgb(0 0 0 / 30%);
+  border-radius: 20px 20px 20px 20px;
+  color:rgb(73, 73, 73);
+ 
+  
+}
+.go-lesson-btn:hover{
+  text-decoration: none;
+  box-shadow: 0 3px 20px rgb(0 0 0 / 50%);
+  transition-property: all;
+  transition-delay: .5s;
+  transition: .8s ease-out;
+}
+
+.date-time-row{
+  color:#4e93dd;
+}
+
+.go-lesson-1:hover{
+  
+  background:  #e9e9e9;
+  opacity: 80%;
+}
+.go-lesson-1{
+  border-radius: 20px 20px 0 0;
+  background:  #e6f5ff;
+  opacity: 90%;
+  
+ 
+}
+
+.go-lesson-2:hover{
+  background:  #f8f8f8ec;
+  opacity: 80%;
+}
+.go-lesson-2{
+  background:  #d9e0e6;
+  opacity: 90%;
+  border-radius:  0 0 20px 20px;
+  border-top: 1px solid rgba(109, 109, 109, 0.767);
+}
+
+
 nav.navbar{
   background: transparent;
 } 
 .header-title {
   
   display: block;
-  margin-top: 40px;
-  margin-bottom: 10px;
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
 .header-title h1{
   font-weight: 700;
@@ -36,12 +135,43 @@ nav.navbar{
   text-align: center;
 
 }
+.header-title-js {
+  
+  display: block;
+ 
+}
+.header-title-js h1 {
+  font-weight: 400;
+  font-size: 5em;
+  padding: 0px;
+  line-height: 1em;
+  text-align: center;
+  
+}
+.header-title-js .main-title-js{
+font-weight: 900;
+  display: block;
+  font-size: 6.5em;
+  color:  #ffbf00;
+}
+.bounce a {
+  color: white;
+  text-decoration: none;
+}
+.arrow {
+  text-align: center;
+  margin: 4% 0;
+}
+.bounce {
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
 .header-title .py-title{
   font-weight: 900;
   display: block;
   font-size: 5em;
   color:  #ffbf00;
-  
 }
 .header-title .py-answer{
   text-align-last: left;
@@ -59,7 +189,7 @@ nav.navbar{
   border-radius: 300px;
   font-weight: 500;
   padding: 15px 25px;
-
+  
 }
 .course-button button:hover{
   background:  linear-gradient(90deg, #ffbf00  0%, rgb(255, 125, 4) 100%);
@@ -109,27 +239,135 @@ nav.navbar{
 
 main{
   min-height: 90%;
-}
-#course{
-  padding-top: 70px;
-  padding-bottom: 70px;
   
 }
-#course h2{
+.lesson-list-js{
+  padding: 30px;
+  
+}
+#course  h2{
   margin-bottom: 20px;
+  font-weight: 700;
+  text-align: left;
+}
+.lesson-list-js h2{
+  
+  font-size: 25px;
   font-weight: 700;
   text-align: center;
 }
-.lesson-list li{
+.lesson-list li, .lesson-list-js li{
   display: block;
   padding: 5px;
 }
-.lesson-list ol{
+.lesson-list ol, .lesson-list-js ol{
   padding-left: 0;
 }
-.lesson-link{
+.lesson-link, .lesson-list-js{
   color: #375381;
   font-size: 20px;
   line-height: 40px;
   font-weight: 500;
 }
+.lesson-list-js{
+  color: #375381;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 500;
+}
+.disabled-js-link{
+  pointer-events: none;
+  color: #375381b4;
+}
+.lesson-list-js{
+  background: #fff;
+  margin: 40px;
+  box-shadow: rgba(202, 203, 206, 0.25) 0px 20px 40px 0px;
+  border-radius: 20px;
+}
+/*****/
+/* LESSON PAGE */
+/*****/
+.body-js-lesson .header-title-js h1{
+  font-size: 1.7em;
+  font-weight: 700;
+  position: relative;
+  bottom: -25px;
+}
+.body-js-lesson .page-header{
+  height: fit-content;
+}
+
+.body-js-lesson .go-lesson-btn{
+  position: relative;
+  bottom: -35px;
+}
+.body-js-lesson .lesson-list-js{
+  cursor: pointer;
+}
+.collapse-heading{
+  position: relative;
+}
+.collapse-heading::after{
+  content: "";
+  position: absolute;
+  display: block;
+  right: 0;
+  margin-right: 9px;
+  
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: url(/src/img/chevron-down.svg) no-repeat center center/17px 17px, -webkit-gradient(linear, left top, left bottom, from(#f6d365), to(#fda085));
+  background: url(/src/img/chevron-down.svg) no-repeat center center/17px 17px, linear-gradient(
+180deg
+, #f6d365 0%, #fda085 100%);
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  -webkit-transform: none;
+  transform: none;
+}
+
+
+
+/*****/
+/* MEDIA MEDIA MEDIA*/
+/*****/
+
+@media (max-width: 575px) { 
+  .header-title-js h1{
+    font-size: 2em;
+  }
+  .header-title-js .main-title-js{
+    font-size: 3em;
+  }
+  .go-lesson-btn{
+    max-width: 250px;
+  }
+  .lesson-list-js{
+    margin: 30px 0;
+  }
+  .arrow.bounce{
+    margin-bottom: 40px;
+  }
+}
+
+/* sm (>=576 и <=767) */
+@media (min-width: 576px) and (max-width: 767px) { 
+  .header-title-js h1{
+    font-size: 3em;
+  }
+  .header-title-js .main-title-js{
+    font-size: 4em;
+    
+  }
+}
+
+/* md (>=768 и <=991) */
+@media(max-width: 991px) { 
+  a.nav-item.nav-link.active{
+    margin: 0;
+  }
+  
+}
+
