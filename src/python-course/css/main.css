@@ -388,7 +388,7 @@ main{
 , #f6d365 0%, #fda085 100%);
 }
 .body-js footer.footer {
-  background-color: rgb(129, 129, 129);
+  background-color: rgba(131, 126, 148, 0.87);
 }
 .body-js footer.footer .footer-nav{
   min-height: 100px;
