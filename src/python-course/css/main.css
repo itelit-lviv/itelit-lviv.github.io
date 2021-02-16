@@ -345,17 +345,11 @@ main{
   
 }
 
-.freebirdFormviewerViewFooterDisclaimer.freebirdDisclaimerColor, 
-.freebirdFormviewerViewNavigationPasswordWarning, 
-.freebirdFormviewerViewFooterImageContainer.freebirdFormviewerViewFooterPageBreak,
-.freebirdFormviewerViewNoPadding{
+/* .freebirdFormviewerViewNavigationPasswordWarning{
   display: none !important;
-}
+} */
 
 
-.freebirdFormviewerViewNumberedItemContainer{
-  border: none;
-}
 
 /*****/
 /* MEDIA MEDIA MEDIA*/
