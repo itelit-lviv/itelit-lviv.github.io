@@ -67,19 +67,15 @@ html, body {
   min-height: fit-content;
   min-height: -moz-fit-content;
 }
-#lessonBtn{
-  transform: scale(1.1);
-}
 
 .go-lesson-btn{
+
   padding: 0;
   display: block;
   text-decoration: none;
   box-shadow: 0 3px 20px rgb(0 0 0 / 30%);
   border-radius: 20px 20px 20px 20px;
   color:rgb(73, 73, 73);
- 
-  
 }
 .go-lesson-btn:hover{
   text-decoration: none;
@@ -344,23 +340,81 @@ main{
     transform: rotate(180deg);
   
 }
+#sendedModal .modal-dialog .modal-content{
+  border-radius: 20px;
+  color: #752fc5;
+  
+}
+.ok-btn{
+  border-radius: 20px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  background: no-repeat center center/17px 17px, -webkit-gradient(linear, left top, left bottom, from(#f6d365), to(#fda085));
+  background: no-repeat center center/17px 17px, linear-gradient(
+180deg
+, #f6d365 0%, #fda085 100%);
 
-/* .freebirdFormviewerViewNavigationPasswordWarning{
-  display: none !important;
-} */
+}
+.ok-btn:hover{
+  box-shadow: rgb(138 138 139 / 37%) 1px 5px 10px 1px;
+
+}
 
 
+/*****/
+/* FOOTER */
+/*****/
 
+.body-js footer.footer {
+  background-color: rgb(129, 129, 129);
+}
+.body-js footer.footer .footer-nav{
+  min-height: 100px;
+}
+.body-js footer.footer span.muted{
+  color: rgb(82, 82, 82);
+  font-size: .9em;
+
+}
+.body-js footer.footer .footer-nav a{
+  color: rgb(82, 82, 82);
+  
+}
+.body-js footer.footer .footer-nav a:hover{
+  color: #ffc400;
+}
 /*****/
 /* MEDIA MEDIA MEDIA*/
 /*****/
 
-@media (max-width: 575px) { 
+@media (max-width: 345px){
+  .header-title-js h1{
+    font-size: 1.7em;
+  }
+  .header-title-js .main-title-js{
+    font-size: 2.0em;
+  }
+   .body-js-lesson .header-title-js h1{
+    font-size: 1.5em;
+
+   }
+  .go-lesson-btn{
+    max-width: 240px;
+  }
+  .lesson-list-js{
+    margin: 30px 0;
+  }
+  html{
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 345px) and (max-width: 575px) { 
   .header-title-js h1{
     font-size: 2em;
   }
   .header-title-js .main-title-js{
-    font-size: 3em;
+    font-size: 3.1em;
   }
   .go-lesson-btn{
     max-width: 250px;
@@ -370,6 +424,9 @@ main{
   }
   .arrow.bounce{
     margin-bottom: 20px;
+  }
+  .body-js-lesson .header-title-js h1{
+    font-style: 1.0em;
   }
 }
 
@@ -389,6 +446,11 @@ main{
   a.nav-item.nav-link.active{
     margin: 0;
   }
+ 
   
 }
-
+@media (min-width: 1200px){ 
+  a#lessonBtn.go-lesson-btn{
+    min-width: 350px;
+  }
+}
