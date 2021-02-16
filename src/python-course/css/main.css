@@ -1,15 +1,11 @@
 html, body {
-  
   height: 100%;
   margin: 0;
   width: 100%;
 }
 .body-js{
-  
   background-color: #e9edee;
-  
 }
-
 
 .header-wrapper{
   background: linear-gradient(90deg,#375381 0%,#6495ed 100%),#6495ed;
@@ -24,7 +20,7 @@ html, body {
   width: 100%;
   background: linear-gradient(45deg, #5d9cfc 0%,#752fc5 100%);
   background-size: 200% 200%;  
-  height: 300px;
+  height: -moz-fit-content;;
   height: fit-content;
   width: 100%;
   animation: background 9s ease infinite;
@@ -36,8 +32,7 @@ html, body {
 .body-js .nav-item.nav-link.active:hover{
   border: 2px solid #f2f7f7;
   border-radius: 100px;
-  transition: .2s;
-  
+  transition: .2s;  
 }
 
 @keyframes background { 
@@ -55,8 +50,10 @@ html, body {
 }
 .page-header{
   /* min-height: 400px; */
-  height: 100vh;
+  
   min-height: fit-content;
+  min-height: -moz-fit-content;
+  min-height: 100vh;
   background: url('/src/python-course/header-baner.png') no-repeat;
   background-size: contain;
   background-position: bottom center;
@@ -64,9 +61,12 @@ html, body {
 }
 .page-header-js{
   background: none;
-  
+ }
+.body-js-lesson .page-header {
+  min-height: 300px;
+  min-height: fit-content;
+  min-height: -moz-fit-content;
 }
-
 #lessonBtn{
   transform: scale(1.1);
 }
@@ -306,15 +306,26 @@ main{
   cursor: pointer;
 }
 .collapse-heading{
+  box-sizing:border-box;
+
   position: relative;
+  display: block;
+  padding-right: 50px;
 }
-.collapse-heading::after{
+.collapse-heading h4{
+  box-sizing:border-box;
+  display: block;
+  position: relative;
+  box-sizing:border-box;
+  width: 100%;
+}
+.collapse-heading::before{
   content: "";
   position: absolute;
   display: block;
-  right: 0;
-  margin-right: 9px;
-  
+  right: 0px;
+  top: 50%;
+  margin-top: -15px;
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -327,8 +338,24 @@ main{
   -webkit-transform: none;
   transform: none;
 }
+.collapse-heading.collapsed::before{
+  
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  
+}
+
+.freebirdFormviewerViewFooterDisclaimer.freebirdDisclaimerColor, 
+.freebirdFormviewerViewNavigationPasswordWarning, 
+.freebirdFormviewerViewFooterImageContainer.freebirdFormviewerViewFooterPageBreak,
+.freebirdFormviewerViewNoPadding{
+  display: none !important;
+}
 
 
+.freebirdFormviewerViewNumberedItemContainer{
+  border: none;
+}
 
 /*****/
 /* MEDIA MEDIA MEDIA*/
@@ -348,7 +375,7 @@ main{
     margin: 30px 0;
   }
   .arrow.bounce{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 }
 
