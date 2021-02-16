@@ -3,11 +3,14 @@ html, body {
   margin: 0;
   width: 100%;
   scroll-behavior: smooth;
+  
 }
 .body-js{
   background-color: #e9edee;
 }
-
+.body-js *{
+  box-sizing:border-box;
+}
 .header-wrapper{
   background: linear-gradient(90deg,#375381 0%,#6495ed 100%),#6495ed;
   padding: 0;
