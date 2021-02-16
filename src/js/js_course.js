@@ -20,7 +20,6 @@ phoneBtn.addEventListener("mouseleave", function (event) {
   // highlight the mouseenter target
   event.target.classList.remove("heartBeat");
   event.target.style.color = '#f2f7f7';
-
 }, false);
 
 lessonBtn.addEventListener("mouseenter", function (event) {
@@ -31,3 +30,12 @@ lessonBtn.addEventListener("mouseleave", function (event) {
   // highlight the mouseenter target
   event.target.style.transform = 'scale(1.0)';
 }, false);
+
+arrowTopBtn.onclick = function() {
+   window.scrollTo(pageXOffset, 0);
+   // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
+ };
+
+ window.addEventListener('scroll', function() {
+   arrowTopBtn.hidden = (pageYOffset < document.documentElement.clientHeight);
+ });
