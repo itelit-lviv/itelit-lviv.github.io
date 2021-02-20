@@ -68,8 +68,8 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 1.</span class="text-warning">
-          Поринаємо в JavaScript. Змінні. Типи даних. </h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 2.</span class="text-warning">
+          Дії зі змінними. Оператори if/else, switch. Цикли for, while.</h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -114,12 +114,10 @@
       <div id="collapsePres" class="collapse show">
         <div class="collapse-pres mt-4">
           <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item "
-              src="https://docs.google.com/presentation/d/e/2PACX-1vTFZgygZoYcv74yicPxjL_t9Murit7Lm7pFBzO0Sh6hThkTxJ3UQwx3n7QTDDMd4HPKUebBwWpo-wVh/embed?start=false&loop=false&delayms=3000"
-              frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
-              webkitallowfullscreen="true"></iframe> </div>
-          <a data-fancybox href="https://www.youtube.com/watch?v=JO0AFNcmgHI" class="btn btn-lg ok-btn mt-3">
+            src="https://docs.google.com/presentation/d/e/2PACX-1vSMBXenk-v45SV0XkbHCa63fYX6Kg47m0TpVOpGH1WEe2qZaiHf4UBzTayBMLvUDHcEIIW3DD6eoG0O/embed?start=false&loop=false&delayms=15000" frameborder="0" width="995" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> </div>
+          <!-- <a data-fancybox href="https://www.youtube.com/watch?v=JO0AFNcmgHI" class="btn btn-lg ok-btn mt-3">
             Запис заняття
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
@@ -147,14 +145,28 @@
 
       <div id='collapseTasks' class="collapse">
         <ol>
-          <li><b>1.</b> Створити новий проєкт та всі потрібні файли. Підключити js-файл до html-сторінки. </li>
-          <li><b>2.</b> Оголосіть дві змінні: <code>admin</code> і <code>name</code>. Запишіть рядок "Джон" в змінну
-            name. Скопіюйте значення з змінної name в admin. Виведіть на екран значення admin, використовуючи функцію
-            alert (повинна показати «Джон»).</li>
-          <li><b>3.</b>Створіть сторінку, яка запитує ім'я у користувача і виводить його.</li>
-          <li><b>4.</b> Створіть об'єкт <code>Student</code>, в якому опишіть інформацію про себе.</li>
+          <li><b> 1. </b> Створіть сторінку, яка запитує ім'я у користувача і виводить його.</li>
+          <li><b>2.</b> Створіть об'єкт <code>Student</code>, в якому опишіть інформацію про себе.</li>
+          <li><b>3. </b> Нижче наведено код, який запитує у користувача два числа і показує їх суму. Він не працює належним чином. Код в прикладі виводить 12 (для значення полів за замовчуванням).
+           У чому помилка? Виправте її. 
+          <code><pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">let a <span style="color: #339933;">=</span> prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Введіть перше число?&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">let b <span style="color: #339933;">=</span> prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Введіть друге число?&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">2</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">alert<span style="color: #009900;">&#40;</span>a <span style="color: #339933;">+</span> b<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">// 12</span></div></li></ol></pre>
+          </code>
+          </li>
+          <li><b>4. </b> Перепишіть код з використанням однієї конструкції <b>switch</b>:
+           <code>
+<pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">const</span> number <span style="color: #339933;">=</span> <span style="color: #339933;">+</span>prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Введіть число між 0 и 3'</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 0'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 1'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">2</span> <span style="color: #339933;">||</span> number <span style="color: #339933;">===</span> <span style="color: #CC0000;">3</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 2 або 3'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li></ol></pre>
+           </code>
+           </li>
+          <li><b>5.</b> Напишіть цикл, який пропонує за допомогою <b>prompt</b> ввести число, яке більше 100. Якщо відвідувач ввів інше число - попросити ввести ще раз, і так далі.
+            Цикл повинен питати число поки або відвідувач не введе число, більше 100, або не натисне кнопку Скасувати (ESC).</li>
+            <li><b>6. </b> Перепишіть код, замінивши цикл <b>for</b> на <b>while</b>, без зміни поведінки циклу.</b>
+              <code>
+                <pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span>let i <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> <span style="color: #CC0000;">5</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span> <span style="color: #3366CC;">&quot;number &quot;</span> <span style="color: #339933;">+</span> i <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li></ol></pre>
+              </code>
+              </li>
         </ol>
         <h4></h4>
+   <!-- /Завдання -->
         <!-- <iframe class="w-100" src="https://docs.google.com/forms/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/viewform?embedded=true" width="640" height="682" frameborder="0" marginheight="0" marginwidth="0">Завантаження…</iframe> -->
         <h5><b>Надіслати виконане завдання</b></h5>
         <script type="text/javascript">

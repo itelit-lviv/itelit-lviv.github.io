@@ -32,11 +32,13 @@ html, body {
 .body-js .nav-item.nav-link.active{
   padding: 6px 16px;
   color: #f2f7f7;
+  border: 2px solid transparent;
+
 }
 .body-js .nav-item.nav-link.active:hover{
   border: 2px solid #f2f7f7;
   border-radius: 100px;
-  transition: .2s;  
+  transition: .5s;  
 }
 
 @keyframes background { 
