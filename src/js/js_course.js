@@ -39,3 +39,10 @@ arrowTopBtn.onclick = function() {
  window.addEventListener('scroll', function() {
    arrowTopBtn.hidden = (pageYOffset < document.documentElement.clientHeight);
  });
+
+
+ document.body.addEventListener("DOMNodeInserted",function(e){ 
+    var iframe = document.getElementById("collapseTest");
+    var elmnt = iframe.contentWindow.document.getElementsByTagName("div")[0];
+    elmnt.style.display = "none";
+  },false);
