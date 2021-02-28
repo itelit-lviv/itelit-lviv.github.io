@@ -18,6 +18,7 @@ html, body {
   width: 100%;
 }
 
+
 .header-wrapper-js{
   padding: 0;
   margin: 0;
@@ -28,6 +29,7 @@ html, body {
   height: fit-content;
   width: 100%;
   animation: background 9s ease infinite;
+  /* z-index: 2; */
 }
 .body-js .nav-item.nav-link.active{
   padding: 6px 16px;
@@ -241,7 +243,7 @@ font-weight: 900;
 
 main{
   min-height: 90%;
-  
+  /* z-index: -2; */
 }
 .lesson-list-js{
   padding: 30px;
@@ -283,7 +285,7 @@ main{
 }
 .lesson-list-js{
   background: #fff;
-  margin: 40px;
+  margin: 40px 0;
   box-shadow: rgba(202, 203, 206, 0.25) 0px 20px 40px 0px;
   border-radius: 20px;
 }
@@ -313,6 +315,11 @@ main{
   position: relative;
   display: block;
   padding-right: 50px;
+}
+.body-js-lesson .lesson-list-js img{
+  width: 100%;
+  max-width: 600px;
+  display: block;
 }
 .collapse-heading h4{
   box-sizing:border-box;
@@ -366,6 +373,120 @@ main{
 
 }
 
+.main-wrapper{
+  position: relative;
+  
+  padding: 0 20px;
+
+}
+.page-nav-btn-wrapper{
+  
+  font-size: 1em;
+  margin: 10px 20px;
+  margin-bottom: 40px;
+}
+a.page-nav-left{
+  background-color:rgba(110, 110, 110, 0.26);
+  display: inline-block;
+  line-height: 22px;
+  border-radius: 20px;
+  height: 70px;
+  margin: 5px 0;
+  width: 49%;
+  transition: top .2s,-webkit-transform .2s;
+  transition: transform .2s,top .2s;
+  transition: transform .2s,top .2s,-webkit-transform .2s;
+  outline: 0;
+  padding: 22px;
+  color:rgb(116, 116, 116);
+  text-decoration: none;
+  text-align: center;
+}
+
+.page-nav-left .text-btn-nav{
+  
+  color: rgb(0, 0, 0);
+
+}
+.page-nav-btn-wrapper a:hover{
+  background-color:rgba(107, 107, 107, 0.432);
+}
+.page-nav-left span{
+  
+  text-align: center;
+  white-space: nowrap;
+}
+
+.page-nav-left svg{
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 768px) {
+  
+  a.page-nav-left{
+   width: 100%;
+  }
+  .page-nav-btn-wrapper{
+  
+    font-size: 1em;
+    
+  }
+  
+}
+
+
+@media (min-width: 1100px) {
+  .page-nav-left .text-btn-nav{
+    display: none;
+  }
+  a.page-nav-left{
+    
+    border-radius: 0;
+    background-color:transparent;
+    display: block;
+    position: fixed;
+    top:50%;
+    left: 0;
+    width: 90px;
+    height: 90px;
+    /* z-index: -1; */
+    transition: top .2s,-webkit-transform .2s;
+    transition: transform .2s,top .2s;
+    transition: transform .2s,top .2s,-webkit-transform .2s;
+    outline: 0;
+    color:rgb(116, 116, 116);
+    text-align: center;
+    padding: 0px;
+  }
+  a.page-nav-right{
+    left: auto;
+    right: 0;
+  }
+  .page-nav-btn-wrapper a:hover{
+    background-color:rgba(110, 110, 110, 0.26);
+  }
+  a.page-nav-left span{
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    margin-top: -16px;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  a.page-nav-left svg{
+    width: 30px;
+    height: 30px;
+  }
+  
+}
+
+footer.footer{
+  /* z-index: 1; */
+}
 
 /*****/
 /* FOOTER */
@@ -393,7 +514,7 @@ main{
 , #f6d365 0%, #fda085 100%);
 }
 .body-js footer.footer {
-  background-color: rgba(131, 126, 148, 0.87);
+  background-color: rgba(132, 122, 167, 0.699);
 }
 .body-js footer.footer .footer-nav{
   min-height: 100px;
@@ -440,6 +561,18 @@ main{
     height: 45px;
     width: 45px;
   }
+  .main-wrapper{
+    
+    padding: 0 0;
+  
+  }
+   a.page-nav-left {
+    
+    width: 49%;
+  }
+  .page-nav-left .text-btn-nav{
+    display: none;
+  }
 }
 
 @media (min-width: 345px) and (max-width: 575px) { 
@@ -465,7 +598,18 @@ main{
     bottom: 20px;
     right: 30px;
   }
-
+  .main-wrapper{
+    
+    padding: 0 0;
+  
+  }
+   a.page-nav-left {
+    
+    width: 49%;
+  }
+  .page-nav-left .text-btn-nav{
+    display: none;
+  }
 }
 
 /* sm (>=576 и <=767) */
@@ -477,6 +621,18 @@ main{
     font-size: 4em;
     
   }
+  a.page-nav-left {
+    
+    width: 49%;
+  }
+  .page-nav-left .text-btn-nav{
+    display: none;
+  }
+  .main-wrapper{
+    
+    padding: 0 0;
+  
+  }
 }
 
 /* md (>=768 и <=991) */
@@ -484,7 +640,11 @@ main{
   a.nav-item.nav-link.active{
     margin: 0;
   }
- 
+  .main-wrapper{
+    
+    padding: 0 0;
+  
+  }
   
 }
 @media (min-width: 1200px){ 

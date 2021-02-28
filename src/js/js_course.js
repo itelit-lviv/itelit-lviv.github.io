@@ -33,7 +33,6 @@ lessonBtn.addEventListener("mouseleave", function (event) {
 
 arrowTopBtn.onclick = function() {
    window.scrollTo(pageXOffset, 0);
-   // после scrollTo возникнет событие "scroll", так что стрелка автоматически скроется
  };
 
  window.addEventListener('scroll', function() {
@@ -41,8 +40,3 @@ arrowTopBtn.onclick = function() {
  });
 
 
- document.body.addEventListener("DOMNodeInserted",function(e){ 
-    var iframe = document.getElementById("collapseTest");
-    var elmnt = iframe.contentWindow.document.getElementsByTagName("div")[0];
-    elmnt.style.display = "none";
-  },false);
