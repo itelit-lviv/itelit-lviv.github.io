@@ -69,8 +69,8 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 5.</span class="text-warning">
-          Отримання елементів веб-сторінки та дії над ними. Робота з Git.</h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 6.</span class="text-warning">
+          Обробка подій в JavaScript.</h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -107,108 +107,128 @@
   <!-- Main block -->
   <main class="container pt-4">
     <!-- Теорія -->
-    <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Робота з GIT</h4>
-      </a>
-      <div id="collapsePres" class="collapse">
-        <div class="collapse-pres mt-4">
-          <h2>Система контролю версій Git</h2>
-          
-          <strong>Git</strong> - система контролю версій, яка дозволяє зберігати декілька створених версій файлу, проєкту чи його складових, а також бачити зміни, які були створені розробником під час роботи. Git створює журнал змін і дозволяє повертатися до старих версій коду, а також вести кілька паралельних версій проєкту.
-
-          <li><a href="https://codeguida.com/post/453" target="_blank">Коротка іструкція по роботі з Git</a></li>
-          <li><a href="https://githowto.com/uk" target="_blank">Повний гайд по роботі з Git через термінал</a></li>
-          <h3>Схема роботи розподіленої системи контролю версій (Git)</h3>
-          <img src="git_shema.png" alt="" style="max-width: 900px;">
-          <h2>GitHub</h2>
-          <p>За допомогою Git створюють <strong>репозиторій</strong> проєкту (в ньому зберігаються всі версії програми). А <a href="https://github.com/" target="_blank">GitHub</a> - це онлайн-сервіс <strong>для віддаленого зберігання (хостингу) git-репозиторіїв</strong>. Він дозволяє налагоджувати розробку в команді та між різними пристроями. GitHub працює на основі системи контролю версій Git та містить додаткові функції для роботи над проєктом.</p>
-          <li><a href="https://desktop.github.com/" target="_blank">Програма для роботи з GitHub для ПК</a></li>
-
-        </div>
-      </div>  
-    </div>
+    
 
      <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading " data-toggle="collapse" data-target="#collapse2" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " style="color:#752fc5;"> <span class="font-weight-bold ">#2</span> Розглянути
-          теорію </h4> <a data-fancybox href="https://www.youtube.com/watch?v=t_LE1mFPsBE" class="btn btn-lg ok-btn my-3">
+        <h4 class="h4  font-weight-normal " style="color:#752fc5;"> <span class="font-weight-bold ">#1</span> Розглянути
+          теорію </h4> 
+          <!-- <a data-fancybox href="https://www.youtube.com/watch?v=t_LE1mFPsBE" class="btn btn-lg ok-btn my-3">
             Запис заняття
-          </a> 
+          </a>  -->
       </a>
       <div id="collapse2" class="collapse show">
         <div class="collapse-2 mt-4">
           
-          <h2>Отримання елементів веб-сторінки</h2>
-          <h4>Об'єктна модель документа - <b>DOM</b></h4>
-          <p>Відповідно до об'єктної моделі документа («Document Object Model», коротко DOM), кожен HTML-тег є об'єктом. Вкладені теги є «дітьми» батьківського елемента. Текст, який знаходиться всередині тега, також є об'єктом.
-            Всі ці об'єкти доступні за допомогою JavaScript, ми можемо використовувати їх для зміни сторінки.
-            Наприклад, <code>document.body</code> - об'єкт для тега <code>body</code>.</p>
-          <img src="dom.gif" alt="" style="max-width: 700px;">
-
-          <a  href="https://github.com/webteacher/js-elements" target="_blank" class="btn btn-lg ok-btn mt-3 mb-3">
-            Репозиторій для роботи
-          </a> 
-          <h4>Методи для отримання елементів html</h4>
-          <li>1. <code>document.<b>getElementById('idElem')</b></code> - отримання елемента за допомогою <i>id</i></li>
-          <li>2. <code>document.<b>getElementsByTagName('button')</b> </code>- повертає колекцію усіх елементів <i>button</i> на сторінці</li>
-          <li>3. <code>document.<b>getElementsByClassName('circle')</b></code> - повертає колекцію усіх елементів з класом <i>circle</i></li>
-          <li>4. <code>document.<b>getElementsByName('age')</b></code> - повертає колекцію усіх елементів із заданим атрибутом <i>age</i></li>
-          <li>5. <code>document.<b>querySelector('.container .circle')</b></code> - повертає перший елемент на сторінці, що відповідає css-селектору.</li>
-          <li>6. <code>document.<b>querySelectorAll('.container .circle')</b></code> - повертає масив усіх елементів на сторінці, що відповідаю css-селектору.</li>
+          <h2>Події в браузері  <a class="font-weight-normal" href="https://developer.mozilla.org/uk/docs/Web/Events" target='_blank'>[Список усіх подій]</a></h2>
+          <p>Подія - це сигнал від браузера про те, що щось сталося. Всі DOM-вузли (елементи html-сторінки) подають такі сигнали.</p>
+          <p>Ось список найбільш часто використовуваних DOM-подій, поки просто для ознайомлення:</p>
+          <h4>Події миші:</h4>
+          <ul>
+            <li class="dot"><code><strong>click</strong></code> - відбувається, коли клікати (натискати) на елемент лівою кнопкою миші (на пристроях з сенсорними екранами воно відбувається при торканні).</li>
+            <li class="dot"><code><strong>contextmenu</strong></code> - відбувається, коли натискати на елемент правою кнопкою миші.</li>
+            <li class="dot"><code><strong>mouseover / mouseout</strong></code> - коли курсор миші наводиться на / покидає елемент.</li>
+            <li class="dot"><code><strong>mousedown/ mouseup</strong></code> - коли натиснули / відтиснули кнопку миші на елементі.</li>
+            <li class="dot"><code><strong>mousemove</strong></code> - при русі миші.</li>
+          </ul>
+          <h4>Події на елементах управління:</h4>
+          <ul>
+            <li class="dot"><code><strong>submit</strong></code> - користувач відправив форму <code>form</code>.</li>
+            <li class="dot"><code><strong>focus</strong></code> - користувач фокусується на елементі, наприклад натискає на <code>input</code>.</li>
+           </ul>
+           <h4>Клавіатурні події:</h4>
+           <ul>
+             <li class="dot"><code><strong>keydown</strong></code> i <code><strong>keyup</strong></code> - коли користувач натискає / відпускає клавішу.</li>
+            </ul>
+            <h4>Події документа:</h4>
+           <ul>
+             <li class="dot"><code><strong>DOMContentLoaded</strong></code> - коли HTML завантажений і оброблений, DOM документа повністю побудований і доступний.</li>
+            </ul>
+            <h4>CSS events:</h4>
+           <ul>
+             <li class="dot"><code><strong>transitionend</strong></code> - коли CSS-анімація завершена.</li>
+            </ul>
+          
+          <h2>Обробники подій</h2>
           <p>
-          Безумовно, найбільш часто використовуваними в даний час є методи <b>querySelector</b> і <b>querySelectorAll</b>, а  методи <b>getElement(s)By*</b> можуть бути корисні в окремих випадках і зустрічаються в старому коді.
+            Події можна призначити <b>обробник</b> , тобто функцію, яка спрацює, як тільки подія відбудеться. Саме завдяки обробникам JavaScript-код може реагувати на дії користувача.
           </p>
-          <h2>Дії з елементами веб-сторінки</h2>
-          <h4>Зміна css-стилів елементів:</h4>
-          <code>element.<b>style</b>.width = '500px'  </code> - додає ширину для елемента як вбудований стиль.<br>
-          <code>elem.style.<b>cssText</b> = "height: 200px;width: 400px"</code> - додає будь-який css-код у стилі елемента.
-          <h4>Створення елемента:</h4>
-          <code>const div = document.<b>createElement('div')</b></code> - створює div-елемент як об'єкт JS.
-          <h4>Додавання класів до елемента:</h4>
-          <code>div.<b>classList.add('active')</b></code> - додає до div-елемента клас <i>active.</i><br>
-          <code>div.<b>classList.remove('active')</b></code> - видаляє з div-елемента клас <i>active.</i>
-          <h4>Вставлення і видалення елементів на веб-сторінці:</h4>
-          <li><code>node.<b>append(div)</b></code> - вставляє <i>div</i> в кінець елемента <i>node</i></li>
-          <li><code>node.<b>prepend(div)</b></code> - вставляє <i>div</i> на початок елемента <i>node</i></li>
-          <li><code>node.<b>before(div)</b></code> - вставляє <i>div</i> перед елементом <i>node</i></li>
-          <li><code>node.<b>after(div)</b></code> - вставляє <i>div</i> після елемента <i>node</i></li>
-          <li><code>node.<b>replaceWith(div)</b></code> - замінює <i>node</i> на <i>div</i></li>
-          <li><code>node.<b>remove()</b></code> - видаляє <i>node</i> </li>
-          <h4>Зміна наповнення тегу:</h4>
-          <li><code>elem.<b>innerHTML</b></code> - повертає html-вміст елемента, можна записати в нього інший текст або html-код. <i>node</i> 
-          <li><code>elem.<b>innerHTML</b> = "&lt;h1&gt;Новий заголовок&lt;/h1&gt;"</code> </li>
-          <li><code>elem.<b>textContent</b> = "Новий заголовок"</code> - текст всередині елемент без тегів,  можна записати в нього інший текст.</i> 
-          
-          
-      
-          
+          <h4>Використання атрибута HTML (не рекомендується)</h4>
+          <p>До HTML-елемента можна додати атрибут <code><b>onclick</b></code>, якому передати функцію що буде виконуватися при натисканні на елемент.</p>
+          <pre class="xml" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;input</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;Натисни на мене&quot;</span> <span style="color: #000066;">onclick</span>=<span style="color: #ff0000;">&quot;alert('Дякую, що натиснув!')&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;button&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span></div></li></ol></pre>
+          <p>Однак, цей метод краще не використовувати у реальних проектах.</p>
+          <h4>Використання властивості DOM-об'єкта</h4>
+          <p>Можна призначати обробник, використовуючи властивість DOM-елемента <code><b>on[назва події]</b></code>.
+          </p>
+          <code>
+<pre>
+elem.<b>onclick</b> = function() {
+  alert('Дякую, що натиснув!');
+};
+</pre>
+          </code>
+          <h2>addEventListener() <a class="font-weight-normal" href="https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener" target='_blank'>[Читати більше]</a></h2>
+          <p>Метод <code><b>addEventListener()</b></code> дозволяє додавати кілька обробників подій для одного елемента та не змінювати html-код сторінки. </p>
+          <p>
+            Синтаксис додавання обробника:</p>
+           <p>
+              <code>element.<b>addEventListener</b>(event, handler[, options]);
+              </code>
+           </p>
+            
+              <p><b><code>event</code></b> - Ім'я події, наприклад "click".</p>
+              <p></p><b><code>handler</code></b> - Посилання на функцію-обробника події.</p>
+              <p><b><code>options</code></b> - Додатковий об'єкт з властивостями:
+                <li class="dot"><b><code>once</code></b>: Якщо <code>true</code>, тоді обробник буде автоматично видалений після першого виконання.</li>
+                <li class="dot"><code>capture і passive</code></li>
+          </p>
+          <p>Для видалення обробника слід використовувати <code><b>removeEventListener</b> <a class="font-weight-normal" href="https://developer.mozilla.org/ru/docs/Web/API/EventTarget/removeEventListener" target='_blank'>[Читати більше]</a></code>:
+          </p>
+          <code>element.<b>removeEventListener</b>(event, handler[, options]);
+          </code>
+          <h2>Об'єкт події <a class="font-weight-normal" href="https://developer.mozilla.org/uk/docs/Web/API/Event" target='_blank'>[Читати більше]</a></h2>
+          <p>
+            Щоб добре обробити подію, нам можуть знадобитися деталі того, що сталося. Не просто «клік» або «натискання клавіші», а також - які координати покажчика миші, яка клавіша натиснута і так далі.</p>
+            <p>Коли відбувається подія, браузер створює <b>об'єкт події</b> , записує в нього деталі і передає його в якості аргументу для функції-обробника.
+            </p>
+            <h4>Деякі властивості об'єкта <b>event</b>:</h4>
+            <li class="dot"><code><b>event.type</b></code> - містить тип події, наприклад "click".</li>
+            <li class="dot"><code><b>event.target</b></code> i <code><b>event.currentTarget</b></code> - містить посилання на елемент, на якому спрацював обробник.</li>
+            <li class="dot"><code><b>event.clientX / event.clientY</b></code> - містить координати курсора в момент кліку відносно вікна, для подій миші..</li>
+
         </div>
+
       </div>  
     </div>
     <!-- Завдання -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#3</span> Виконати
+        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Виконати
           завдання </h4>
       </a>
 
       <div id='collapseTasks' class="collapse">
         
         <ol>
-          <li><b>1.</b> Клонувати репозиторій з готовим сайтом із GitHub на свій комп'ютер. У файлі "script.js" виконати завдання, що описані нижче.<strong> Після виконання кожного завдання комітити зміни</strong>.</li>
-          <a  href="https://github.com/webteacher/js-elements-tasks" target="_blank" class="btn btn-lg ok-btn mt-3">
-            Репозиторій для виконання завдань
+          <li> Продовжуємо роботу з проєктом із минулого розділу. У файлі "script.js" дописати завдання, що описані нижче.<strong> Після виконання кожного завдання комітити зміни</strong>.</li>
+          <a  href="https://github.com/webteacher/js-elements-tasks" target="_blank" class="btn btn-lg ok-btn my-3">
+            Репозиторій для роботи
           </a> 
-          <li><b>2.</b> За допомогою  JS видалити всі рекламні блоки зі сторінки (права частина сайту).</li>
-          <li><b>3.</b> Зберегти коміт та спробувати надіслати зміни на GitHub. Створити нову гілку  із зміненим кодом у своєму GitHub. <strong>Надіслати посилання на гілку проєкту на власному репозиторії на GitHub через форму нижче.</strong></li>
-          <li><b>4.</b> За допомогою  JS змінити жанр фільму, замінити "комедія" на "драма".</li>
-          <li><b>5.</b>  Змінити задній фон постера з фільмом на зображення "bg.jpg". Воно лежить в папці img.
-            Реалізувати тільки за допомогою JS.</li>
-          <li><b>6.</b> Список фільмів на сторінці сформувати на підставі з даних у файлі "script.js".
-            Відсо2тувати їх за алфавітом.</li>
-          <li><b>7.</b> Додати нумерацію виведених фільмів.</li>
-          <li><b>8.</b> Зберегти всі зміни і надіслати на GitHub.</li>
+          <li><b>1.</b> Реалізувати функціонал, щоб після заповнення форми і натискання кнопки "Підтвердити" -
+            новий фільм додавався до списку "ПЕРЕГЛЯНУТІ ФІЛЬМИ".  Сторінка не повинна перезавантажуватися.
+            Новий фільм повинен додаватися в movieDB.movies.
+            Для отримання доступу до значення <code>input</code> - звертаємося до нього <b><code>input.value</code></b>;
+          <li><b>2.</b> Якщо назва доданого фільму більше, ніж 21 символ - обрізати її та додати три крапки вкінці</li>
+          <li><b>3.</b> При наведенні курсору миші на постер фільму (<code>promo__bg</code> ) змінювати фонове зображення на <code>"mars.webp"</code>.</li>
+          <li><b>4.</b> При кліці на кошик для сміття - елемент списку "ПЕРЕГЛЯНУТІ ФІЛЬМИ" буде видалятися зі списку (зміни повинні одразу відобразитися на сторінці)</li>
+          <li><b>5.</b>  Якщо в формі стоїть галочка "Так" у відповідь на запитання "Зробити його улюбленим?", тоді після назви фільму вивести іконку "Зірочка" або іншу для позначення улюбленого фільму. Для зручності можна створити масив з улюбленими фільмами і додати фільм туди.</li>
+          
+          <li><b>6.</b> Фільми повинні бути відсортовані за алфавітом навіть після додавання нового фільму.</li>
+          
+
+          <li><b>7.</b> За допомогою  JS під рейтингом фільму додати кнопку "Дивитися трейлер". При натисканні на неї повинен з'являтися <code>iframe</code> з трейлером фільму на YouTube. Ця діє повинна виконуватися тільки раз.</li>
+          
+          <p> <p>Закомітити всі зміни і надіслати на GitHub.</p></p>
 
         </ol>
    <!-- /Завдання -->
@@ -234,7 +254,7 @@
   </main>
    <!-- Nav buttons -->
    <div class="page-nav-btn-wrapper">
-    <a href="/js-3823/4/" class="page-nav-left" title="Тема 4. Об'єкти, масиви, рядки та робота з ними.">
+    <a href="/js-3823/5/" class="page-nav-left" title="Тема 5. Отримання елементів веб-сторінки та дії над ними. Робота з Git.">
      <span>
         <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -242,7 +262,7 @@
      </span>
      <span class="text-btn-nav">Попередня тема</span>
     </a>
-    <a href="/js-3823/6/" class="page-nav-left page-nav-right" title="Тема 6. Обробка подій в JavaScript.">
+    <!-- <a href="/js-3823/3/" class="page-nav-left page-nav-right" title="Тема 3. Цикли for, while. Функції: стандартні та власні.">
       
       <span class="text-btn-nav">Наступна тема</span>
       <span>
@@ -250,7 +270,7 @@
           <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
         </svg>
      </span>
-     </a>
+     </a> -->
   </div>
 
   <!-- /Nav buttons -->
