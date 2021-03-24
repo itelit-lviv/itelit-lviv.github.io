@@ -41,10 +41,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <a class="nav-item nav-link active" href="../#course" onclick="slowScroll('#course')"
-                title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link active" href="../shpora/" data-toggle="tooltip" data-placement="bottom"
-                title="Шпаргалка по JavaScript">Шпаргалка</a>
+              <!-- <a class="nav-item nav-link active" href="../#course" onclick="slowScroll('#course')"
+                title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a> -->
+                <!-- <a class="nav-item nav-link active" href="../shpora/" data-toggle="tooltip" data-placement="bottom"
+                title="Шпаргалка по JavaScript">Шпаргалка</a> -->
               
                 <a class="nav-item nav-link active" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
               
@@ -67,8 +67,8 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 5.</span class="text-warning">
-          Робота з рядковими змінними. Цикл for. Бібліотека turtle. </h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Рядки.</span class="text-warning">
+          Робота з рядковими змінними. Цикл for. </h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -100,60 +100,117 @@
         <div class="collapse-pres mt-4">
           
           <div class='theory'>
-            <h3>Робота з рядками</h3>
-            <div class='answer'>
-            <ul>
-            <li class="dot"><i>Рядок str - складається з набора символів.</i></li><br>
-            <li class="dot"><i>Можна отримати символ по індексу</i></li><br>
-            <li class="dot"><i><code>riadok[1]</code></i></li><br>
-            <li class="dot"><i>Індекси починаються з 0.</i></li><br>
-            <li class="dot"><i>В Python можна використовувати від'ємні індекси.</i></li><br>
-            <li class="dot"><i><code>riadok[-3]</code></i></li><br></ul></div>
- class="dot"
+            <h2>Як створити рядок</h2>
+            <div class="answer">
+              <p>Рядки завжди створюються одним з трьох способів. Ви можете використовувати одинарні, подвійні або потрійні дужки. </p>
+              <pre class="python" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">my_string <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">&quot;Ласкаво просимо в Python!&quot;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">another_string <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Я новий текст тут...'</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">a_long_string <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'''А це</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #483d8b;">рядок, що займає</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #483d8b;">декілька рядків'''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li></ol></pre>
+            </div>
+            <h2>Базові операції з рядками</h2>
+            <h3>Додавання рядків</h3>
+            <p>
+              За допомогою оператор <b><code>+</code></b> можна об'єднювати кілька рядків в один. Ця операція називається <b>конкатенація</b>.
+              <code>
+<pre>
+s1 = "Hello"
+s2 = " world"
+print(s1+s2) <span class="comment">#Результат: 'Hello world'</span> 
+</pre>
+              </code>
+            </p>
+<p>
+  При необхідності об'єднання рядки з числом його попередньо потрібно привести теж до рядка, використовуючи функцію <b>str()</b>:
+<code>
+<pre>
+name = "John"
+age = 30
+"Name: " + name + ", age: " + str(age)<span class="comment">#Результат: 'Name: John, age: 30'</span> 
+</pre>
+</code>
+</p>
+
+
+            
+            <h3>Доступ по індексу</h3>
+
+            <div class='answer'>            
+            <p>
+              Рядок <b>str</b> - складається з набору символів. Тому можна отримати символ по індексу. Індекси починаються з 0.<br>
+              <code>riadok[1] <span class="comment">#повертає другий символ рядка</span></code>
+            </p>
+            <p>
+            
+            В Python можна використовувати від'ємні індекси.<br>
+            <code>riadok[-3] <span class="comment">#повертає третій з кінця символ рядка</span></code></p></div>
+ 
             <h3>Зрізи</h3>
-            <div class='answer'><ul>
-            <li class="dot"><i>Можна отримати декілька символів, частину рядка.</i></li><br>
-            <li class="dot"><i><code>riadok[start:end]</code></i></li><br>
-            <li class="dot"><i><code>riadok[1:4]</code></i></li><br>
-            <li class="dot"><i>1 - з якого символа починається зріз, 4 - на якому закінчується.</i></li><br>
-            <li class="dot"><i><code>riadok[:4]</code> - зріз з початку рядка.</i></li><br>
-            <li class="dot"><i><code>riadok[1:] </code>- зріз до кінця рядка.</i></li><br></ul></div>
-
-            <h3>Функції для рядків.</h3>
-            <div class='answer'><ul>
-            <li class="dot"><code>len(riadok)</code> - довжина рядка(повертає кількість символів)</li><br>
-            <li class="dot"><code>riadok.find('a')</code> - шукаємо символ 'a' в рядку</li><br>
-            <li class="dot"><code>riadok.split()</code> - розбиття рядка через пробіл </li><br>
-            <li class="dot"><code>riadok.isdigit()</code> - рядок складається з чисел</li><br>
-            <li class="dot"><code>riadok.upper()</code> - зміна рядку до верхнього регістру</li><br>
-            <li class="dot"><code>riadok.lower()</code> - зміна рядку до нижнього регістру</li><br></ul></div>
-
-            <h3>Вивід інформації методом форматування</h3>
             <div class='answer'>
-            Правильним методом виведення інформації вважається метод форматування.<br>
-            Він виглядє наступним чином: <code>print(<b>f</b>'Some information about - <b>{name_zminna}</b>')</code><br><br>
+             <p>
+                Можна отримати декілька символів, частину рядка. <br>
+                <code>riadok[start:end] </code>
+             </p>
+             <ul>
+            <li class="dot"><code>riadok[1:4]</code> - 1 - з якого символа починається зріз, 4 - на якому закінчується.</li>
+            <li class="dot"><code>riadok[:4]</code> - зріз з початку рядка.</li>
+            <li class="dot"><code>riadok[1:] </code>- зріз до кінця рядка.</li></ul></div>
+            <h2>Вивід інформації методом форматування</h2>
+            <h3>Оператор %
+            </h3>
+            
+            <div class='answer'>
+              <p>
+            <code>
+            <pre>
+            name = "Alex"
+            'Hello, %s' % name <span class="comment">#Результат: 'Hello, Alex'</span> 
+            </pre>
+            </code>
+              </p>
+            </div>
+            <h3>f-рядки (Python 3.6+)</h3>
+            <div class='answer'>
+              В Python версії 3.6 з'явився новий метод форматування рядків - "f-рядки", з його допомогою можна використовувати вбудовані вирази всередині рядків.<br>
+            Він виглядє наступним чином: <br> <code>print(<b>f</b>'Some information about - <b>{name_zminna}</b>')</code><br>
             Наприклад:<br>
             <code>
-            name = 'Danylo'<br>
+            name = 'Volodymyr'<br>
             age = 20<br>
             print(f'My name is {name}. I am {age} y.o.')
             </code>
             </div>
+            <h2>Функції і методи для роботи з рядками</h2>
+            <div class='answer'><ul>
+            <li class="dot"><code>len(riadok)</code> - довжина рядка (повертає кількість символів)</li>
+            <li class="dot"><code>str(riadok)</code> - перетворення числового або іншого типу до рядка</li>
 
-            <h3>Цикл for</h3>
+            <li class="dot"><code>riadok.find('a', start, end)</code> - шукаємо символ 'a' в рядку. Повертає індекс першого входження 'a' або -1 при відсутності.Пошук йде в межах від start до end (можна не задавати)</li>
+            <li class="dot"><code>riadok.split(x)</code> - розбиває рядок на підрядки за допомогою обраного роздільника x (наприклад, пробілу або коми). Повертає список підрядків (окремих слів). </li>
+            <li class="dot"><code>riadok.join(x)</code> - об'єднює рядок і підрядки за допомогою обраного роздільника x. </li>
+            <li class="dot"><code>riadok.strip()</code> - прибирає пробіли з обох боків рядка.</li>
+            <li class="dot"><code>riadok.lstrip() </code> чи <code>riadok.rstrip() </code> - прибирає пробіли тільки зліва чи справа.</li>
+
+            <li class="dot"><code>riadok.isdigit()</code> - рядок складається з чисел</li>
+            <li class="dot"><code>riadok.upper()</code> - зміна рядку до верхнього регістру (великими літерами)</li>
+            <li class="dot"><code>riadok.lower()</code> - зміна рядку до нижнього регістру (малими літерами)</li>
+            <li class="dot"><code>riadok.capitalize()</code> - зміна першої літери у верхній регістр, інших - в нижній.</li>
+            <li class="dot"><code>riadok.replace(a, b)</code> - заміна символів а на символи b.</li></ul></div>
+
+            <p>Більше методів з прикладами коду можна знайти <a href="https://www.w3schools.com/python/python_strings_methods.asp" target="_blank">за посиланням.</a></p>
+            
+            <br>
+            <h2>Цикл for</h2>
             <div class='answer'>
             Цикл for виконує ті ж самі задачі, що й цикл while. Головна відмінність між ними це те, що цикл for менше і займає набагато менше пам'яті. В подальшому при створенні великих програм необхідно звертати увагу на економічність програми.</div>
             <h3>Як будується цикл for</h3>
             <div class='answer'>
-            Цикл for будується наступним чином:<br><br>
+            Цикл for будується наступним чином:<br>
             <code >
-                i in range(0,10):<br>
+              for i in range(0,10):<br>
                <span style='margin-left:20px;'>print('hello')</span><br>
             </code>
 
             <br>
             Вираз <code>i in range(0,10)</code> - значить, що ми створюємо змінну і, яка дійсна тільки в цьому циклі. І що вона проходить значення від 0 до 10-1, тобто 10 проходів. <br> 
-            Також цикл for можна використати наступним чином:<br><br>
+            Також цикл for можна використати наступним чином:<br>
             <code>
             a = 'danylo'<br>
             for i in a:<br>
@@ -161,29 +218,8 @@
             В цьому випадку ми проходимось по нашому рядку проходячи кожен символ і виводимо його на екран.<br> 
             </div>
 
-            <h3>Бібліотека Turtle</h3>
-            <div class='answer'>Бібліотека Turtle - створена для створення різноманітної графіки.</div>
-            <div class='answer'>Для початку цю бібліотеку необхідно вставити в нашу програму за допомого <b><code>import turtle</code></b></div>
-            <div class='answer'>Далі необхідно визначити нашу черепашку, для цього використовуємо вираз:  <b><code>t = turtle.Pen()</code></b><br>Тепер, якщо запустити нашу програму, у нас з'явиться стрілочка на білому екрані, це наша черепашка.</div>
-            <h3>Функції бібліотеки Turtle</h3>
-            <div class='answer'><ul>
-            <li class="dot"><code>forward(Довжина)</code> - Рухається вперед на вказану кількість пікселів.</li><br>
-            <li class="dot"><code>backward(Довжина)</code> - Рухається назад на вказану кількість пікселів.</li><br>
-            <li class="dot"><code>left(Кут)</code> - Повертає вліво на вказаний кут.</li><br>
-            <li class="dot"><code>right(Кут)</code> - Повертає вправо на вказаний кут. </li><br>
-            <li class="dot"><code>up()</code> - Вимикає малювання.</li><br>
-            <li class="dot"><code>down()</code> - Вмикає малювання.</li><br>
-            <li class="dot"><code>color(0,0,0)</code> - Вибір кольору.</li><br>
-            <li class="dot"><code>begin_fill()</code> - Початок закрашування зони.</li><br>
-            <li class="dot"><code>end_fill()</code> - Кінець закрашування зони.</li><br>
-            <li class="dot"><code>setheading()</code> - Повертає черепашку щоб вона дивилась в казаному напрямі.</li><br>
-            <li class="dot"><code>circle(Радіус)</code> - Малює коло заданого радіусу.</li><br></ul></div>
-            <div class='answer'>
-            <div class="alert alert-info" role="alert">
-              <h4 class="alert-heading">Зауваження!</h4>
-               Якщо ваша черепашка відкривається, малює і одразу закривається. В кінці програми допишіть наступний вираз: <br>
-            <b><code>turtle.getscreen()._root.mainloop()</code></b>
-            </div>
+            
+            
           </div>
         </div>
         </div>
@@ -223,7 +259,7 @@
           <p><img src="/src/python-course/t5_6.PNG" alt="" /></p></div>
 
           
-          <div class='task'><h3>                                ЗАВДАННЯ 5.7.                            </h3>
+          <!-- <div class='task'><h3>                                ЗАВДАННЯ 5.7.                            </h3>
             <p>Створити програму, яка намалює таку рамку. Довжина видимої частини - 90, невидимої - 20.</p>
           <p>Результат вивести на екран у вигляді:</p>
           <p><img src="/src/python-course/t5_7.PNG" alt="" /></p></div>
@@ -247,7 +283,7 @@
           <div class='task'><h3>                                ЗАВДАННЯ 5.12.                            </h3>
             <p>За допомогою бібліотеки <b>turtle</b> намалювати ялинку.</p>
           <p>Результат вивести на екран у вигляді:</p>
-          <p><img src="/src/python-course/t5_12.PNG" alt="" /></p></div>
+          <p><img src="/src/python-course/t5_12.PNG" alt="" /></p></div> -->
         <h5><b>Надіслати виконане завдання</b></h5>
         <script type="text/javascript">
           var submitted = false;
@@ -280,8 +316,8 @@
         <div class="footer-nav d-flex flex-column flex-md-row align-items-center justify-content-md-start">
           <a class="mr-lg-5  navbar-brand mr-0 logo order-md-0 order-12" href="/js-3823/index.html"><span>Web</span><span
               class="text-dark">Teach</span></a>
-          <a class="ml-lg-5 ml-0 nav-item nav-link " href="#course" 
-            title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+          <!-- <a class="ml-lg-5 ml-0 nav-item nav-link " href="#course" 
+            title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a> -->
           
           <a class="nav-item nav-link ml-0" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду"
             target="_blank">Редактор</a>
