@@ -48,7 +48,7 @@
               
               <a class="nav-item nav-link active" href="https://codesandbox.io/s/" title="Відкрити онлайн-редактор коду"
                 target="_blank">Редактор</a>
-
+               
               <a class="nav-item nav-link active" href="../progress/" data-toggle="tooltip" data-placement="bottom"
                 title="Журнал успішності">Журнал</a>
 
@@ -69,8 +69,8 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 3.</span class="text-warning">
-          Цикли for, while. Функції та їх види.</h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 6.</span class="text-warning">
+          Обробка подій в JavaScript.</h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -107,90 +107,134 @@
   <!-- Main block -->
   <main class="container pt-4">
     <!-- Теорія -->
-    <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Розглянути
-          теорію </h4>
-      </a>
-      <div id="collapsePres" class="collapse show">
-        <div class="collapse-pres mt-4">
-          <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item "
-            src="https://docs.google.com/presentation/d/e/2PACX-1vT3jA7mvzO--4aU7gVL7a_yuG8w7HyFIinSrg-giPk-TArhuRV_JkHaVWlSGB2nBfFltg2QuQxihDMI/embed?start=false&loop=false&delayms=15000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> </div>
-          <!-- <a data-fancybox href="https://www.youtube.com/watch?v=ppS0IH29-0M" class="btn btn-lg ok-btn mt-3">
-            Запис заняття
-          </a> -->
-        </div>
-      </div>
-    </div>
     
+
+     <div class="lesson-list-js wow fadeInUp" id="course">
+      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="true">
+        <h4 class="h4  font-weight-normal " style="color:#752fc5;"> <span class="font-weight-bold ">#1</span> Розглянути
+          теорію </h4> 
+          <a data-fancybox href="https://www.youtube.com/watch?v=hdcYsIrFJ-I" class="btn btn-lg ok-btn my-3">
+            Запис заняття
+          </a> 
+      </a>
+      <div id="collapse2" class="collapse ">
+        <div class="collapse-2 mt-4">
+          
+          <h2>Події в браузері  <a class="font-weight-normal" href="https://developer.mozilla.org/uk/docs/Web/Events" target='_blank'>[Список усіх подій]</a></h2>
+          <p>Подія - це сигнал від браузера про те, що щось сталося. Всі DOM-вузли (елементи html-сторінки) подають такі сигнали.</p>
+          <p>Ось список найбільш часто використовуваних DOM-подій, поки просто для ознайомлення:</p>
+          <h4>Події миші:</h4>
+          <ul>
+            <li class="dot"><code><strong>click</strong></code> - відбувається, коли клікати (натискати) на елемент лівою кнопкою миші (на пристроях з сенсорними екранами воно відбувається при торканні).</li>
+            <li class="dot"><code><strong>contextmenu</strong></code> - відбувається, коли натискати на елемент правою кнопкою миші.</li>
+            <li class="dot"><code><strong>mouseover / mouseout</strong></code> - коли курсор миші наводиться на / покидає елемент.</li>
+            <li class="dot"><code><strong>mousedown/ mouseup</strong></code> - коли натиснули / відтиснули кнопку миші на елементі.</li>
+            <li class="dot"><code><strong>mousemove</strong></code> - при русі миші.</li>
+          </ul>
+          <h4>Події на елементах управління:</h4>
+          <ul>
+            <li class="dot"><code><strong>submit</strong></code> - користувач відправив форму <code>form</code>.</li>
+            <li class="dot"><code><strong>focus</strong></code> - користувач фокусується на елементі, наприклад натискає на <code>input</code>.</li>
+           </ul>
+           <h4>Клавіатурні події:</h4>
+           <ul>
+             <li class="dot"><code><strong>keydown</strong></code> i <code><strong>keyup</strong></code> - коли користувач натискає / відпускає клавішу.</li>
+            </ul>
+            <h4>Події документа:</h4>
+           <ul>
+             <li class="dot"><code><strong>DOMContentLoaded</strong></code> - коли HTML завантажений і оброблений, DOM документа повністю побудований і доступний.</li>
+            </ul>
+            <h4>CSS events:</h4>
+           <ul>
+             <li class="dot"><code><strong>transitionend</strong></code> - коли CSS-анімація завершена.</li>
+            </ul>
+          
+          <h2>Обробники подій</h2>
+          <p>
+            Події можна призначити <b>обробник</b> , тобто функцію, яка спрацює, як тільки подія відбудеться. Саме завдяки обробникам JavaScript-код може реагувати на дії користувача.
+          </p>
+          <h4>Використання атрибута HTML (не рекомендується)</h4>
+          <p>До HTML-елемента можна додати атрибут <code><b>onclick</b></code>, якому передати функцію що буде виконуватися при натисканні на елемент.</p>
+          <pre class="xml" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;input</span> <span style="color: #000066;">value</span>=<span style="color: #ff0000;">&quot;Натисни на мене&quot;</span> <span style="color: #000066;">onclick</span>=<span style="color: #ff0000;">&quot;alert('Дякую, що натиснув!')&quot;</span> <span style="color: #000066;">type</span>=<span style="color: #ff0000;">&quot;button&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span></div></li></ol></pre>
+          <p>Однак, цей метод краще не використовувати у реальних проектах.</p>
+          <h4>Використання властивості DOM-об'єкта</h4>
+          <p>Можна призначати обробник, використовуючи властивість DOM-елемента <code><b>on[назва події]</b></code>.
+          </p>
+          <code>
+<pre>
+elem.<b>onclick</b> = function() {
+  alert('Дякую, що натиснув!');
+};
+</pre>
+          </code>
+          <h2>addEventListener() <a class="font-weight-normal" href="https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener" target='_blank'>[Читати більше]</a></h2>
+          <p>Метод <code><b>addEventListener()</b></code> дозволяє додавати кілька обробників подій для одного елемента та не змінювати html-код сторінки. </p>
+          <p>
+            Синтаксис додавання обробника:</p>
+           <p>
+              <code>element.<b>addEventListener</b>(event, handler[, options]);
+              </code>
+           </p>
+            
+              <p><b><code>event</code></b> - Ім'я події, наприклад "click".</p>
+              <p></p><b><code>handler</code></b> - Посилання на функцію-обробника події.</p>
+              <p><b><code>options</code></b> - Додатковий об'єкт з властивостями:
+                <li class="dot"><b><code>once</code></b>: Якщо <code>true</code>, тоді обробник буде автоматично видалений після першого виконання.</li>
+                <li class="dot"><code>capture і passive</code></li>
+          </p>
+          <p>Для видалення обробника слід використовувати <code><b>removeEventListener</b> <a class="font-weight-normal" href="https://developer.mozilla.org/ru/docs/Web/API/EventTarget/removeEventListener" target='_blank'>[Читати більше]</a></code>:
+          </p>
+          <code>element.<b>removeEventListener</b>(event, handler[, options]);
+          </code>
+          <h2>Об'єкт події <a class="font-weight-normal" href="https://developer.mozilla.org/uk/docs/Web/API/Event" target='_blank'>[Читати більше]</a></h2>
+          <p>
+            Щоб добре обробити подію, нам можуть знадобитися деталі того, що сталося. Не просто «клік» або «натискання клавіші», а також - які координати покажчика миші, яка клавіша натиснута і так далі.</p>
+            <p>Коли відбувається подія, браузер створює <b>об'єкт події</b> , записує в нього деталі і передає його в якості аргументу для функції-обробника.
+            </p>
+            <h4>Деякі властивості об'єкта <b>event</b>:</h4>
+            <li class="dot"><code><b>event.type</b></code> - містить тип події, наприклад "click".</li>
+            <li class="dot"><code><b>event.target</b></code> i <code><b>event.currentTarget</b></code> - містить посилання на елемент, на якому спрацював обробник.</li>
+            <li class="dot"><code><b>event.clientX / event.clientY</b></code> - містить координати курсора в момент кліку відносно вікна, для подій миші..</li>
+
+        </div>
+
+      </div>  
+    </div>
     <!-- Завдання -->
-    <div class="lesson-list-js wow fadeInUp " id="course">
+    <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading " data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
         <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Виконати
           завдання </h4>
       </a>
 
       <div id='collapseTasks' class="collapse show">
+        
         <ol>
-          <!-- <li><b> 1. </b> Створіть сторінку, яка запитує ім'я у користувача і виводить його.</li>
-          <li><b>2.</b> Створіть об'єкт <code>Student</code>, в якому опишіть інформацію про себе.</li>
-          <li><b>3. </b> Нижче наведено код, який запитує у користувача два числа і показує їх суму. Він не працює належним чином. Код в прикладі виводить 12 (для значення полів за замовчуванням).
-           У чому помилка? Виправте її. 
-          <code><pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">let a <span style="color: #339933;">=</span> prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Введіть перше число?&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">let b <span style="color: #339933;">=</span> prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Введіть друге число?&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">2</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">alert<span style="color: #009900;">&#40;</span>a <span style="color: #339933;">+</span> b<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">// 12</span></div></li></ol></pre>
-          </code>
-          </li>
-          <li><b>4. </b> Перепишіть код з використанням однієї конструкції <b>switch</b>:
-           <code>
-<pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">const</span> number <span style="color: #339933;">=</span> <span style="color: #339933;">+</span>prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Введіть число між 0 и 3'</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 0'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 1'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">2</span> <span style="color: #339933;">||</span> number <span style="color: #339933;">===</span> <span style="color: #CC0000;">3</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 2 або 3'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li></ol></pre>
-           </code>
-           </li>
-           <li><b>5. </b> Напишіть код, який буде питати логін за допомогою prompt.
+          <li> Продовжуємо роботу з проєктом із минулого розділу. У файлі "script.js" дописати завдання, що описані нижче.<strong> Після виконання кожного завдання комітити зміни</strong>.</li>
+          <a  href="https://github.com/webteacher/js-elements-tasks" target="_blank" class="btn btn-lg ok-btn my-3">
+            Репозиторій для роботи
+          </a> 
+          <li><b>1.</b> Реалізувати функціонал, щоб після заповнення форми і натискання кнопки "Підтвердити" -
+            новий фільм додавався до списку "ПЕРЕГЛЯНУТІ ФІЛЬМИ".  Сторінка не повинна перезавантажуватися.
+            Новий фільм повинен додаватися в movieDB.movies.
+            Для отримання доступу до значення <code>input</code> - звертаємося до нього <b><code>input.value</code></b>;
+          <li><b>2.</b> Якщо назва доданого фільму більше, ніж 21 символ - обрізати її та додати три крапки вкінці</li>
+          <li><b>3.</b> При наведенні курсору миші на постер фільму (<code>promo__bg</code> ) змінювати фонове зображення на <code>"mars.webp"</code>.</li>
+          <li><b>4.</b> При кліці на кошик для сміття - елемент списку "ПЕРЕГЛЯНУТІ ФІЛЬМИ" буде видалятися зі списку (зміни повинні одразу відобразитися на сторінці)</li>
+          <li><b>5.</b>  Якщо в формі стоїть галочка "Так" у відповідь на запитання "Зробити його улюбленим?", тоді після назви фільму вивести іконку "Зірочка" або іншу для позначення улюбленого фільму. Для зручності можна створити масив з улюбленими фільмами і додати фільм туди.</li>
+          
+          <li><b>6.</b> Фільми повинні бути відсортовані за алфавітом навіть після додавання нового фільму.</li>
+          
 
-            Якщо відвідувач вводить «Адмін», то prompt запитує пароль, якщо нічого не введено або натиснута клавіша Esc- показати "відкинуто", в іншому випадку відобразити «Я вас не знаю».
-            
-            Пароль перевіряти так:
-            
-            Якщо введений пароль «Я головний», то виводити «Вітаю!»,
-            Інакше - «Неправильний пароль»,
-            При відміні - "Скасування".
-            <img src="/src/img/t2_1.png" alt="">
-            </li> -->
-          <li><b>1.</b> Напишіть цикл, який пропонує за допомогою <b>prompt</b> ввести число, яке більше 100. Якщо відвідувач ввів інше число - попросити ввести ще раз, і так далі.
-            Цикл повинен питати число поки або відвідувач не введе число, більше 100, або не натисне кнопку Скасувати (ESC).</li>
-            <li><b>2. </b> Перепишіть код, замінивши цикл <b>for</b> на <b>while</b>, без зміни поведінки циклу.</b>
-              <code>
-                <pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span>let i <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> <span style="color: #CC0000;">5</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span> <span style="color: #3366CC;">&quot;number &quot;</span> <span style="color: #339933;">+</span> i <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li></ol></pre>
-              </code>
-              </li>
-              <li><b>3.</b> Створити програму, яка виводить на екран всі непарні числа від 6 до 55. Використати оператор <b>continue</b>.</li>
-              <li><b>4.</b> Переписати завдання №3, помістивши весь функціонал <b>у окрему функцію</b>. Також зробіть функцію універсальною, нехай вона виводить всі непарні числа між будь якими двома заданими числами.  </b>.</li>
-              <li><b>5. </b> Перепишіть код, використовуючи анонімні <b> функції-вирази</b> для колбеків.</b>
-                <code>
-<pre>
-function ask(question, yes, no) {
-  if (confirm(question)) yes();
-  else no();
-}
-function showOk() {
-  alert( "Ви згідні." );
-}
-function showCancel() {
-  alert( "Ви скасували виконання." );
-}
-ask("Ви згідні?", showOk, showCancel);
-</pre>
-                </code>
-                </li>
-              <li><b>6. </b> Напишіть <b>функцію-стрілку</b>, що отримує два параметри-рядки та складає їх докупи в один рядок, додаючи пробіл між ними. </b>.</b>
-                
-              <li><b>7. </b> Перепишіть результат завдання №5, використовуючи  <b>функції-стрілки</b>.</b>
-               
-                </li>
+          <li><b>7.</b> За допомогою  JS під рейтингом фільму додати кнопку "Дивитися трейлер". При натисканні на неї повинен з'являтися <code>iframe</code> з трейлером фільму на YouTube. Ця діє повинна виконуватися тільки раз.</li>
+          
+          <p> <p>Закомітити всі зміни і надіслати на GitHub.</p></p>
+
         </ol>
-        <h4></h4>
    <!-- /Завдання -->
+
         <!-- <iframe class="w-100" src="https://docs.google.com/forms/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/viewform?embedded=true" width="640" height="682" frameborder="0" marginheight="0" marginwidth="0">Завантаження…</iframe> -->
-        <h5><b>Надіслати виконане завдання</b></h5>
+        <h4><b>Надіслати посилання на репозиторій GitHub</b></h4>
         <script type="text/javascript">
           var submitted = false;
         </script>
@@ -200,8 +244,8 @@ ask("Ви згідні?", showOk, showCancel);
           action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
           method="post" target="hidden_iframe" onsubmit="submitted=true;">
           <input required class="form-control my-3" name="entry.42502702" type="text" placeholder="Введіть ваше ім'я">
-          <textarea required name="entry.339734998" class="w-100 form-control" rows=6
-            placeholder="Введість ваш код або посилання на онлайн-редактор"></textarea>
+          <textarea required name="entry.339734998" class="w-100 form-control" rows=2
+            placeholder="Введіть  посилання "></textarea>
           <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
         </form>
       </div>
@@ -210,7 +254,7 @@ ask("Ви згідні?", showOk, showCancel);
   </main>
    <!-- Nav buttons -->
    <div class="page-nav-btn-wrapper">
-    <a href="/js-3823/2/" class="page-nav-left" title="Тема 2. Дії зі змінними. Взаємодія з користувачем. Оператори if/else, switch.">
+    <a href="/js-3823/5/" class="page-nav-left" title="Тема 5. Отримання елементів веб-сторінки та дії над ними. Робота з Git.">
      <span>
         <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -218,7 +262,7 @@ ask("Ви згідні?", showOk, showCancel);
      </span>
      <span class="text-btn-nav">Попередня тема</span>
     </a>
-    <a href="/js-3823/4/" class="page-nav-left page-nav-right" title="Тема 4. Об'єкти, масиви, рядки та робота з ними.">
+    <a href="/js-3823/7/" class="page-nav-left page-nav-right" title="Тема 7. Практика. Анімації на landing-page.">
       
       <span class="text-btn-nav">Наступна тема</span>
       <span>

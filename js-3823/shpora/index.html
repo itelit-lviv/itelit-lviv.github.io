@@ -69,8 +69,7 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 1.</span class="text-warning">
-          Поринаємо в JavaScript. Змінні. Типи даних. </h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> Шпаргалка по <span class="text-warning">JavaScript</span></h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -103,94 +102,177 @@
     </header>
   </div>
   <!--/Header-wrapper -->
-  <div class="main-wrapper container container-lg-fluid">
+
   <!-- Main block -->
   <main class="container pt-4">
     <!-- Теорія -->
     <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Розглянути
-          теорію </h4>
+      <a class="collapse-heading " data-toggle="collapse" data-target="#collapse1" aria-expanded="true">
+         <h3 class="font-weight-bold">Типи даних JS</h3>
       </a>
-      <div id="collapsePres" class="collapse show">
-        <div class="collapse-pres mt-4">
-          <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item "
-              src="https://docs.google.com/presentation/d/e/2PACX-1vTFZgygZoYcv74yicPxjL_t9Murit7Lm7pFBzO0Sh6hThkTxJ3UQwx3n7QTDDMd4HPKUebBwWpo-wVh/embed?start=false&loop=false&delayms=3000"
-              frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
-              webkitallowfullscreen="true"></iframe> </div>
-          <a data-fancybox href="https://www.youtube.com/watch?v=JO0AFNcmgHI" class="btn btn-lg ok-btn mt-3">
-            Запис заняття
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- Тест -->
-    <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTest" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Пройти тест
-        </h4>
-      </a>
+      <div id="collapse1" class="collapse show">
+        <div class="collapse-1 mt-4">
+          <div class="row">
+             <div class="col-md-6 col-12">
+                <h4><u>Прості типи</u> </h4>
+                <ol>
+                   <li><b>number</b> - числа 1, 2, 3.5</li>
+                   <li><b>string</b> - рядки "Якийсь текст"</li>
+                   <li><b>boolean</b> - Логічний тип true/false</li>
+                   <li><b>null</b> - спеціальне значення</li>
+                   <li><b>undefined</b> - спеціальне значення</li>
+                   <li><b>Symbol</b></li>
+                   <li><b>BigInt</b> </li>
+                </ol>
+             </div>
+             <div class="col-md-6 col-12"> 
+                <h4><u>Об'єкти</u></h4>
+                <ol>
+                  <li><b>{ }</b> - звичайні об'єкти  </li>
 
-      <div id='collapseTest' class="collapse">
-        <div class="test w-100">
-          <iframe class="w-100"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSe8N7VbNI86You0j6dvVYZ7rzlxO7vLiNh3YpcoWq1RVZDvtg/viewform?embedded=true"
-            width="640" height="2440" frameborder="0" marginheight="0" marginwidth="0">Завантаження…</iframe>
+                   <li><b>[ ]</b> - Масиви  </li>
+                   <li><b>String </b> - Рядки (з методами)  </li>
+                   <li><b>funtion</b> - Функції </li>
+                   <li>Об'єкт дати </li>
+                   <li>Регулярні вирази </li>
+                   <li>Помилки</li>
+                </ol>
+            </div>
+          </div>
         </div>
-      </div>
+      </div>  
+      
     </div>
-    <!-- Завдання -->
     <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#3</span> Виконати
-          завдання </h4>
-      </a>
+      <a class="collapse-heading " data-toggle="collapse" data-target="#collapse2" aria-expanded="true">
+         <h3 class="font-weight-bold">Функції</h3>
 
-      <div id='collapseTasks' class="collapse">
-        <ol>
-          <li><b>1.</b> Створити новий проєкт та всі потрібні файли. Підключити js-файл до html-сторінки. </li>
-          <li><b>2.</b> Оголосіть дві змінні: <code>admin</code> і <code>name</code>. Запишіть рядок "Джон" в змінну
-            name. Скопіюйте значення з змінної name в admin. Виведіть на екран значення admin, використовуючи функцію
-            alert (повинна показати «Джон»).</li>
-          <li><b>3.</b>Створіть сторінку, яка запитує ім'я у користувача і виводить його.</li>
-          <li><b>4.</b> Створіть об'єкт <code>Student</code>, в якому опишіть інформацію про себе.</li>
-        </ol>
-        <h4></h4>
-        <!-- <iframe class="w-100" src="https://docs.google.com/forms/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/viewform?embedded=true" width="640" height="682" frameborder="0" marginheight="0" marginwidth="0">Завантаження…</iframe> -->
-        <h5><b>Надіслати виконане завдання</b></h5>
-        <script type="text/javascript">
-          var submitted = false;
-        </script>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-          onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
-        <form
-          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
-          method="post" target="hidden_iframe" onsubmit="submitted=true;">
-          <input required class="form-control my-3" name="entry.42502702" type="text" placeholder="Введіть ваше ім'я">
-          <textarea required name="entry.339734998" class="w-100 form-control" rows=6
-            placeholder="Введість ваш код або посилання на онлайн-редактор"></textarea>
-          <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
-        </form>
-      </div>
+      </a>
+      <div id="collapse2" class="collapse show">
+        <div class="collapse-2 mt-4">
+         <div class="row">
+            <div class="col-md-4 col-12">
+               <h4><u>Function Declaration</u> </h4>
+               <code>
+<pre>
+function nameFunction(arguments){
+  //код
+}
+</pre>
+               </code>
+               Створюється до початку виконання скрипта, можна викликати перед оголошенням.
+            </div>
+            <div class="col-md-4 col-12">
+              <h4><u>Function Expression</u> </h4>
+              <code>
+<pre>
+let nameFunction =  function(arguments){
+ //код
+};
+</pre>
+              </code>
+              Створюється лише тоді, коли доходить до створення змінної, можна викликати лише після оголошення.
+           </div>
+           <div class="col-md-4 col-12">
+              <h4><u>Arrow Function</u> </h4>
+              <code>
+<pre>
+(arguments)=>{//код}
+};
+</pre>
+              </code>
+              Не має контексту <b>this</b>.
+           </div>
+         </div>
+        </div>
+      </div>  
     </div>
+    <div class="lesson-list-js wow fadeInUp" id="course">
+      <a class="collapse-heading " data-toggle="collapse" data-target="#collapse3" aria-expanded="true">
+         <h3 class="font-weight-bold">Об'єкти і масиви</h3>
+
+      </a>
+      <div id="collapse3" class="collapse show">
+        <div class="collapse-3 mt-4">
+         <div class="row">
+            <div class="col-md-4 col-12">
+               <h4><u>Об'єкти</u> <a href="https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" class="font-weight-light"> [читати більше]</a></h4>
+               <code>
+<pre>
+let obj = new Object();
+let obj = {};
+</pre>
+               </code>
+               Властивості об'єктів:
+               <code>
+<pre>
+let obj = {
+   name: "John",
+   age: 13
+};
+obj.name = 'John';   
+</pre>
+               </code>
+Cтворення методів <br>(дій, функцій об'єкта)
+<code>
+   <pre>
+let obj = {
+   name: "John",
+   sayName: function(){
+      alert(this.name);
+   }
+};
+obj.sayName();
+   </pre>
+</code>
+            </div>
+           
+           <div class="col-md-8 col-12">
+              <h4><u>Масиви</u> <a href="https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" class="font-weight-light"> [читати більше]</a></h4>
+              <code>
+<pre>
+let arr = [1,"text", [],{}];
+let arr[0]=1;
+</pre>
+              </code>
+             <div class="row">
+                <div class="col-md-8 col-12">
+                   Методи масивів:
+                   <ol>
+                      <li><b>arr.push('a')</b> - додає елемент в кінець масиву </li>
+                      <li><b>arr.pop()</b> - видаляє останній елемент масиву </li>
+                      <li><b>arr.shift()</b> - видаляє елемент з початку, зсуваючи масив </li>
+                      <li><b>arr.unshift('а')</b> -  додає елемент в початок масиву, зсуваючи масив </li>
+                      <li><b>str.split(s)</b> -  перетворює рядок в масив, s - розділювач </li>
+                      <li><b>arr.join(s)</b> -  перетворює масив у рядок, s - розділювач </li>
+                      <li><b>delete arr[2]</b> -  видаляє 3 елемент масиву</li>
+                      <li><b>arr.slice(begin, end)</b> -  копіює частину масива від begin до end індекса невключно </li>
+                      <li><b>arr.sort(fn)</b> -  сортування масиву. Якщо не передати функцію порівняння fn, то сортує як звичайні рядки по алфавіту.</li>
+                      <li><b>arr.reverse()</b> -  змінює порядок елементів на зворотній</li>
+                      <li><b>arr.concat(item1...)</b> - створює новий масив, додаючи до масиву arr елемент item1...</li>
+                   </ol>
+                </div>
+                <div class="col-md-4 col-12">
+                   Методи перебору:
+                   <ol>
+                      <li><b>arr.forEach()</b> </li>
+                      <li><b>arr.map()</b> </li>
+                      <li><b>arr.every()</b> </li>
+                      <li><b>arr.some()</b> </li>
+                      <li><b>arr.filter()</b> </li>
+                      <li><b>arr.reduce()</b> </li>
+                   </ol>
+                </div>
+             </div>
+           </div>
+         </div>
+        </div>
+      </div>  
+    </div>
+   
 
   </main>
-   <!-- Nav buttons -->
-   <div class="page-nav-btn-wrapper">
-    
-    <a href="/js-3823/2/" class="page-nav-left page-nav-right" title="Тема 2. Дії зі змінними. Взаємодія з користувачем. Оператори if/else, switch.">
-      
-      <span class="text-btn-nav">Наступна тема</span>
-      <span>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-        </svg>
-     </span>
-     </a>
-  </div>
-
-  <!-- /Nav buttons -->
-</div>
+   
   <button class="btn" hidden id='arrowTopBtn'  onclick="window.scrollTo(0, 0);">
     <!-- <svg xmlns="http://www.w3.org/2000/svg"  fill="rgb(82, 82, 82)" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
       <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>

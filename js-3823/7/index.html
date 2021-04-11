@@ -48,7 +48,7 @@
               
               <a class="nav-item nav-link active" href="https://codesandbox.io/s/" title="Відкрити онлайн-редактор коду"
                 target="_blank">Редактор</a>
-
+               
               <a class="nav-item nav-link active" href="../progress/" data-toggle="tooltip" data-placement="bottom"
                 title="Журнал успішності">Журнал</a>
 
@@ -69,8 +69,8 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 3.</span class="text-warning">
-          Цикли for, while. Функції та їх види.</h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 7.</span class="text-warning">
+          Практика. Анімації на landing-page.</h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -106,91 +106,44 @@
 
   <!-- Main block -->
   <main class="container pt-4">
-    <!-- Теорія -->
-    <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Розглянути
-          теорію </h4>
-      </a>
-      <div id="collapsePres" class="collapse show">
-        <div class="collapse-pres mt-4">
-          <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item "
-            src="https://docs.google.com/presentation/d/e/2PACX-1vT3jA7mvzO--4aU7gVL7a_yuG8w7HyFIinSrg-giPk-TArhuRV_JkHaVWlSGB2nBfFltg2QuQxihDMI/embed?start=false&loop=false&delayms=15000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> </div>
-          <!-- <a data-fancybox href="https://www.youtube.com/watch?v=ppS0IH29-0M" class="btn btn-lg ok-btn mt-3">
-            Запис заняття
-          </a> -->
-        </div>
-      </div>
-    </div>
     
     <!-- Завдання -->
-    <div class="lesson-list-js wow fadeInUp " id="course">
-      <a class="collapse-heading " data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Виконати
+    <div class="lesson-list-js wow fadeInUp" id="course">
+      <a class="collapse-heading" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
+        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Виконати
           завдання </h4>
       </a>
 
       <div id='collapseTasks' class="collapse show">
+        
         <ol>
-          <!-- <li><b> 1. </b> Створіть сторінку, яка запитує ім'я у користувача і виводить його.</li>
-          <li><b>2.</b> Створіть об'єкт <code>Student</code>, в якому опишіть інформацію про себе.</li>
-          <li><b>3. </b> Нижче наведено код, який запитує у користувача два числа і показує їх суму. Він не працює належним чином. Код в прикладі виводить 12 (для значення полів за замовчуванням).
-           У чому помилка? Виправте її. 
-          <code><pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">let a <span style="color: #339933;">=</span> prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Введіть перше число?&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">let b <span style="color: #339933;">=</span> prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Введіть друге число?&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">2</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">alert<span style="color: #009900;">&#40;</span>a <span style="color: #339933;">+</span> b<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">// 12</span></div></li></ol></pre>
-          </code>
-          </li>
-          <li><b>4. </b> Перепишіть код з використанням однієї конструкції <b>switch</b>:
-           <code>
-<pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">const</span> number <span style="color: #339933;">=</span> <span style="color: #339933;">+</span>prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Введіть число між 0 и 3'</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 0'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 1'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">2</span> <span style="color: #339933;">||</span> number <span style="color: #339933;">===</span> <span style="color: #CC0000;">3</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 2 або 3'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li></ol></pre>
-           </code>
-           </li>
-           <li><b>5. </b> Напишіть код, який буде питати логін за допомогою prompt.
+          <li> Клонуйте репозиторій з landing-page на свій комп'ютер. <strong> Після виконання кожного завдання не забувайте комітити зміни</strong>.</li>
+          <a  href="https://github.com/webteacher/food-delivery-landing" target="_blank" class="btn btn-lg ok-btn my-3">
+            Репозиторій для роботи
+          </a> 
+          <a data-fancybox href="https://www.youtube.com/watch?v=A4R1cTXTdtw" class="btn btn-lg ok-btn my-3 mx-2">
+            Запис заняття 03.04
+          </a> 
+          <a data-fancybox href="https://www.youtube.com/watch?v=EJACXVc3B2w" class="btn btn-lg ok-btn my-3 mx-2">
+            Запис заняття 10.04
+          </a> 
+          <a  href="https://github.com/vhubash/food-delivery-landing/blob/main/js/script.js" target="_blank" class="btn btn-lg ok-btn my-3">
+            Відповіді
+          </a>
+          <li><b>1.</b> Реалізувати перемикання табів в розділі "Виберіть стиль харчування", щоб при натисканні на різні стилі, змінювався блок з класом "tabcontent" на відповідний. Додати css-анімацію при перемиканні табів. </li>
+          <li><b>2.</b> Додати таймер, що буде автоматично перемикати таби кожні 5 секунд. Після відкриття останнього табу повинен знову показуватися перший. Використайте функцію <b>setInterval()</b>. </li>
+          <li><b>3.</b> Додати обробник події кліку на кнопку "Зв'язатися з нами", що знаходиться в правому верхньому куті сторінки, який буде відкривати модальне вікно (клас <code>modal</code> ), а кнопка з класом <code>modal__close</code> повинна закривати вікно. Використати атрибут <b>data-modal</b>.  </li>
+          <li><b>4.</b> Анімувати таймер в кінці сторінки, щоб він показував час що залишився до кінця акції (задається константною змінною, наприклад, <code>const <b>deadline</b> = '2021-05-11'</code>). Таймер повинен оновлюватися щосекунди без перезавантаження сторінки. Для отримання дати з рядка <code>deadline</code> скористайтеся функцією <b>Date.parse()</b>. Для уникнення конфліктів відключіть функцію setInterval() з другого завдання. </li> 
+          <li><b>5.</b> Дописати завдання 3 так, щоб обробник події кліку на кнопку "Зв'язатися з нами" спрацьовував для обох кнопок "Зв'язатися з нами" на сторінці.  </li>
+          <li><b>6.</b> Додати слайдер в блоці з класом <code><b>.offer__slider</b></code>. При натисканні на стрілки вліво/вправо повинні змінюватися картинки з папки img/slider одна за одною. </li>
+          
+          <p> <p>Закомітити всі зміни і надіслати на GitHub.</p></p>
 
-            Якщо відвідувач вводить «Адмін», то prompt запитує пароль, якщо нічого не введено або натиснута клавіша Esc- показати "відкинуто", в іншому випадку відобразити «Я вас не знаю».
-            
-            Пароль перевіряти так:
-            
-            Якщо введений пароль «Я головний», то виводити «Вітаю!»,
-            Інакше - «Неправильний пароль»,
-            При відміні - "Скасування".
-            <img src="/src/img/t2_1.png" alt="">
-            </li> -->
-          <li><b>1.</b> Напишіть цикл, який пропонує за допомогою <b>prompt</b> ввести число, яке більше 100. Якщо відвідувач ввів інше число - попросити ввести ще раз, і так далі.
-            Цикл повинен питати число поки або відвідувач не введе число, більше 100, або не натисне кнопку Скасувати (ESC).</li>
-            <li><b>2. </b> Перепишіть код, замінивши цикл <b>for</b> на <b>while</b>, без зміни поведінки циклу.</b>
-              <code>
-                <pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">for</span> <span style="color: #009900;">&#40;</span>let i <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span><span style="color: #339933;">;</span> i <span style="color: #339933;">&lt;</span> <span style="color: #CC0000;">5</span><span style="color: #339933;">;</span> i<span style="color: #339933;">++</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span> <span style="color: #3366CC;">&quot;number &quot;</span> <span style="color: #339933;">+</span> i <span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li></ol></pre>
-              </code>
-              </li>
-              <li><b>3.</b> Створити програму, яка виводить на екран всі непарні числа від 6 до 55. Використати оператор <b>continue</b>.</li>
-              <li><b>4.</b> Переписати завдання №3, помістивши весь функціонал <b>у окрему функцію</b>. Також зробіть функцію універсальною, нехай вона виводить всі непарні числа між будь якими двома заданими числами.  </b>.</li>
-              <li><b>5. </b> Перепишіть код, використовуючи анонімні <b> функції-вирази</b> для колбеків.</b>
-                <code>
-<pre>
-function ask(question, yes, no) {
-  if (confirm(question)) yes();
-  else no();
-}
-function showOk() {
-  alert( "Ви згідні." );
-}
-function showCancel() {
-  alert( "Ви скасували виконання." );
-}
-ask("Ви згідні?", showOk, showCancel);
-</pre>
-                </code>
-                </li>
-              <li><b>6. </b> Напишіть <b>функцію-стрілку</b>, що отримує два параметри-рядки та складає їх докупи в один рядок, додаючи пробіл між ними. </b>.</b>
-                
-              <li><b>7. </b> Перепишіть результат завдання №5, використовуючи  <b>функції-стрілки</b>.</b>
-               
-                </li>
         </ol>
-        <h4></h4>
    <!-- /Завдання -->
+
         <!-- <iframe class="w-100" src="https://docs.google.com/forms/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/viewform?embedded=true" width="640" height="682" frameborder="0" marginheight="0" marginwidth="0">Завантаження…</iframe> -->
-        <h5><b>Надіслати виконане завдання</b></h5>
+        <h4><b>Надіслати посилання на репозиторій GitHub</b></h4>
         <script type="text/javascript">
           var submitted = false;
         </script>
@@ -200,8 +153,8 @@ ask("Ви згідні?", showOk, showCancel);
           action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
           method="post" target="hidden_iframe" onsubmit="submitted=true;">
           <input required class="form-control my-3" name="entry.42502702" type="text" placeholder="Введіть ваше ім'я">
-          <textarea required name="entry.339734998" class="w-100 form-control" rows=6
-            placeholder="Введість ваш код або посилання на онлайн-редактор"></textarea>
+          <textarea required name="entry.339734998" class="w-100 form-control" rows=2
+            placeholder="Введіть  посилання "></textarea>
           <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
         </form>
       </div>
@@ -210,7 +163,7 @@ ask("Ви згідні?", showOk, showCancel);
   </main>
    <!-- Nav buttons -->
    <div class="page-nav-btn-wrapper">
-    <a href="/js-3823/2/" class="page-nav-left" title="Тема 2. Дії зі змінними. Взаємодія з користувачем. Оператори if/else, switch.">
+    <a href="/js-3823/6/" class="page-nav-left" title="Тема 6. Обробка подій в JavaScript.">
      <span>
         <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -218,7 +171,7 @@ ask("Ви згідні?", showOk, showCancel);
      </span>
      <span class="text-btn-nav">Попередня тема</span>
     </a>
-    <a href="/js-3823/4/" class="page-nav-left page-nav-right" title="Тема 4. Об'єкти, масиви, рядки та робота з ними.">
+    <!-- <a href="/js-3823/3/" class="page-nav-left page-nav-right" title="Тема 3. Цикли for, while. Функції: стандартні та власні.">
       
       <span class="text-btn-nav">Наступна тема</span>
       <span>
@@ -226,7 +179,7 @@ ask("Ви згідні?", showOk, showCancel);
           <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
         </svg>
      </span>
-     </a>
+     </a> -->
   </div>
 
   <!-- /Nav buttons -->
