@@ -34,21 +34,22 @@
       <!-- Navbar -->
       <nav class="main-navbar navbar navbar-expand-lg navbar-dark wow fadeInDown">
         <div class="container-xl">
-          <a class="navbar-brand logo" href="/js-3823/"><span>Web</span>Teach</a>
+          <a class="navbar-brand logo" href="../"><span>Web</span>Teach</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <a class="nav-item nav-link active" href="/js-3823/#course" onclick="slowScroll('#course')"
+              <a class="nav-item nav-link active" href="../#course" onclick="slowScroll('#course')"
                 title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="../shpora/" data-toggle="tooltip" data-placement="bottom"
+                title="Шпаргалка по JavaScript">Шпаргалка</a>
               
               <a class="nav-item nav-link active" href="https://codesandbox.io/s/" title="Відкрити онлайн-редактор коду"
                 target="_blank">Редактор</a>
-
-              <a class="nav-item nav-link active" href="progress/" data-toggle="tooltip" data-placement="bottom"
-                title="Журнал успішності">Журнал</a>
+               
+              
 
             </div>
             <div class="nav-phone my-2 my-lg-0">
@@ -67,8 +68,8 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning"></span class="text-warning">
-          Журнал успішності</h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 8.</span class="text-warning">
+          Робота з формами та запити до сервера. Практика.</h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -104,22 +105,33 @@
 
   <!-- Main block -->
   <main class="container pt-4">
-    <!-- Теорія -->
-    <div class="lesson-list-js wow fadeInUp" id="course">
-      
-      <div id="collapsePres" class="collapse show">
-         <iframe width=100% height=250px src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTRF7lGerH-RGdMCkwzR_vXPyntXlMSbwaD0ZPC4Wrqjufz-KC84yQCctXSMpOpJ-4ZZ6TyUzQRwrIX/pubhtml?gid=894194663&amp;single=true&amp;widget=true&amp;headers=false" ></iframe>
-
-         
-        </div>
-      </div>
-    </div>
-   
+    
     <!-- Завдання -->
     <div class="lesson-list-js wow fadeInUp" id="course">
-      <h4 class="h4" style="color:#752fc5;"> Надіслати виконане завдання</h4>
-   
+      <a class="collapse-heading" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
+        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Виконати
+          завдання </h4>
+      </a>
+
       <div id='collapseTasks' class="collapse show">
+        <a data-fancybox href="https://www.youtube.com/watch?v=GN9zm0jrH5g" class="btn btn-lg ok-btn my-3 mx-2">
+          Запис заняття 15.05
+        </a> 
+        <a  href="https://github.com/vhubash/food-delivery-landing/blob/main/js/script.js" target="_blank" class="btn btn-lg ok-btn my-3">
+          Остання версія проєкту
+        </a>
+        <ol>         
+          
+          <li><b>1.</b> До форм додати поле з типом 'email' для введення електронної адреси. Додати валідацію усіх полів форм, що є на сторінці за допомогою JavaScript. Потрібно додати обробник події <b>'input'</b> для кожного  поля <code>input</code>, який за допомогою регулярних виразів перевірятиме правильність введення даних. У разі помилки виводити відповідне повідомлення користувачу. Регулярні вирази знайти в інтернеті самостійно.</li>
+          
+          
+          <p> <p>Закомітити всі зміни і надіслати на GitHub.</p></p>
+
+        </ol>
+   <!-- /Завдання -->
+
+        <!-- <iframe class="w-100" src="https://docs.google.com/forms/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/viewform?embedded=true" width="640" height="682" frameborder="0" marginheight="0" marginwidth="0">Завантаження…</iframe> -->
+        <h4><b>Надіслати посилання на репозиторій GitHub</b></h4>
         <script type="text/javascript">
           var submitted = false;
         </script>
@@ -129,14 +141,36 @@
           action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
           method="post" target="hidden_iframe" onsubmit="submitted=true;">
           <input required class="form-control my-3" name="entry.42502702" type="text" placeholder="Введіть ваше ім'я">
-          <textarea required name="entry.339734998" class="w-100 form-control" rows=6
-            placeholder="Введість ваш код або посилання на онлайн-редактор"></textarea>
+          <textarea required name="entry.339734998" class="w-100 form-control" rows=2
+            placeholder="Введіть  посилання "></textarea>
           <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
         </form>
       </div>
     </div>
 
   </main>
+   <!-- Nav buttons -->
+   <div class="page-nav-btn-wrapper">
+    <a href="/js-3823/6/" class="page-nav-left" title="Тема 6. Обробка подій в JavaScript.">
+     <span>
+        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+     </span>
+     <span class="text-btn-nav">Попередня тема</span>
+    </a>
+    <!-- <a href="/js-3823/3/" class="page-nav-left page-nav-right" title="Тема 3. Цикли for, while. Функції: стандартні та власні.">
+      
+      <span class="text-btn-nav">Наступна тема</span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+     </span>
+     </a> -->
+  </div>
+
+  <!-- /Nav buttons -->
   <button class="btn" hidden id='arrowTopBtn'  onclick="window.scrollTo(0, 0);">
     <!-- <svg xmlns="http://www.w3.org/2000/svg"  fill="rgb(82, 82, 82)" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
       <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
@@ -147,16 +181,16 @@
     <div class="container">
       <div class="d-flex flex-column align-items-center">
         <div class="footer-nav d-flex flex-column flex-md-row align-items-center justify-content-md-start">
-          <a class="mr-lg-5  navbar-brand mr-0 logo order-md-0 order-12" href="/js-3823/"><span>Web</span><span
+          <a class="mr-lg-5  navbar-brand mr-0 logo order-md-0 order-12" href="../"><span>Web</span><span
               class="text-dark">Teach</span></a>
-          <a class="ml-lg-5 ml-0 nav-item nav-link " href="/js-3823/#course" onclick="slowScroll('#course')"
+          <a class="ml-lg-5 ml-0 nav-item nav-link " href="../#course" onclick="slowScroll('#course')"
             title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
           <a class="nav-item nav-link ml-0" href="https://web-teach.pp.ua/py-222/" title="Курс по Python"
             target="_blank">Python</a>
           <a class="nav-item nav-link ml-0" href="https://codesandbox.io/s/" title="Відкрити онлайн-редактор коду"
             target="_blank">Редактор</a>
 
-          <a class="nav-item nav-link  ml-0" href="/js-3823/progress/" data-toggle="tooltip"
+          <a class="nav-item nav-link  ml-0" href="../progress/" data-toggle="tooltip"
             data-placement="bottom" title="Журнал успішності">Журнал</a>
           <div class="nav-phone my-2 my-lg-0 flex-shrink-0">
             <!-- <span class=" text-muted">Контакти: </span> -->
