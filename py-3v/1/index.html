@@ -67,7 +67,7 @@
       <div class="header-title-js my-3 wow backInDown container">
 
         <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 1.</span class="text-warning">
-          Змінні. Типи даних. Ввід/вивід. </h1>
+          Вступ в Python. Змінні. Ввід/вивід даних. </h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -92,52 +92,72 @@
     <!-- Теорія -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Розглянути
-          теорію </h4>
+        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Вступ в Python </h4>
       </a>
       <div id="collapsePres" class="collapse show">
+        <div class="collapse-pres mt-4">
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTtJ10_gApXyVDaN6yc6BK7eznD2FUToA6EH-sgwBqKpUGaB68h5C9aOBTjNEelUiPbn724OM1WHDlD/embed?start=true&loop=false&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Теорія -->
+    <div class="lesson-list-js wow fadeInUp" id="course">
+      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTheory" aria-expanded="true">
+        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Розглянути
+          теорію</h4>
+      </a>
+      <div id="collapseTheory" class="collapse ">
         <div class="collapse-pres mt-4">
           <div class='theory'>
             <h3>Для чого потрібні змінні?</h3>
            <div class='answer'>
            <ul>
-           <li class="dot "><i>Змінні використовуються для зберігання даних.</i></li><br>
-           <li class="dot"><i>Змінні можна повторно використовувати.</i></li><br>
-           <li class="dot"><i>Можна змінювати тип і значення змінної.</i></li><br></ul></div>
+           <li class="dot "><i>Змінні використовуються для зберігання даних.</i></li>        <li class="dot"><i>Змінні можна повторно використовувати.</i></li>
+           <li class="dot"><i>Можна змінювати тип і значення змінної.</i></li></ul></div>
 
-           <h3>Як оголосити змінну?</h3>
-           <div class='answer'><b>ім'я_змінної = значення змінної</b><br><br>
-           <i>name = 'Даня'</i><br></div>
-
-           <h3>Як правильно називати змінні?</h3>
-           <div class='answer'><b>Змінну необхідно називати так, щоб було зрозуміло для чого ця змінна використовується</b><br><br>
-           <i><b>Правильно: </b> name, surname, age, name_person</i><br>
-           <i><b>Неправильно: </b> a , b, ds, as, sadfads, afsd11111</i><br></div>
-
-           <h3>Тип змінної</h3>
-           <div class='answer'>Тип даних визначає, що з цією змінною можна робити(які операції)<br><br>
-           <i><b>Найпростіші типи даних:</b></i><br>
-           <ul>
-           <li  class="dot"><i>Ціле число - int</i></li><br>
-           <li  class="dot"><i>Число з комою - float</i></li><br>
-           <li  class="dot"><i>Логічний тип(Правда/Брехня) - bool</i></li><br>
-           <li  class="dot"><i>Нічого(пустий тип) - None</i></li><br>
-           <li  class="dot"><i>Рядкова змінна - str</i></li><br></ul></div>
-
-           <h3>Як перевести змінну до іншого типу?</h3>
+          
            <div class='answer'>
-           <ul>
-           <li  class="dot"><i>Рядок до цілого числа - int(word)</i></li><br>
-           <li  class="dot"><i>Число до рядка - str(number)</i></li><br>
-           <li  class="dot"><i>Інші типи аналогічно</i></li><br></ul></div>
+            <h3>Як оголосити змінну?</h3>
+            <b>ім'я_змінної = значення змінної</b>
+           <p><i>name = 'Володимир'</i></p></div>
+
+           
+          <p>
+             <div class='answer'><h3>Як правильно називати змінні?</h3>
+              <b>Змінну необхідно називати так, щоб було зрозуміло для чого ця змінна використовується</b>
+            <p> <i><b>Правильно: </b> name, surname, age, name_person</i></p>
+             <p><i><b>Неправильно: </b> a , b, ds, as, sadfads, afsd11111</i></p></div>
+          </p>
+
+          
+           <p>
+             <div class='answer'> <h3>Тип змінної</h3>Тип даних визначає, що з цією змінною можна робити(які операції)
+             
+             <ul><i><b>Найпростіші типи даних:</b></i>
+             <li  class="dot"><i>Ціле число - <b>int</b></i></li>
+             <li  class="dot"><i>Число з комою - <b>float</b></i></li>
+             <li  class="dot"><i>Логічний тип(Правда/Брехня) - <b>bool</b></i></li>
+             <li  class="dot"><i>Нічого(пустий тип) - <b>None</b></i></li>
+             <li  class="dot"><i>Рядкова змінна - <b>str</b></i></li></ul></div>
+           </p>
+
+           
+           <p>
+             <div class='answer'><h3>Як перевести змінну до іншого типу?</h3>
+             <ul>
+             <li  class="dot"><i>Рядок до цілого числа - int(word)</i></li>
+             <li  class="dot"><i>Число до рядка - str(number)</i></li>
+             <li  class="dot"><i>Інші типи аналогічно</i></li></ul></div>
+           </p>
 
            <h3>Вивід\ввід</h3>
-           <div class='answer'>Вивід відбувається за допомогою функції <b>print()</b><br><br>
-           <i>print('Hello world!')</i><br><br><hr>
-           Ввід відбувається за допомогою функції <b>input()</b><br><br>
-           <i>name = input('Enter your name:')</i><br><br>
+           <div class='answer'><p>Вивід на екран виконується за допомогою функції <b>print()</b></p>
+           <i>print('Hello world!')</i><hr>
+           <p>Ввід даних з клавіатури виконується за допомогою функції <b>input()</b></p>
+           <i>name = input('Enter your name:')</i>
            <div class="alert alert-success" role="alert">
-             <b>Зауваження!</b> Тип змінної отриманої за допомогою input() - <b>STR</b><i><u><br>(а отже, якщо ви виконуєте математичні дії, змінну необхідно перевести до типу числа)</i></u><br></div>
+             <b>Зауваження!</b> Тип змінної отриманої за допомогою input() - <b>STR</b><i><u> (а отже, якщо ви виконуєте математичні дії, змінну необхідно перевести до типу числа)</i></u></div>
            </div>
           </div>
         </div>
@@ -147,7 +167,7 @@
     <!-- Завдання -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Виконати
+        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#3</span> Виконати
           завдання </h4>
       </a>
 
