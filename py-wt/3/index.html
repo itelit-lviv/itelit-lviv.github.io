@@ -89,20 +89,30 @@
   <div class="main-wrapper container container-lg-fluid">
   <!-- Main block -->
   <main class="container pt-4">
-    <!-- Теорія -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Розглянути
-          теорію </h4>
+        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Презентація </h4>
       </a>
       <div id="collapsePres" class="collapse show">
+        <div class="collapse-pres mt-4">
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRfBUkCJvL7SSFk_VtlT6QDEYZFrXRmhkDLICjQmjdxIcwsf6U6lYr2P70iECQ8elGN1wA2jSNSg2WZ/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+      </div>
+    </div>
+    <!-- Теорія -->
+    <div class="lesson-list-js wow fadeInUp" id="course">
+      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTheory" aria-expanded="true">
+        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Розглянути
+          теорію </h4>
+      </a>
+      <div id="collapseTheory" class="collapse ">
         <div class="collapse-pres mt-4">
           <h3>Для чого потрібні умовні оператори?</h3>
           <div class='answer'>
             <ul>
-              <li class="dot"><i>Початок казки</i></li><br>
+              <li class="dot"><i>Початок казки</i></li>
               <li class="dot">Наліво підеш - коня втратиш</li>
-              <li class="dot">Направо підеш - життя втратиш</li><br>
+              <li class="dot">Направо підеш - життя втратиш</li>
               <li class="dot"><i>Кінець казки</i></li>
             </ul>
           </div>
@@ -110,8 +120,8 @@
           <h3>Оператор if</h3>
           <div class='answer'>
             <ul>
-              <li class="dot"><i>Початок казки</i></li><br>
-              <li class="dot"><b>if</b> Наліво підеш:<br> <span style='margin-left:20px;'>  </span>коня втратиш</li><br>
+              <li class="dot"><i>Початок казки</i></li>
+              <li class="dot"><b>if</b> Наліво підеш: <span style='margin-left:20px;'>  </span>коня втратиш</li>
               <li class="dot"><i>Кінець казки</i></li>
             </ul>
           </div>
@@ -119,9 +129,9 @@
           <h3>Блоки і відступи в Python</h3>
           <div class='answer'>
               <ul>
-              <li class="dot">Блок коду - логічно згрупований шматок коду</li><br>	
-              <li class="dot">В python нема - <b>{}</b>, які розділяють блоки коду</li><br>
-              <li class="dot">Тому для кожного блоку коді потрібно робити <b>ВІДСТУП</b></li><br>
+              <li class="dot">Блок коду - логічно згрупований шматок коду</li>	
+              <li class="dot">В python нема - <b>{}</b>, які розділяють блоки коду</li>
+              <li class="dot">Тому для кожного блоку коді потрібно робити <b>ВІДСТУП</b></li>
               <li class="dot"><b>Відступ</b> - 4 пробіла(кнопка TAB зліва на клавіатурі)</li>
             </ul>
           </div>
@@ -129,15 +139,15 @@
           <h3>if - elif - else</h3>
           <div class='answer'>
             <ul>
-              <li class="dot"><b>if</b> перша умова:</li><br>
+              <li class="dot"><b>if</b> перша умова:</li>
               <ul type='circle'><li>Код 1</li></ul>
-              <br>	
-              <li class="dot"><b>elif</b> друга умова:</li><br>
+              	
+              <li class="dot"><b>elif</b> друга умова:</li>
               <ul type='circle'><li>Код 2</li></ul>
-              <br>	
-              <li class="dot"><b>else</b>:</li><br>
+              	
+              <li class="dot"><b>else</b>:</li>
               <ul type='circle'><li>Код 3</li></ul>
-              <br>	
+              	
               <div class="alert alert-info" role="alert">
                 Якщо не виконується перша умова, то перевіряється друга умова, якщо обидві <b>БРЕХНЯ</b>, то виконується блок <b>else</b>.
               </div>
@@ -146,13 +156,13 @@
           <h3>Внутрішній <b>if</b></h3>
           <div class='answer'>
           <ul>
-          <li class="dot">Всередині <b>if-elif-else</b> може бути інший <b>if</b>.</li><br>
-          <li class="dot">Таких вкладень може бути скільки завгодно</li><br>
+          <li class="dot">Всередині <b>if-elif-else</b> може бути інший <b>if</b>.</li>
+          <li class="dot">Таких вкладень може бути скільки завгодно</li>
           </ul></div>
           <h3>Функція strip()</h3>
           <div class='answer'>
             <p>Функція <b>strip()</b> створена для видалення пробілів зліва і справа.</p>
-            <p>Також є функції <b>lstrip()</b> та <b>rstrip()</b> створена для вида лення пробілів зліва і справа відповідно.</p>
+            <p>Також є функції <b>lstrip()</b> та <b>rstrip()</b> створені для видалення пробілів зліва і справа відповідно.</p>
           
           </div>
         </div>
@@ -162,7 +172,7 @@
     <!-- Завдання -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Виконати
+        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#3</span> Виконати
           завдання </h4>
       </a>
 
@@ -188,6 +198,9 @@
           <p>Створити програму, що визначає тип трикутника (різносторонній, рівносторонній, прямокутний) по введених трьох сторонах.</p>
 <p>Результат вивести на екран у вигляді:</p>
 <p><img src="/src/python-course/t3_5.PNG" alt="" /></p></div>
+<div class='task'><h3>                                ЗАВДАННЯ 3.6.                            </h3>
+ 
+<p><img src="/src/python-course/t3_6.PNG" style="max-width: 1000px" /></p></div>
         <h5><b>Надіслати виконане завдання</b></h5>
         <script type="text/javascript">
           var submitted = false;
