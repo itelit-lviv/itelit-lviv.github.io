@@ -97,48 +97,61 @@
       </a>
       <div id="collapsePres" class="collapse show">
         <div class="collapse-pres mt-4">
-          
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRBEERhpUEwzUuWbcNJi-9kCi_f7XhDBC3yd7lwVhDphBhpQOAPSOAsazb6pki0iAocuRj5NCluVWGJ/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
           <div class='theory'>
-            <h3>Що таке списки?</h3>
+            <h3>Що таке <b>список</b>?</h3>
             <div class='answer'>
-            Грубо кажучи, списки використовують для зберігання багатьох рядків. Це масив.
+              <b>Список</b> - це ще один тип даних Python. Він використовується для зберігання впорядкованих наборів даних.
             </div>
-            
             <h3>Як будуються списки?</h3>
             <div class='answer'>
-            Списки будуються дуже просто:<br><br>
-            <code>
-            name_list = ['first' , 2 , 'third' , 'hello', 12.33, True]
-            </code>
+            Списки будуються дуже просто:
+            <p>
+              <code>
+              name_list = ['first' , 2 , 'third' , 'hello', 12.33, True]
+              </code>
+            </p>
             </div>
-            
             <h3>Особливості списків</h3>
             <div class='answer'>
-            До елементів списку можна звертатись за індексом.
-            <br><br><code>
-            name_list[2]</code> - Виведе нам на екран 3 елемент нашого списку
-            <br><br>
-            Також елементи списку можна змінювати. Для цього необхідно записати таке:<br><br><code>
-            name_list[2] = 'Danylo'<br><br>
-            </code>
-            До списків також можна використовувати зрізи!<br><br>
-            В середині списку можна створити інші списки. Такі списки вважаються двовимірними.
+              <div class="alert alert-warning" role="alert">
+                <p><b>Зверни увагу!</b> Нумерація елементів в списку завжди<b> починається з 0</b>!</p>
+              </div>
+           <ul>
+             <li class="dot">
+              До елементів списку можна звертатись за індексом.
+             <p>
+                <code>
+                name_list[2]</code> - Виведе нам на екран 3 елемент нашого списку
+             </p>
+           </li>
+           <li class="dot">
+              Також елементи списку можна змінювати. Для цього необхідно записати таке:
+              <p>
+                <code>
+                name_list[2] = 'Ivan'
+                </code>
+              </p>
+           </li>
+           <li class="dot"> До списків також можна використовувати зрізи!</li>
+            <li class="dot">В середині списку можна створити інші списки. Такі списки вважаються двовимірними.</li>
+           </ul>
             </div>
-            
             <h3>Арифметика списків</h3>
             <div class='answer'>
-            <ul>
-            <li class="dot">
-            Ми можемо додавати між собою списки, після чого вони стануть одним списком:<br><br><code>a = ['abc', 2]<br>b = [1,2]<br>print(a+b)<br>
-            Result: ['abc', 2, 1, 2]</code>
-            </li><br>
-            <li class="dot">
-            Ми можемо множити список на ціле число, результатом буде список з елементами, які повторюються декілька разів:<br><br><code>a = ['abc', 2]<br>print(a*3)<br>
-            Result: ['abc', 2,'abc', 2,'abc', 2]</code>
-            </li>
-            </ul>
-            </div>
-            
+            Ми можемо додавати між собою списки, після чого вони стануть одним списком:
+            <code>
+            <pre>
+    a = ['abc', 2]
+    b = [1,2]
+    print(a+b)
+    Result: ['abc', 2, 1, 2]</pre></code>
+Ми можемо множити список на ціле число, результатом буде список з елементами, які повторюються декілька разів:
+<code><pre>
+    a = ['abc', 2]
+    print(a*3)
+    Result: ['abc', 2,'abc', 2,'abc', 2]</pre></code>
+            </div>            
             <h3>Функції для списків</h3>
             <div class='answer'>
             <ul>
@@ -154,40 +167,39 @@
             <li class="dot" ><code>list.reverse()</code> -	Перевертає список</li>
             <li class="dot" ><code>list.copy()</code> -	Поверхнева копія списку</li>
             <li class="dot" ><code>list.clear()</code> -	Очищує список</li>
-            
             </ul></div>
             
-            <h3>Що таке кортеж?</h3>
+            <h3>Що таке <b>кортеж</b>?</h3>
             <div class='answer'>
-             Кортеж дуже схожий на списки, за винятком двох особливостей.
-             <ol>
-             <li >Записується він в <b>круглих</b> дужках:<br><br><code>cortezh = ('a', 'hello', 1 ,2 ,34,5)</code></li><br>
-             <li >
-             Кортеж не можна змінювати! Тобто замінити, додати чи видалити елемент як в списках не можна!
+             Кортеж дуже схожий на список, за винятком двох особливостей:
+             <ol class="ml-5">
+             <li class="dot">Записується він в <b>круглих</b> дужках:
+              <br><code>cortezh = ('a', 'hello', 1 ,2 ,34,5)</code></li>
+             <li class="dot" >
+             Кортеж <b>не можна змінювати</b>! Тобто замінити, додати чи видалити елемент як в списках не можна!
              </li>
              <ol>
             </div>
             
-            <h3>Що таке словник?</h3>
+            <h3>Що таке <b>словник</b>?</h3>
             <div class='answer'>
-            Словник це щось дуже схоже на списки. Тільки знову є деякі відмінность.
+              <b>Словник</b> - це невпорядкований набір пар типу «ключ-значення».
             </div>
-            <h3>Словник</h3>
-            <div class='answer'><ul>
-            <li class="dot">Будується наступним чином: <br><br><code>
-            library_name = {'Перший ключ': 'Перше значення',<br>'Другий ключ': 'Друге значення'}
-            </code></li><br>
-            <li class="dot">Кожному значенню відповідає в бібліотеці не індекс, а ключ.</li><br>
-            <li class="dot">Звертатись до елементів в бібліотеці необхідно за ключем: <br><br><code>
-            print(library_name['Перший ключ'])
-            </code></li><br>
-            <li class="dot">Видаляти елементи в бібліотеці також необхідно за ключем:<br><br><code>
-            del library_name['Перший ключ']
-            </code></li><br>
-            <li class="dot">Об'єднювати бібліотеки не можна. Видасть помилку.</li><br>
             
-           
-
+            <div class='answer'><ul>
+            <li class="dot">Будується наступним чином: <br><code>
+            library_name = {'Перший ключ': 'Перше значення','Другий ключ': 'Друге значення'}
+            </code></li>
+            <li class="dot">Кожному значенню відповідає в бібліотеці не індекс, а ключ.</li>
+            <li class="dot">Звертатись до елементів в бібліотеці необхідно за ключем: <br>
+             <code>
+            print(library_name['Перший ключ'])
+            </code></li>
+            <li class="dot">Видаляти елементи в бібліотеці також необхідно за ключем:
+              <br><code>
+            del library_name['Перший ключ']
+            </code></li>
+            <li class="dot">Додавати словники не можна. Видасть помилку.</li>
             </ul></div>
             <h3>Функції для словників</h3>
             <div class='answer'>
@@ -217,7 +229,7 @@
             
             </ul>
             <div class="alert alert-success" role="alert">
-              <p><i><u>УВАГА!</u> Для того щоб знайти інші функції використовуйте google!</i></p>
+              <p><i>Для того щоб знайти інші функції - використовуйте <a href="https://google.com" target="_blank">google.com</a> :) </i></p>
             </div></div>
             </div>
           
@@ -308,6 +320,30 @@
   </main>
     
 </div>
+<!-- Nav buttons -->
+<div class="page-nav-btn-wrapper">
+  <a href="/py-wt/8/" class="page-nav-left" title='Тема 8. Модуль Turtle. Гра "Перегони черепах"'>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+      </svg>
+    </span>
+    <span class="text-btn-nav">Попередня тема</span>
+  </a>
+  <!-- <a href="/py-wt/10/" class="page-nav-left page-nav-right" title='Тема 10. Проєкт "Малювалка". Модуль Turtle.'>
+
+    <span class="text-btn-nav">Наступна тема</span>
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+      </svg>
+    </span>
+  </a> -->
+</div>
+
+<!-- /Nav buttons -->
   <button class="btn" hidden id='arrowTopBtn'  onclick="window.scrollTo(0, 0);">
     <!-- <svg xmlns="http://www.w3.org/2000/svg"  fill="rgb(82, 82, 82)" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
       <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
