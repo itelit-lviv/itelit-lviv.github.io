@@ -144,19 +144,33 @@
   
         <div id='collapseTasks' class="collapse">
           <ol>
-            <li><b> 1. </b> Створіть сторінку, яка запитує ім'я у користувача і виводить його.</li>
-            <li><b>2.</b> Створіть об'єкт <code>Student</code>, в якому опишіть інформацію про себе.</li>
-            <li><b>3. </b> Нижче наведено код, який запитує у користувача два числа і показує їх суму. Він не працює належним чином. Код в прикладі виводить 12 (для значення полів за замовчуванням).
+            <li><b>1.</b> Створіть об'єкт <code>Student</code>, в якому опишіть інформацію про себе.</li>
+            <li><b>2. </b> Нижче наведено код, який запитує у користувача два числа і показує їх суму. Він не працює належним чином. Код в прикладі виводить 12 (для значення полів за замовчуванням).
              У чому помилка? Виправте її. 
             <code><pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">let a <span style="color: #339933;">=</span> prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Введіть перше число?&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">let b <span style="color: #339933;">=</span> prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;Введіть друге число?&quot;</span><span style="color: #339933;">,</span> <span style="color: #CC0000;">2</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">alert<span style="color: #009900;">&#40;</span>a <span style="color: #339933;">+</span> b<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #006600; font-style: italic;">// 12</span></div></li></ol></pre>
             </code>
             </li>
-            <li><b>4. </b> Перепишіть код з використанням однієї конструкції <b>switch</b>:
+            <li><b>3.</b> Створіть програму з тестом, яка перевіряє чи правильно відповідає користувач на питання.
+
+              Результат вивести на екран у вигляді:</li>
+              <div class="d-flex">
+                <img src="/src/js-course/t2z3_1.jpg" alt=""  style="width:48%" />
+                <img src="/src/js-course/t2z3_2.jpg" alt="" style="width:48%" />
+             </div>
+             <li><b>4.</b> Визначити агрегатний стан води по її температурі.
+
+              Результат вивести на екран у вигляді:</li>
+              <div class="d-flex">
+                <img src="/src/js-course/t2z4_1.jpg" alt=""  style="width:48%" />
+                <img src="/src/js-course/t2z4_2.jpg" alt="" style="width:48%" />
+             </div>
+
+            <li><b>5. </b> Перепишіть код з використанням однієї конструкції <b>switch</b>:
              <code>
   <pre class="javascript" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">const</span> number <span style="color: #339933;">=</span> <span style="color: #339933;">+</span>prompt<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Введіть число між 0 и 3'</span><span style="color: #339933;">,</span> <span style="color: #3366CC;">''</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">0</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 0'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 1'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>number <span style="color: #339933;">===</span> <span style="color: #CC0000;">2</span> <span style="color: #339933;">||</span> number <span style="color: #339933;">===</span> <span style="color: #CC0000;">3</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">  alert<span style="color: #009900;">&#40;</span><span style="color: #3366CC;">'Ви ввели число 2 або 3'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&#125;</span></div></li></ol></pre>
              </code>
              </li>
-             <li><b>5. </b> Напишіть код, який буде питати логін за допомогою prompt.
+             <li><b>6. </b> Напишіть код, який буде питати логін за допомогою prompt.
   
               Якщо відвідувач вводить «Адмін», то prompt запитує пароль, якщо нічого не введено або натиснута клавіша Esc- показати "відкинуто", в іншому випадку відобразити «Я вас не знаю».
               
