@@ -66,7 +66,7 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 11.</span class="text-warning">
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 12.</span class="text-warning">
           Класи і спадкування класів.</h1>
       </div>
 
@@ -102,37 +102,31 @@
       </div>
     </div>
     
-    <!-- Завдання -->
-    <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Виконати
-          завдання </h4>
-      </a>
-
-    </div>
+    
 
     <!-- Квест -->
     <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseQuest" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#3</span> Текстовий квест-гра </h4>
+      <a class="collapse-heading " data-toggle="collapse" data-target="#collapseQuest" aria-expanded="true">
+        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Вдосконалити текстовий квест</h4>
       </a>
 
-      <div id='collapseQuest' class="collapse">
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRLMViNHTAXSaX1YVy2KQoUkv7zgqAlK5fgIjPvpQ2nUZ6mHM6NqqiC_VEKevZz92JbViGwhxbWn8xS/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      <div id='collapseQuest' class="">
         <div class='task'> <h3> ЗАВДАННЯ ПРОЄКТУ </h3>   
-          Створи і протестуй клас <b>Hero</b>. Після чого запрограмуй квест-гру!
-            <div class="d-flex">
-              <img src="/src/python-course/t11_4.jpg" alt="" style="width:50%;" />  
-              <img src="/src/python-course/t11_5.jpg" alt="" style="width:50%;" /> 
-            </div> 
-
-          Використовуючи інструкції, запрограмують клас <b>Hero</b> і створи два екземпляри (об'єкти) цього класу. Оформи все як на картинці.
+          <div>
+            <a href="/py-wt/11/#collapseQuest" class="btn btn-lg ok-btn mt-3">
+              Початок створення квесту
+            </a>
+          </div>
+          Створи класи-спадкоємці <b>Knight</b> та <b>Dragon</b> від суперкласу <b>Hero</b> відповідно до підказки нижче.
+          Після чого вдоскональ саму квест-гру!
+              <img src="/src/python-course/t12_1.jpg" alt="" style="max-width:90%;" />  
+         
           <div class="accordion" id="accordionExample">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
                   <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <h5><b>1)</b> Запрограмуй клас Hero.</h5>
+                    <h5> <b>1)</b> Запрограмуй клас <b>Knight</b>.</h5>
                   </button>
                 </h2>
               </div>
@@ -140,15 +134,13 @@
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
   
-    Поля класу (задаються в конструкторі):<pre>1) Ім'я.
-2) Рівень здоров'я.
-3) Клас броні.
-4) Сила удару.
-5) Зброя.</pre>
-Методи класу:<pre>1) Конструктор класу <b>__init __</b>().
-2) Друк інформації про персонажа <b>print_info</b>().
-3) Нанесення удару по іншому персонажу <b>strike</b>().</pre>
-<p>При нанесенні удару методом <b>strike</b>(), з броні і рівня здоров'я опонента віднімаються частинки, рівні силі удару (спочатку з броні, потім зі здоров'я).</p>
+<p>Запрограмуй клас <b>Knight</b> як спадкоємець від Hero.</p>
+
+<p><b>1)</b> Поля класу <b>Knight</b> визначаються за допомогою конструктора <b>Hero</b>. Також потрібно додати додаткові поля, які потрібні лише лицарю.</p>
+<p> <b>2)</b>Запрограмуй методи Knight:
+  1) Метод hello() - при викликі представляє  персонажа користувачеві. Може використовувати метод print_info() суперкласу Hero.
+  
+  2) Метод attack() - завдає удару по ворогові (примірнику класу Hero або його спадкоємця). Сила удару відповідає класу персонажа (удар меча Лицаря слабший за силу заклинання Дракона).</p>
   </div>
               </div>
             </div>
@@ -156,15 +148,18 @@
               <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
                   <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <h5><b>2)</b> Створити двох персонажів і запрограмувати бій між ними.</h5>
+                    <h5><b>2)</b> Запрограмуй клас <b>Dragon</b>.</h5>
                   </button>
                 </h2>
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
-                  <img src="/src/python-course/t11_3.jpg" alt="" style="width:100%; max-width: 450px;" />  
-                  <p>Створи два примірника класу Hero, наприклад, Лицаря і Розбійника.</p>
-                  <p>За допомогою методу <b>strike()</b> напади на Розбійника. Скільки разів потрібно застосувати цей метод, щоб отримати перемогу?</p>
+                  <p>Запрограмуй клас Dragon як спадкоємець від Hero.
+
+                    Визнач йому додаткове поле чи поля.
+                    
+                    Запрограмуй додаткові методи класу Dragon, аналогічно до класу Knight. Не забудь придумати оригінальне представлення для персонажа та задати іншу силу удару.</p>
+                    
                 </div>
               </div>
             </div>
@@ -172,69 +167,13 @@
               <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
                   <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    <h5><b>3)</b> Оформи клас Hero в окремий модуль.</h5>
+                    <h5><b>3)</b> Зміни сюжет квесту відповідно до нових класів.</h5>
                   </button>
                 </h2>
               </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                 <li> 1. Перенеси створення екземплярів класу новий файл.</li>
-                  <li>2. Збережи <b>Hero</b> як модуль і підключи до основної програми в новому файлі.</li>
-                </div>
-              </div>
+              
             </div>
-            <div class="card">
-              <div class="card-header" id="heading4">
-                <h2 class="mb-0">
-                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                    <h5><b>4)</b> Запрограмувати метод fight().</h5>
-                  </button>
-                </h2>
-              </div>
-              <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
-                <div class="card-body">
-                  <p>Доповни клас Hero методом <b>fight()</b>.</p>
-                    <p>Учасники сутички повинні завдавати один одному удари (метод strike()), поки не залишиться живий тільки один з них.</p>
-                    <p>Протестуй створений метод, організувавши битву Лицаря і Розбійника.</p>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="heading5">
-                <h2 class="mb-0">
-                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapseThree">
-                    <h5><b>5)</b> Заверши створення квесту</h5>
-                  </button>
-                </h2>
-              </div>
-              <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionExample">
-                <div class="card-body">
-                  <p>
-Якщо лицар вижив, то:
-<li>- здоров'я відновлюється до початкового значення;</li>
-<li>- клас броні збільшується в два рази;</li>
-<li>  - сила удару збільшується в два рази.</li>
-                  </p>  
-<p>Запрограмуй сутичку з Драконом!</p>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="heading6">
-                <h2 class="mb-0">
-                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                    <h5><b>Додатково:</b> Зроби квест цікавіше</h5>
-                  </button>
-                </h2>
-              </div>
-              <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordionExample">
-                <div class="card-body">
-                  <p>Зроби текстову розповідь більш живою: </p>
-                 <li> -> Додай інформацію про навколишній світ. Що оточує лицаря? Коли починається сутичка? </li>
-                  <li>-> Додай паузи, щоб створити інтригу! В цьому допоможе функція <b>sleep(2)</b> з модуля <b>time</b>.</li>
-                </div>
-              </div>
-            </div>
+           
           </div>
 
         
@@ -261,7 +200,7 @@
 </div>
 <!-- Nav buttons -->
 <div class="page-nav-btn-wrapper">
-  <a href="/py-wt/10/" class="page-nav-left" title='Тема 10. Проєкт "Малювалка". Події"'>
+  <a href="/py-wt/11/" class="page-nav-left" title='Тема 11. Вступ до ООП. Класи"'>
     <span>
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd"
@@ -314,7 +253,7 @@
         </div>
 
         <div class="d-inline-flex flex-column align-items-center">
-          <span class="muted mr-1">2020-2021 © Губаш Володимир. WebTeach.
+          <span class="muted mr-1">2020-2021 © . WebTeach.
  </span>
           <span class="muted">Всі права застережено. Будь-яке копіювання без згоди автора заборонено.</span>
         </div>
