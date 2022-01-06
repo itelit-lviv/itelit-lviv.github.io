@@ -115,31 +115,40 @@
          
           Створи гру "Арканоїд".
         <div class="d-flex">
-          <img src="/src/python-course/ball2.png" alt=""  />  
-  
-              <img src="/src/python-course/enemy.png" alt=""  />  
-              <img src="/src/python-course/enemy.png" alt="" />  
-              <img src="/src/python-course/platform.png" alt="" />  
+         
 
 
         </div>
          
-          <!-- <div class="accordion" id="accordionExample">
+          <div class="accordion" id="accordionExample">
             <div class="card">
               <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
                   <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <h5> <b>1)</b> 1. Створи заготовку гри з фоном та ігровим ціклом.</h5>
+                    <h5> <b>1)</b> Створення персонажів та ігрового циклу.</h5>
                   </button>
                 </h2>
               </div>
           
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-<p><b>1)</b> Підключи бібліотеку Pygame.</p>
-<p><b>2)</b> Окресли ігрову сцену 500х500. Задай ігровій сцені будь який кольоровий фон сторінки, за допомогою палітри RGB (можна білий).</p>
-<p><b>3)</b> Підключи можливість використовувати текст. Створи шрифт і два написи на екрані: «Питання» і «Відповідь».</p>
-<p><b>4)</b> Запусти гру. Перевір, щоб відобразилися фон і написи на ньому.</p>
+<p> Створи персонажів гри (м'яч, платформу та монстрів) та відобрази їх на ігровій сцені. Для цього:
+
+ <li> 1. Підключи ігрову бібліотеку Pygame.</li>
+  <li>2. Створи вікно гри розміром 500x500, дай йому назву.</li>
+ <li> 3. Створи ігровий цикл із виходом при натисканні на «закриття вікна».</li>
+  <li>4. Встановіть FPS 30 кадрів/секунду.</li>
+  <li>5. Створи класи для спрайтів, успадковані від <code>pygame.sprite.Sprite</code>.</li>
+  <li>6. Задай спрайтам зовнішній вигляд, можна використати зображення представлені нижче.</li>
+ <li> 7. Створи та відобрази спрайти: м'яч, платформу.</li>
+  <li>8. Створи список із 24 монстрів. Продумай їхнє малювання на сцені.</li>
+  <li>9. Відобразіть всіх монстрів на ігровій сцені.</p></li>
+<div class="">
+  <img src="/src/python-course/ball2.png" alt=""  style="width:200px;" align="left" />  
+    
+  <img src="/src/python-course/enemy.png" alt="" style="width:200px;" align="left"  />  
+  <img src="/src/python-course/platform.png" alt="" style="width:200px;" align="left" />  
+</div>
   </div>
               </div>
             </div>
@@ -147,21 +156,41 @@
               <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
                   <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <h5><b>2)</b> Запрограмуйте клас <b>TextArea</b> для блоків з написами.</h5>
+                    <h5><b>2)</b> Рух платформи та м'яча</h5>
                   </button>
                 </h2>
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
-                  <p><b>1)</b> Запрограмуйте клас TextArea, екземплярами якого є прямокутники з написами.</p>
-                  <p><b>2)</b> Доповни код програми створенням двох об'єктів для відображення питань та відповідей.</p>
-                  <p><b>3)</b> Створи кілька варіантів питань і відповідей. Постав випадкове відображення питання при натисканні на Q і відповіді - на A.</p>               
+                  <p>Запрограмуйте рух платформи та м'яча.</p>
+
+<li>1. Платформа має керуватися з клавіатури. Передбачте випадок, коли при затисканні керуючої клавіші платформа продовжує рух.</li>
+
+<li>2. М'яч повинен рухатися автоматично. Для цього під час запуску програми повинна задаватися початкова швидкість об'єкта. Потім при зіткненні зі стіною або платформою напрямок руху повинен змінюватися. </li>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <h5><b>3)</b>  Зіткнення спрайтів та умова перемоги та програшу</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p>Запрограмуйте зіткнення спрайтів та умови перемоги та програшу.</p>
+
+<li>1. Зіткнення м'яча зі спрайтом-монстром має знищувати монстра (видаляти його зі списку монстрів). Гравець виграє, якщо всі монстри знищені. У разі перемоги відображається напис «YOU WIN» і гра завершується.</li>
+
+<li>2. Гравець програє, якщо м'яч виявився нижче за платформу, тобто торкнувся "землі". У разі програшу з'являється напис «YOU LOSE», і гра завершується. </li>
                 </div>
               </div>
             </div>
             
            
-          </div> -->
+          </div>
 
         
        </div>
