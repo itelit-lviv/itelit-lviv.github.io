@@ -59,8 +59,8 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 8.</span class="text-warning">
-          Модуль Turtle. Гра "Перегони черепах".</h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 15.</span class="text-warning">
+          Створення гри-шутера.</h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -85,63 +85,127 @@
     <!-- Теорія -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Розглянути
-          теорію </h4>
+        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Розглянути теорію
+           </h4>
       </a>
       <div id="collapsePres" class="collapse show">
         <div class="collapse-pres mt-4">
-          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQwPe06w7VkegjHOQsJFl4xv3zt_EznjDHWWmtQgNqqnJl7nw9cuYlnzTNNqNMoQg/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-          <div class='theory'>
-           
-            </div>
-          
-       
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSCYsp5dFwzEJzmu6fw2CBwPmRmpBDqFaDQn97dtTDq6T-hlMUFW2360oXHc_XSu2ViLG2DQHIeG879/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>і
         </div>
       </div>
     </div>
     
-    <!-- Завдання -->
-    <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Виконати
-          завдання </h4>
-      </a>
+    
 
-      <div id='collapseTasks' class="collapse">
-        <div class='task'> <h3> ЗАВДАННЯ ПРОЄКТУ </h3>                           
-          <p>Напиши програму, слідуючи записаному плану.
-            
-            <p>
-          <p>План програми написаний в коментарях. Виконай пункти 1 - 5.</p>
-            
-<code>
-<pre>
-  # ПЛАН ПРОГРАМИ:
-  # 1. Підключаємо потрібні модулі.
-  # Згадай, які модулі потрібні: черепашки будуть робити кроки випадкової довжини.
-  # Напиши тут команди підключення цих модулів:
+    <!-- Квест -->
+    <div class="lesson-list-js wow fadeInUp" id="course">
+      <a class="collapse-heading " data-toggle="collapse" data-target="#collapseQuest" aria-expanded="true">
+        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Створюємо гру-шутер</h4>
+      </a>
+      <h3>Зображення для створення гри:</h3>
+      <div class="d-flex flex-wrap">
+        <img src="/src/python-course/spaceship.png" class="flex-shrink-1 h-100" alt=""  style="width:200px;" align="left" />  
+        <img src="/src/python-course/ufo.png" alt="" class="flex-shrink-1 h-100" style="width:200px;" align="left" />  
+        <img src="/src/python-course/bullet.png" class="flex-shrink-1 h-100" alt="" style="width:100px;" />      
+
+        <img src="/src/python-course/space_bg.jpg" class="flex-shrink-1 h-100" alt="" style="width:500px;" align="left"  />  
+      
+      </div>
+      
+      <div class="">
+        <h3>Звуки для створення гри:</h3>
+        <audio
+              controls
+              src="/src/python-course/space.ogg">
+                  Your browser does not support the
+                  <code>audio</code> element.
+          </audio>
+          <audio
+              controls
+              src="/src/python-course/fire.ogg">
+                  Your browser does not support the
+                  <code>audio</code> element.
+          </audio>
+      </div>
+      <div id='collapseQuest' class="">         
+          Створи гру-шутер, слідуючи інструкціям.        
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h5> <b>1)</b> Створення персонажів та ігрового циклу.</h5>
+                  </button>
+                </h2>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  Створи заготовку гри з фоном, музикою та космічним кораблем. Використовуйте готовий клас GameSprite, запрограмований для минулої гри «Арканоїд».
+
+ <li>1. Підключи ігрову бібліотеку pygame. Створи вікно гри розміром 700x500, дай йому назву.</li>
+ <li>2. Створи ігровий цикл із виходом при натисканні на «Закрити вікно». Задай FPS 60 кадрів/сек. Встановити фон гри.</li>
+ <li>3. Підключи фонову музику (файл space.ogg).</li>
+  <li>4. Створи клас Player (спадкоємець від GameSprite). Запрограмуй управління екземпляром Player за допомогою клавіш зі стрілками «Вліво» та «Вправо».  Доповнити ігровий цикл відображенням корабля.</li>
   
-  # 2. Заводимо змінні для розміру ігрового поля,
-  # Так буде простіше управляти черепашками!
-  # Напиши команди, що задають значення ширини (width) та висоти (height) поля:
-  
-  
-  # 3. Створюємо об'єкти типу "Черепашка" і запам'ятовуємо їх в змінних
-  # Нехай тільки дві їх буде для початку.
-  # Конструктор Turtle () ти використовуй.
-  # Тут запиши:
-  
-  # 4. Тепер на старт виходять черепашки.
-  # Які установки їм запам'ятати?
-  # Яка форма, колір, де встати? І чи потрібно сліди їм залишати?
-  
-  # 5. А ось і гонка!
-  # Тут потрібно розібратися: як рухати черепашку з випадковим кроком?
-  # Як довго повторювати цей рух?
-  
-  
-</pre>
-</code>
+
+  </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h5><b>2)</b> Створення ворогів та лічильник очок</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+             <p>Доповніть заготовку гри ворогами та відображенням статистики.</p>
+
+<li>1) Створіть клас Enemy. Запрограмуйте автоматичне переміщення тарілок назустріч космічному кораблю гравця.</li>
+
+<li>2) Створіть групу спрайтів типу Enemy. На початку гри створіть 5 спрайтів-ворогів. Тарілки повинні з'являтися у випадковій верхній частині екрану та «зникати», доходячи до нижньої частини. Насправді тарілка не зникає, а знову з'являється нагорі екрана.</li>
+<li>3) Підключіть можливість використання шрифтів. Запрограмуйте два лічильники статистики: для збитих та пропущених літаючих тарілок. Зробіть лічильник пропущених тарілок працюючим.</li>
+
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left disabled collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <h5><b>3)</b>  Створення спрайтів-куль. Вчимо гравця стріляти.</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="heading4">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left disabled collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    <h5><b>4)</b>  Оформлення перемоги та програшу.</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
+                <div class="card-body">
+                  
+                </div>
+              </div>
+            </div>
+           
+          </div>
+
+        
+       </div>
+       <p></p>
         <h5><b>Надіслати виконане завдання</b></h5>
         <script type="text/javascript">
           var submitted = false;
@@ -158,13 +222,12 @@
         </form>
       </div>
     </div>
-
   </main>
     
 </div>
 <!-- Nav buttons -->
 <div class="page-nav-btn-wrapper">
-  <a href="/py-wt/7/" class="page-nav-left" title="Тема 7. Функції">
+  <a href="/py-wt/14/" class="page-nav-left" title='Тема 14. Класи і спадкування класів."'>
     <span>
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd"
@@ -173,7 +236,7 @@
     </span>
     <span class="text-btn-nav">Попередня тема</span>
   </a>
-  <a href="/py-wt/9/" class="page-nav-left page-nav-right" title='Тема 9. Списки. Кортежі. Словники.'>
+  <!-- <a href="/py-wt/16/" class="page-nav-left page-nav-right" title='Тема 14. Пишимо першу гру на модулі Pygame.'>
 
     <span class="text-btn-nav">Наступна тема</span>
     <span>
@@ -182,7 +245,7 @@
           d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
       </svg>
     </span>
-  </a>
+  </a> -->
 </div>
 
 <!-- /Nav buttons -->

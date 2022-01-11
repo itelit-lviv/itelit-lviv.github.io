@@ -85,52 +85,72 @@
     <!-- Теорія -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Розглянути
-          теорію </h4>
+        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Вступ в Python </h4>
       </a>
       <div id="collapsePres" class="collapse show">
+        <div class="collapse-pres mt-4">
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTtJ10_gApXyVDaN6yc6BK7eznD2FUToA6EH-sgwBqKpUGaB68h5C9aOBTjNEelUiPbn724OM1WHDlD/embed?start=true&loop=false&delayms=30000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Теорія -->
+    <div class="lesson-list-js wow fadeInUp" id="course">
+      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTheory" aria-expanded="true">
+        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Розглянути
+          теорію</h4>
+      </a>
+      <div id="collapseTheory" class="collapse ">
         <div class="collapse-pres mt-4">
           <div class='theory'>
             <h3>Для чого потрібні змінні?</h3>
            <div class='answer'>
            <ul>
-           <li class="dot "><i>Змінні використовуються для зберігання даних.</i></li><br>
-           <li class="dot"><i>Змінні можна повторно використовувати.</i></li><br>
-           <li class="dot"><i>Можна змінювати тип і значення змінної.</i></li><br></ul></div>
+           <li class="dot "><i>Змінні використовуються для зберігання даних.</i></li>        <li class="dot"><i>Змінні можна повторно використовувати.</i></li>
+           <li class="dot"><i>Можна змінювати тип і значення змінної.</i></li></ul></div>
 
-           <h3>Як оголосити змінну?</h3>
-           <div class='answer'><b>ім'я_змінної = значення змінної</b><br><br>
-           <i>name = 'Даня'</i><br></div>
-
-           <h3>Як правильно називати змінні?</h3>
-           <div class='answer'><b>Змінну необхідно називати так, щоб було зрозуміло для чого ця змінна використовується</b><br><br>
-           <i><b>Правильно: </b> name, surname, age, name_person</i><br>
-           <i><b>Неправильно: </b> a , b, ds, as, sadfads, afsd11111</i><br></div>
-
-           <h3>Тип змінної</h3>
-           <div class='answer'>Тип даних визначає, що з цією змінною можна робити(які операції)<br><br>
-           <i><b>Найпростіші типи даних:</b></i><br>
-           <ul>
-           <li  class="dot"><i>Ціле число - int</i></li><br>
-           <li  class="dot"><i>Число з комою - float</i></li><br>
-           <li  class="dot"><i>Логічний тип(Правда/Брехня) - bool</i></li><br>
-           <li  class="dot"><i>Нічого(пустий тип) - None</i></li><br>
-           <li  class="dot"><i>Рядкова змінна - str</i></li><br></ul></div>
-
-           <h3>Як перевести змінну до іншого типу?</h3>
+          
            <div class='answer'>
-           <ul>
-           <li  class="dot"><i>Рядок до цілого числа - int(word)</i></li><br>
-           <li  class="dot"><i>Число до рядка - str(number)</i></li><br>
-           <li  class="dot"><i>Інші типи аналогічно</i></li><br></ul></div>
+            <h3>Як оголосити змінну?</h3>
+            <b>ім'я_змінної = значення змінної</b>
+           <p><i>name = 'Володимир'</i></p></div>
+
+           
+          <p>
+             <div class='answer'><h3>Як правильно називати змінні?</h3>
+              <b>Змінну необхідно називати так, щоб було зрозуміло для чого ця змінна використовується</b>
+            <p> <i><b>Правильно: </b> name, surname, age, name_person</i></p>
+             <p><i><b>Неправильно: </b> a , b, ds, as, sadfads, afsd11111</i></p></div>
+          </p>
+
+          
+           <p>
+             <div class='answer'> <h3>Тип змінної</h3>Тип даних визначає, що з цією змінною можна робити(які операції)
+             
+             <ul><i><b>Найпростіші типи даних:</b></i>
+             <li  class="dot"><i>Ціле число - <b>int</b></i></li>
+             <li  class="dot"><i>Число з комою - <b>float</b></i></li>
+             <li  class="dot"><i>Логічний тип(Правда/Брехня) - <b>bool</b></i></li>
+             <li  class="dot"><i>Нічого(пустий тип) - <b>None</b></i></li>
+             <li  class="dot"><i>Рядкова змінна - <b>str</b></i></li></ul></div>
+           </p>
+
+           
+           <p>
+             <div class='answer'><h3>Як перевести змінну до іншого типу?</h3>
+             <ul>
+             <li  class="dot"><i>Рядок до цілого числа - int(word)</i></li>
+             <li  class="dot"><i>Число до рядка - str(number)</i></li>
+             <li  class="dot"><i>Інші типи аналогічно</i></li></ul></div>
+           </p>
 
            <h3>Вивід\ввід</h3>
-           <div class='answer'>Вивід відбувається за допомогою функції <b>print()</b><br><br>
-           <i>print('Hello world!')</i><br><br><hr>
-           Ввід відбувається за допомогою функції <b>input()</b><br><br>
-           <i>name = input('Enter your name:')</i><br><br>
+           <div class='answer'><p>Вивід на екран виконується за допомогою функції <b>print()</b></p>
+           <i>print('Hello world!')</i><hr>
+           <p>Ввід даних з клавіатури виконується за допомогою функції <b>input()</b></p>
+           <i>name = input('Enter your name:')</i>
            <div class="alert alert-success" role="alert">
-             <b>Зауваження!</b> Тип змінної отриманої за допомогою input() - <b>STR</b><i><u><br>(а отже, якщо ви виконуєте математичні дії, змінну необхідно перевести до типу числа)</i></u><br></div>
+             <b>Зауваження!</b> Тип змінної отриманої за допомогою input() - <b>STR</b><i><u> (а отже, якщо ви виконуєте математичні дії, змінну необхідно перевести до типу числа)</i></u></div>
            </div>
           </div>
         </div>
@@ -140,7 +160,7 @@
     <!-- Завдання -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Виконати
+        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#3</span> Виконати
           завдання </h4>
       </a>
 
@@ -214,22 +234,14 @@
         <div class="footer-nav d-flex flex-column flex-md-row align-items-center justify-content-md-start">
           <a class="mr-lg-5  navbar-brand mr-0 logo order-md-0 order-12" href="/py-wt/index.html"><span>Web</span><span
               class="text-dark">Teach</span></a>
-          <a class="ml-lg-5 ml-0 nav-item nav-link " href="#course" 
+          <a class="ml-lg-5 ml-0 nav-item nav-link " href="../#course" 
             title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
           
           <a class="nav-item nav-link ml-0" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду"
             target="_blank">Редактор</a>
 
           
-          <div class="nav-phone my-2 my-lg-0 flex-shrink-0">
-            <!-- <span class=" text-muted">Контакти: </span> -->
-            <a href="tel:" id="phonebtn" class=" nav-item nav-link  animated ml-0">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="mr-1 bi bi-telephone" viewBox="0 0 16 16">
-                <path
-                  d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-              </svg></a>
-          </div>
+          
         </div>
 
         <div class="d-inline-flex flex-column align-items-center">
