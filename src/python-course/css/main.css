@@ -31,6 +31,17 @@ html, body {
   animation: background 9s ease infinite;
   /* z-index: 2; */
 }
+.header-wrapper-scratch{
+  /* background: url('/src/img/scratchcat-no-bg.png') no-repeat center #5d9cfc;  */
+  background: #5d9cfc;
+  background-size: contain;  
+  animation: none;
+  height: -moz-fit-content;;
+  height: fit-content;
+  width: 100%;
+  
+  /* z-index: 2; */
+}
 .body-js .nav-item.nav-link.active{
   padding: 6px 16px;
   color: #f2f7f7;
