@@ -59,8 +59,8 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 3.</span class="text-warning">
-          Напрям та координати</h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 4.</span class="text-warning">
+          Умови і оператор вибору</h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -91,7 +91,7 @@
       <div id="collapsePres" class="collapse show">
         <div class="collapse-pres mt-4">
           <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item "
-              src=  "https://docs.google.com/presentation/d/e/2PACX-1vRNse5j-7-mBkLyy6alak2w16iSapBv3pAG-rzKU4DXf58t_mcf8plFq1_491LiLMQ0dWoPaaVpmUHN/embed?start=false&loop=false"
+              src=  "https://docs.google.com/presentation/d/e/2PACX-1vTTu38ag1AsTfeU_mzhEy8ntia2lWQ1O2VqTo3O9tBgQIbtmqftI4dnpHtANgAF-ccwD_xetrgWkkNS/embed?start=false&loop=false&delayms=60000"
               frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
               webkitallowfullscreen="true"></iframe> </div>
               
@@ -104,31 +104,34 @@
     <div class="tasks accordion" id="TasksAccordion">
       <div class="lesson-list-js wow fadeInUp" id="course">
         <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks2" aria-expanded="false">
-          <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">Завдання 1</span> - Проєкт "Космічна ракета"</h4>
+          <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">Завдання 1</span> - Проєкт "Кольоровий м'ячі"</h4>
         </a>
   
         <div id='collapseTasks2' class="collapse" data-parent="#TasksAccordion">
           <div class="row">
-            <div class="col-12 col-md-5">
+            <!-- <div class="col-12 col-md-5">
               <iframe src="https://scratch.mit.edu/projects/780011985/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-            </div>
-            <div class="col-12 col-md-7 ">
+            </div> -->
+            <div class="col-12 ">
               <ol>
-                <a class="btn btn-lg ok-btn " href="https://scratch.mit.edu/projects/780012740/editor/" title="Відкрити проєкт Scratch" target="_blank" style="background: linear-gradient(#3256b1, #5d9cfc);"> 
+                <a class="btn btn-lg ok-btn " href="https://scratch.mit.edu/projects/781893898/editor/" title="Відкрити проєкт Scratch" target="_blank" style="background: linear-gradient(#3256b1, #5d9cfc);"> 
                   Відкрити проєкт </a>
                 <li><b>1.</b> Відкрийте проєкт і зробіть ремікс.</li>
-                <li><b>2.</b> Наближення. При натисканні на стрілку «вгору» змінюється образ і збільшується розмір. </li>
+                <li><b>2.</b> Команда «Якщо на межі, відбити» теж перевіряє умову! І в ній захована математична формула розрахунку кута, на який повертається м'яч. </li>
                 <li><b>3.</b> 
-                  Віддалення
-                  При натисканні на стрілку «вниз» змінюється образ і зменшується розмір. Подумай, як це зробити.</li>
-                <li><b>4.</b> Початкове розташування
-                  При натисканні на зелений прапорець ракета завжди одного і того ж розміру.</li>
+                  М'яч завжди рухається і відштовхується від межі.
+
+Цикл «завжди» допомагає зробити дію безкінечною! Але як ми будемо його використовувати? Потрібно запрограмувати постійне повторення дій!</li>
+                <li><b>4.</b> Якщо м'яч на межі, він змінює колір.
+
+                  А цієї готової команди в нас немає. Потрібно запрограмувати перевірку умови «торкається межа?» і зміну образа в цьому випадку.</li>
                   <li><b>5.</b> 
                     Зупинка інших скриптів
                     Якщо спочатку натиснути на стрілку «вгору» і приблизити ракету, а потім — на стрілку «вниз», то потрібно спочатку зупинити наближення, а потім запустити віддалення.</li>
-                    <li><b>Бонус.</b> 
-                      Наближення і віддалення Землі
-  При натисканні на стрілку «вгору» Земля віддаляється, при натисканні стрілки «вниз» — наближається.</li>
+                    <li><b>6.</b> 
+                      Початкове розташування.
+
+                      Встанови початковий розмір та образ м'яча!</li>
                 </ol>
             </div>
           </div>
@@ -136,23 +139,30 @@
       </div>
       <div class="lesson-list-js wow fadeInUp" id="course">
         <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks4" aria-expanded="false">
-          <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">Завдання 2</span> - Проєкт "Воротар</h4>
+          <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">Завдання 2</span> - Проєкт "Три м'ячі</h4>
         </a>
   
         <div id='collapseTasks4' class="collapse" data-parent="#TasksAccordion">
           <div class="row">
             <div class="col-12 col-md-6">
-              <iframe src="https://scratch.mit.edu/projects/780035301/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+              <iframe src="https://scratch.mit.edu/projects/781896928/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
             </div>
             <div class="col-12 col-md-6 ">
               <ol>
-                <a class="btn btn-lg ok-btn " href="https://scratch.mit.edu/projects/780039124/editor/" title="Відкрити проєкт Scratch" target="_blank" style="background: linear-gradient(#3256b1, #5d9cfc);"> 
+                <a class="btn btn-lg ok-btn " href="https://scratch.mit.edu/projects/781896515/editor/" title="Відкрити проєкт Scratch" target="_blank" style="background: linear-gradient(#3256b1, #5d9cfc);"> 
                   Відкрити проєкт</a>
                 <li><b>1.</b> Відкрийте проєкт і зробіть ремікс.</li>
-                <li><b>2.</b> Конструкція «Завжди (якщо ...)»
-                  Ти вже з нею знайомий! Використовуй її, щоб перевіряти, чи не натиснуто клавішу.</li>
-                <li><b>3.</b> Якщо натиснуто відповідну клавішу, то спрайт пересувається в потрібну сторону.</li>
-                <li><b>4.</b> Задайте початкове розташування.</li>
+                <li><b>2.</b> Задай хаотичний рух м'яча./li>
+                <li><b>3.</b> Перевірка доторкання
+
+                  Використовуй цю умову для програмування стикання м'ячів.</li>
+                <li><b>4.</b>Початкове розташування. 
+                  Ми ж не хочемо, щоб вони рухались однаково і з однієї точки, вірно?</li>
+                <li><b>5.</b> 
+                  Відштовхування.
+                  
+                  Щоб відштовхнутися, потрібно розвернутися в протилежну сторону і переміститися!</li>
+                <li><b>6.</b>Перевіряємо зіштовхування з обома м'ячами</li>
                 </ol>
             </div>
           </div>
@@ -161,26 +171,35 @@
     
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks1" aria-expanded="false" >
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">Завдання 3</span> - Проєкт "Сніжинки падають"</h4>
+        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">Завдання 3</span> - Проєкт "Їжак і краби"</h4>
       </a>
 
       <div id='collapseTasks1' class="collapse" data-parent="#TasksAccordion">
       
         <div class="row">    
           <div class="col-12 col-md-4">
-            <iframe src="https://scratch.mit.edu/projects/780021853/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            <iframe src="https://scratch.mit.edu/projects/781897397/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
           </div>
           <div class="col-12 col-md-8">
-            <a class="btn btn-lg ok-btn " href="https://scratch.mit.edu/projects/780030090/editor/" title="Відкрити проєкт Scratch" target="_blank" style="background: linear-gradient(#3256b1, #5d9cfc);"> 
+            <a class="btn btn-lg ok-btn " href="https://scratch.mit.edu/projects/781897213/editor/" title="Відкрити проєкт Scratch" target="_blank" style="background: linear-gradient(#3256b1, #5d9cfc);"> 
               Відкрити проєкт </a>
             <ol>
               <li><b>1.</b> Відкрийте проєкт і зробіть ремікс.</li>
-              <li><b>2.</b> Падіння. Щоб перемістити спрайт вниз, змінюй координату Y на від'ємне число!</li>
-              <li><b>3.</b> Повторювати. Повторимо зміну координати декілька разів, щоб імітувати падіння!</li>
-              <li><b>4.</b> Завжди. Сніжинка завжди повертається нагору і падає знову!</li>
-              <li><b>5.</b> Сніжинки падають з різною швидкістю. Введи різні значення, на які змінюється координата Y для різних сніжинок — тоді вони будуть падати по-різному!</li>
-              <li><b>Бонус.</b> Сніжинки обертаються. 
-                Подумай, як зробити так, щоб сніжинки обертались під час падіння? Яка команда повертає сніжинки?</li>
+              <li><b>2.</b> Етап «Прицілюємся».
+                Їжак перевіряє різні умови під час прицілювання і під час руху до краба. Запрограмуй передачу повідомлень спрайту самому собі і розділи виконання умов за допомогою цих повідомлень!</li>
+              <li><b>3.</b> 
+                Їжак повертається за вказівником миші!                
+                Використовуй команду, яка допомогає Їжаку повертатися за вказівником миші. Подумай, чи потрібно вставляти її в цикл чи достатньо помістити в алгоритм?</li>
+              <li><b>4.</b> Запусти Їжака в краба за допомогою умови!
+                Використовуй команду «якщо...», щоб Їжак запускався з натисканням миші. Які ще команди руху можуть нам знадобитися?</li>
+              <li><b>5.</b> 
+                Етап «Старт»
+                «Старт» — це подія, яка наступить при натисканні на кнопку миші. </li>
+              <li><b>6.</b> 
+                Їжак зникає, якщо торкається межі!
+                Створи нову умову, в якій Їжак буде зникати, якщо торкається межі. Які команди ми використовуємо?</li>
+                <li><b>7.</b> 
+                  Краб пропадає при торканні Їжака</li>
             </ol>
            
           </div>
@@ -188,79 +207,7 @@
       </div>
     </div>
    
-    <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks3" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">Завдання 4</span> - Проєкт "Сонце"</h4>
-      </a>
-
-      <div id='collapseTasks3' class="collapse" data-parent="#TasksAccordion">
-        <div class="row">
-          <div class="col-12 col-md-6">
-            <iframe src="https://scratch.mit.edu/projects/780005482/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-          <div class="col-12 col-md-6 ">
-            <ol>
-              <a class="btn btn-lg ok-btn " href="https://scratch.mit.edu/projects/780006706/editor/" title="Відкрити проєкт Scratch" target="_blank" style="background: linear-gradient(#3256b1, #5d9cfc);"> 
-                Відкрити проєкт </a>
-              <li><b>1.</b> Відкрийте проєкт і зробіть ремікс.</li>
-              <li><b>2.</b> Сонце пливе в декілька точок (змінює координати) </li>
-              <li><b>3.</b> Сонце змінює образи</li>
-              <li><b>4.</b> Задайте початкове розташування.</li>
-              </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks5" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">Завдання 5</span> - Проєкт "Лицар</h4>
-      </a>
-
-      <div id='collapseTasks5' class="collapse" data-parent="#TasksAccordion">
-        <div class="row">
-          
-          <div class="col-12 ">
-            <ol>
-              <a class="btn btn-lg ok-btn " href="https://scratch.mit.edu/projects/780041594/editor/" title="Відкрити проєкт Scratch" target="_blank" style="background: linear-gradient(#3256b1, #5d9cfc);"> 
-                Відкрити проєкт</a>
-              <li><b>1.</b> Відкрийте проєкт і зробіть ремікс.</li>
-              <li><b>2.</b> Початкове розташування.                  Лицар починає рух з нижнього лівого кута і дивиться вправо.</li>
-              <li><b>3.</b> 
-                Лицар обходить одну сторону вежі.
-                
-                Щоб обійти одну сторону вежі, лицар робить 25 разів по 10 кроків.</li>
-              <li><b>4.</b> Лицар повертає.
-                Кожного разу, після обходу однієї стіни, лицар повертає на 90 градусів. Зверни увагу: поворот проти годинникової стрілки.</li>\
-                <li><b>5.</b> Цикл.
-                  Щоб обійти 4 стіни, лицарю потрібно повторити обхід і поворот 4 рази.</li>
-              </ol>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks6" aria-expanded="false">
-        <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">Завдання 6</span> - Проєкт "Колобок"</h4>
-      </a>
-
-      <div id='collapseTasks6' class="collapse" data-parent="#TasksAccordion">
-        <div class="row">
-          <div class="col-12 col-md-6">
-            <iframe src="https://scratch.mit.edu/projects/780976720/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-          </div>
-          <div class="col-12 col-md-6 ">
-            <ol>
-              <a class="btn btn-lg ok-btn " href="https://scratch.mit.edu/projects/780977961/editor/" title="Відкрити проєкт Scratch" target="_blank" style="background: linear-gradient(#3256b1, #5d9cfc);"> 
-                Відкрити проєкт </a>
-              <li><b>1.</b> Відкрийте проєкт і зробіть ремікс.</li>
-              <li><b>2.</b> Завжди (якщо ...). Використовуй цю конструкцію для перевірки натискання клавіші. </li>
-              <li><b>3.</b> Колобок не просто переміщується і змінює координати, але ще й повертається! Головне, обрати потрібну сторону... За часовою чи проти часової стрілки?</li>
-              <li><b>4.</b> Задайте початкове розташування.</li>
-              </ol>
-          </div>
-        </div>
-      </div>
-    </div>
+ 
    
    
   </div>
@@ -268,7 +215,7 @@
   </main>
    <!-- Nav buttons -->
    <div class="page-nav-btn-wrapper">
-    <a href="../2/" class="page-nav-left" title="Тема 2. Практика">
+    <a href="../3/" class="page-nav-left" title="Тема 3. Напрям та координати">
       <span>
          <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -276,7 +223,7 @@
       </span>
       <span class="text-btn-nav">Попередній урок</span>
      </a>
-     <a href="../4/" class="page-nav-left page-nav-right" title="Тема 4. Умови і оператор вибору">
+     <!-- <a href="../4/" class="page-nav-left page-nav-right" title="Урок 4. Практика">
       
       <span class="text-btn-nav">Наступний урок</span>
       <span>
@@ -284,7 +231,7 @@
           <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
         </svg>
      </span>
-     </a>
+     </a> -->
   </div>
 
   <!-- /Nav buttons -->
