@@ -66,8 +66,8 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 1.</span class="text-warning">
-          Вступ в Python. Змінні. Ввід/вивід даних. </h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 2.</span class="text-warning">
+          Вирази та типи даних </h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -92,15 +92,12 @@
     <!-- Теорія -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Вступ в Python </h4>
+        <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#1</span> Презентація </h4>
       </a>
       <div id="collapsePres" class="collapse show">
         <div class="collapse-pres mt-4">
-          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTtJ10_gApXyVDaN6yc6BK7eznD2FUToA6EH-sgwBqKpUGaB68h5C9aOBTjNEelUiPbn724OM1WHDlD/embed?start=true&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRiBDA_-w1TEClGJ3QeXiQ764n2LTlHOi-9jfrj2RjasVckBqlfjz--LdB6X4XbDOn3dRtqk6zWn8qm/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
         </div>
-        <a class="btn btn-lg ok-btn m-3" href="https://kahoot.it/challenge/019591?challenge-id=922fc38c-2872-4617-bd06-7ff74cda0a5b_1672112260967" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
-          Перевірити себе - Kahoot </a>
-
       </div>
     </div>
     
@@ -118,27 +115,32 @@
            <ul>
            <li class="dot "><i>Змінні використовуються для зберігання даних.</i></li>        <li class="dot"><i>Змінні можна повторно використовувати.</i></li>
            <li class="dot"><i>Можна змінювати тип і значення змінної.</i></li></ul></div>
+             
 
           
-           <div class='answer'>
-            <h3>Як оголосити змінну?</h3>
-            <b>ім'я_змінної = значення змінної</b>
-           <p><i>name = 'Володимир'</i></p></div>
+           <p>
+             <div class='answer'> <h3>Тип змінної</h3>Тип даних визначає, що з цією змінною можна робити(які операції)
+             
+             <ul><i><b>Найпростіші типи даних:</b></i>
+             <li  class="dot"><i>Ціле число - <b>int</b></i></li>
+             <li  class="dot"><i>Число з комою - <b>float</b></i></li>
+             <li  class="dot"><i>Логічний тип(Правда/Брехня) - <b>bool</b></i></li>
+             <li  class="dot"><i>Нічого(пустий тип) - <b>None</b></i></li>
+             <li  class="dot"><i>Рядкова змінна - <b>str</b></i></li></ul></div>
+           </p>
 
            
-          <p>
-             <div class='answer'><h3>Як правильно називати змінні?</h3>
-              <b>Змінну необхідно називати так, щоб було зрозуміло для чого ця змінна використовується</b>
-            <p> <i><b>Правильно: </b> name, surname, age, name_person</i></p>
-             <p><i><b>Неправильно: </b> a , b, ds, as, sadfads, afsd11111</i></p></div>
-          </p>
-           <h3>Вивід\ввід</h3>
-           <div class='answer'><p>Вивід на екран виконується за допомогою функції <b>print()</b></p>
-           <i>print('Hello world!')</i><hr>
-           <p>Ввід даних з клавіатури виконується за допомогою функції <b>input()</b></p>
-           <i>name = input('Enter your name:')</i>
-             
-           </div>
+           <p>
+             <div class='answer'><h3>Як перевести змінну до іншого типу?</h3>
+             <ul>
+             <li  class="dot"><i>Рядок до цілого числа - int(word)</i></li>
+             <li  class="dot"><i>Число до рядка - str(number)</i></li>
+             <li  class="dot"><i>Інші типи аналогічно</i></li></ul></div>
+           </p>
+
+           
+           <div class="alert alert-success" role="alert">
+             <b>Зауваження!</b> Тип змінної отриманої за допомогою input() - <b>STR</b><i><u> (а отже, якщо ви виконуєте математичні дії, змінну необхідно перевести до типу числа)</i></u></div>
           </div>
         </div>
       </div>
@@ -157,42 +159,33 @@
           Редактор для виконання завдань </a>
           <a class="btn btn-lg ok-btn m-3" href="https://www.speedcoder.net/lessons/py/1/" target="_blank"> 
             Тренажер друку </a>
-        <div class='task'> <h3> ЗАВДАННЯ 1.2. </h3>                           
-          <p>Створити програму, що додає значення двох змінних a і b.</p>
+        <div class='task'> <h3> ЗАВДАННЯ 2.1. </h3>                           
+          <p>Створити програму, що запитує значення двох чисел та друкує їх добуток.</p>
          <p>Програма має працювати як на зображенні:</p>
-          <p><img class="" src="/src/python-course/t1_1.PNG" alt="" /></p></div>
+          <p><img class="" src="/src/python-course/py-t2-1.png" style="max-width: 350px;" alt="" /></p></div>
           <br />                                                                                              
-                      <div class='task'>  <h3> ЗАВДАННЯ 1.2. </h3>
-                      <p> Створити програму, що виводить на екран нікнейм, очки та рівень гравця. Дані повинні зберігатись у змінних - <code><b>nickname, points, level</b></code>.</p>
+                      <div class='task'>  <h3> ЗАВДАННЯ 2.2. </h3>
+                      <p> Створити програму, що по черзі запитує місто, вулицю та номер будинку, запам'ятовує ці дані у змінні та сформуйте з них адресу у форматі "Місто <i>Назва_міста</i>, вул. <i>Назва_вулиці</i>, буд. <i>Номер_будинку</i>".</p>
          <p>Програма має працювати як на зображенні:</p>
-          <p><img src="/src/python-course/py-t1-2.png" style="max-width: 450px;" alt="" /></p></div>
-              <div class='task'>  <h3>        ЗАВДАННЯ 1.3.                            </h3>
-                      <p>Напиши програму, яка вітається за ім'ям</p>
-                       <p>
-                           Програма запитує ім'я людини, а потім друкує:
-                         <b> "Радий знайомству, ім'я"</b>
-                       </p>
-         <p>Приклад роботи програми:</p>
-          <p><img src="/src/python-course/py-t1-3.png" style="max-width: 450px;" alt="" /></p></div>
-          <div class='task'><h3>                                ЗАВДАННЯ 1.4.                            </h3>
-                      <p>Нехай користувач введе своє ім'я, прізвище та вік у відповідні змінні (створити 3 змінні).</p>
-         <p>Програма має надрукувати відповідь як на зображенні:</p>
-          <p><img src="/src/python-course/t1_4.PNG" alt="" /></p></div>
-          <div class='task'><h3>                                ЗАВДАННЯ 1.5.                            </h3>
-                      <p>Створи дві змінні зі значеннями 785 і 157.</p>
-                        <p>
-                          Надрукуй по порядку результати наступних дій з ними:
-                          сума,
-                          різниця (перше мінус друге),
-                          множення,
-                          ділення (перше розділити на друге)
-                        </p></div>
+          <p><img src="/src/python-course/py-t2-2.png" style="max-width: 500px;" alt="" /></p></div>
+              <div class='task my-5'>  <h3>        ЗАВДАННЯ 2.3.                            </h3>
+                      <p>Запитай два числа, порахуй середнє арифметичне цих чисел (суму, розділену навпіл). Надрукуй результат.
+                      </p>
+                      
+          <div class='task my-5'><h3>                                ЗАВДАННЯ 2.4.                            </h3>
+                      <p>Запитай два числа, сторони прямокутника -  a і b. Виведи площу прямокутника із заданими сторонами в форматі, який вказаний в прикладі. Формула знаходження площі прямокутника: S = a * b.  </p>
+                      <p>Приклад виводу результату <code>S = 20.</code></p>
+         
+          <div class='task my-5'><h3>                                ЗАВДАННЯ 2.5.                            </h3>
+            <p>Створити 5 змінних усіх типів та вивести на екран результат функції для визначення типу змінної.</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="https://web-teach.pp.ua/src/python-course/t1_3.PNG" style="max-width: 400px;" alt="" /></p></div>
          
         <h4></h4>
         <h5><b>Надіслати виконане завдання</b></h5>
         <script type="text/javascript">
           var submitted = false;
-        </script>
+        </script> 
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
           onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
         <form
@@ -209,8 +202,15 @@
   </main>
    <!-- Nav buttons -->
    <div class="page-nav-btn-wrapper">
-    
-    <a href="../2/" class="page-nav-left page-nav-right" title="Тема 2. Вирази та типи даних.">
+    <a href="../1/" class="page-nav-left" title="Тема 1. Вступ в Python. Змінні. Ввід/вивід даних.">
+      <span>
+         <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+           <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+         </svg>
+      </span>
+      <span class="text-btn-nav">Попередня тема</span>
+     </a>
+    <!-- <a href="../2/" class="page-nav-left page-nav-right" title="Тема 2. Умовний оператор if.">
       
       <span class="text-btn-nav">Наступна тема</span>
       <span>
@@ -218,7 +218,7 @@
           <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
         </svg>
      </span>
-     </a>
+     </a> -->
   </div>
   <!-- /Nav buttons -->
 </div>
