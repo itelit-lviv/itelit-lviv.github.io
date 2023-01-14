@@ -1,0 +1,34 @@
+{
+	
+	"Scratch - add new task ": {
+		"scope": "html",
+		"prefix": "scratchnewtask",
+		"body": [
+			'''<div class="lesson-list-js wow fadeInUp" id="course">
+		<a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks2" aria-expanded="false">
+		  <h4 class="h4 font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold "># 1</span> Котик спілкується</h4>
+		</a>
+
+		<div id='collapseTasks2' class="collapse" data-parent="#TasksAccordion">
+		  <div class="row">
+			 <div class="col-12 col-md-5">
+				<iframe src="https://scratch.mit.edu/projects/787754098/embed" allowtransparency="true" width="100%" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+			 </div>
+			 <div class="col-12 col-md-7">
+				<ol>
+				  <a class="btn btn-lg ok-btn " href="https://scratch.mit.edu/projects/787761667/editor/" title="Відкрити проєкт Scratch" target="_blank" style="background: linear-gradient(#3256b1, #5d9cfc);"> 
+					 Відкрити проєкт </a>
+				  <li><b>1.</b> Відкрийте проєкт і зробіть ремікс.</li>
+				  <li><b>2.</b> </li>
+				  <li><b>3.</b> </li>
+				  <li><b>5.</b> </li>
+				  </ol>
+			 </div>
+		  </div>
+		</div>
+	 </div>'''
+		],
+		"description": "Log output to console"
+	}
+	
+}
