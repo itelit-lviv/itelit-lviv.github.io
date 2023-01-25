@@ -67,11 +67,11 @@
       <div class="header-title-js my-3 wow backInDown container">
 
         <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 6.</span class="text-warning">
-          Модуль Turtle. Створюємо гру "Змійку".</h1>
+          Списки та кортежі. </h1>
       </div>
 
       <!-- Go-lesson Button -->
-      <a href="https://meet.google.com/krn-ozhd-tpp" target="_blank" id="lessonBtn"
+      <a href="https://meet.google.com/uiy-tjgh-hxp" target="_blank" id="lessonBtn"
         class="go-lesson-btn  wow fadeInUp container" data-wow-delay=".5s" style="width: 300px;">
         <div class="go-lesson-1 pt-2 px-4">
          
@@ -97,11 +97,13 @@
         <div class="collapse-pres mt-4">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item "
-              src="https://docs.google.com/presentation/d/e/2PACX-1vQ_x-4x95MngcM_CJTi-YuWFnVAdcg1waaeJABMqnZIrMoHcOaP09zhOGUoyhi2ZnLQM1_1Fcoqw278/embed?start=false&loop=false&delayms=60000"
+              src="https://docs.google.com/presentation/d/e/2PACX-1vRu018p_mX0lhzFJiJsGErSg5gzEsJnx5gesPTOevrZMJuVFlM0MjeBcjZix4ZglvFOHmt99K6z4OM0/embed?start=false&loop=false&delayms=60000"
               frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
               webkitallowfullscreen="true">
             </iframe> 
           </div>
+          <!-- <a class="btn btn-lg ok-btn my-3" href="https://kahoot.it/challenge/03402684?challenge-id=922fc38c-2872-4617-bd06-7ff74cda0a5b_1673553429275" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+            Перевірити себе - Kahoot </a> -->
           </div>
       </div>
     </div>
@@ -112,97 +114,92 @@
         <h4 class="h4  font-weight-normal " style="color:#752fc5;"><span class="font-weight-bold ">#2</span> Розглянути
           теорію </h4>
       </a>
-      <div id="collapseTheory" class="collapse ">
+      <div id="collapseTheory" class="collapse">
         <div class="collapse-pres mt-4">
-          
           <div class='theory'>
-            <h3>Команди переміщення черепашки</h3>
+            <h3>Що таке список?</h3>
             <div class='answer'>
-              <ol>
-                <li><code>forward(n)</code> -  Проповзти вперед n кроків (пікселів). Скорочений запис: <code>fd(n)</code>.</li>
-                <li><code>backward(n) </code> - Проповзти назад n кроків (пікселів). Скорочений запис: <code>bd(n)</code>.</li>
-                <li><code>left(angle) </code> - Повернутися ліворуч на angle градусів. Скорочений запис: <code>lt(angle)</code>.</li>
-                <li><code>right(angle)</code>  - Повернутись праворуч на angle градусів. Скорочений запис: <code>rt(angle)</code>.</li>
-                <li> <code>circle(r) </code> - Намалювати коло радіусу |r|, центр якого знаходиться ліворуч від черепашки, якщо r>0 і праворуч, якщо r<0.</li>
-                <li><code>circle(r,angle)</code> -  Намалювати дугу радіусу | r | і градусною мірою angle. Дуга малюється проти годинникової стрілки, якщо r>0 і за годинниковою стрілкою, якщо r<0.</li>
-                <li><code>goto(x,y) </code> - Перемістити черепашку в точку з координатами (x, y).</li>
-              </ol>
-              </div>
-              <h3>Команди малювання</h3>
-              <div class='answer'>
-                <ol>
-                  <li><code>down() </code> - Опустити перо, щоб почати малювати. Після цієї команди черепашка почне залишати слід за будь-якого свого пересування.</li>
-                  <li><code>up()</code> -  Підняти перо, щоб перестати малювати.</li>
-                 <li> <code>width(n)</code> -  Встановити ширину сліду черепашки n пікселів.</li>
-                  <li><code>сolor(s)</code> -  Встановити колір черепашки. s має бути текстовим рядком, поміщеним у лапки, з назвою кольору (англійською), наприклад, "red", "yellow", "green" і т.д.</li>
-                  <li><code>begin_fill()(f) </code> - Почати зафарбовування області.</li>
-                  <li><code>end_fill()</code> - Завершити замафарбовування області.</li>
-                  <li><code>stamp()</code> - залишити штамп (слід черепашки).</li>
-                  <li><code>write("hello", font=("Arial", 22, "bold"))</code> - Написати текст черепашкою шрифтом font.</li>
-                </ol>
-                </div>
-                <h3>Зовнішній вигляд черепашки</h3>
-              <div class='answer'>
-                <ol>
-                  <li><code>t1 = Turtle()</code>  - Створення нової черепашки</li>
-                  <li><code>t1.clone()</code>  - Клонування черепашки</li>
-                  
-                  <li>
-                    <code>shape(форма)  </code>- задає форму черепашки:
-                    <code>shape(‘turtle‘)</code> – черепашка,
-                    <code>shape(‘arrow ‘) </code>– стрілка,
-                    <code>shape(‘circle‘) </code>– круг,
-                    <code>shape(‘square’) </code>– квадрат,
-                    <code>shape(‘triangle’)</code> – трикутник,
-                    <code>shape(‘classic’) </code>– класичний
-                  </li>
-                  <li><code>shapesize(m,n)</code>  - зміна розміру виконавця</li>
-                 <li> <code>hideturtle()  </code> - сховати виконавця</li>
-                  <li><code>showturtle()  </code> - показати виконавця</li>
-                  <li><code>speed(x)</code>  - Швидкість руху (від 1 до 10) за умовчанням стоїть 6 </li>
-                  <li><code>speed(x)</code>  - Швидкість руху (від 1 до 10) за умовчанням стоїть 6 </li>
-                </ol>
-                </div>
+            <p><b>Список</b> <i>(list)</i> - це структура для впорядкованого зберігання даних різних типів.</p>
+            </div>  
+            <h3>Як створити список?</h3>
+            <div class='answer'>
+            <p>
+              <code>
+              name_list = ['first' , 2 , 'third' , 'hello', 12.33, True]
+              </code>
+            </p>
             </div>
-            <h3>Робота з екраном</h3>
+            <h3>Особливості списків <a href="https://www.w3schools.com/python/python_lists.asp" target="_blank" class="font-weight-light ml-2">[читати більше]</a></h3>
             <div class='answer'>
-              <ol>
-                <li><code>win = Screen()</code>   - Створення об'єкта екрану</li>
-                <li><code>win.bgcolor(‘black’)</code> -  Колір фону вікна</li>
-                <li><code>win.title("My Turtle Program")</code> -  Назва вікна</li>
-                <li><code>win.reset()</code> - Скидання до початку</li>
-                <li><code>win.сlear()</code> - Очистити екран</li>
-                <li><code>win.screensize (1200,800, "Blue")</code> - Встановлення розмірів полотна в пікселях
-                  і кольору полотна (екрану).</li>
-                  <li><code>win.mainloop( )</code> - Затримати вікно на екрані.</li>
-              </ol>
-              </div>
-              <h3>Події екрану</h3>
-              <div class='answer'>
-                <ol>
-                 <li> <code>turtle.ondrag(draw)</code> - подія “черепашку переміщують мишею”, обробник отримує параметри — координати точки, де зараз переміщується черепашка.</li>
-                  <li><code>scr = t.getscreen()</code> - отримуємо об’єкт екрану на якому знаходится черепашка t.</li>
-                  <li><code>scr.onscreenclick(move)</code> - подія “клік”, обробник отримує координати.</li>
-                  <li><code>scr.onkey(setRed,'r')</code> - подія “нажали клавішу”, клавіша вказуєтся другим параметром, обробник без параметрів.</li>
-                  <li><code>scr.listen()</code> - команда “почати слухати клавіатуру”.</li>
-                </ol>
-                </div>
-              <h3>Система координат</h3>
-              <div class='answer'>
-                <ol>
-                  <li><code>pos()</code> -  Отримати поточні координати черепашки;</li>
-                 <li> <code>towards(x, y)</code> -  Отримати кут між поточним напрямок черепашки і прямий від черепашки до точки (x,y);</li>
-                 <li> <code>xcor() </code> - Отримати x координату черепашки;</li>
-                  <li><code>ycor() </code> - Отримати y координату черепашки;</li>
-                  <li><code>distance(x, y)</code> -  Отримати відстань до точки (x, y);</li>
-                  <li><code>isdown()</code> -  Дізнатися, чи малює зараз черепашка;</li>
-                  <li><code>isvisible()</code> -  Дізнатися, чи видно зараз черепашка; </li>
-                </ol>
-                </div>
+          <ul>
+             <li class="dot"> До елементів списку можна звертатись за індексом (починається від 0).</li>
+              <li class="dot">
+                <code>
+                name_list[2]</code> - Виведе нам на екран 3 елемент нашого списку
+              </li>
+             <li class="dot">
+                Також елементи списку можна змінювати. Для цього необхідно записати таке:<code>
+                name_list[2] = 'Danylo'</code></li>
+              <li class="dot">До списків також можна використовувати зрізи!</li>
+              <li class="dot">В середині списку можна створити інші списки. Такі списки вважаються двовимірними.</li>
+          </ul>
+            </div>  
+            <h3>Арифметика списків</h3>
+            <div class='answer'>
+            <ul>
+            <li class="dot">
+              Ми можемо додавати між собою списки, після чого вони стануть одним списком:
+                <code>
+                  <pre>a = ['abc', 2]
+b = [1,2]
+print(a+b)
+Result: ['abc', 2, 1, 2]</pre>
+                </code>
+            </li>
+            <li class="dot">
+              Ми можемо множити список на ціле число, результатом буде список з елементами, які повторюються декілька разів:
+              <code>
+               <pre>a = ['abc', 2]
+print(a*3)
+Result: ['abc', 2,'abc', 2,'abc', 2]</pre></code>
+            </li>
+            </ul>
+            </div>
+            
+            <h3>Методи роботи зі списками <a href="https://www.w3schools.com/python/python_lists_methods.asp" target="_blank" class="font-weight-light ml-2">[читати більше]</a> </h3>
+            <div class='answer'>
+            <ul>
+            <li class="dot" ><code>list.append(x)</code> - Додає елемент в кінець списку.</li>
+            <li class="dot" ><code>del list[i]</code> - Видаляє і-тий елемент зі списку.</li>
+            <li class="dot" ><code>list.extend(L)</code> - Розширює список list, додаючи в кінець списку всі значення списку L.</li>
+            <li class="dot" ><code>list.insert(i, x)</code> - Вставляє на і-тий індекс елемент х. </li>
+            <li class="dot" ><code>list.remove(x)</code> - Видаляє перший елемент списку зі значенням x. ValueError, якщо такого елементу не існує. </li>
+            <li class="dot" ><code>list.pop([i])</code> - Видаляє i-тий елемент і повертає його. Якщо індекс не вказаний, видаляється останній елемент.</li>
+            <li class="dot" ><code>list.index(x, [start [, end]])</code> -	Повертає індекс першого елемента зі значенням x (при цьому пошук ведеться від start до end).</li>
+            <li class="dot" ><code>list.count(x)</code> -	Повертає кількість елементів зі значенням x.</li>
+            <li class="dot" ><code>list.sort([key=функція])</code> -	Сортує  список на основі функції.</li>
+            <li class="dot" ><code>list.reverse()</code> -	Змінює порядок елементів списку на зворотній</li>
+            <li class="dot" ><code>list.copy()</code> -	Поверхнева копія списку</li>
+            <li class="dot" ><code>list.clear()</code> -	Очищує список</li>
+            </ul>
+            
+          </div>
+            
+            <h3>Що таке кортеж? <a href="https://www.w3schools.com/python/python_tuples.asp" target="_blank" class="font-weight-light ml-2">[читати більше]</a></h3>
+            <div class='answer'>
+              <p><b>Кортеж (tuple)</b> - це незмінний аналог списку. Він захищає дані від ненавмисних змін. </p>
+             Кортеж дуже схожий на список, за винятком двох особливостей.
+             <ol>
+             <li class="dot ml-4">Записується він в <b>круглих</b> дужках: <code> tuple1 = ('a', 'hello', 1 ,2 ,34,5)</code></li>
+             <li  class="dot ml-4">
+             Кортеж не можна змінювати! Тобто замінити, додати чи видалити елемент як в списках не можна!
+             </li>
+             <ol>
+            </div>
+            </div>
         </div>
       </div>
     </div>
-   
     
     <!-- Завдання -->
     <div class="lesson-list-js wow fadeInUp" id="course">
@@ -212,9 +209,49 @@
       </a>
 
       <div id='collapseTasks' class="collapse show">
-        <a class="btn btn-lg ok-btn my-3" href="https://replit.com/@web-teach-vlas/py-6-turtle" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+        <a class="btn btn-lg ok-btn my-3" href="https://replit.com/@web-teach/py-6" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
           Редактор для виконання завдань </a>
-                     
+          <div class='task my-3'> <h3> ЗАВДАННЯ 6.1. </h3>                           
+            <p>Створити список покупок. У списку потрібно підрахувати кількість елементів та надрукувати його за допомогою циклу <b>for</b>.<p>
+            <p>Програма має працювати як на зображенні:</p>
+            <p><img src="/src/python-course/py-t6-1.png" alt="" style="max-width: 300px;" /></p></div>
+        
+        <div class='task  my-4'>  <h3> ЗАВДАННЯ 6.2. </h3>
+                      <p>Створити список та довільно заповнити його числами. Вивести на екран відсортований список.</p>
+          <p>Програма має працювати як на зображенні:</p>
+          <p><img src="/src/python-course/t6_2.PNG" alt="" style="max-width: 950px;" /></p></div>
+          <div class='task'> <h3> ЗАВДАННЯ 6.3. </h3>                           
+            <p>Створити два списки. В перший записати улюбленні заняття (5 занять). В другий записати улюблені страви (5 страв). Об'єднати ці два списки в третій список і вивести його на екран за допомогою циклу <b>for</b>.<p>
+            <p>Програма має працювати як на зображенні:</p>
+            <p><img src="/src/python-course/t6_1.PNG" alt="" style="max-width: 250px;" /></p></div>
+              
+            <div class='task'><h3>                                ЗАВДАННЯ 6.4.                            </h3>
+              <p>Створити програму для пошуку книги серед всіх книг бібліотеки. Потрібно створити список для книг, додати туди кілька видань. Програма запитує назву бажаної книги і якщо книга є в бібліотеці, то друкує "Така книга є в бібліотеці", в іншому разі друкується "Такої книги немає". </p>
+  <p>Програма має працювати як на зображенні:</p>
+  <p><img src="/src/python-course/py-t6-4.png" alt="" style="max-width: 400px;" /></p></div>
+          <div class='task'><h3>                                ЗАВДАННЯ 6.5.                            </h3>
+                      <p>Створити кортеж та довільно заповнити його цілими числами. Вивести цей кортеж на екран за допомогою циклу <b>for</b>. Також перезаписати цей кортеж в список, список відсортувати та вивести його на екран.</p>
+          <p>Програма має працювати як на зображенні:</p>
+          <p><img src="/src/python-course/t6_4.PNG" alt="" style="max-width: 750px;" /></p></div>
+          <div class='task'><h3>                                ЗАВДАННЯ 6.6.                            </h3>
+                      <p>Створити список з випадковими числами від 0 до 20. Вивести на екран усі значення, які менше 5. Використати цикл <b>for</b>.</p>
+          <p>Програма має працювати як на зображенні:</p>
+          <p><img src="/src/python-course/t6_7.PNG" alt="" style="max-width: 250px;"/></p></div>
+
+          <div class='task'><h3>                                ЗАВДАННЯ 6.7.                            </h3>
+                      <p>Створити два списки заповнені випадковими числами. В третій список записати елементи, які співпадають у двох інших списках. Використати цикл <b>for</b>.</p>
+          <p>Програма має працювати як на зображенні:</p>
+          <p><img src="/src/python-course/t6_9.PNG" alt="" /></p></div>
+          <div class='task'><h3>                                ЗАВДАННЯ 6.8.                            </h3>
+                      <p>Створити два списки. В одному з них записати імена товарів. В другий записати ціну на ці товари. Вивести на екран <i>Товар = Ціна</i> та порахувати середню ціну товару.</p>
+          <p>Програма має працювати як на зображенні:</p>
+          <p><img src="/src/python-course/t6_10.PNG" alt="" /></p></div>
+          
+          <div class='task'><h3>                                ЗАВДАННЯ 6.9.                            </h3>
+                      <p>Створити три списки. В перший записати імена учнів(10). В другий оцінки з Української мови(10). В третій записати оцінки з Англійської мови(10). В четвертий список має записувати середня оцінка учня по двом предметам. Також потрібно порахувати середній бал класу.</p>
+          <p>Програма має працювати як на зображенні:</p>
+          <p><img src="/src/python-course/t6_12.PNG" alt="" style="max-width: 750px;" /></p></div>
+          
         <h5><b>Надіслати виконане завдання</b></h5>
         <script type="text/javascript">
           var submitted = false;
@@ -230,8 +267,8 @@
           <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
         </form>
       </div>
-    </div></div>
-    
+    </div>
+
   </main>
     
 </div>
@@ -245,7 +282,7 @@
    </span>
    <span class="text-btn-nav">Попередня тема</span>
   </a>
-  <!-- <a href="../4/" class="page-nav-left page-nav-right" title="Тема 4. Цикл for. Робота з рядковими змінними. ">
+  <!-- <a href="../7/" class="page-nav-left page-nav-right" title="Тема 7. Словники, множини та вкладені структури даних.">
     
     <span class="text-btn-nav">Наступна тема</span>
     <span>
@@ -255,7 +292,6 @@
    </span>
    </a> -->
 </div>
-
 <!-- /Nav buttons -->
   <button class="btn" hidden id='arrowTopBtn'  onclick="window.scrollTo(0, 0);">
     <!-- <svg xmlns="http://www.w3.org/2000/svg"  fill="rgb(82, 82, 82)" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
@@ -289,7 +325,7 @@
 
         <div class="d-inline-flex flex-column align-items-center">
           <span class="muted mr-1">2020-2023 ©  WebTeach. </span>
-          <span class="muted text-center">Всі права застережено. Будь-яке копіювання без згоди автора заборонено.</span>
+          <span class="muted">Всі права застережено. Будь-яке копіювання без згоди автора заборонено.</span>
         </div>
       </div>
     </div>
