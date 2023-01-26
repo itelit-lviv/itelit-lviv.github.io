@@ -1,12 +1,19 @@
 html, body {
+  --bg-color: #e9edee;
+  --text-color: #375381;
+  --card-bg-color: #fff;
+  --shadow-color: rgba(202, 203, 206, 0.25) 0px 20px 40px 0px;
+  --text-accent-color: #752fc5;
+  --text-secondary-color: #375381b4;
+
   height: 100%;
   margin: 0;
   width: 100%;
   scroll-behavior: smooth;
-  
+  color: var(--text-color)
 }
 .body-js{
-  background-color: #e9edee;
+  background-color: var(--bg-color);
 }
 .body-js *{
   box-sizing:border-box;
@@ -257,10 +264,7 @@ main{
   min-height: 90%;
   /* z-index: -2; */
 }
-.lesson-list-js{
-  padding: 30px;
-  
-}
+
 #course  h2{
   margin-bottom: 20px;
   font-weight: 700;
@@ -276,29 +280,39 @@ main{
   display: block;
   padding: 5px;
 }
+.lesson-list-js .h4{
+  color: var(--text-accent-color);
+}
 .lesson-list ol, .lesson-list-js ol{
   padding-left: 0;
 }
 .lesson-link, .lesson-list-js{
-  color: #375381;
+  color:#375381;
   font-size: 20px;
   line-height: 40px;
   font-weight: 500;
 }
-.lesson-list-js{
-  color: #375381;
-  font-size: 20px;
-  line-height: 40px;
-  font-weight: 500;
+.lesson-list-js .lesson-link{
+  color: var(--text-color);
 }
-.disabled-js-link{
+
+.lesson-list-js .lesson-link{
+  color: var(--text-color);
+}
+
+.lesson-list-js .lesson-link.disabled-js-link{
   pointer-events: none;
-  color: #375381b4;
+  color: var(--text-secondary-color);
 }
 .lesson-list-js{
-  background: #fff;
+  color: var(--text-color);
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 500;
+  padding: 30px;
+  background: var(--card-bg-color);
   margin: 40px 0;
-  box-shadow: rgba(202, 203, 206, 0.25) 0px 20px 40px 0px;
+  box-shadow: var(--shadow-color);
   border-radius: 20px;
 }
 /*****/
@@ -667,3 +681,20 @@ footer.footer{
     min-width: 350px;
   }
 }
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+  --bg-color: #262333;
+  --card-bg-color: #262646;
+  --text-color: #eee;
+  --shadow-color: rgb(0 0 0 / 40%) 0px 20px 40px 0px;
+  --text-accent-color: #b6a3f4;
+  --text-secondary-color: #d7e2f37c;
+  } 
+  .header-wrapper {
+    background: linear-gradient(90deg,#375381 0%,#6495ed 100%),#6495ed;
+  }
+  code{
+    color:  #98c6ff;
+  }
+} */
