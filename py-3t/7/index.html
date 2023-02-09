@@ -195,6 +195,32 @@ Result: ['abc', 2,'abc', 2,'abc', 2]</pre></code>
              </li>
              <ol>
             </div>
+            <h3>Що таке словник?</h3>
+            <div class='answer'>
+              <b>Словник (dict)</b> — це невпорядкований набір пар типу «ключ-значення».
+              <ul>
+                <li class="dot">Будується наступним чином: <code>
+                library_name = {'Перший ключ': 'Перше значення','Другий ключ': 'Друге значення'}
+                </code></li>
+                <li class="dot">Кожному значенню відповідає в бібліотеці не індекс, а ключ.</li>
+                <li class="dot">Звертатись до елементів в бібліотеці необхідно за ключем: <code>
+                print(library_name['Перший ключ'])
+                </code></li>
+                <li class="dot">Видаляти елементи в бібліотеці також необхідно за ключем:<code>
+                del library_name['Перший ключ']
+                </code></li>
+                <li class="dot">Об'єднювати бібліотеки не можна. Видасть помилку.</li>
+                </ul></div>
+                <h3>Методи для словників <a href="https://www.w3schools.com/python/python_dictionaries_methods.asp" target="_blank" class="font-weight-light ml-2"> [читати більше]</a> </h3>
+                <div class='answer'>
+                <ul>
+                <li class="dot"><code>library_name.keys()</code> - повертає значення всіх ключів словника</li>
+                <li class="dot"><code>library_name.values()</code> - повертає значення словника</li>
+                <li class="dot"><code>library_name.items()</code> - повертає пари "ключ - значення"</li>
+                <li class="dot"><code>library_nameclear()</code> - очищує словник</li>
+                </ul>
+            </div>
+
             </div>
         </div>
       </div>
