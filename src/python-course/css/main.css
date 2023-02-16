@@ -325,11 +325,10 @@ li.dot {
   bottom: -35px;
 }
 .body-js-lesson .lesson-list-js {
-  cursor: pointer;
 }
 .collapse-heading {
   box-sizing: border-box;
-
+  cursor: pointer;
   position: relative;
   display: block;
   padding-right: 50px;
