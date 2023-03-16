@@ -118,9 +118,11 @@
     </a>
 
     <div id='collapseQuest' class="collapse show">
-      <div class='task my-4'> <h3> Створи міні-гру «Пінг-понг»</h3>   
-        <img src="/src/python-course/pygame/ping-pong/result.gif" alt="" style="max-width:500px;" />  
+      <div class='task my-3'> <h3> Створи міні-гру «Пінг-понг»</h3>   
        
+        <img src="/src/python-course/pygame/ping-pong/result.gif" alt="" style="max-width:500px;" />  
+        <a class="btn btn-lg ok-btn my-4" href="https://replit.com/@web-teach/ping-pong" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+          Редактор для коду </a>
         <div class="accordion" id="TasksAccordion">
           <div class="card">
             <div class="card-header" id="heading1">
@@ -153,8 +155,9 @@
               <div class="card-body">
                 <a title="Зображення ракетки" id="" class="btn btn-primary" href="/src/python-course/pygame/ping-pong/rocket.png" role="button" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);">rocket.png</a>
                 <a title="Зображення спрайту" id="" class="btn btn-primary" href="/src/python-course/pygame/ping-pong/tenis_ball.png" role="button" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);">tenis_ball.png</a>
+                <p><b>1)</b> Створи два класи - клас Ball та клас Paddle - для м'яча та ракетки відповідно. Використовуй метод <code>__init__()</code> для ініціалізації початкових значень координат, швидкості та інших параметрів.</p>
 
-                <p>Створи класи для усіх видів спрайтів: м'яча та 2 ракеток. Після чого створи екземпляри цих класів та розмісти їх на сцені. Підбери координати.</p>
+                <p>Створити екземпляри класів Ball та Paddle та відрисуй їх на екрані у ігровому циклі.</p>
                 <div class="alert alert-info" role="alert">
                   <b>Примітка. </b>Пам'ятай, що у PyGame початок відліку (0, 0) знаходиться у лівій верхній частині вікна.
                 </div>
@@ -162,9 +165,9 @@
             </div>
           </div>
           <div class="card">
-            <div class="card-header" id="heading2">
+            <div class="card-header" id="heading3">
               <h2 class="mb-0">
-                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapseTwo">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                   <h5><b>3.</b> Запрограмуй рух ракеток та м'яча</h5>
                 </button>
               </h2>
@@ -172,12 +175,27 @@
             <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#TasksAccordion">
               <div class="card-body">
                 <p><b>1)</b> Використовуй метод key.get_pressed(), щоб отримати словник натиснутих клавіш keys_pressed.</p>
-                <p><b>2)</b> Перевір які кнопки натиснуті. Якщо клавіша керування натиснута (наприклад, keys_pressed[K_LEFT] — чи натиснута «Стрілка вліво») і спрайт не знаходиться за межами екрана, перемістіть його в потрібну сторону на 5 пікселів.</p>
+                <p><b>2)</b> Перевір які кнопки натиснуті. Якщо клавіша керування натиснута (наприклад, keys_pressed[K_UP] — чи натиснута «Стрілка вгору») і спрайт не знаходиться за межами екрана, перемістіть його в потрібну сторону на 5 пікселів.</p>
                 <p><b>3)</b> Встанови частоту зміни кадрів 60 кадрів/сек. Для цього поза ігровим циклом створи об'єкт time.Clock() та константу FPS = 60. А в циклі задай потрібну частоту: clock.tick(FPS)</p>
               </div>
             </div>
           </div>
-         
+          <div class="card">
+            <div class="card-header" id="heading4">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                  <h5><b>4.</b> Перевірка зіткнень та перемога/програш.</h5>
+                </button>
+              </h2>
+            </div>
+            <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#TasksAccordion">
+              <div class="card-body">
+                <p><b>1)</b> Зроби перевірку зіткнень м'яча з ракетками за допомогою функції <code>sprite.collide_rect()</code>. Якщо зіткнення відбулось, то м'яч повинен відскакувати від платформи.</p>
+                <p><b>2)</b> Перевірити, чи м'яч не вилетів за межі екрану. Якщо так, то гра повинна завершитися.</p>
+                <p><b>3)</b> Вивести результат гри на екран у вигляді тексту.</p>
+              </div>
+            </div>
+          </div>
         </div>
       
      </div>
@@ -195,8 +213,7 @@
         <input required class="form-control my-3" name="entry.42502702" type="text" placeholder="Введіть ваше ім'я">
         <textarea required name="entry.339734998" class="w-100 form-control" rows=6
           placeholder="Введість ваш код або посилання на онлайн-редактор"></textarea>
-        <input type="submit" class="btn btn-lg ok-btn  my-3" value="Надіслати">  <a class="btn btn-lg ok-btn m-3" href="https://replit.com/@webteach/py-10" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
-          Редактор для коду </a>
+        <input type="submit" class="btn btn-lg ok-btn  my-3" value="Надіслати">  
       </form>
     </div>
   </div>
