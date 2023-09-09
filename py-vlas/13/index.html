@@ -80,29 +80,9 @@
   <div class="main-wrapper container container-lg-fluid">
   <!-- Main block -->
   <main class="container pt-4">
-    <!-- Теорія -->
-    <!-- <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#1</span> Розглянути теорію
-           </h4>
-      </a>
-      <div id="collapsePres" class="collapse show">
-        <div class="collapse-pres mt-4">
-          <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item "
-              src="https://docs.google.com/presentation/d/e/2PACX-1vSyjQ0GKiWocaZO-lxiOTcKrIVrEGXQ5c2ijz4Vl0KG4NbSW4Z9K89pVhJ3_ber71EMqayy-veg4w5F/embed?start=false&loop=false&delayms=60000"
-              frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
-              webkitallowfullscreen="true">
-            </iframe> 
-          </div>
-          <a class="btn btn-lg ok-btn my-3" href="https://kahoot.it/challenge/08907928?challenge-id=922fc38c-2872-4617-bd06-7ff74cda0a5b_1680913442712" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
-            Kahoot - Основи Pygame</a>
-        </div>
-         
-      </div>
-    </div> -->
+   
     
-   <!-- Квест -->
+   <!-- Туторіал -->
    <div class="lesson-list-js wow fadeInUp" id="course">
     <a class="collapse-heading show" data-toggle="collapse" data-target="#collapseQuest" aria-expanded="true">
       <h4 class="h4 font-weight-normal " ><span class="font-weight-bold ">#1</span> Перший чат-бот</h4>
@@ -168,6 +148,51 @@
           Документація OpenWeatherMap API</a>
      </div>
      <p></p>
+     
+    </div>
+  </div>
+    <!-- Теорія -->
+  <div class="lesson-list-js wow fadeInUp" id="course">
+    <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
+      <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#2</span>Конфігурація чат-бота
+         </h4>
+    </a>
+    <div id="collapsePres" class="collapse show">
+      <div class="collapse-pres mt-4">
+       <h4>Додавання нової команди:</h4>
+       <h5><a class="font-weight-normal ml-2" href="https://docs.aiogram.dev/uk_UA/latest/dispatcher/filters/command.html" target="_blank" > 
+        [Дізнатися більше]</a></h5>
+<pre><code>from aiogram.filters.command import Command
+...
+@dp.message(Command('help'))
+async def help(message: types.Message):
+  await message.answer("Допомога")
+</code></pre>
+
+<h4>Додавання обробки текстового повідомлення</h4>
+<h5>Використовуючи "магічні фільтри"<a class="font-weight-normal ml-2" href="https://docs.aiogram.dev/uk_UA/latest/dispatcher/filters/magic_filters.html" target="_blank" > 
+   [Дізнатися більше]</a></h5>
+<pre><code>from aiogram import F
+...
+@dp.message(F.text == 'привіт')
+async def hello(message: types.Message):
+  await message.answer("Як справи?")
+</code></pre>
+
+<h4>Додавання клавіатури відповідей</h4>
+<h5>За допомогою ReplyKeyboardMarkup<a class="font-weight-normal ml-2" href="https://docs.aiogram.dev/uk_UA/latest/utils/keyboard.html" target="_blank" > 
+   [Дізнатися більше]</a></h5>
+<pre><code>kb = [ # список кнопок
+    [types.KeyboardButton(text = "Кнопка 1")],
+    [types.KeyboardButton(text = "Кнопка 2")],
+]
+keyboard = types.ReplyKeyboardMarkup(keyboard=kb) # створення клавіатури
+...
+# відповідь за допомогою клавіатури ReplyKeyboardMarkup
+await message.answer(f"Hello, {hbold(message.from_user.full_name)}!", <b>reply_markup = keyboard</b>)
+</code></pre>
+
+      </div>
       <h4 class="my-4 font-weight-bold">Надіслати виконане завдання</b></h4>
      
       <script type="text/javascript">
