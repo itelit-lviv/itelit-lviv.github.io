@@ -103,7 +103,59 @@
       </div>
     </div>
     
-    
+    <!-- Завдання -->
+   <div class="lesson-list-js wow fadeInUp" id="course">
+    <a class="collapse-heading " data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
+      <h4 class="h4 font-weight-normal " ><span class="font-weight-bold ">#2</span> Виконати
+        завдання </h4>
+    </a>
+
+    <div id='collapseTasks' class="collapse show">
+      <a class="btn btn-lg ok-btn my-3" href="https://replit.com/@web-teach-vit/py-9" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+        Редактор для виконання завдань </a>
+      <div class='task'> <h3> ЗАВДАННЯ 1 </h3>   
+        Скористайся класом <b>Animal</b> з попереднього розділу та створи два спадкоємці цього класу - класи Dog та Cat.<ol>
+          <li><b>1)</b> В класі <b>Cat</b> додай властивості "порода" та "ім'я" та придумай мінімум 2 додаткові методи, які вмітиме виконувати лише кіт.</li>
+          
+          <li><b>2)</b> В класі <b>Dog</b> додай властивості "порода", "ім'я" та "команди". В властивості "команди" повинен зберігатися список всіх команд які знає собака. Додай методи "сидіти" та "принести кістку".</li>
+          
+          <li><b>3) </b>Створи екземпляри підкласів: собаку та кота. Перевір чи працюють всі функції.</li>
+          
+       </ol>
+        <p>Оформи все як на картинці.</p>
+     </div>
+
+     <div class='task'> <h3> ЗАВДАННЯ 2 </h3>   
+      <h4>Створи систему управління користувачами:</h4>
+      Запрограмуй клас <b>User</b>:<ol>
+        <li><b>1)</b> Створіть клас "Користувач" з атрибутами, такими як ім'я, електронна пошта та пароль, а також стан користувача (залогінений чи не залогінений)</li>
+        
+        <li><b>2)</b>Додайте методи <b>login</b> та <b>logout</b>. Методи повинен змінювати властивість стан користувача. </li>
+        <li><b>3)</b>. Далі створіть підкласи для різних типів користувачів (наприклад, "Клієнт", "Адміністратор") та додайте до них специфічні можливості, наприклад адміністатор може блокувати користувача. Користувач може видалити свій профіль тощо. </li>
+        
+     </ol>
+      <p>Оформи все як на картинці.</p>
+   </div>
+ <h5><b>Надіслати виконане завдання</b></h5>
+ <script type="text/javascript">
+   var submitted = false;
+ </script>
+ <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+ onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
+<form
+ action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
+ method="post" target="hidden_iframe" onsubmit="submitted=true;">
+ <input required class="d-none form-control my-3" name="entry.42502702" type="text" 
+ value="Віталій">
+ <input required class="d-none form-control my-3" name="entry.559818029" type="text" 
+ value="Тема 10">
+ <input required class="form-control my-3" name="entry.215350378" placeholder="Номер завдання" type="number" min="1" max="3">
+ <textarea required name="entry.339734998" class="w-100 form-control" rows=6
+   placeholder="Введість ваш код або посилання на онлайн-редактор"></textarea>
+ <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
+</form>
+    </div>
+  </div>
 
     <!-- Квест -->
     <div class="lesson-list-js wow fadeInUp" id="course">
@@ -207,7 +259,7 @@
    </span>
    <span class="text-btn-nav">Попередня тема</span>
   </a>
-  <a href="../10/" class="page-nav-left page-nav-right" title="Тема 10. Основи створення ігор за допомогою pygame.">
+  <!-- <a href="../10/" class="page-nav-left page-nav-right" title="Тема 10. Основи створення ігор за допомогою pygame.">
     
     <span class="text-btn-nav">Наступна тема</span>
     <span>
@@ -215,7 +267,7 @@
         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
       </svg>
    </span>
-   </a>
+   </a> -->
 </div>
 
 <!-- /Nav buttons -->
