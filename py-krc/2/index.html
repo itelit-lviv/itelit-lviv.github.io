@@ -60,11 +60,11 @@
       <div class="header-title-js my-3 wow backInDown container">
 
         <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 2.</span class="text-warning">
-          Умовний оператор if. </h1>
+          Типи даних. Робота з рядками. </h1>
       </div>
 
       <!-- Go-lesson Button -->
-      <a href="https://meet.google.com/smx-tpqm-qkc" target="_blank" id="lessonBtn"
+      <a href="https://meet.google.com/kjr-pcdy-ctv" target="_blank" id="lessonBtn"
         class="go-lesson-btn  wow fadeInUp container" data-wow-delay=".5s" style="width: 300px;">
         <div class="go-lesson-1 pt-2 px-4">
          
@@ -87,80 +87,125 @@
         <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#1</span> Презентація </h4>
       </a>
       <div id="collapsePres" class="collapse show">
+        
         <div class="collapse-pres mt-4">
-          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRfBUkCJvL7SSFk_VtlT6QDEYZFrXRmhkDLICjQmjdxIcwsf6U6lYr2P70iECQ8elGN1wA2jSNSg2WZ/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item "
+              src="https://docs.google.com/presentation/d/e/2PACX-1vQ3v-trxcHKqI9Z3y8gIyj_QzhxY3IjYXZ44eYkBGA6gLucyu2cfBMPMHtEb4_WAFpyl1ZsCNRthRt2/embed?start=false&loop=false&delayms=60000"
+              frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
+              webkitallowfullscreen="true">
+            </iframe> 
+          </div>
         </div>
-
-        <a class="btn btn-lg ok-btn m-3" href="https://kahoot.it/challenge/09757795?challenge-id=922fc38c-2872-4617-bd06-7ff74cda0a5b_1672151211011" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
-          Перевірити себе - Kahoot </a>
+        <a class="btn btn-lg ok-btn my-3" href="https://www.speedcoder.net/lessons/py/1/" target="_blank"> 
+          Тренажер друку </a>
+        <!-- <a class="btn btn-lg ok-btn my-3" href="https://kahoot.it/challenge/09442766" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+          Перевірити себе - Kahoot </a> -->
       </div>
     </div>
     <!-- Теорія -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTheory" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#2</span> Розглянути
-          теорію </h4>
+        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#2</span> Теорія</h4>
       </a>
       <div id="collapseTheory" class="collapse ">
         <div class="collapse-pres mt-4">
-          <h3>Для чого потрібні умовні оператори?</h3>
-          <div class='answer'>
-            <ul>
-              <li class="dot"><i>Початок казки</i></li>
-              <li class="dot">Наліво підеш - коня втратиш</li>
-              <li class="dot">Направо підеш - життя втратиш</li>
-              <li class="dot"><i>Кінець казки</i></li>
-            </ul>
+          <h2>Як створити рядок</h2>
+          <div class="answer">
+            <p>Рядки завжди створюються одним з трьох способів. Ви можете використовувати одинарні, подвійні або потрійні дужки. </p>
+            <pre class="python" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">my_string <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">&quot;Ласкаво просимо в Python!&quot;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">another_string <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'Я новий текст тут...'</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">a_long_string <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'''А це</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #483d8b;">рядок, що займає</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #483d8b;">декілька рядків'''</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li></ol></pre>
           </div>
+          <h2>Базові операції з рядками</h2>
+          <h3>Додавання рядків</h3>
+          <p>
+            За допомогою оператор <b><code>+</code></b> можна об'єднювати кілька рядків в один. Ця операція називається <b>конкатенація</b>.
+            <code>
+<pre>
+s1 = "Hello"
+s2 = " world"
+print(s1+s2) <span class="comment">#Результат: 'Hello world'</span> 
+</pre>
+            </code>
+          </p>
+<p>
+При необхідності об'єднання рядки з числом його попередньо потрібно привести теж до рядка, використовуючи функцію <b>str()</b>:
+<code>
+<pre>
+name = "John"
+age = 30
+"Name: " + name + ", age: " + str(age)<span class="comment">#Результат: 'Name: John, age: 30'</span> 
+</pre>
+</code>
+</p>
+
+
           
-          <h3>Оператор if</h3>
+          <h3>Доступ по індексу</h3>
+
+          <div class='answer'>            
+          <p>
+            Рядок <b>str</b> - складається з набору символів. Тому можна отримати символ по індексу. Індекси починаються з 0.<br>
+            <code>riadok[1] <span class="comment">#повертає другий символ рядка</span></code>
+          </p>
+          <p>
+          
+          В Python можна використовувати від'ємні індекси.<br>
+          <code>riadok[-3] <span class="comment">#повертає третій з кінця символ рядка</span></code></p></div>
+
+          <h3>Зрізи</h3>
           <div class='answer'>
-            <ul>
-              <li class="dot"><i>Початок казки</i></li>
-              <li class="dot"><b>if</b> Наліво підеш: <span style='margin-left:20px;'>  </span>коня втратиш</li>
-              <li class="dot"><i>Кінець казки</i></li>
-            </ul>
+           <p>
+              Можна отримати декілька символів, частину рядка. <br>
+              <code>riadok[start:end] </code>
+           </p>
+           <ul>
+          <li class="dot"><code>riadok[1:4]</code> - 1 - з якого символа починається зріз, 4 - на якому закінчується.</li>
+          <li class="dot"><code>riadok[:4]</code> - зріз з початку рядка.</li>
+          <li class="dot"><code>riadok[1:] </code>- зріз до кінця рядка.</li></ul></div>
+          <h2>Вивід інформації методом форматування</h2>
+          <h3>Оператор %
+          </h3>
+          
+          <div class='answer'>
+            <p>
+          <code>
+          <pre>
+          name = "Alex"
+          'Hello, %s' % name <span class="comment">#Результат: 'Hello, Alex'</span> 
+          </pre>
+          </code>
+            </p>
           </div>
-          
-          <h3>Блоки і відступи в Python</h3>
+          <h3>f-рядки (Python 3.6+)</h3>
           <div class='answer'>
-              <ul>
-              <li class="dot">Блок коду - логічно згрупований шматок коду</li>	
-              <li class="dot">В python нема - <b>{}</b>, які розділяють блоки коду</li>
-              <li class="dot">Тому для кожного блоку коді потрібно робити <b>ВІДСТУП</b></li>
-              <li class="dot"><b>Відступ</b> - 4 пробіла(кнопка TAB зліва на клавіатурі)</li>
-            </ul>
+            В Python версії 3.6 з'явився новий метод форматування рядків - "f-рядки", з його допомогою можна використовувати вбудовані вирази всередині рядків.<br>
+          Він виглядє наступним чином: <br> <code>print(<b>f</b>'Some information about - <b>{name_zminna}</b>')</code><br>
+          Наприклад:<br>
+          <code>
+          name = 'Volodymyr'<br>
+          age = 20<br>
+          print(f'My name is {name}. I am {age} y.o.')
+          </code>
           </div>
+          <h2>Функції і методи для роботи з рядками</h2>
+          <div class='answer'><ul>
+          <li class="dot"><code>len(riadok)</code> - довжина рядка (повертає кількість символів)</li>
+          <li class="dot"><code>str(riadok)</code> - перетворення числового або іншого типу до рядка</li>
+
+          <li class="dot"><code>riadok.find('a', start, end)</code> - шукаємо символ 'a' в рядку. Повертає індекс першого входження 'a' або -1 при відсутності.Пошук йде в межах від start до end (можна не задавати)</li>
+          <li class="dot"><code>riadok.split(x)</code> - розбиває рядок на підрядки за допомогою обраного роздільника x (наприклад, пробілу або коми). Повертає список підрядків (окремих слів). </li>
+          <li class="dot"><code>riadok.join(x)</code> - об'єднює рядок і підрядки за допомогою обраного роздільника x. </li>
+          <li class="dot"><code>riadok.strip()</code> - прибирає пробіли з обох боків рядка.</li>
+          <li class="dot"><code>riadok.lstrip() </code> чи <code>riadok.rstrip() </code> - прибирає пробіли тільки зліва чи справа.</li>
+
+          <li class="dot"><code>riadok.isdigit()</code> - рядок складається з чисел</li>
+          <li class="dot"><code>riadok.upper()</code> - зміна рядку до верхнього регістру (великими літерами)</li>
+          <li class="dot"><code>riadok.lower()</code> - зміна рядку до нижнього регістру (малими літерами)</li>
+          <li class="dot"><code>riadok.capitalize()</code> - зміна першої літери у верхній регістр, інших - в нижній.</li>
+          <li class="dot"><code>riadok.replace(a, b)</code> - заміна символів а на символи b.</li></ul></div>
+
+          <p>Більше методів з прикладами коду можна знайти <a href="https://www.w3schools.com/python/python_strings_methods.asp" target="_blank">за посиланням.</a></p>          
           
-          <h3>if - elif - else</h3>
-          <div class='answer'>
-            <ul>
-              <li class="dot"><b>if</b> перша умова:</li>
-              <ul type='circle'><li>Код 1</li></ul>
-              	
-              <li class="dot"><b>elif</b> друга умова:</li>
-              <ul type='circle'><li>Код 2</li></ul>
-              	
-              <li class="dot"><b>else</b>:</li>
-              <ul type='circle'><li>Код 3</li></ul>
-              	
-              <div class="alert alert-info" role="alert">
-                Якщо не виконується перша умова, то перевіряється друга умова, якщо обидві <b>БРЕХНЯ</b>, то виконується блок <b>else</b>.
-              </div>
-          </div>
-          
-          <h3>Внутрішній <b>if</b></h3>
-          <div class='answer'>
-          <ul>
-          <li class="dot">Всередині <b>if-elif-else</b> може бути інший <b>if</b>.</li>
-          <li class="dot">Таких вкладень може бути скільки завгодно</li>
-          </ul></div>
-          <h3>Функція strip()</h3>
-          <div class='answer'>
-            <p>Функція <b>strip()</b> створена для видалення пробілів зліва і справа.</p>
-            <p>Також є функції <b>lstrip()</b> та <b>rstrip()</b> створені для видалення пробілів зліва і справа відповідно.</p>
-          
-          </div>
         </div>
       </div>
     </div>
@@ -175,41 +220,60 @@
       <div id='collapseTasks' class="collapse show">
         <!-- <a class="btn btn-lg ok-btn my-3" href="https://replit.com/@web-teach-vlas/py-2"  target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
           Редактор для виконання завдань </a> -->
-        <div class='task'> <h3> ЗАВДАННЯ 1 </h3>                           
-          <p>Створіть програму з тестом, яка перевіряє чи правильно відповідає користувач.</p>
-<p>Результат вивести на екран у вигляді:</p>
-<p><img src="/src/python-course/t3_1.PNG" alt="" /></p></div>
-<br />                                                                                              
-          <div class='task'>  <h3> ЗАВДАННЯ 2 </h3>
-          <p> Визначити агрегатний стан води по її температурі (вода, лід чи пара).</p>
-<p>Результат вивести на екран у вигляді:</p>
-<p><img src="/src/python-course/t3_2.PNG" alt="" /></p></div>
-  <div class='task'>  <h3>        ЗАВДАННЯ 3                            </h3>
-          <p>За перший товар ви заплатили гривнями, за другий товар заплатили доларами. Визначити який товар коштує дорожче, якщо один долар коштує 40.5 грн.</p>
-<p>Результат вивести на екран у вигляді:</p>
-<p><img src="/src/python-course/t3_3.PNG" alt="" /></p></div>
-<div class='task'><h3>                                ЗАВДАННЯ 4                            </h3>
-          <p>Створити програму, яка визначає до якох категорії відноситься людина. Пенсіонер, доросла людина, підліток чи дитина. </p>
-<p>Результат вивести на екран у вигляді:</p>
-<p><img src="/src/python-course/t3_4.PNG" alt="" /></p></div>
-<div class='task'><h3>                                ЗАВДАННЯ 5                            </h3>
-          <p>Створити програму, що визначає тип трикутника (різносторонній, рівносторонній, прямокутний) по введених трьох сторонах.</p>
-<p>Результат вивести на екран у вигляді:</p>
-<p><img src="/src/python-course/t3_5.PNG" alt="" /></p></div>
-<div class='task'><h3>                                ЗАВДАННЯ 6                            </h3>
- 
-<p><img src="/src/python-course/t3_6.PNG" style="max-width: 1000px" /></p></div>
-<div class='task my-4'><h3>                                ЗАВДАННЯ 7                            </h3>
-  <p>Напиши діалог. Програма повинна працювати відповідно до блок-схеми.</p>
-  <p><img src="/src/python-course/t3_7.PNG" style="max-width: 600px" /></p></div>
-<div class='task my-4'><h3>                                ЗАВДАННЯ 8                            </h3>
-  <p>Напиши діалог. Програма повинна працювати відповідно до блок-схеми.</p> 
-    <p><img src="/src/python-course/t3_8.PNG" style="max-width: 800px" /></p>
-</div>
-<div class='task my-5'><h3>ЗАВДАННЯ 9</h3>
-  <b>Напиши калькулятор: програма отримує два числа і операцію, здійснює операцію і друкує результат.</b> 
-  <p>Програма виконує такі операції: "+" - додавання, "-" - відняти від першого числа друге, "*" - помножити, "/" - розділити перше число на друге. </p> <p>Якщо введена якась інша операція, потрібно надрукувати рядок: "Помилка: невідома операція". Якщо введена операція ділення, і друге число дорівнює нулю, потрібно надрукувати рядок: "Помилка: ділити на нуль не можна."</p> 
-</div>
+          
+                                                      
+                      <div class='task'>  <h3> ЗАВДАННЯ 1</h3>
+                      <p> Створити програму, що по черзі запитує місто, вулицю та номер будинку, запам'ятовує ці дані у змінні та сформуйте з них адресу у форматі "Місто <i>Назва_міста</i>, вул. <i>Назва_вулиці</i>, буд. <i>Номер_будинку</i>".</p>
+         <p>Програма має працювати як на зображенні:</p>
+          <p><img src="/src/python-course/py-t2-2.png" style="max-width: 500px;" alt="" /></p></div>
+           
+          <div class='task my-5'><h3>ЗАВДАННЯ 2</h3>
+                      <p>Запитай два числа, сторони прямокутника -  a і b. Виведи площу прямокутника із заданими сторонами в форматі, який вказаний в прикладі. Формула знаходження площі прямокутника: S = a * b.  </p>
+                      <p>Приклад виводу результату <code>S = 20.</code></p>
+         
+          <div class='task my-5'><h3>ЗАВДАННЯ 3</h3>
+            <p>Створити 5 змінних усіх типів та вивести на екран результат функції для визначення типу змінної. Скористайся функцією <code>type()</code>.</p>
+            <p>Результат вивести на екран у вигляді:</p>
+            <p><img src="https://web-teach.pp.ua/src/python-course/t1_3.PNG" style="max-width: 400px;" alt="" /></p></div>
+
+            <div class='task my-5'><h3>ЗАВДАННЯ 4</h3>
+              <p>Написати програму, що запитує відгук клієнта, після чого висловлює подяку клієнту та друкує довжину введеного відгуку.</p>
+              <p>Програма має працювати як на картинці.</p>
+              <p><img src="/src/python-course/py-t2-3.png" style="max-width: 600px;" alt="" /></p></div>
+              <div class='task my-5'><h3>ЗАВДАННЯ 5</h3>
+                <p>Хазяїна ресторану цікавить, чи сподобалися клієнту фірмові страви: <b>шоколадний торт</b> та <b>шашлик</b>.
+                  <p>Напиши програму, яка запитує у користувача страви, що сподобалися, і друкує результат пошуку як на картинці:</p>
+               <ul>
+                   <li> – Якщо страву знайдено, програма друкує номер символу, з якого починається страва.</li>
+                    <li>– Якщо страву не знайдено, то програма друкує –1. </li>
+               </ul>
+                <p>Програма має працювати як на картинці.</p>
+               
+                <p><img src="/src/python-course/py-t2-5.png" style="max-width: 600px;" alt="" /></p>
+                <div class="alert alert-info" role="alert">
+                  <strong>УВАГА! </strong> Перед аналізом необхідно зробити всі літери тексту малими (маленькими). Раптом клієнт написав "Шашлик", а не "шашлик"!
+                </div>
+                
+              </div>
+                <div class='task my-5'><h3>ЗАВДАННЯ 6</h3>
+                  <p>Напиши програму, яка розраховує премію співробітникам.</p>
+                  <p>Іноді у компаніях співробітники працюють навіть у вихідні. За додаткову роботу вони мають нагороджуватися преміями.</p>
+  <p>Напиши програму для розрахунку премій, яка буде:</p>
+<ul>
+  <li>- Запитувати середньомісячну зарплату;</li>
+  <li>- Запитувати кількість робочих годин у вихідні;</li>
+  <li>- Розраховувати премію: (зарплата) * 0.01 * (Робота у вихідні).</li>
+</ul>
+
+                  <p>Програма має працювати як на картинці.</p>
+                 
+                  
+                  <p><img src="/src/python-course/py-t2-6.png" style="max-width: 600px;" alt="" /></p>
+                  <div class="alert alert-info" role="alert">
+                    <strong>УВАГА! </strong> Довжина коду має бути меншою за 5 рядків.
+                  </div>
+                </div>
+         
         <h5><b>Надіслати виконане завдання</b></h5>
         <script type="text/javascript">
           var submitted = false;
@@ -244,7 +308,7 @@
    </span>
    <span class="text-btn-nav">Попередня тема</span>
   </a>
-  <a href="../3/" class="page-nav-left page-nav-right" title="Тема 3. Цикли. Цикл while.">
+  <!-- <a href="../3/" class="page-nav-left page-nav-right" title="Тема 3. Цикли. Цикл while.">
     
     <span class="text-btn-nav">Наступна тема</span>
     <span>
@@ -252,7 +316,7 @@
         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
       </svg>
    </span>
-   </a>
+   </a> -->
 </div>
 
 <!-- /Nav buttons -->
