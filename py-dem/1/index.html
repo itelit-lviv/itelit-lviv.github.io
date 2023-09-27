@@ -64,7 +64,7 @@
       </div>
 
       <!-- Go-lesson Button -->
-      <a href="https://us04web.zoom.us/j/6458909486?pwd=1uSbAxcAZQRf8NxWW3lnLIefJgwoYb.1" target="_blank" id="lessonBtn"
+      <a href="https://meet.google.com/qux-owyp-mib" target="_blank" id="lessonBtn"
         class="go-lesson-btn  wow fadeInUp container" data-wow-delay=".5s" style="width: 300px;">
         <div class="go-lesson-1 pt-2 px-4">
          
@@ -103,9 +103,9 @@
     <!-- Теорія -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTheory" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#2</span> Програмуємо на Python у Minecraft</h4>
+        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#2</span> Налаштовуємо Python у Minecraft</h4>
       </a>
-      <div id="collapseTheory" class="collapse ">
+      <div id="collapseTheory" class="collapse">
         <div class="collapse-pres mt-4">
           <div class='theory'>
             <a class="btn btn-lg ok-btn m-3" href="https://www.java.com/en/download/" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
@@ -113,11 +113,72 @@
 
               <a class="btn btn-lg ok-btn m-3" href="https://drive.google.com/file/d/16zJlA917EeeQH-GUI2mEHTAXXTNYztSe/view?usp=sharing" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
                 Minecraft Python API & Spigot </a>
+                <h4>Для того щоб запускати програми на Python для Minecraft потрібно:</h4>
+              <ol class="ml-4">
+                <li class="dot">Мати встановлені наступні програми:
+                    <ul>
+                      <li  class="dot"> Minecraft</li>
+                      <li  class="dot"> Python 3.7</li>
+                      <li  class="dot"> Java 8</li>
+                      <li  class="dot"> Minecraft Python API & Spigot</li>
+                    </ul>
+                </li>
+                <li class="dot">Дозволити запуск сервера без інтернету. Для цього у папці <code>"C:\Users\User\Documents\Minecraft Python\Minecraft Tools\server"</code> змінюємо файл <code><b>"server.properties"</b></code>. Потрібно задати значення параметра <code><b>online-mode=false</b></code></li>
+                <li class="dot">Запустити Minecraft-сервер за допомогою файлу <code>Start_Server</code> із папки Minecraft Tools.</li>
+                <li class="dot">Запустіть Minecraft і виберіть пункт меню Мережева гра (Multiplayer). Натисніть на кнопку Додати (Add Server). У рядку введення "Назва сервера" (Server Name) назвіть ваш сервер "Minecraft Python World", а в рядку "Адреса сервера" (Server
+                  Address) введіть <code><b>localhost</b></code>. Потім клікніть Готово (Done). Зробіть подвійний клік по Minecraft Python World, і відкриється світ, створений сервером Spigot.</li>
+                <li class="dot">Створюєте код і програмуєте свій світ Minecraft!</li>
+              </ul>
+              
           </div>
         </div>
       </div>
     </div>
     
+
+     <!-- Теорія -->
+     <div class="lesson-list-js wow fadeInUp" id="course2">
+      <a class="collapse-heading" data-toggle="collapse" data-target="#collapseTheory2" aria-expanded="true">
+        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#3</span> Програмуємо на Python у Minecraft</h4>
+      </a>
+      <div id="collapseTheory2" class="collapse show">
+        <div class="collapse-pres mt-4">
+          <div class='theory'>
+            <a class="btn btn-lg ok-btn m-3" href="https://www.java.com/en/download/" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+              Завантажити Java </a>
+
+              <a class="btn btn-lg ok-btn m-3" href="https://drive.google.com/file/d/16zJlA917EeeQH-GUI2mEHTAXXTNYztSe/view?usp=sharing" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+                Minecraft Python API & Spigot </a>
+                <ul>
+                  <li class="dot">
+                    <h4>Для того щоб підключитися до світу Minecraft у Python потрібно:</h4>
+                    <p>
+                  <code><pre># Підключаємося до Minecraft
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()</pre>
+                        </code>
+                    </p>
+                  </li>
+
+                  <li class="dot">
+                    <h4>Для надсилання повідомлень у чат гри:</h4>
+                    <p>
+                  <code><pre>mc.postToChat("Hello world!")</pre>
+                        </code>
+                    </p>
+                  </li>
+                  <li class="dot">
+                    <h4>Для надсилання повідомлень у чат гри:</h4>
+                    <p>
+                  <code><pre>mc.postToChat("Hello world!")</pre>
+                        </code>
+                    </p>
+                  </li>
+                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Завдання -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="true">
