@@ -44,8 +44,7 @@
               <a class="nav-item nav-link active" href="../#course" onclick="slowScroll('#course')"
                 title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link active" href="../minecraft/" title="Основи програмування на Python в Minecraft" target="_blank">Python Minecraft</a>
-                <a class="nav-item nav-link active" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
-              
+                <a class="nav-item nav-link active" href="https://replit.com/new/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
              
 
             </div>
@@ -58,8 +57,8 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 1.</span class="text-warning">
-          Вступ в Python. Змінні. Ввід/вивід даних. </h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning"></span class="text-warning">
+          Програмування на Python в Minecraft </h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -83,81 +82,117 @@
   <main class="container pt-4">
     <!-- Теорія -->
     <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#1</span> Вступ в Python </h4>
+      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTheory" aria-expanded="true">
+        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#1</span> Налаштовуємо Python у Minecraft</h4>
       </a>
-      <div id="collapsePres" class="collapse show">
+      <div id="collapseTheory" class="collapse">
         <div class="collapse-pres mt-4">
-          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTtJ10_gApXyVDaN6yc6BK7eznD2FUToA6EH-sgwBqKpUGaB68h5C9aOBTjNEelUiPbn724OM1WHDlD/embed?start=true&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        </div>
-        <a class="btn btn-lg ok-btn m-3" href="https://www.python.org/downloads/release/python-378/" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
-         Завантажити Python </a>
-       
-        <!-- <a class="btn btn-lg ok-btn m-3" href="https://kahoot.it/challenge/019591?challenge-id=922fc38c-2872-4617-bd06-7ff74cda0a5b_1672112260967" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
-          Перевірити себе - Kahoot </a> -->
+          <div class='theory'>
+            <a class="btn btn-lg ok-btn m-3" href="https://www.java.com/en/download/" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+              Завантажити Java </a>
 
+              <a class="btn btn-lg ok-btn m-3" href="https://drive.google.com/file/d/16zJlA917EeeQH-GUI2mEHTAXXTNYztSe/view?usp=sharing" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+                Minecraft Python API & Spigot </a>
+                <h4>Для того щоб запускати програми на Python для Minecraft потрібно:</h4>
+              <ol class="ml-4">
+                <li class="dot">Мати встановлені наступні програми:
+                    <ul>
+                      <li  class="dot"> Minecraft</li>
+                      <li  class="dot"> Python 3.7</li>
+                      <li  class="dot"> Java 8</li>
+                      <li  class="dot"> Minecraft Python API & Spigot</li>
+                    </ul>
+                </li>
+                <li class="dot">Дозволити запуск сервера без інтернету. Для цього у папці <code>"C:\Users\User\Documents\Minecraft Python\Minecraft Tools\server"</code> змінюємо файл <code><b>"server.properties"</b></code>. Потрібно задати значення параметра <code><b>online-mode=false</b></code></li>
+                <li class="dot">Запустити Minecraft-сервер за допомогою файлу <code>Start_Server</code> із папки Minecraft Tools.</li>
+                <li class="dot">Запустіть Minecraft і виберіть пункт меню Мережева гра (Multiplayer). Натисніть на кнопку Додати (Add Server). У рядку введення "Назва сервера" (Server Name) назвіть ваш сервер "Minecraft Python World", а в рядку "Адреса сервера" (Server
+                  Address) введіть <code><b>localhost</b></code>. Потім клікніть Готово (Done). Зробіть подвійний клік по Minecraft Python World, і відкриється світ, створений сервером Spigot.</li>
+                <li class="dot">Створюєте код і програмуєте свій світ Minecraft!</li>
+              </ul>
+              
+          </div>
+        </div>
       </div>
     </div>
     
+
+     <!-- Теорія -->
+     <div class="lesson-list-js wow fadeInUp" id="course2">
+      <a class="collapse-heading" data-toggle="collapse" data-target="#collapseTheory2" aria-expanded="true">
+        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#2</span> Основні команди Python у Minecraft</h4>
+      </a>
+      <div id="collapseTheory2" class="collapse show">
+        <div class="collapse-pres mt-4">
+          <div class='theory'>
+                <ul>
+                  <li class="dot">
+                    <h4>Для того щоб підключитися до світу Minecraft у Python потрібно:</h4>
+                    <p>
+                  <code><pre># Підключаємося до Minecraft
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()</pre>
+                        </code>
+                    </p>
+                  </li>
+
+                  <li class="dot">
+                    <h4>Для надсилання повідомлень у чат гри:</h4>
+                    <p>
+                  <code><pre>mc.postToChat("Hello world!")</pre>
+                        </code>
+                    </p>
+                    <div class="alert alert-warning" role="alert">
+                      <h5 class="alert-heading">Бонус</h5>
+                      <p>Ви можете додати паузу у програму, використовуючи модуль <b>time.</b> <code><pre>import time # Додайте цей рядок на початок програми
+time.sleep(3) # 3-х секундна пауза</pre></code></p> 
+                    </div>
+                  </li>
+                  
+                  <li class="dot">
+                    <h4>Робота з координатами</h4>
+                    <p>
+                  <code>pos = mc.player.getTilePos()</code> - отримати координати гравця
+                    </p>
+                    <p>
+                      <code>mc.player.setTilePos(x, y, z)</code> - задати координати гравцю (<b>телепортувати</b> гравця)
+                        </p>
+                    <p>
+                          <code>mc.player.setPos(x, y, z)</code> - задати точні координати гравцю
+                      </p>
+                      <div class="alert alert-info" role="alert">
+                        <h5 class="alert-heading">Бонус</h5>
+                        <p>Ви можете задати випадкові координати використовуючи модуль <b>random.</b> Наприклад, задати випадкову координату x на проміжку від 0 до 100:<code><pre>import random # Додайте цей рядок на початок програми
+x=random.randint(0,100)</pre></code></p> 
+                      </div>
+                  </li>
+                  <li class="dot">
+                    <h4>Побудова блоків</h4>
+                    <p>
+                      <code>mc.setBlock(x, y, z, blockType)</code> - побудувати блок типу blockType (ідектифікатор блоку) в координатах x, y, z.
+                        </p>
+                    <p>
+                      <code>mc.setBlocks(x, y, z, x + width, y + height, z + length, blockType)
+                      </code> - побудувати кубіоїд із блоків типу blockType (ідектифікатор блоку) в координатах x, y, z розмірами width, height, length.
+                    </p>
+                    <p>
+                      <code>mc.setBlocks(x, y, z, x + width-1, y + height-1, z + length-1, blockType)
+                      </code> - додатково побудувати порожній кубіоїд трохи меншого розміру всередині звичайного. Для цього змінній <code>blockType</code> задаємо значення 0 - повітря
+                    </p>
+                  </li>
+                  
+                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Завдання -->
     <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="true">
-        <h4 class="h4 font-weight-normal " ><span class="font-weight-bold ">#2</span> Виконати
-          завдання </h4>
+      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="true">
+        <h4 class="h4 font-weight-normal " ><span class="font-weight-bold ">#3</span> Ідентифікатори блоків та предметів </h4>
       </a>
 
-      <div id='collapseTasks' class="collapse show">
-      
-        <div class='task'> <h3> ЗАВДАННЯ 1.2. </h3>                           
-          <p>Створити програму, що додає значення двох змінних a і b.</p>
-         <p>Програма має працювати як на зображенні:</p>
-          <p><img class="" src="/src/python-course/t1_1.PNG" alt="" /></p></div>
-          <br />                                                                                              
-                      <div class='task'>  <h3> ЗАВДАННЯ 1.2. </h3>
-                      <p> Створити програму, що виводить на екран нікнейм, очки та рівень гравця. Дані повинні зберігатись у змінних - <code><b>nickname, points, level</b></code>.</p>
-         <p>Програма має працювати як на зображенні:</p>
-          <p><img src="/src/python-course/py-t1-2.png" style="max-width: 450px;" alt="" /></p></div>
-              <div class='task'>  <h3>        ЗАВДАННЯ 1.3.                            </h3>
-                      <p>Напиши програму, яка вітається за ім'ям</p>
-                       <p>
-                           Програма запитує ім'я людини, а потім друкує:
-                         <b> "Радий знайомству, ім'я"</b>
-                       </p>
-         <p>Приклад роботи програми:</p>
-          <p><img src="/src/python-course/py-t1-3.png" style="max-width: 450px;" alt="" /></p></div>
-          <div class='task'><h3>                                ЗАВДАННЯ 1.4.                            </h3>
-                      <p>Нехай користувач введе своє ім'я, прізвище та вік у відповідні змінні (створити 3 змінні).</p>
-         <p>Програма має надрукувати відповідь як на зображенні:</p>
-          <p><img src="/src/python-course/t1_4.PNG" alt="" /></p></div>
-          <div class='task'><h3>                                ЗАВДАННЯ 1.5.                            </h3>
-                      <p>Створи дві змінні зі значеннями 785 і 157.</p>
-                        <p>
-                          Надрукуй по порядку результати наступних дій з ними:
-                          сума,
-                          різниця (перше мінус друге),
-                          множення,
-                          ділення (перше розділити на друге)
-                        </p></div>
-         
-        <h4></h4>
-        <h5><b>Надіслати виконане завдання</b></h5>
- <script type="text/javascript">
-   var submitted = false;
- </script>
- <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
- onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
-<form
- action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
- method="post" target="hidden_iframe" onsubmit="submitted=true;">
- <input required class="d-none form-control my-3" name="entry.42502702" type="text" 
- value="Демид">
- <input required class="d-none form-control my-3" name="entry.559818029" type="text" 
- value="Тема 1">
- <input required class="form-control my-3" name="entry.215350378" placeholder="Номер завдання" type="number" min="1" max="10">
- <textarea required name="entry.339734998" class="w-100 form-control" rows=6
-   placeholder="Введість ваш код або посилання на онлайн-редактор"></textarea>
- <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
-</form>
+      <div id='collapseTasks' class="collapse">
+        <img src="/src/python-course/id_minecraft.jpg" class="mt-4" alt="" style="max-width: 100%;">
       </div>
     </div>
 
@@ -191,6 +226,7 @@
           <a class="ml-lg-5 ml-0 nav-item nav-link " href="../#course" 
             title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link ml-0" href="../minecraft/" title="Основи програмування на Python в Minecraft" target="_blank">Python Minecraft</a>
+
           <a class="nav-item nav-link ml-0" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду"
             target="_blank">Редактор</a>
 
