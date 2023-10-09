@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Курс Python онлайн - WebTeach">
+    <meta property="og:site_name" content="WebTeach">
+    <meta property="og:url" content="https://web-teach.pp.ua/py-denys/">
+    <meta property="og:description" content="Вивчаємо мову програмування Python онлайн!">
+    <meta property="og:image" content="https://web-teach.pp.ua/src/python-course/python-page-preview.jpg">
+    <!-- /Required meta tags -->
+  <title> Курс Python онлайн - WebTeach </title>
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/src/python-course/css/style.css">
+  <link rel="SHORTCUT ICON" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/src/python-course/css/main.css">
+  <link rel="stylesheet" href="/src/python-course/css/animate.css">
+</head>
+
+<body class="body-js body-js-lesson">
+  <!-- Header-wrapper -->
+  <div class="header-wrapper ">
+    <header class="page-header text-white page-header-js d-flex flex-column  container">
+      <!-- Navbar -->
+      <nav class="main-navbar navbar navbar-expand-lg navbar-dark wow fadeInDown">
+        <div class="container-xl">
+          <a class="navbar-brand logo" href="../"><span>Web</span>Teach</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <a class="nav-item nav-link active" href="../#course" onclick="slowScroll('#course')"
+                title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="../minecraft/" title="Основи програмування на Python в Minecraft" target="_blank">Python Minecraft</a>
+                <a class="nav-item nav-link active" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
+              
+             
+
+            </div>
+            
+          </div>
+        </div>
+      </nav>
+      <!-- /Navbar -->
+
+      <!-- Page title -->
+      <div class="header-title-js my-3 wow backInDown container">
+
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 2.</span class="text-warning">
+          Умовний оператор if.</h1>
+      </div>
+
+      <!-- Go-lesson Button -->
+      <a href="https://meet.google.com/qux-owyp-mib" target="_blank" id="lessonBtn"
+        class="go-lesson-btn  wow fadeInUp container" data-wow-delay=".5s" style="width: 300px;">
+        <div class="go-lesson-1 pt-2 px-4">
+         
+          <div class="row p-1 justify-content-center">
+            <h5 class="font-weight-bolder text-dark">Вивчаємо Python!</h5>
+          </div>
+        </div>
+        <div class="go-lesson-2  btn btn-block text-uppercase ">
+          відкрити онлайн-урок
+        </div>
+      </a>
+    </header>
+  </div>
+  <!--/Header-wrapper -->
+  <div class="main-wrapper container container-lg-fluid">
+<!-- Main block -->
+<main class="container pt-4">
+  <div class="lesson-list-js wow fadeInUp" id="course">
+    <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
+      <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#1</span> Презентація </h4>
+    </a>
+    <div id="collapsePres" class="collapse show">
+      <div class="collapse-pres mt-4">
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRfBUkCJvL7SSFk_VtlT6QDEYZFrXRmhkDLICjQmjdxIcwsf6U6lYr2P70iECQ8elGN1wA2jSNSg2WZ/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+      </div>
+
+      <a class="btn btn-lg ok-btn m-3" href="https://kahoot.it/challenge/09757795?challenge-id=922fc38c-2872-4617-bd06-7ff74cda0a5b_1672151211011" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+        Перевірити себе - Kahoot </a>
+    </div>
+  </div>
+  <!-- Теорія -->
+  <div class="lesson-list-js wow fadeInUp" id="course">
+    <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTheory" aria-expanded="true">
+      <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#2</span> Теорія</h4>
+    </a>
+    <div id="collapseTheory" class="collapse ">
+      <div class="collapse-pres mt-4">
+        <h3>Для чого потрібні умовні оператори?</h3>
+        <div class='answer'>
+          <ul>
+            <li class="dot"><i>Початок казки</i></li>
+            <li class="dot">Наліво підеш - коня втратиш</li>
+            <li class="dot">Направо підеш - життя втратиш</li>
+            <li class="dot"><i>Кінець казки</i></li>
+          </ul>
+        </div>
+        
+        <h3>Оператор if</h3>
+        <div class='answer'>
+          <ul>
+            <li class="dot"><i>Початок казки</i></li>
+            <li class="dot"><b>if</b> Наліво підеш: <span style='margin-left:20px;'>  </span>коня втратиш</li>
+            <li class="dot"><i>Кінець казки</i></li>
+          </ul>
+        </div>
+        
+        <h3>Блоки і відступи в Python</h3>
+        <div class='answer'>
+            <ul>
+            <li class="dot">Блок коду - логічно згрупований шматок коду</li>	
+            <li class="dot">В python нема - <b>{}</b>, які розділяють блоки коду</li>
+            <li class="dot">Тому для кожного блоку коді потрібно робити <b>ВІДСТУП</b></li>
+            <li class="dot"><b>Відступ</b> - 4 пробіла(кнопка TAB зліва на клавіатурі)</li>
+          </ul>
+        </div>
+        
+        <h3>if - elif - else</h3>
+        <div class='answer'>
+          <ul>
+            <li class="dot"><b>if</b> перша умова:</li>
+            <ul type='circle'><li>Код 1</li></ul>
+              
+            <li class="dot"><b>elif</b> друга умова:</li>
+            <ul type='circle'><li>Код 2</li></ul>
+              
+            <li class="dot"><b>else</b>:</li>
+            <ul type='circle'><li>Код 3</li></ul>
+              
+            <div class="alert alert-info" role="alert">
+              Якщо не виконується перша умова, то перевіряється друга умова, якщо обидві <b>БРЕХНЯ</b>, то виконується блок <b>else</b>.
+            </div>
+        </div>
+        
+        <h3>Внутрішній <b>if</b></h3>
+        <div class='answer'>
+        <ul>
+        <li class="dot">Всередині <b>if-elif-else</b> може бути інший <b>if</b>.</li>
+        <li class="dot">Таких вкладень може бути скільки завгодно</li>
+        </ul></div>
+        <h3>Функція strip()</h3>
+        <div class='answer'>
+          <p>Функція <b>strip()</b> створена для видалення пробілів зліва і справа.</p>
+          <p>Також є функції <b>lstrip()</b> та <b>rstrip()</b> створені для видалення пробілів зліва і справа відповідно.</p>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Завдання -->
+  <div class="lesson-list-js wow fadeInUp" id="course">
+    <a class="collapse-heading " data-toggle="collapse" data-target="#collapseTasks" aria-expanded="false">
+      <h4 class="h4 font-weight-normal " ><span class="font-weight-bold ">#3</span> Виконати
+        завдання </h4>
+    </a>
+
+    <div id='collapseTasks' class="collapse show">
+      <!-- <a class="btn btn-lg ok-btn my-3" href="https://replit.com/@web-teach-vlas/py-2"  target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+        Редактор для виконання завдань </a> -->
+      <div class='task'> <h3> ЗАВДАННЯ 1 </h3>                           
+        <p>Створіть програму з тестом, яка перевіряє чи правильно відповідає користувач.</p>
+<p>Результат вивести на екран у вигляді:</p>
+<p><img src="/src/python-course/t3_1.PNG" alt="" /></p></div>
+<br />                                                                                              
+        <div class='task'>  <h3> ЗАВДАННЯ 2 </h3>
+        <p> Визначити агрегатний стан води по її температурі (вода, лід чи пара).</p>
+<p>Результат вивести на екран у вигляді:</p>
+<p><img src="/src/python-course/t3_2.PNG" alt="" /></p></div>
+<div class='task'>  <h3>        ЗАВДАННЯ 3                            </h3>
+        <p>За перший товар ви заплатили гривнями, за другий товар заплатили доларами. Визначити який товар коштує дорожче, якщо один долар коштує 40.5 грн.</p>
+<p>Результат вивести на екран у вигляді:</p>
+<p><img src="/src/python-course/t3_3.PNG" alt="" /></p></div>
+<div class='task'><h3>                                ЗАВДАННЯ 4                            </h3>
+        <p>Створити програму, яка визначає до якох категорії відноситься людина. Пенсіонер, доросла людина, підліток чи дитина. </p>
+<p>Результат вивести на екран у вигляді:</p>
+<p><img src="/src/python-course/t3_4.PNG" alt="" /></p></div>
+<div class='task'><h3>                                ЗАВДАННЯ 5                            </h3>
+        <p>Створити програму, що визначає тип трикутника (різносторонній, рівносторонній, прямокутний) по введених трьох сторонах.</p>
+<p>Результат вивести на екран у вигляді:</p>
+<p><img src="/src/python-course/t3_5.PNG" alt="" /></p></div>
+<div class='task'><h3>                                ЗАВДАННЯ 6                            </h3>
+
+<p><img src="/src/python-course/t3_6.PNG" style="max-width: 1000px" /></p></div>
+<div class='task my-4'><h3>                                ЗАВДАННЯ 7                            </h3>
+<p>Напиши діалог. Програма повинна працювати відповідно до блок-схеми.</p>
+<p><img src="/src/python-course/t3_7.PNG" style="max-width: 600px" /></p></div>
+<div class='task my-4'><h3>                                ЗАВДАННЯ 8                            </h3>
+<p>Напиши діалог. Програма повинна працювати відповідно до блок-схеми.</p> 
+  <p><img src="/src/python-course/t3_8.PNG" style="max-width: 800px" /></p>
+</div>
+<div class='task my-5'><h3>ЗАВДАННЯ 9</h3>
+<b>Напиши калькулятор: програма отримує два числа і операцію, здійснює операцію і друкує результат.</b> 
+<p>Програма виконує такі операції: "+" - додавання, "-" - відняти від першого числа друге, "*" - помножити, "/" - розділити перше число на друге. </p> <p>Якщо введена якась інша операція, потрібно надрукувати рядок: "Помилка: невідома операція". Якщо введена операція ділення, і друге число дорівнює нулю, потрібно надрукувати рядок: "Помилка: ділити на нуль не можна."</p> 
+</div>
+      <h5><b>Надіслати виконане завдання</b></h5>
+      <script type="text/javascript">
+        var submitted = false;
+      </script>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+      onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
+    <form
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
+      method="post" target="hidden_iframe" onsubmit="submitted=true;">
+      <input required class="d-none form-control my-3" name="entry.42502702" type="text" 
+      value="Демид">
+      <input required class="d-none form-control my-3" name="entry.559818029" type="text" 
+      value="Тема 2">
+      <input required class="form-control my-3" name="entry.215350378" placeholder="Номер завдання" type="number" step="0.01">
+      <textarea required name="entry.339734998" class="w-100 form-control" rows=6
+        placeholder="Введість ваш код або посилання на онлайн-редактор"></textarea>
+      <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
+    </form>
+    </div>
+  </div>
+
+</main>
+   <!-- Nav buttons -->
+   <div class="page-nav-btn-wrapper">
+    
+   <a href="../1/" class="page-nav-left" title="Тема 1. Вступ в Python. Змінні. Ввід/вивід даних.">
+   <span>
+      <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+      </svg>
+   </span>
+   <span class="text-btn-nav">Попередня тема</span>
+  </a>
+  </div>
+  <!-- /Nav buttons -->
+</div>
+  <button class="btn" hidden id='arrowTopBtn'  onclick="window.scrollTo(0, 0);">
+  </button>
+  <!-- Footer -->
+  <footer class="footer  mt-auto py-3 wow slideInUp">   
+    <div class="container">
+      <div class="d-flex flex-column align-items-center">
+        <div class="footer-nav d-flex flex-column flex-md-row align-items-center justify-content-md-start">
+          <a class="mr-lg-5  navbar-brand mr-0 logo order-md-0 order-12" href="../index.html"><span>Web</span><span
+              class="text-dark">Teach</span></a>
+          <a class="ml-lg-5 ml-0 nav-item nav-link " href="../#course" 
+            title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link ml-0" href="../minecraft/" title="Основи програмування на Python в Minecraft" target="_blank">Python Minecraft</a>
+          <a class="nav-item nav-link ml-0" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду"
+            target="_blank">Редактор</a>
+
+          
+          
+        </div>
+
+        <div class="d-inline-flex flex-column align-items-center">
+          <span class="muted mr-1">2020-2023 ©  WebTeach. </span>
+          <span class="muted text-center">Всі права застережено. Будь-яке копіювання без згоди автора заборонено.</span>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="sendedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title h3" id="exampleModalCenterTitle">Завдання надіслано.</h5>
+          <button type="button" width=30px height=30px class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="ok-btn btn btn-warning btn-lg" data-dismiss="modal">Чудово!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <script src="/src/js/wow.min.js"></script>
+  <script src="/src/js/js_course.js"></script>
+</body>
+
+</html>
