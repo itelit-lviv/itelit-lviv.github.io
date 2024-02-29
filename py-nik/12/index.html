@@ -59,8 +59,8 @@
       <!-- Page title -->
       <div class="header-title-js my-3 wow backInDown container">
 
-        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 12.</span class="text-warning">
-          Віконний додаток на Kivy. Робота з файлами.</h1>
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning">Тема 11.</span class="text-warning">
+          Створюємо гру "Комічний шутер"</h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -85,14 +85,14 @@
     <!-- Теорія -->
     <div class="lesson-list-js wow fadeInUp" id="course">
       <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
-        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#1</span> Основи роботи з Kivy
+        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#1</span> Розглянути теорію
            </h4>
       </a>
       <div id="collapsePres" class="collapse show">
         <div class="collapse-pres mt-4">
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item "
-              src="https://docs.google.com/presentation/d/e/2PACX-1vTITL_ge7S58oNhbalx1GdHLwm08Bsg9u0pZS9i7GjuEqZb5GAw9HB7fNTBUB_ZtL37Bz4zM2KvJ0I2/embed?start=false&loop=false&delayms=60000"
+              src="https://docs.google.com/presentation/d/e/2PACX-1vSCYsp5dFwzEJzmu6fw2CBwPmRmpBDqFaDQn97dtTDq6T-hlMUFW2360oXHc_XSu2ViLG2DQHIeG879/embed?start=false&loop=false&delayms=60000"
               frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
               webkitallowfullscreen="true">
             </iframe> 
@@ -104,29 +104,179 @@
       </div>
     </div>
     
-   <!-- Робота з файлами -->
+   <!-- Гра -->
    <div class="lesson-list-js wow fadeInUp" id="course">
     <a class="collapse-heading show" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="true">
-      <h4 class="h4 font-weight-normal " ><span class="font-weight-bold ">#2</span> Основи роботи з файлами. Json-файли</h4>
+      <h4 class="h4 font-weight-normal " ><span class="font-weight-bold ">#2</span> Створюємо гру-шутер</h4>
     </a>
 
     <div id='collapseTasks' class="collapse show">
-      <div class="collapse-pres mt-4">
+      <img class="my-4" src="/src/python-course/pygame/shooter/shooter_example.png" alt="" style="max-width:700px;" />  
+
+        <h4 class="my-3">Ресурси для створення гри:</h4>
+        <a title="Зображення для фону" class="btn btn-primary" href="/src/python-course/pygame/shooter/infinite_starts.jpg" role="button" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);">infinite_starts.jpg</a>
+        <a title="Зображення для гравця" class="btn btn-primary" href="/src/python-course/pygame/shooter/spaceship.png" role="button" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);">spaceship.png</a>
+        <a title="Зображення для ворога" class="btn btn-primary" href="/src/python-course/pygame/shooter/alien.png" role="button" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);">alien.png</a>
+        <a title="Зображення для пострілу" class="btn btn-primary" href="/src/python-course/pygame/shooter/fire.png" role="button" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);">fire.png</a>
+        <a title="фонова музика" class="btn btn-primary" href="/src/python-course/pygame/shooter/musictheme.ogg" role="button" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);">musictheme.ogg</a>
+        <a title="звук пострілу" class="btn btn-primary" href="/src/python-course/pygame/shooter/laser.wav" role="button" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);">laser.wav</a>
+        
+       
+        <h3 class="my-3" >Створи космічний шутер, слідуючи інструкціям: </h3> 
+          <div class="accordion my-3" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h5> <b>1)</b> Створення заготовки гри та гравця.</h5>
+                  </button>
+                </h2>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p>Створи заготовку гри з фоном, музикою та космічним кораблем. Використовуйте готовий клас GameSprite, запрограмований для минулої гри.</p>
+                  <li>1. Підключи ігрову бібліотеку pygame. Створи вікно гри розміром 700x500, дай йому назву.</li>
+                  <li>2. Створи ігровий цикл із виходом при натисканні на «Закрити вікно». Задай FPS 60 кадрів/сек. Встановити фон гри <i>infinite_starts.jpg</i>.</li>
+                  <li>3. Підключи фонову музику (файл <i>musictheme.ogg</i>).</li>
+                    <li>4. Створи клас Player (спадкоємець від GameSprite). Запрограмуй управління екземпляром Player за допомогою клавіш зі стрілками «Вліво» та «Вправо».  Доповнити ігровий цикл відображенням корабля.</li>
+                  </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h5><b>2)</b> Створення ворогів та лічильник очок</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+             <p>Доповніть заготовку гри ворогами та відображенням статистики.</p>
+
+<li>1) Створіть клас Enemy. Запрограмуйте автоматичне переміщення тарілок назустріч космічному кораблю гравця.</li>
+
+<li>2) Створіть групу спрайтів типу Enemy. На початку гри створіть 5 спрайтів-ворогів. Тарілки повинні з'являтися у випадковій верхній частині екрану та «зникати», доходячи до нижньої частини. Насправді тарілка не зникає, а знову з'являється нагорі екрана.</li>
+<li>3) Підключіть можливість використання шрифтів. Запрограмуйте два лічильники статистики: для збитих та пропущених літаючих тарілок. Зробіть лічильник пропущених тарілок працюючим.</li>
+
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left  collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <h5><b>3)</b>  Створення спрайтів-куль. Вчимо гравця стріляти.</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  
+
+                  
+                  
+                  
+                  <p>Створіть спрайти-кулі та доповніть гравця вмінням стріляти.</p>
+
+                  <li>1) Створіть клас Bullet. Запрограмуйте автоматичне переміщення куль назустріч тарілкам, що літають, знизу вгору (куля повинна з'являтися в поточному положенні гравця).</li>
+                  
+                  <li>                  2) Створіть групу спрайтів типу Bullet. Нова куля повинна створюватися та додаватися до групи при кожному натисканні на «пробіл». Якщо куля досягла верху сцени (отже не торкнулася жодного ворога), то видаліть її з групи.
+                  </li>
+                  3) Доповніть постріл звуковим ефектом. Використовуйте файл fire.ogg або власний.
+                  <li></li>
+                  
+                </div>
+              </div>
+             
+            <div class="card">
+              <div class="card-header" id="heading4">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left  collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    <h5><b>4)</b>  Оформлення перемоги та програшу.</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p>Запрограмуйте умови перемоги та програшу! Аналіз умов має відбуватися кожному кроці ігрового циклу.</p>
+
+<b>Програш</b>: пропущено 3+ монстрів, або гравець зіткнувся з ворогом.
+<b>Виграш</b>: повалено 10+ монстрів.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="heading5">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left  collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                    <h5><b>Бонус.</b> Власне оформлення для гри.</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordionExample">
+                <div class="card-body">
+                  <p>Ви також можете додати свої зображення спрайтів, фону та музику! 
+                    <p>Ресурси для пошуку:</p>
+                   <ul>
+                      <li class="dot"><a href="https://pixabay.com/" target="_blank">pixabay.com</a>— безкоштовні картинки для скачування.</li>
+                      <li class="dot"><a href="https://incompetech.com/music/royalty-free/music.html" target="_blank">incompetech.com</a> — безкоштовна mp3 музика</li>
+                      <li class="dot"><a href="https://opengameart.org/" target="_blank">opengameart.org</a> - сайт з наборами зображень та звуків для 2д - ігор</li>
+                   </ul>
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      
+     </div>
+     <p></p>
+      <h4 class="my-4 font-weight-bold">Надіслати виконане завдання</b></h4>
+     
+      <script type="text/javascript">
+        var submitted = false;
+      </script>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+        onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
+      <form
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
+        method="post" target="hidden_iframe" onsubmit="submitted=true;">
+        <input required class="form-control my-3" name="entry.42502702" type="text" placeholder="Введіть ваше ім'я">
+        <textarea required name="entry.339734998" class="w-100 form-control" rows=6
+          placeholder="Введість ваш код або посилання на онлайн-редактор"></textarea>
+        <input type="submit" class="btn btn-lg ok-btn  my-3" value="Надіслати"> 
+         <a class="btn btn-lg ok-btn m-3" href="https://replit.com/@web-teach/space-shooter" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+          Редактор для коду </a>
+      </form>
+    </div>
+  </div>
+  <!-- Exe-файл -->
+  <div class="lesson-list-js wow fadeInUp" id="course">
+    <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks2" aria-expanded="false">
+      <h4 class="h4 font-weight-normal " ><span class="font-weight-bold ">#3</span> Створюємо
+        .exe-файл</h4>
+    </a>
+
+    <div id='collapseTasks2' class="collapse">
+      <div class='task'> <h3> ЗБІРКА ПРОЄКТУ В ДОДАТОК</h3>                           
         <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item "
-            src="https://docs.google.com/presentation/d/e/2PACX-1vQIih1VSOVg20Ss5GkBhb-oyA6e8-k8uMCcyPi-WpRSbfUcWVy0Pn4aXIALWhYioiVjRvHITHG8zgka/embed?start=false&loop=false&delayms=60000"
+            src="https://docs.google.com/presentation/d/e/2PACX-1vQDe4d_tkJSweZR5vaqhB6MIGYw0b4r9fC9si4sBp0qElxk3lbIDdNN06ORGmGMFKxpcQxwpTuP-L0w/embed?start=false&loop=false&delayms=60000"
             frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
             webkitallowfullscreen="true">
           </iframe> 
-        </div>
+        </div>  
       </div>
     </div>
   </div>
+  <!-- /Exe-файл -->
   </main>
 </div>
  <!-- Nav buttons -->
  <div class="page-nav-btn-wrapper">
-  <a href="../11/" class="page-nav-left" title='Тема 11. Створюємо гру "Космічний шутер".'>
+  <a href="../10/" class="page-nav-left" title='Тема 10. Основи створення ігор за допомогою pygame.'>
    <span>
       <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -134,7 +284,7 @@
    </span>
    <span class="text-btn-nav">Попередня тема</span>
   </a>
-  <!-- <a href="../13/" class="page-nav-left page-nav-right" title="Тема 4. Цикл for. Робота з рядковими змінними. ">
+  <a href="../12/" class="page-nav-left page-nav-right" title="Тема 12. Віконний додаток на Kivy. Робота з файлами.">
     
     <span class="text-btn-nav">Наступна тема</span>
     <span>
@@ -142,7 +292,7 @@
         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
       </svg>
    </span>
-   </a> -->
+   </a>
 </div>
 
 <!-- /Nav buttons -->
