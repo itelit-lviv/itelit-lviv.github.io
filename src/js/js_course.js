@@ -35,15 +35,15 @@ if (lessonBtn) {
   }, false);
   
 }
-// if (arrowTopBtn){
-//   arrowTopBtn.onclick = function() {
-//     window.scrollTo(pageXOffset, 0);
-//   };
+if (arrowTopBtn){
+  arrowTopBtn.onclick = function() {
+    window.scrollTo(pageXOffset, 0);
+  };
  
-//   window.addEventListener('scroll', function() {
-//     arrowTopBtn.hidden = (pageYOffset < document.documentElement.clientHeight);
-//   });
-// }
+  window.addEventListener('scroll', function() {
+    arrowTopBtn.hidden = (pageYOffset < document.documentElement.clientHeight);
+  });
+}
 
 
 

@@ -172,3 +172,12 @@ main{
 	bottom: 30px;
 	right: 30px;
 }
+
+
+.lesson-list-js a{
+	text-decoration: none;
+}
+
+.lesson-list-js a:hover{
+	text-decoration: underline;
+}

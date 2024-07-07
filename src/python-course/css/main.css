@@ -387,7 +387,7 @@ li.dot {
 
 .main-wrapper {
   position: relative;
-
+  min-height: 60vh;
   padding: 0 20px;
 }
 .page-nav-btn-wrapper {
