@@ -105,13 +105,13 @@
       </div>
       <!-- Завдання -->
       <div class="lesson-list-js wow fadeInUp" id="course">
-        <a class="collapse-heading" data-toggle="collapse" data-target="#collapseTasks2"
+        <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks2"
           aria-expanded="false">
           <h4 class="h4 font-weight-normal "><span class="font-weight-bold ">#2</span> Виконати
             завдання </h4>
         </a>
 
-        <div id='collapseTasks2' class="collapse show">
+        <div id='collapseTasks2' class="collapse">
           <div class='task my-3'>
             <h3> ЗАВДАННЯ ПРОЄКТУ </h3>
             Нас попросили допомогти з розробкою сторінки банку. Візуальна частина вже готова. Наше завдання — організувати видачу карток і зберігання інформації.
@@ -305,6 +305,104 @@
         </div>
       </div>
 
+        <!-- Завдання -->
+        <div class="lesson-list-js wow fadeInUp" id="course">
+          <a class="collapse-heading" data-toggle="collapse" data-target="#collapseTasks3"
+            aria-expanded="false">
+            <h4 class="h4 font-weight-normal "><span class="font-weight-bold ">#3</span> Домашнє
+              завдання </h4>
+          </a>
+  
+          <div id='collapseTasks3' class="collapse show">
+
+            <div class='task my-3'>
+              <h3> ЗАВДАННЯ "Годинник" </h3>
+              Ви створюєте простий клас для представлення годинника. Ваше завдання — реалізувати основні функціональні можливості для відстеження часу.
+              Виконайте наступні кроки:
+              <div class="accordion" id="accordionExample">
+                  <div class="card">
+                      <div class="card-header" id="headingOne">
+                          <h2 class="mb-0">
+                              <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  <h5><b>1)</b> Створи клас Clock</h5>
+                              </button>
+                          </h2>
+                      </div>
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                          <div class="card-body">
+                            <p>Функція-конструктор приймає години, хвилини та секунди.</p>
+<code><pre>class Clock {
+  constructor(hours, minutes, seconds) {
+      this.hours = hours;
+      this.minutes = minutes;
+      this.seconds = seconds;
+}</pre></code></div>
+                      </div>
+                  </div>
+                  <div class="card">
+                      <div class="card-header" id="headingTwo">
+                          <h2 class="mb-0">
+                              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  <h5><b>2)</b> Додай метод tick</h5>
+                              </button>
+                          </h2>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                          <div class="card-body">
+                              Метод tick() повинен додавати одну секунду до поточного часу. Якщо секунди досягають 60, вони обнуляються, а хвилини збільшуються на 1. Аналогічно для хвилин та годин.
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card">
+                      <div class="card-header" id="headingThree">
+                          <h2 class="mb-0">
+                              <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                  <h5><b>3)</b> Додай метод displayTime</h5>
+                              </button>
+                          </h2>
+                      </div>
+                      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                          <div class="card-body">
+                              Метод displayTime() повинен повертати у консоль поточний час у форматі hh:mm:ss. 
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <h5><b>4)</b> Перевір роботу програми</h5>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p>Створи об'єкт класу <code>Clock</code> та перевір роботу програми, викликаючи метод <code>displayTime()</code> кожну секунду. Використай <code>setInterval</code> для автоматичного оновлення часу.</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          
+            <!-- /Завдання -->
+            <h5><b>Надіслати виконане завдання</b></h5>
+            <script type="text/javascript">
+              var submitted = false;
+            </script>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+              onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
+            <form
+              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
+              method="post" target="hidden_iframe" onsubmit="submitted=true;">
+              <input required class="d-none form-control my-3" name="entry.42502702" type="text" value="Саша">
+              <input required class="d-none form-control my-3" name="entry.559818029" type="text" value="ООП. Класи">
+              <input required class="form-control my-3 d-none" name="entry.215350378" placeholder="Номер завдання" value="3">
+              <textarea required name="entry.339734998" class="w-100 form-control" rows=6
+                placeholder="Введіть ваш код або посилання на онлайн-редактор"></textarea>
+              <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
+            </form>
+          </div>
+        </div>
     </main>
     <!-- Nav buttons -->
     <div class="page-nav-btn-wrapper">
