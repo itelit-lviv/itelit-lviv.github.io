@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="uk">
+
+<head>
+ <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Курс Python онлайн - WebTeach">
+    <meta property="og:site_name" content="WebTeach">
+    <meta property="og:url" content="https://web-teach.pp.ua/py-denys/">
+    <meta property="og:description" content="Вивчаємо мову програмування Python онлайн!">
+    <meta property="og:image" content="https://web-teach.pp.ua/src/python-course/python-page-preview.jpg">
+    <!-- /Required meta tags -->
+  <title> Курс Python онлайн - WebTeach </title>
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Ruda:wght@400;500;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/src/python-course/css/style.css">
+  <link rel="SHORTCUT ICON" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/src/python-course/css/main.css">
+  <link rel="stylesheet" href="/src/python-course/css/animate.css">
+</head>
+
+<body class="body-js body-js-lesson">
+  <!-- Header-wrapper -->
+  <div class="header-wrapper ">
+    <header class="page-header text-white page-header-js d-flex flex-column  container">
+      <!-- Navbar -->
+      <nav class="main-navbar navbar navbar-expand-lg navbar-dark wow fadeInDown">
+        <div class="container-xl">
+          <a class="navbar-brand logo" href="../"><span>Web</span>Teach</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <a class="nav-item nav-link active" href="../#course" onclick="slowScroll('#course')"
+                title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="../minecraft/" title="Основи програмування на Python в Minecraft" target="_blank">Python Minecraft</a>
+                <a class="nav-item nav-link active" href="https://replit.com/new/python3" title="Відкрити онлайн-редактор коду" target="_blank">Редактор</a>
+             
+
+            </div>
+            
+          </div>
+        </div>
+      </nav>
+      <!-- /Navbar -->
+
+      <!-- Page title -->
+      <div class="header-title-js my-3 wow backInDown container">
+
+        <h1 class="lesson-title-h1  wow fadeInUp "> <span class="text-warning"></span class="text-warning">
+          Програмування на Python в Minecraft </h1>
+      </div>
+
+      <!-- Go-lesson Button -->
+      <a href="https://meet.google.com/ynz-bmbk-fke" target="_blank" id="lessonBtn"
+        class="go-lesson-btn  wow fadeInUp container" data-wow-delay=".5s" style="width: 300px;">
+        <div class="go-lesson-1 pt-2 px-4">
+         
+          <div class="row p-1 justify-content-center">
+            <h5 class="font-weight-bolder text-dark">Вивчаємо Python!</h5>
+          </div>
+        </div>
+        <div class="go-lesson-2  btn btn-block text-uppercase ">
+          відкрити онлайн-урок
+        </div>
+      </a>
+    </header>
+  </div>
+  <!--/Header-wrapper -->
+  <div class="main-wrapper container container-lg-fluid">
+  <!-- Main block -->
+  <main class="container pt-4">
+    <!-- Теорія -->
+    <div class="lesson-list-js wow fadeInUp" id="course">
+      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTheory" aria-expanded="true">
+        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#1</span> Налаштовуємо Python у Minecraft</h4>
+      </a>
+      <div id="collapseTheory" class="collapse">
+        <div class="collapse-pres mt-4">
+          <div class='theory'>
+            <a class="btn btn-lg ok-btn m-3" href="https://www.java.com/en/download/" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+              Завантажити Java </a>
+
+              <a class="btn btn-lg ok-btn m-3" href="https://drive.google.com/file/d/16zJlA917EeeQH-GUI2mEHTAXXTNYztSe/view?usp=sharing" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+                Minecraft Python API & Spigot </a>
+                <h4>Для того щоб запускати програми на Python для Minecraft потрібно:</h4>
+              <ol class="ml-4">
+                <li class="dot">Мати встановлені наступні програми:
+                    <ul>
+                      <li  class="dot"> Minecraft</li>
+                      <li  class="dot"> Python 3.7</li>
+                      <li  class="dot"> Java 8</li>
+                      <li  class="dot"> Minecraft Python API & Spigot</li>
+                    </ul>
+                </li>
+                <li class="dot">Дозволити запуск сервера без інтернету. Для цього у папці <code>"C:\Users\User\Documents\Minecraft Python\Minecraft Tools\server"</code> змінюємо файл <code><b>"server.properties"</b></code>. Потрібно задати значення параметра <code><b>online-mode=false</b></code></li>
+                <li class="dot">Запустити Minecraft-сервер за допомогою файлу <code>Start_Server</code> із папки Minecraft Tools.</li>
+                <li class="dot">Запустіть Minecraft і виберіть пункт меню Мережева гра (Multiplayer). Натисніть на кнопку Додати (Add Server). У рядку введення "Назва сервера" (Server Name) назвіть ваш сервер "Minecraft Python World", а в рядку "Адреса сервера" (Server
+                  Address) введіть <code><b>localhost</b></code>. Потім клікніть Готово (Done). Зробіть подвійний клік по Minecraft Python World, і відкриється світ, створений сервером Spigot.</li>
+                <li class="dot">Створюєте код і програмуєте свій світ Minecraft!</li>
+              </ul>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+     <!-- Теорія -->
+     <div class="lesson-list-js wow fadeInUp" id="course2">
+      <a class="collapse-heading" data-toggle="collapse" data-target="#collapseTheory2" aria-expanded="true">
+        <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#2</span> Основні команди Python у Minecraft</h4>
+      </a>
+      <div id="collapseTheory2" class="collapse show">
+        <div class="collapse-pres mt-4">
+          <div class='theory'>
+                <ul>
+                  <li class="dot">
+                    <h4>Для того щоб підключитися до світу Minecraft у Python потрібно:</h4>
+                    <p>
+                  <code><pre># Підключаємося до Minecraft
+from mcpi.minecraft import Minecraft
+mc = Minecraft.create()</pre>
+                        </code>
+                    </p>
+                  </li>
+
+                  <li class="dot">
+                    <h4>Для надсилання повідомлень у чат гри:</h4>
+                    <p>
+                  <code><pre>mc.postToChat("Hello world!")</pre>
+                        </code>
+                    </p>
+                    <div class="alert alert-warning" role="alert">
+                      <h5 class="alert-heading">Бонус</h5>
+                      <p>Ви можете додати паузу у програму, використовуючи модуль <b>time.</b> <code><pre>import time # Додайте цей рядок на початок програми
+time.sleep(3) # 3-х секундна пауза</pre></code></p> 
+                    </div>
+                  </li>
+                  
+                  <li class="dot">
+                    <h4>Робота з координатами</h4>
+                    <p>
+                  <code>pos = mc.player.getTilePos()</code> - отримати координати гравця
+                    </p>
+                    <p>
+                      <code>mc.player.setTilePos(x, y, z)</code> - задати координати гравцю (<b>телепортувати</b> гравця)
+                        </p>
+                    <p>
+                          <code>mc.player.setPos(x, y, z)</code> - задати точні координати гравцю
+                      </p>
+                      <div class="alert alert-info" role="alert">
+                        <h5 class="alert-heading">Бонус</h5>
+                        <p>Ви можете задати випадкові координати використовуючи модуль <b>random.</b> Наприклад, задати випадкову координату x на проміжку від 0 до 100:<code><pre>import random # Додайте цей рядок на початок програми
+x=random.randint(0,100)</pre></code></p> 
+                      </div>
+                  </li>
+                  <li class="dot">
+                    <h4>Побудова блоків</h4>
+                    <p>
+                      <code>mc.setBlock(x, y, z, blockType)</code> - побудувати блок типу blockType (ідектифікатор блоку) в координатах x, y, z.
+                        </p>
+                    <p>
+                      <code>mc.setBlocks(x, y, z, x + width, y + height, z + length, blockType)
+                      </code> - побудувати кубіоїд із блоків типу blockType (ідектифікатор блоку) в координатах x, y, z розмірами width, height, length.
+                    </p>
+                    <p>
+                      <code>mc.setBlocks(x, y, z, x + width-1, y + height-1, z + length-1, blockType)
+                      </code> - додатково побудувати порожній кубіоїд трохи меншого розміру всередині звичайного. Для цього змінній <code>blockType</code> задаємо значення 0 - повітря
+                    </p>
+                  </li>
+                  
+                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Завдання -->
+    <div class="lesson-list-js wow fadeInUp" id="course">
+      <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks" aria-expanded="true">
+        <h4 class="h4 font-weight-normal " ><span class="font-weight-bold ">#3</span> Ідентифікатори блоків та предметів </h4>
+      </a>
+
+      <div id='collapseTasks' class="collapse">
+        <img src="/src/python-course/id_minecraft.jpg" class="mt-4" alt="" style="max-width: 100%;">
+      </div>
+    </div>
+
+    
+
+  </main>
+   <!-- Nav buttons -->
+   <!-- <div class="page-nav-btn-wrapper">
+    
+    <a href="../2/" class="page-nav-left page-nav-right" title="Тема 2. Умовний оператор if.">
+      
+      <span class="text-btn-nav">Наступна тема</span>
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+     </span>
+     </a>
+  </div> -->
+  <!-- /Nav buttons -->
+</div>
+  <button class="btn" hidden id='arrowTopBtn'  onclick="window.scrollTo(0, 0);">
+  </button>
+  <!-- Footer -->
+  <footer class="footer  mt-auto py-3 wow slideInUp">   
+    <div class="container">
+      <div class="d-flex flex-column align-items-center">
+        <div class="footer-nav d-flex flex-column flex-md-row align-items-center justify-content-md-start">
+          <a class="mr-lg-5  navbar-brand mr-0 logo order-md-0 order-12" href="../index.html"><span>Web</span><span
+              class="text-dark">Teach</span></a>
+          <a class="ml-lg-5 ml-0 nav-item nav-link " href="../#course" 
+            title="Перейти до курсу Python">Курс<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link ml-0" href="../minecraft/" title="Основи програмування на Python в Minecraft" target="_blank">Python Minecraft</a>
+
+          <a class="nav-item nav-link ml-0" href="https://repl.it/languages/python3" title="Відкрити онлайн-редактор коду"
+            target="_blank">Редактор</a>
+
+          
+          
+        </div>
+
+        <div class="d-inline-flex flex-column align-items-center">
+          <span class="muted mr-1">2020-2024 ©  WebTeach. </span>
+          <span class="muted text-center">Всі права застережено. Будь-яке копіювання без згоди автора заборонено.</span>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="sendedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title h3" id="exampleModalCenterTitle">Завдання надіслано.</h5>
+          <button type="button" width=30px height=30px class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="ok-btn btn btn-warning btn-lg" data-dismiss="modal">Чудово!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <script src="/src/js/wow.min.js"></script>
+  <script src="/src/js/js_course.js"></script>
+</body>
+
+</html>
