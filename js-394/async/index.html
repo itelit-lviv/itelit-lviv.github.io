@@ -61,7 +61,7 @@
       <div class="header-title-js my-3 wow backInDown container">
 
         <h1 class="lesson-title-h1  wow fadeInUp "> 
-          Анімації в CSS та JavaScript.<span class="text-warning"> Anime.js</span class="text-warning"></h1>
+          Асинхронність. Асинхронні функції<span class="text-warning"> </span class="text-warning"></h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -90,13 +90,13 @@
     <main class="container pt-4">
       <!-- Теорія -->
       <div class="lesson-list-js wow fadeInUp" id="course">
-        <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapsePres2" aria-expanded="true">
+        <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres2" aria-expanded="true">
           <h4 class="h4  font-weight-normal "><span class="font-weight-bold ">#1</span>   Анімація в CSS </h4>
         </a>
-        <div id="collapsePres2" class="collapse ">
+        <div id="collapsePres2" class="collapse show">
           <div class="collapse-pres mt-4">
             <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item "
-                src="https://docs.google.com/presentation/d/1ocG8hTIx1ujmijd4rfwOjwFcvkbRra61Ut5NU1TjuF8/embed?start=false&loop=false&delayms=30000"
+                src="https://docs.google.com/presentation/d/1q-3Qfog-Iyc1JVXwkwfvA23R8BLUUxBCvsWg6dBQGcc/embed?start=false&loop=false&delayms=30000"
                 frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
                 webkitallowfullscreen="true"></iframe> </div>
                 <!-- <a class="btn btn-lg ok-btn mt-3" href="https://kahoot.it/challenge/01482012" target="_blank" > 
@@ -115,15 +115,17 @@
         <div id='collapseTasks2' class="collapse">
         <div class="task my-3">
             <h3>ЗАВДАННЯ 1</h3>
-            <img src="/src/js-course/1_1698737930.gif" class="img-fluid" style="max-width: 500px;" alt="">
-            <p>1) Використайте наданий HTML-код для створення кнопки, яка змінює свою форму та відображення при наведенні курсору.</p>
-            <p>2) Додайте стилі для елементів <b>body</b>, <b>.container</b> та <b>.button</b>, щоб кнопка була центрувана на сторінці та мала базовий вигляд.</p>
-            <p>3) Створіть ефект наведення курсору на кнопку (<b>:hover</b>), при якому вона збільшується, повертається на кілька градусів і додається тінь як на зображенні.</p>
-            <p>4) Налаштуйте перехід (<b>transition</b>) для плавної зміни ефектів при наведенні та натисканні на кнопку.</p>
-            <li>5) При натисканні на кнопку (<b>:active</b>) поверніть її до початкового стану без тіні і трансформації.</li>
-            <iframe src="https://codesandbox.io/embed/cm9mql?view=editor&module=%2Findex.html&theme=light"
-            style="width:100%; height: 400px; border:0; border-radius: 4px; overflow:hidden;"
-            title="heuristic-https"
+            <img src="/src/js-course/ezgif.com-gif-maker (75).gif" class="img-fluid" style="max-width: 500px;" alt="">
+           <p> Створи анімацію колеса, що рухається, як у зразку Анімації тут дві, і друга виконується тільки після того, як перша завершилася. Ось важливі параметри:</p>
+            <ul>
+             <li class="dot"> Тривалість обох анімацій — 1.5 секунди;</li>
+              <li class="dot">У кожній анімації колесо здійснює оборот на 360 градусів;</li>
+           <li class="dot">   Затримка перед виконанням кожної з анімацій — 1 секунда;</li>
+              <li class="dot">Не забудь використовувати easing!</li>
+            </ul>
+            <iframe src="https://codesandbox.io/embed/k4k37f?view=editor+%2B+preview&module=%2Findex.js&theme=light"
+            style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+            title="async-animejs"
             allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
             sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
           ></iframe>
@@ -131,34 +133,25 @@
           
   
            <div class='task my-3'> <h3> ЗАВДАННЯ 2 </h3>   
-            <img src="/src/js-course/ezgif.com-gif-maker (59).gif" class="img-fluid" style="max-width: 300px;" alt="">
-            <p>1) Створіть анімацію завантаження сторінки для елементів <b>.circle1</b> та <b>.circle2</b>, використовуючи ключові кадри (<b>@keyframes</b>).</p>
-            <p>2) Налаштуйте анімацію з такими параметрами: тривалість — <b>2s</b>, функція швидкості — <b>ease-out</b>, кількість обертів — <b>infinite</b>.</p>
-            <p>3) Задайте рух кульок по вертикалі та горизонталі на <b>60px</b> у обох напрямках.</p>
-            <li>4) Перевірте роботу анімації, щоб кульки рухались так, як показано на картинці.</li>
-
-           <iframe src="https://codesandbox.io/embed/l87kns?view=editor+%2B+preview&module=%2Findex.html&theme=light"
-     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="loading-animation"
-     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-   ></iframe>
+            <p>
+              Отримати список товарів із <b><a href="https://fakestoreapi.com/" target="_blank">Fake Store API</a></b>.
+              Вивести ці товари на сторінці у вигляді HTML-карток. Приклад картки є в коментарях в HTML-коді.
+            </p>
+            Вивести наступні дані для кожного товару:
+           <ul>
+            <li  class="dot">  Назва товару.</li>
+              <li  class="dot">Зображення.</li>
+              <li  class="dot">Ціна.</li>
+              <li  class="dot">Категорія.</li>
+              <li  class="dot">Опис.</li>
+           </ul>
+            <iframe src="https://codesandbox.io/embed/76gckn?view=editor+%2B+preview&module=%2Findex.html&theme=light"
+            style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+            title="async-fakeapi"
+            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+          ></iframe>
          </div>
-      
-         <div class='task my-3'> <h3> ЗАВДАННЯ 3 </h3>   
-          <img src="/src/js-course//ezgif.com-gif-maker (60).gif" class="img-fluid" style="max-width: 300px;" alt="">
-          <p>Потрібно створити анімацію логотипу.</p>
-          <p>Потрібно анімувати поворот та зміну розміру колючок .logo_spikes. </p>
-          <p>Приклад анімації є на картинці, але не обов'язково намагатися повторити його зі 100-відсотковою точністю. Пофантазуй!</p>
-
-          <iframe src="https://codesandbox.io/embed/7kt87y?view=editor+%2B+preview&module=%2Findex.html&theme=light"
-          style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-          title="cactus-animation"
-          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-        ></iframe>
-       </div>
-    
           <!-- /Завдання -->
           <h5><b>Надіслати виконане завдання</b></h5>
           <script type="text/javascript">
@@ -170,7 +163,7 @@
             action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
             method="post" target="hidden_iframe" onsubmit="submitted=true;">
             <input required class="d-none form-control my-3" name="entry.42502702" type="text" value="Саша">
-            <input required class="d-none form-control my-3" name="entry.559818029" type="text" value="5. Анімації в СSS">
+            <input required class="d-none form-control my-3" name="entry.559818029" type="text" value="6. Асинхронність">
             <input required class="form-control my-3" name="entry.215350378" placeholder="Номер завдання" value="">
             <textarea required name="entry.339734998" class="w-100 form-control" rows=6
               placeholder="Введіть ваш код або посилання на онлайн-редактор"></textarea>
@@ -178,80 +171,11 @@
           </form>
         </div>
       </div>
-      <!-- Теорія -->
-      <div class="lesson-list-js wow fadeInUp" id="course">
-      <a class="collapse-heading" data-toggle="collapse" data-target="#collapsePres3" aria-expanded="true">
-        <h4 class="h4  font-weight-normal "><span class="font-weight-bold ">#3</span>   Анімація в JS </h4>
-      </a>
-      <div id="collapsePres3" class="collapse show">
-        <div class="collapse-pres mt-4">
-          <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item "
-              src="https://docs.google.com/presentation/d/1EyjIYRfOCMsUDuZRGiJHRhBx8cUhRWb81-vH3BRIhrg/embed?start=false&loop=false&delayms=30000"
-              frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
-              webkitallowfullscreen="true"></iframe> </div>
-              <a class="btn btn-lg ok-btn mt-3" href="https://animejs.com/documentation/" target="_blank" > 
-                Документація anime.js</a>
-        </div>
-      </div>
-    </div>
-  <!-- Завдання -->
-  <div class="lesson-list-js wow fadeInUp" id="course">
-    <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks4"
-      aria-expanded="false">
-      <h4 class="h4 font-weight-normal "><span class="font-weight-bold ">#4</span> Виконати
-        завдання </h4>
-    </a>
-
-    <div id='collapseTasks4' class="collapse">
-    <div class="task my-3">
-        <h3>ЗАВДАННЯ 4</h3>
-        <img src="/src/js-course/ezgif.com-gif-maker (66).gif" class="img-fluid" style="max-width: 500px;" alt="">
-        <p>1) Створіть анімацію для елемента млина, щоб він здійснював один повний оберт за <b>10 секунд</b> з використанням бібліотеки <b>anime.js</b>.</p>
-        <p>2) Налаштуйте анімацію для безперервного обертання, використовуючи параметр <b>loop: true</b>.</p>
-        <p>3) Використайте властивість <b>rotate</b>, щоб млин обертався на <b>360 градусів</b>.</p>
-        <p>4) Перевірте, щоб анімація відповідала заданому часу та плавно виконувалася.</p>
-        <iframe src="https://codesandbox.io/embed/vj6p6f?view=editor+%2B+preview&module=%2Fsrc%2Findex.html&theme=light"
-        style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-        title="mlyn-animation"
-        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-      ></iframe>
-    </div>
-    <div class="task my-3">
-      <h3>ЗАВДАННЯ 5</h3>
-      <img src="/src/js-course/src/js-course/2024-09-18013735-ezgif.com-video-to-gif-converter.gif" class="img-fluid" style="max-width: 500px;" alt="">
-      <p>1) Створити анімацію як на зображенні з використанням бібліотеки <b>anime.js</b>.</p>
-      <p>2) Запрограмувати управління анімацією за допомогою кнопок Play та Pause</p>
-      <iframe src="https://codesandbox.io/embed/hj7s7t?view=editor+%2B+preview&theme=light"
-      style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-      title="animejs-tutorial"
-      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-    ></iframe>
-  </div>
-      <!-- /Завдання -->
-      <h5><b>Надіслати виконане завдання</b></h5>
-      <script type="text/javascript">
-        var submitted = false;
-      </script>
-      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-        onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
-      <form
-        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
-        method="post" target="hidden_iframe" onsubmit="submitted=true;">
-        <input required class="d-none form-control my-3" name="entry.42502702" type="text" value="Саша">
-        <input required class="d-none form-control my-3" name="entry.559818029" type="text" value="5. Анімації в JS">
-        <input required class="form-control my-3 d-none" name="entry.215350378" placeholder="Номер завдання" value="3">
-        <textarea required name="entry.339734998" class="w-100 form-control" rows=6
-          placeholder="Введіть ваш код або посилання на онлайн-редактор"></textarea>
-        <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
-      </form>
-    </div>
-  </div>
+    
     </main>
     <!-- Nav buttons -->
     <div class="page-nav-btn-wrapper">
-      <a href="../abstraction/" class="page-nav-left" title="Тема 4. ООП. Абстракція та інкапсуляція">
+      <a href="../animations/" class="page-nav-left" title=" Анімації в CSS та JavaScript. Anime.js">
         <span>
            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
              <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -259,8 +183,8 @@
         </span>
         <span class="text-btn-nav">Попередня тема</span>
        </a>
-      <a href="../async/" class="page-nav-left page-nav-right"
-        title="Асинхронність. Асинхронні функції">
+      <!-- <a href="../2/" class="page-nav-left page-nav-right"
+        title="Тема 2. Дії зі змінними. Взаємодія з користувачем. Оператори if/else, switch.">
 
         <span class="text-btn-nav">Наступна тема</span>
         <span>
@@ -269,7 +193,7 @@
               d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
           </svg>
         </span>
-      </a>
+      </a> -->
     </div>
 
     <!-- /Nav buttons -->
