@@ -61,7 +61,7 @@
       <div class="header-title-js my-3 wow backInDown container">
 
         <h1 class="lesson-title-h1  wow fadeInUp "> 
-          Асинхронність. Асинхронні функції<span class="text-warning"> </span class="text-warning"></h1>
+          Середовище браузера. <span class="text-warning">BOM</span class="text-warning"></h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -91,16 +91,16 @@
       <!-- Теорія -->
       <div class="lesson-list-js wow fadeInUp" id="course">
         <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres2" aria-expanded="true">
-          <h4 class="h4  font-weight-normal "><span class="font-weight-bold ">#1</span>   Анімація в CSS </h4>
+          <h4 class="h4  font-weight-normal "><span class="font-weight-bold ">#1</span> BOM - середовище браузера</h4>
         </a>
         <div id="collapsePres2" class="collapse show">
           <div class="collapse-pres mt-4">
             <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item "
-                src="https://docs.google.com/presentation/d/1q-3Qfog-Iyc1JVXwkwfvA23R8BLUUxBCvsWg6dBQGcc/embed?start=false&loop=false&delayms=30000"
+                src="https://docs.google.com/presentation/d/e/2PACX-1vTPHmpTmqm_K83UQWddqpFJXG40-3oaj3j7_8vSY-kHqANWOwDs5XsILhldA_rt6685dd86Z31vyFso/embed?start=false&loop=false&delayms=30000"
                 frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
                 webkitallowfullscreen="true"></iframe> </div>
-                <!-- <a class="btn btn-lg ok-btn mt-3" href="https://kahoot.it/challenge/01482012" target="_blank" > 
-                  Кахут по ООП</a> -->
+                <a class="btn btn-lg ok-btn mt-3" href="https://openlayers.org/download/" target="_blank" > 
+                  CDN OpenLayers</a>
           </div>
         </div>
       </div>
@@ -113,45 +113,34 @@
         </a>
 
         <div id='collapseTasks2' class="collapse">
-        <div class="task my-3">
-            <h3>ЗАВДАННЯ 1</h3>
-            <img src="/src/js-course/ezgif.com-gif-maker (75).gif" class="img-fluid" style="max-width: 500px;" alt="">
-           <p> Створи анімацію колеса, що рухається, як у зразку Анімації тут дві, і друга виконується тільки після того, як перша завершилася. Ось важливі параметри:</p>
-            <ul>
-             <li class="dot"> Тривалість обох анімацій — 1.5 секунди;</li>
-              <li class="dot">У кожній анімації колесо здійснює оборот на 360 градусів;</li>
-           <li class="dot">   Затримка перед виконанням кожної з анімацій — 1 секунда;</li>
-              <li class="dot">Не забудь використовувати easing!</li>
-            </ul>
-            <iframe src="https://codesandbox.io/embed/k4k37f?view=editor+%2B+preview&module=%2Findex.js&theme=light"
-            style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-            title="async-animejs"
-            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-          ></iframe>
-        </div>
-          
-  
-           <div class='task my-3'> <h3> ЗАВДАННЯ 2 </h3>   
-            <p>
-              Отримати список товарів із <b><a href="https://fakestoreapi.com/" target="_blank">Fake Store API</a></b>.
-              Вивести ці товари на сторінці у вигляді HTML-карток. Приклад картки є в коментарях в HTML-коді.
+
+
+
+          <div class='task my-3'> 
+            <h3> ЗАВДАННЯ 1 </h3>   
+            <p> Продовжіть створення інтернет-магазину з попереднього уроку. Додайте кнопки для фільтрування товарів за категоріями, такими як "електроніка", "прикраси" тощо. Щоб відобразити всі категорії товарів на сторінці у вигляді фільтрів-кнопок, можна зробити наступні кроки:
             </p>
-            Вивести наступні дані для кожного товару:
-           <ul>
-            <li  class="dot">  Назва товару.</li>
-              <li  class="dot">Зображення.</li>
-              <li  class="dot">Ціна.</li>
-              <li  class="dot">Категорія.</li>
-              <li  class="dot">Опис.</li>
-           </ul>
+            <ul>
+              <li class="dot">
+                Отримати всі категорії з API. 
+                API за адресою <b><a href="https://fakestoreapi.com/products/categories" target="_blank">https://fakestoreapi.com/products/categories</a></b> повертає список усіх доступних категорій.
+              </li>
+              <li class="dot">
+                Згенерувати кнопки для кожної категорії.
+                На основі отриманого списку категорій створіть кнопки-фільтри. При натисканні на кнопку категорії фільтруйте товари, які належать до цієї категорії.
+              </li>
+              <li class="dot">
+                Оновлювати товари при кліку на кнопку-фільтр.
+                Коли користувач натискає на кнопку категорії, оновлюйте URL з новим параметром <code>category</code> і виконуйте запит на сервер для отримання товарів відповідної категорії.
+              </li>
+            </ul>
             <iframe src="https://codesandbox.io/embed/76gckn?view=editor+%2B+preview&module=%2Findex.html&theme=light"
             style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
             title="async-fakeapi"
             allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
             sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
           ></iframe>
-         </div>
+          </div>      
           <!-- /Завдання -->
           <h5><b>Надіслати виконане завдання</b></h5>
           <script type="text/javascript">
@@ -171,11 +160,13 @@
           </form>
         </div>
       </div>
+
+
     
     </main>
     <!-- Nav buttons -->
     <div class="page-nav-btn-wrapper">
-      <a href="../animations/" class="page-nav-left" title=" Анімації в CSS та JavaScript. Anime.js">
+      <a href="../async/" class="page-nav-left" title=" Асинхронність. Асинхронні функції">
         <span>
            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
              <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -183,8 +174,8 @@
         </span>
         <span class="text-btn-nav">Попередня тема</span>
        </a>
-      <a href="../bom/" class="page-nav-left page-nav-right"
-        title="Середовище браузера. BOM">
+      <!-- <a href="../2/" class="page-nav-left page-nav-right"
+        title="Тема 2. Дії зі змінними. Взаємодія з користувачем. Оператори if/else, switch.">
 
         <span class="text-btn-nav">Наступна тема</span>
         <span>
@@ -193,7 +184,7 @@
               d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
           </svg>
         </span>
-      </a>
+      </a> -->
     </div>
 
     <!-- /Nav buttons -->
