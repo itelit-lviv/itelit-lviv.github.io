@@ -530,6 +530,17 @@ footer.footer {
 .body-js footer.footer .footer-nav a:hover {
   color: #ffc400;
 }
+
+pre {
+  background-color: #f0f0f0; /* Сірий фон для коду */
+  padding: 10px; /* Відступи навколо коду */
+  margin: 15px 0;
+  border-radius: 15px; /* Закруглені краї */
+  font-size: 16px; /* Розмір тексту */
+  line-height: 1.6; /* Відстань між рядками */
+  overflow-x: auto; /* Додає горизонтальну прокрутку при необхідності */
+}
+
 /*****/
 /* MEDIA MEDIA MEDIA*/
 /*****/
