@@ -157,12 +157,14 @@ function getCookie(name) {
       </div>
   <!-- Завдання -->
   <div class="lesson-list-js wow fadeInUp" id="course">
-    <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks2" aria-expanded="false">
+    <a class="collapse-heading " data-toggle="collapse" data-target="#collapseTasks2" aria-expanded="false">
       <h4 class="h4 font-weight-normal "><span class="font-weight-bold ">#2</span> Виконати
         завдання </h4>
     </a>
 
-    <div id='collapseTasks2' class="collapse">
+    <div id='collapseTasks2' class="collapse show">
+      <a class="btn btn-lg ok-btn mt-3 mx-2" href="https://kahoot.it/challenge/08718070" target="_blank" > 
+        Вікторина - повторення JavaScript</a>
       <div class='task my-3'>
         <h3> ЗАВДАННЯ 1</h3>
         <img src="/src/js-course/1.gif" alt="">
@@ -209,6 +211,21 @@ function getCookie(name) {
           style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="async-fakeapi"
           allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
           sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+      </div>
+
+      <div class='task my-3'>
+        <h3> ЗАВДАННЯ 3</h3>
+        <p>Створіть програму, яка при кліці на кнопку "Змінити тему" буде змінювати тему сайту на світлу або темну і зберігати поточну тему в кукі. При наступному завантаженні сторінки, потрібно відобразити останню збережену тему, а у разі якщо жодної теми не збережно, відобразити білу тему сторінки.</p>
+        <p>Для зміни теми сторінки задайте для тега <b>body</b> готові CSS-класи <b>.light</b> та  <b>.dark</b>. Стилі для них вже додано в CSS.</p>
+        <p>Використайте готові функції <b>setCookie()</b> та <b>getCookie() для керування кукі-файлами.</b>.
+        </p>
+     
+        <iframe src="https://codesandbox.io/embed/tdykzk?view=editor+%2B+preview&module=%2Findex.js&theme=light"
+        style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+        title="toggle-theme-cookies"
+        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+      ></iframe>
       </div>
       <!-- /Завдання -->
       <h5><b>Надіслати виконане завдання</b></h5>
