@@ -284,6 +284,73 @@ application.add_error_handler(error_handler)
               </div>
             </div>
           </div>
+
+          <div class="card">
+            <div class="card-header" id="headingInlineKeyboard">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseInlineKeyboard"aria-controls="collapseInlineKeyboard">
+                  <h5><b>9.</b> Використання <b>InlineKeyboardMarkup</b></h5>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseInlineKeyboard" class="collapse" aria-labelledby="headingInlineKeyboard" data-parent="#TasksAccordion">
+              <div class="card-body">
+                <p><b>InlineKeyboardMarkup</b> використовується для створення інтерактивних кнопок під повідомленням, що дозволяють користувачеві взаємодіяти з ботом без відправлення нового повідомлення.</p>
+                <p>Кожна кнопка в InlineKeyboard має <code>callback_data</code> — текст, який надсилається боту при натисканні на кнопку, або <code>url</code>, що відкривається при натисканні.</p>
+        
+                <p><b>Приклад:</b> створимо клавіатуру з двома кнопками:</p>
+                <pre><code class="language-python">from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+
+keyboard = [
+    [InlineKeyboardButton("Кнопка 1", callback_data="button1")],
+    [InlineKeyboardButton("Кнопка 2", callback_data="button2")]
+]
+reply_markup = InlineKeyboardMarkup(keyboard)</code></pre>
+        
+                <p>У цьому прикладі <code>reply_markup</code> передається у метод <code>send_message</code> або <code>edit_message_text</code>:</p>
+                <pre><code class="language-python">await update.message.reply_text("Оберіть опцію:", reply_markup=reply_markup)</code></pre>
+        
+                <p><b>Відповідь на натискання:</b> У функції обробки <code>callback_query</code> ми можемо отримати <code>callback_data</code>:</p>
+                <pre><code class="language-python">async def button_handler(update, context):
+    query = update.callback_query
+    await query.answer()  # підтверджуємо запит
+    await query.edit_message_text(text=f"Ви обрали {query.data}")</code></pre>
+              </div>
+            </div>
+          </div>
+        
+          <div class="card">
+            <div class="card-header" id="headingReplyKeyboard">
+              <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseReplyKeyboard" aria-expanded="false" aria-controls="collapseReplyKeyboard">
+                  <h5><b>10.</b> Використання <b>ReplyKeyboardMarkup</b></h5>
+                </button>
+              </h2>
+            </div>
+            <div id="collapseReplyKeyboard" class="collapse" aria-labelledby="headingReplyKeyboard" data-parent="#TasksAccordion">
+              <div class="card-body">
+                <p><b>ReplyKeyboardMarkup</b> створює стандартну клавіатуру, яка відображається на екрані чату, а не під повідомленням.</p>
+                <p>Ця клавіатура більше підходить для команд, які бот отримує як текстові повідомлення, а не як <code>callback_data</code>.</p>
+        
+                <p><b>Приклад:</b> створимо клавіатуру з двома кнопками:</p>
+                <pre><code class="language-python">from telegram import ReplyKeyboardMarkup, KeyboardButton
+
+keyboard = [
+    [KeyboardButton("Кнопка A")],
+    [KeyboardButton("Кнопка B")]
+]
+reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=True)</code></pre>
+        
+                <p>Параметр <code>resize_keyboard=True</code> змінює розмір кнопок, а <code>one_time_keyboard=True</code> приховує клавіатуру після вибору опції.</p>
+        
+                <p>Клавіатура додається до повідомлення:</p>
+                <pre><code class="language-python">await update.message.reply_text("Оберіть опцію:", reply_markup=reply_markup)</code></pre>
+        
+                <p><b>Обробка натискання:</b> при використанні ReplyKeyboardMarkup натискання обробляється як звичайне текстове повідомлення.</p>
+              </div>
+            </div>
+          </div>
+        
         </div>
         
 
@@ -298,11 +365,11 @@ application.add_error_handler(error_handler)
   </div>
     <!-- Теорія -->
   <div class="lesson-list-js wow fadeInUp" id="course">
-    <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
+    <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapsePres" aria-expanded="true">
       <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#2</span> Чат-бот для реєстрації на подію
          </h4>
     </a>
-    <div id="collapsePres" class="collapse show">
+    <div id="collapsePres" class="collapse ">
       <a class="btn btn-lg ok-btn my-3" href="https://github.com/webteacher/tg_bots" target="_blank" > 
         КОД з уроку</a>
       <div class="accordion" id="TasksAccordion">
@@ -392,6 +459,133 @@ application.add_error_handler(error_handler)
           </div>
         </div>
       </div>
+      <h5 class="mt-4"><b>Надіслати виконане завдання</b></h5>
+      <script type="text/javascript">
+        var submitted = false;
+      </script>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+        onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
+      <form
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
+        method="post" target="hidden_iframe" onsubmit="submitted=true;">
+        <input required class="d-none form-control my-3" name="entry.42502702" type="text" value="Денис">
+        <input required class="d-none form-control my-3" name="entry.559818029" type="text" value="Чат-боти">
+        <input required class="d-none form-control my-3" name="entry.215350378" placeholder="Номер завдання" value="1">
+        <textarea required name="entry.339734998" class="w-100 form-control" rows=6
+          placeholder="Введіть ваш код або посилання на онлайн-редактор"></textarea>
+        <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
+      </form>
+    </div>
+  </div>
+
+  <div class="lesson-list-js wow fadeInUp" id="course">
+    <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres2" aria-expanded="true">
+      <h4 class="h4  font-weight-normal " ><span class="font-weight-bold ">#3</span> Чат-бот погоди
+         </h4>
+    </a>
+    <div id="collapsePres2" class="collapse show">
+      <a class="btn btn-lg ok-btn my-3" href="https://github.com/webteacher/weather_bot" target="_blank" > 
+        КОД з уроку</a>
+        <a class="btn btn-lg ok-btn my-3" href="https://openweathermap.org/current" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+          Документація OpenWeatherMap</a>
+          <div class="accordion" id="TasksAccordion">
+
+            <div class="card">
+              <div class="card-header" id="heading1">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                    <h5><b>1.</b> Налаштування для роботи (в терміналі)</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse1" class="collapse show" aria-labelledby="heading1" data-parent="#TasksAccordion">
+                <div class="card-body">
+                  <p><b>1)</b> Створюємо віртуальне середовище: <code>python -m venv venv</code></p>
+                  <p><b>2)</b> Активуємо віртуальне середовище: <code>venv\Scripts\activate</code></p>
+                  <p><b>3)</b> Встановлюємо необхідні бібліотеки: <code>pip install -r requirements.txt</code></p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header" id="heading2">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    <h5><b>2.</b> Створення бота у Telegram</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#TasksAccordion">
+                <div class="card-body">
+                  <p>Зверніться до <a href="https://t.me/BotFather">BotFather</a>, щоб створити нового бота і отримати токен доступу. Вкажіть отриманий токен в змінну <code>TELEGRAM_TOKEN</code>.</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header" id="heading3">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    <h5><b>3.</b> Отримання погоди з OpenWeatherMap API</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#TasksAccordion">
+                <div class="card-body">
+                  <p>Зареєструйтесь на <a href="https://openweathermap.org/">OpenWeatherMap</a> для отримання API-ключа. Збережіть ключ в змінній <code>WEATHER_API_KEY</code>.</p>
+                  <pre><code class="language-python">def get_weather(latitude, longitude, api_key):
+    url = f"http://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={api_key}&units=metric&lang=uk"
+    response = requests.get(url)
+    return response.json()</code></pre>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header" id="heading4">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    <h5><b>4.</b> Функція старту з кнопками для локації</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#TasksAccordion">
+                <div class="card-body">
+                  <pre><code class="language-python">async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    keyboard = [[KeyboardButton("Надати геолокацію 🗺️", request_location=True)]]
+    reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=True)
+    await update.message.reply_text("Привіт! Натисніть кнопку для поділу своєю локацією.", reply_markup=reply_markup)</code></pre>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header" id="heading5">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                    <h5><b>5.</b> Обробка локації користувача</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#TasksAccordion">
+                <div class="card-body">
+                  <pre><code class="language-python">
+async def location_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    location = update.message.location
+    latitude, longitude = location.latitude, location.longitude
+    context.user_data["location"] = (latitude, longitude)
+    weather_data = get_weather(latitude, longitude, WEATHER_API_KEY)
+    weather_text = f"Погода:\n🌡️ Температура: {weather_data['main']['temp']}°C\n🌬️ Вітер: {weather_data['wind']['speed']} м/с\n☁️ Опис: {weather_data['weather'][0]['description']}"
+    await update.message.reply_text(weather_text)
+                  </code></pre>
+                </div>
+              </div>
+            </div>
+
+            
+          
+          </div>
+          
       <h5 class="mt-4"><b>Надіслати виконане завдання</b></h5>
       <script type="text/javascript">
         var submitted = false;
