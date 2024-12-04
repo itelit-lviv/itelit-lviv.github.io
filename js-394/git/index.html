@@ -61,7 +61,7 @@
       <div class="header-title-js my-3 wow backInDown container">
 
         <h1 class="lesson-title-h1  wow fadeInUp ">
-          Рядки та <span class="text-warning">cookie-файли</span class="text-warning"></h1>
+          Visual Studio Code та <span class="text-warning">Git</span class="text-warning"></h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -97,136 +97,62 @@
   <div class="main-wrapper container container-lg-fluid">
     <!-- Main block -->
     <main class="container pt-4">
-      <!-- Теорія -->
-      <div class="lesson-list-js wow fadeInUp" id="course">
-        <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres2" aria-expanded="true">
-          <h4 class="h4  font-weight-normal "><span class="font-weight-bold ">#1</span> Теорія - рядки та cookies</h4>
-        </a>
-        <div id="collapsePres2" class="collapse show">
-          <div class="collapse-pres mt-4">
-            <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item "
-                src="https://docs.google.com/presentation/d/e/2PACX-1vTZ693edbIxUxZdmaeQ-VCucjVGJTA734SZ11QZlUPwa9luH6CVwUzZMACKyvx27r4fW863T-87pZN1/embed?start=false&loop=false&delayms=30000"
-                frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
-                webkitallowfullscreen="true"></iframe> </div>
-          
-            <h4 class="mt-4 mb-2">Приклади функцій для роботи з кукі</h4>
+          <!-- Exe-файл -->
+<!-- VSCode -->
+<div class="lesson-list-js wow fadeInUp" id="course">
+  <a class="collapse-heading " data-toggle="collapse" data-target="#collapseTasks1" aria-expanded="false">
+    <h4 class="h4 font-weight-normal " ><span class="font-weight-bold ">#1</span> Робота у VSCode</h4>
+  </a>
 
-            <!-- Розділ 1: getCookie -->
-            <button class="btn btn-lg ok-btn mb-3" type="button" data-toggle="collapse" data-target="#collapseGetCookie"
-              aria-expanded="false" aria-controls="collapseGetCookie">
-              Функція getCookie
-            </button>
-              <!-- Розділ 2: setCookie -->
-              <button class="btn btn-lg ok-btn mb-3" type="button" data-toggle="collapse" data-target="#collapseSetCookie"
-              aria-expanded="false" aria-controls="collapseSetCookie">
-              Функція setCookie
-            </button>
-            <div class="card card-body collapse" id="collapseGetCookie">
-                <pre><code class="language-javascript">
-function getCookie(name) {
-  // Отримуємо всі кукі у вигляді одного рядка, розділяємо їх за ';'
-  let cookies = document.cookie.split(';');
-  
-  // Перебираємо кожен кукі
-  for (let cookie of cookies) {
-    // Розділяємо кукі на ім'я та значення, використовуючи знак '='
-    let [cookieName, cookieValue] = cookie.trim().split('=');
-    
-    // Перевіряємо, чи ім'я кукі відповідає запитаному (після розкодування)
-    if (cookieName === decodeURIComponent(name)) {
-      // Якщо ім'я співпадає, повертаємо розкодоване значення кукі
-      return decodeURIComponent(cookieValue);
-    }
-  }
-  
-  // Якщо кукі з таким ім'ям не знайдено, повертаємо null
-  return null;
-}</code></pre>
-            </div>
+  <div id='collapseTasks1' class="collapse show">
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+          <iframe class="embed-responsive-item "
+            src="https://docs.google.com/presentation/d/e/2PACX-1vRfmoQjRCD-u4tZe7icMATtg2NoL09HSvqKNu0kslsuMfNILPDOgzL0UqzPjOuW4IlLZEkJJILrW9KW/embed?start=false&loop=false&delayms=30000"
+            frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
+            webkitallowfullscreen="true">
+          </iframe> 
+        </div>  
+      <a class="btn btn-lg ok-btn my-3 mr-3" href="https://code.visualstudio.com/updates/v1_70" target="_blank"> 
+        Завантажити VSCode для Windows 7</a>
+    </div>
+  </div>
 
-          
-            <div class="card card-body collapse" id="collapseSetCookie">
-                  <pre><code class="language-javascript">
-  function setCookie(name, value, maxAge) {
-    document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; max-age=${maxAge}`;
-  }</code></pre>
-            </div>
-          </div>
+  <!-- Git та Github -->
+<div class="lesson-list-js wow fadeInUp" id="course">
+<a class="collapse-heading " data-toggle="collapse" data-target="#collapseTasks2" aria-expanded="false">
+  <h4 class="h4 font-weight-normal " ><span class="font-weight-bold ">#2</span> Git та Github</h4>
+</a>
 
-        </div>
-      </div>
+<div id='collapseTasks2' class="collapse show">
+      <div class="embed-responsive embed-responsive-16by9 mt-4">
+        <iframe class="embed-responsive-item "
+          src="https://docs.google.com/presentation/d/e/2PACX-1vSElftIm4dIx7H8Dw3hi1r8MhI19vfyeV9u_LEt4oMB9zjUNSsMXGmQ2Iih-IwYDnJZhdOKvIu4jW8b/embed?start=false&loop=false&delayms=60000"
+          frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
+          webkitallowfullscreen="true">
+        </iframe> 
+      </div>  
+    <a class="btn btn-lg ok-btn my-3 mr-3" href="https://git-scm.com/downloads" target="_blank"> 
+      Завантажити Git для Windows</a>
+      <a class="btn btn-lg ok-btn my-3 " href="https://github.com" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+        Github.com </a>
+    <p>Початкові налаштування в терміналі (git bash)</p>
+<code>
+<pre>git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com</pre>
+</code>
+
+  </div>
+</div>
+
+
   <!-- Завдання -->
   <div class="lesson-list-js wow fadeInUp" id="course">
-    <a class="collapse-heading " data-toggle="collapse" data-target="#collapseTasks2" aria-expanded="false">
-      <h4 class="h4 font-weight-normal "><span class="font-weight-bold ">#2</span> Виконати
-        завдання </h4>
+    <a class="collapse-heading collapsed" data-toggle="collapse" data-target="#collapseTasks3" aria-expanded="false">
+      <h4 class="h4 font-weight-normal "><span class="font-weight-bold ">#3</span> Команди Git для терміналу </h4>
     </a>
+    <div id='collapseTasks3' class="collapse ">
+    <p>Ініціалізувати новий локальний репозиторій у поточній папці</p> <code> <pre>git init</pre> </code> <p>Додати віддалений репозиторій з іменем origin</p> <code> <pre>git remote add origin URL_репозиторію</pre> </code> <p>Переглянути стан файлів у репозиторії</p> <code> <pre>git status</pre> </code> <p>Додати конкретний файл до індексу (для підготовки до коміту)</p> <code> <pre>git add назва_файлу</pre> </code> <p>Додати всі змінені файли до індексу</p> <code> <pre>git add --all</pre> </code> <p>Зберегти зміни з коментарем</p> <code> <pre>git commit -m "Опис змін"</pre> </code> <p>Відправити зміни у віддалений репозиторій у гілку main</p> <code> <pre>git push</pre> </code> <p>Клонувати репозиторій з Github (в терміналі)</p> <code> <pre>git clone https://github.com/посилання_на_репозиторій.git</pre> </code> <p>Завантажити зміни з віддаленого репозиторію</p> <code> <pre>git pull</pre> </code>
 
-    <div id='collapseTasks2' class="collapse show">
-      <a class="btn btn-lg ok-btn mt-3 mx-2" href="https://kahoot.it/challenge/08718070" target="_blank" > 
-        Вікторина - повторення JavaScript</a>
-      <div class='task my-3'>
-        <h3> ЗАВДАННЯ 1</h3>
-        <img src="/src/js-course/1.gif" alt="">
-      
-        <p>Створіть програму, яка при першому запуску буде запитувати ім'я користувача та записувати його в куки.</p>
-        <p>При наступних завантаженнях сторінки, програма повинна просто вітатися з користувачем, не запитуючи ім'я, а використовуюче ім'я, що збережене в куках.
-        </p>
-        <p>Програма має працювати як на зображенні.</p>
-     
-        <iframe src="https://codesandbox.io/embed/kdfxlr?view=editor+%2B+preview&module=%2Findex.js&theme=light"
-        style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-        title="cookies-username"
-        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-      ></iframe>
-      </div>
-      <!-- /Завдання -->
-
-
-      <div class='task my-3'>
-        <h3> ЗАВДАННЯ 2 </h3>
-        <p> Продовжіть створення інтернет-магазину з попереднього уроку. </p>
-        <p>Реалізуйте можливість додавати товари в кошик та зберігайте кошик в куках сторінки.</p>
-        <ul>
-          <li class="dot">
-            Додати кнопку "Додати в кошик" для кожного товару.
-            Додайте кнопку "Додати в кошик" в функцію <code>getProductCard</code>.
-            Ця кнопка повинна мати унікальний <code>data-id</code> для кожного товару.
-          </li>
-          <li class="dot">
-            Створити функцію для обробки додавання товару в кошик.
-            При натисканні на кнопку "Додати в кошик" обробити подію, отримати ID товару та зберегти його в масиві кошика.
-          </li>
-          <li class="dot">
-            Зберегти кошик у куках.
-            Використовуйте <code>document.cookie</code> для зберігання даних кошика в куках.
-          </li>
-          <li class="dot">
-            При завантаженні сторінки перевірити наявність куків.
-            Якщо кошик існує в куках, відновити його в масиві та показати користувачу.
-          </li>
-        </ul>
-        <iframe src="https://codesandbox.io/embed/76gckn?view=editor+%2B+preview&module=%2Findex.html&theme=light"
-          style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="async-fakeapi"
-          allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-          sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-      </div>
-
-      <div class='task my-3'>
-        <h3> ЗАВДАННЯ 3</h3>
-        <p>Створіть програму, яка при кліці на кнопку "Змінити тему" буде змінювати тему сайту на світлу або темну і зберігати поточну тему в кукі. При наступному завантаженні сторінки, потрібно відобразити останню збережену тему, а у разі якщо жодної теми не збережно, відобразити білу тему сторінки.</p>
-        <p>Для зміни теми сторінки задайте для тега <b>body</b> готові CSS-класи <b>.light</b> та  <b>.dark</b>. Стилі для них вже додано в CSS.</p>
-        <p>Використайте готові функції <b>setCookie()</b> та <b>getCookie() для керування кукі-файлами.</b>.
-        </p>
-     
-        <iframe src="https://codesandbox.io/embed/tdykzk?view=editor+%2B+preview&module=%2Findex.js&theme=light"
-        style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-        title="toggle-theme-cookies"
-        allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-        sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-      ></iframe>
-      </div>
       <!-- /Завдання -->
       <h5><b>Надіслати виконане завдання</b></h5>
       <script type="text/javascript">
@@ -252,7 +178,7 @@ function getCookie(name) {
   </main>
   <!-- Nav buttons -->
   <div class="page-nav-btn-wrapper">
-    <a href="../bom/" class="page-nav-left" title=" Середовище браузера. BOM">
+    <a href="../cookies/" class="page-nav-left" title="Рядки та cookie-файли">
       <span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
           <path fill-rule="evenodd"
@@ -261,8 +187,8 @@ function getCookie(name) {
       </span>
       <span class="text-btn-nav">Попередня тема</span>
     </a>
-    <a href="../git/" class="page-nav-left page-nav-right"
-        title="Visual Studio Code та Git">
+    <!-- <a href="../2/" class="page-nav-left page-nav-right"
+        title="Тема 2. Дії зі змінними. Взаємодія з користувачем. Оператори if/else, switch.">
 
         <span class="text-btn-nav">Наступна тема</span>
         <span>
@@ -271,7 +197,7 @@ function getCookie(name) {
               d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
           </svg>
         </span>
-      </a>
+      </a> -->
   </div>
 
   <!-- /Nav buttons -->
