@@ -13,12 +13,15 @@ body {
   scroll-behavior: smooth;
   color: var(--text-color);
 }
+
 .body-js {
   background-color: var(--bg-color);
 }
+
 .body-js * {
   box-sizing: border-box;
 }
+
 .header-wrapper {
   background: linear-gradient(90deg, #375381 0%, #6495ed 100%), #6495ed;
   padding: 0;
@@ -38,6 +41,7 @@ body {
   animation: background 9s ease infinite;
   /* z-index: 2; */
 }
+
 .header-wrapper-scratch {
   /* background: url('/src/img/scratchcat-no-bg.png') no-repeat center #5d9cfc;  */
   background: #5d9cfc;
@@ -49,11 +53,13 @@ body {
 
   /* z-index: 2; */
 }
+
 .body-js .nav-item.nav-link.active {
   padding: 6px 16px;
   color: #f2f7f7;
   border: 2px solid transparent;
 }
+
 .body-js .nav-item.nav-link.active:hover {
   border: 2px solid #f2f7f7;
   border-radius: 100px;
@@ -73,6 +79,7 @@ body {
     background-position: 0% 50%;
   }
 }
+
 .page-header {
   /* min-height: 400px; */
 
@@ -84,9 +91,11 @@ body {
   background-position: bottom center;
   width: 100%;
 }
+
 .page-header-js {
   background: none;
 }
+
 .body-js-lesson .page-header {
   min-height: 300px;
   min-height: fit-content;
@@ -102,6 +111,7 @@ body {
   color: rgb(73, 73, 73);
   z-index: 100;
 }
+
 .go-lesson-btn:hover {
   text-decoration: none;
   box-shadow: 0 3px 20px rgb(0 0 0 / 50%);
@@ -118,6 +128,7 @@ body {
   background: #e9e9e9;
   opacity: 80%;
 }
+
 .go-lesson-1 {
   border-radius: 20px 20px 0 0;
   background: #e6f5ff;
@@ -128,6 +139,7 @@ body {
   background: #f8f8f8ec;
   opacity: 80%;
 }
+
 .go-lesson-2 {
   background: #d9e0e6;
   opacity: 90%;
@@ -138,11 +150,13 @@ body {
 nav.navbar {
   background: transparent;
 }
+
 .header-title {
   display: block;
   margin-top: 80px;
   margin-bottom: 40px;
 }
+
 .header-title h1 {
   font-weight: 700;
   font-size: 3.5em;
@@ -150,9 +164,11 @@ nav.navbar {
   line-height: 1em;
   text-align: center;
 }
+
 .header-title-js {
   display: block;
 }
+
 .header-title-js h1 {
   font-weight: 400;
   font-size: 5em;
@@ -160,20 +176,24 @@ nav.navbar {
   line-height: 1em;
   text-align: center;
 }
+
 .header-title-js .main-title-js {
   font-weight: 900;
   display: block;
   font-size: 6.5em;
   color: #ffbf00;
 }
+
 .bounce a {
   color: white;
   text-decoration: none;
 }
+
 .arrow {
   text-align: center;
   margin: 4% 0;
 }
+
 .bounce {
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
@@ -185,6 +205,7 @@ nav.navbar {
   font-size: 5em;
   color: #ffbf00;
 }
+
 .header-title .py-answer {
   text-align-last: left;
   font-weight: 900;
@@ -194,22 +215,27 @@ nav.navbar {
   color: #ffbf00;
   line-height: 0.8em;
 }
+
 .course-button {
   margin: 30px 0;
 }
+
 .course-button button {
   border-radius: 300px;
   font-weight: 500;
   padding: 15px 25px;
 }
+
 .course-button button:hover {
   background: linear-gradient(90deg, #ffbf00 0%, rgb(255, 125, 4) 100%);
   /* box-shadow: 0 0 10px 1px #333; */
   color: #212529;
 }
+
 .video-button button:hover {
   box-shadow: 0 0 15px 1px #333;
 }
+
 .button-play {
   position: relative;
   border: none;
@@ -223,6 +249,7 @@ nav.navbar {
   text-transform: uppercase;
   color: #212529;
 }
+
 .button-play:after {
   content: "";
   position: absolute;
@@ -234,6 +261,7 @@ nav.navbar {
   right: 0;
   top: 0;
 }
+
 .button-play:before {
   content: "";
   position: absolute;
@@ -257,23 +285,28 @@ main {
   font-weight: 700;
   text-align: left;
 }
+
 .lesson-list-js h2 {
   font-size: 25px;
   font-weight: 700;
   text-align: center;
 }
+
 .lesson-list li,
 .lesson-list-js li {
   display: block;
   padding: 5px;
 }
+
 .lesson-list-js .h4 {
   color: var(--text-accent-color);
 }
+
 .lesson-list ol,
 .lesson-list-js ol {
   padding-left: 0;
 }
+
 .lesson-link,
 .lesson-list-js {
   color: #375381;
@@ -281,6 +314,7 @@ main {
   line-height: 40px;
   font-weight: 500;
 }
+
 .lesson-list-js .lesson-link {
   color: var(--text-color);
 }
@@ -293,6 +327,7 @@ main {
   pointer-events: none;
   color: var(--text-secondary-color);
 }
+
 .lesson-list-js {
   color: var(--text-color);
   font-size: 20px;
@@ -304,18 +339,21 @@ main {
   box-shadow: var(--shadow-color);
   border-radius: 20px;
 }
+
 /*****/
 /* LESSON PAGE */
 /*****/
 li.dot {
   display: list-item;
 }
+
 .body-js-lesson .header-title-js h1 {
   font-size: 1.7em;
   font-weight: 700;
   position: relative;
   bottom: -25px;
 }
+
 .body-js-lesson .page-header {
   height: fit-content;
 }
@@ -324,8 +362,9 @@ li.dot {
   position: relative;
   bottom: -35px;
 }
-.body-js-lesson .lesson-list-js {
-}
+
+.body-js-lesson .lesson-list-js {}
+
 .collapse-heading {
   box-sizing: border-box;
   cursor: pointer;
@@ -333,11 +372,13 @@ li.dot {
   display: block;
   padding-right: 50px;
 }
+
 .body-js-lesson .lesson-list-js img {
   width: 100%;
   max-width: 600px;
   display: block;
 }
+
 .collapse-heading h4 {
   box-sizing: border-box;
   display: block;
@@ -345,6 +386,7 @@ li.dot {
   box-sizing: border-box;
   width: 100%;
 }
+
 .collapse-heading::before {
   content: "";
   position: absolute;
@@ -364,14 +406,17 @@ li.dot {
   -webkit-transform: none;
   transform: none;
 }
+
 .collapse-heading.collapsed::before {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+
 #sendedModal .modal-dialog .modal-content {
   border-radius: 20px;
   color: #752fc5;
 }
+
 .ok-btn {
   border-radius: 20px;
   font-weight: 700;
@@ -381,6 +426,7 @@ li.dot {
   background: no-repeat center center/17px 17px,
     linear-gradient(180deg, #f6d365 0%, #fda085 100%);
 }
+
 .ok-btn:hover {
   box-shadow: rgb(138 138 139 / 37%) 1px 5px 10px 1px;
 }
@@ -390,11 +436,13 @@ li.dot {
   min-height: 60vh;
   padding: 0 20px;
 }
+
 .page-nav-btn-wrapper {
   font-size: 1em;
   margin: 10px 20px;
   margin-bottom: 40px;
 }
+
 a.page-nav-left {
   background-color: rgba(110, 110, 110, 0.26);
   display: inline-block;
@@ -416,9 +464,11 @@ a.page-nav-left {
 .page-nav-left .text-btn-nav {
   color: rgb(0, 0, 0);
 }
+
 .page-nav-btn-wrapper a:hover {
   background-color: rgba(107, 107, 107, 0.432);
 }
+
 .page-nav-left span {
   text-align: center;
   white-space: nowrap;
@@ -433,6 +483,7 @@ a.page-nav-left {
   a.page-nav-left {
     width: 100%;
   }
+
   .page-nav-btn-wrapper {
     font-size: 1em;
   }
@@ -442,6 +493,7 @@ a.page-nav-left {
   .page-nav-left .text-btn-nav {
     display: none;
   }
+
   a.page-nav-left {
     border-radius: 0;
     background-color: transparent;
@@ -460,13 +512,16 @@ a.page-nav-left {
     text-align: center;
     padding: 0px;
   }
+
   a.page-nav-right {
     left: auto;
     right: 0;
   }
+
   .page-nav-btn-wrapper a:hover {
     background-color: rgba(110, 110, 110, 0.26);
   }
+
   a.page-nav-left span {
     font-size: 13px;
     position: absolute;
@@ -506,6 +561,7 @@ footer.footer {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
+
 #arrowTopBtn:hover {
   opacity: 1;
   box-shadow: rgb(138 138 139 / 37%) 1px 5px 10px 1px;
@@ -514,31 +570,81 @@ footer.footer {
   background: url(/src/img/chevron-down.svg) no-repeat center center/17px 17px,
     linear-gradient(180deg, #f6d365 0%, #fda085 100%);
 }
+
 .body-js footer.footer {
   background-color: rgba(132, 122, 167, 0.699);
 }
+
 .body-js footer.footer .footer-nav {
   min-height: 100px;
 }
+
 .body-js footer.footer span.muted {
   color: rgb(82, 82, 82);
   font-size: 0.9em;
 }
+
 .body-js footer.footer .footer-nav a {
   color: rgb(82, 82, 82);
 }
+
 .body-js footer.footer .footer-nav a:hover {
   color: #ffc400;
 }
 
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+}
+
+.blinking-btn {
+  cursor: pointer;
+  animation: blinking 1.5s infinite;
+  /* Анімація триває 1.5 секунди і повторюється безкінечно */
+  cursor: pointer;
+  padding: 10px 20px;
+  animation: glowing 1.5s infinite;
+  /* Анімація тривалістю 1.5 секунди */
+}
+
+
 pre {
-  background-color: #f0f0f0; /* Сірий фон для коду */
-  padding: 10px; /* Відступи навколо коду */
+  background-color: #f0f0f0;
+  /* Сірий фон для коду */
+  padding: 10px;
+  /* Відступи навколо коду */
   margin: 15px 0;
-  border-radius: 15px; /* Закруглені краї */
-  font-size: 16px; /* Розмір тексту */
-  line-height: 1.6; /* Відстань між рядками */
-  overflow-x: auto; /* Додає горизонтальну прокрутку при необхідності */
+  border-radius: 15px;
+  /* Закруглені краї */
+  font-size: 16px;
+  /* Розмір тексту */
+  line-height: 1.6;
+  /* Відстань між рядками */
+  overflow-x: auto;
+  /* Додає горизонтальну прокрутку при необхідності */
 }
 
 /*****/
@@ -549,33 +655,42 @@ pre {
   .header-title-js h1 {
     font-size: 1.7em;
   }
+
   .header-title-js .main-title-js {
     font-size: 2em;
   }
+
   .body-js-lesson .header-title-js h1 {
     font-size: 1.5em;
   }
+
   .go-lesson-btn {
     max-width: 240px;
   }
+
   .lesson-list-js {
     margin: 30px 0;
   }
+
   html {
     font-size: 14px;
   }
+
   #arrowTopBtn {
     bottom: 20px;
     right: 10px;
     height: 45px;
     width: 45px;
   }
+
   .main-wrapper {
     padding: 0 0;
   }
+
   a.page-nav-left {
     width: 49%;
   }
+
   .page-nav-left .text-btn-nav {
     display: none;
   }
@@ -585,31 +700,40 @@ pre {
   .header-title-js h1 {
     font-size: 2em;
   }
+
   .header-title-js .main-title-js {
     font-size: 3.1em;
   }
+
   .go-lesson-btn {
     max-width: 250px;
   }
+
   .lesson-list-js {
     margin: 30px 0;
   }
+
   .arrow.bounce {
     margin-bottom: 30px;
   }
+
   .body-js-lesson .header-title-js h1 {
     font-style: 1em;
   }
+
   #arrowTopBtn {
     bottom: 20px;
     right: 30px;
   }
+
   .main-wrapper {
     padding: 0 0;
   }
+
   a.page-nav-left {
     width: 49%;
   }
+
   .page-nav-left .text-btn-nav {
     display: none;
   }
@@ -620,15 +744,19 @@ pre {
   .header-title-js h1 {
     font-size: 3em;
   }
+
   .header-title-js .main-title-js {
     font-size: 4em;
   }
+
   a.page-nav-left {
     width: 49%;
   }
+
   .page-nav-left .text-btn-nav {
     display: none;
   }
+
   .main-wrapper {
     padding: 0 0;
   }
@@ -639,10 +767,12 @@ pre {
   a.nav-item.nav-link.active {
     margin: 0;
   }
+
   .main-wrapper {
     padding: 0 0;
   }
 }
+
 @media (min-width: 1200px) {
   a#lessonBtn.go-lesson-btn {
     min-width: 350px;
