@@ -64,7 +64,7 @@
       </div>
 
       <!-- Go-lesson Button -->
-      <a href="https://meet.google.com/krn-ozhd-tpp" target="_blank" id="lessonBtn"
+      <a href="https://meet.google.com/ruv-kheh-mbw" target="_blank" id="lessonBtn"
         class="go-lesson-btn  wow fadeInUp container" data-wow-delay=".5s" style="width: 300px;">
         <div class="go-lesson-1 pt-2 px-4">
          
@@ -95,8 +95,10 @@
               webkitallowfullscreen="true">
             </iframe> 
           </div>
-          <a class="btn btn-lg ok-btn my-3" href="https://kahoot.it/challenge/0639913?challenge-id=922fc38c-2872-4617-bd06-7ff74cda0a5b_1676498562800" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
-            Перевірити себе - Kahoot </a>
+          <a class="btn btn-lg ok-btn my-3" href="https://kahoot.it/challenge/007365602" target="_blank" > 
+            Вирази і типи даних - Kahoot </a>
+          <a class="btn btn-lg ok-btn my-3" href="https://kahoot.it/challenge/005710416" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+            Списки і словники - Kahoot </a>
           </div>
       </div>
     </div>
@@ -201,7 +203,7 @@ Result: ['abc', 2,'abc', 2,'abc', 2]</pre></code>
       </a>
 
       <div id='collapseTasks' class="collapse show">
-        <a class="btn btn-lg ok-btn my-3" href="https://replit.com/@web-teach-vlas/py-7" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
+        <a class="btn btn-lg ok-btn my-3" href="https://colab.research.google.com/drive/1w5cHGdyPCAM-Ur9MXoVHtHEfjDnF8bpU?usp=sharing" target="_blank" style="background: linear-gradient(#752fc5, #677ff7);"> 
           Редактор для виконання завдань </a>
           <div class='task my-3'> <h3> ЗАВДАННЯ 7.1. </h3>                           
             <p>Створити список покупок. У списку потрібно підрахувати кількість елементів та надрукувати його за допомогою циклу <b>for</b>.<p>
@@ -251,22 +253,27 @@ Result: ['abc', 2,'abc', 2,'abc', 2]</pre></code>
                          <li> 3. Автор і список книг додаються в словник my_shelf. Потім словник виводиться на екран.</li>
 </ul>
           <p>Програма має працювати як на зображенні:</p>
-          <p><img src="/src/python-course/py-t7-2.png" alt="" style="max-width: 850px;" /></p></div>
+          <p><img src="/src/python-course/py-t7-2.png" alt="" style="max-width: 850px;" /></p>
+        </div>
           
         <h5><b>Надіслати виконане завдання</b></h5>
         <script type="text/javascript">
           var submitted = false;
         </script>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-          onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
-        <form
-          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
-          method="post" target="hidden_iframe" onsubmit="submitted=true;">
-          <input required class="form-control my-3" name="entry.42502702" type="text" placeholder="Введіть ваше ім'я">
-          <textarea required name="entry.339734998" class="w-100 form-control" rows=6
-            placeholder="Введіть ваш код або посилання на онлайн-редактор"></textarea>
-          <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
-        </form>
+        onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
+      <form
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
+        method="post" target="hidden_iframe" onsubmit="submitted=true;">
+        <input required class="d-none form-control my-3" name="entry.42502702" type="text" 
+        value="Анна">
+        <input required class="d-none form-control my-3" name="entry.559818029" type="text" 
+        value="Тема 7">
+        <input required class="form-control my-3" name="entry.215350378" placeholder="Номер завдання" type="number" step="0.01">
+        <textarea required name="entry.339734998" class="w-100 form-control" rows=6
+          placeholder="Введіть ваш код або посилання на онлайн-редактор"></textarea>
+        <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
+      </form>
       </div>
     </div>
   </div>
@@ -302,11 +309,28 @@ Result: ['abc', 2,'abc', 2,'abc', 2]</pre></code>
               <div class='task my-3'><h3> ЗАВДАННЯ 4*                           </h3>
                 <p>Підрахуйте кількість випадків появи кожного елемента зі списку. Напишіть програму, що рахує кількість  появи кожного елемента заданого списку та створює словник, що відображає кожен елемент та  кількість його появи у списку.</p>
                 <code>
-                  <p>Зразок списку : "1234abcd"</p>
+                  <p>Зразок списку : [11, 11, 45, 8, 23 ,45, , 23, 45, 89]</p>
                   <p>Кількість друку кожного елемента {11: 2, 45: 3, 8: 1, 23: 2, 89: 1}</p>
                 </code>
                 </div>
-  
+                <h5><b>Надіслати виконане завдання</b></h5>
+                <script type="text/javascript">
+                  var submitted = false;
+                </script>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
+              <form
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
+                method="post" target="hidden_iframe" onsubmit="submitted=true;">
+                <input required class="d-none form-control my-3" name="entry.42502702" type="text" 
+                value="Анна">
+                <input required class="d-none form-control my-3" name="entry.559818029" type="text" 
+                value="Тема 7">
+                <input required class="form-control my-3" name="entry.215350378" placeholder="Номер завдання" type="number" step="0.01">
+                <textarea required name="entry.339734998" class="w-100 form-control" rows=6
+                  placeholder="Введіть ваш код або посилання на онлайн-редактор"></textarea>
+                <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
+              </form>
     </div>
 
   </main>
@@ -322,7 +346,7 @@ Result: ['abc', 2,'abc', 2,'abc', 2]</pre></code>
    </span>
    <span class="text-btn-nav">Попередня тема</span>
   </a>
-  <a href="../8/" class="page-nav-left page-nav-right" title="Тема 8. Вступ до ООП. Класи.">
+  <!-- <a href="../8/" class="page-nav-left page-nav-right" title='Тема 8. Модуль Turtle. Гра "Змійка"'>
     
     <span class="text-btn-nav">Наступна тема</span>
     <span>
@@ -330,7 +354,7 @@ Result: ['abc', 2,'abc', 2,'abc', 2]</pre></code>
         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
       </svg>
    </span>
-   </a>
+   </a> -->
 </div>
 
 <!-- /Nav buttons -->
