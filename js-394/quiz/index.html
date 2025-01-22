@@ -100,7 +100,7 @@
       <!-- Теорія -->
       <div class="lesson-list-js wow fadeInUp" id="course">
         <a class="collapse-heading " data-toggle="collapse" data-target="#collapsePres2" aria-expanded="true">
-          <h4 class="h4  font-weight-normal "><span class="font-weight-bold ">#1</span> Теорія - рядки та cookies</h4>
+          <h4 class="h4  font-weight-normal "><span class="font-weight-bold ">#1</span> Створення верстки</h4>
         </a>
         <div id="collapsePres2" class="collapse show">
           <div class="collapse-pres mt-4">
@@ -114,97 +114,23 @@
         </div>
       </div>
       <!-- Завдання -->
-      <!-- <div class="lesson-list-js wow fadeInUp" id="course">
+      <div class="lesson-list-js wow fadeInUp" id="course">
         <a class="collapse-heading " data-toggle="collapse" data-target="#collapseTasks2" aria-expanded="false">
-          <h4 class="h4 font-weight-normal "><span class="font-weight-bold ">#2</span> Виконати
-            завдання </h4>
+          <h4 class="h4 font-weight-normal "><span class="font-weight-bold ">#2</span> Функціонал додатка</h4>
         </a>
 
         <div id='collapseTasks2' class="collapse show">
-          <a class="btn btn-lg ok-btn mt-3 mx-2" href="https://kahoot.it/challenge/08718070" target="_blank">
-            Вікторина - повторення JavaScript</a>
-          <div class='task my-3'>
-            <h3> ЗАВДАННЯ 1</h3>
-            <img src="/src/js-course/1.gif" alt="">
-
-            <p>Створіть програму, яка при першому запуску буде запитувати ім'я користувача та записувати його в куки.
-            </p>
-            <p>При наступних завантаженнях сторінки, програма повинна просто вітатися з користувачем, не запитуючи ім'я,
-              а використовуюче ім'я, що збережене в куках.
-            </p>
-            <p>Програма має працювати як на зображенні.</p>
-
-            <iframe src="https://codesandbox.io/embed/kdfxlr?view=editor+%2B+preview&module=%2Findex.js&theme=light"
-              style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="cookies-username"
-              allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-          </div>
-
-          <div class='task my-3'>
-            <h3> ЗАВДАННЯ 2 </h3>
-            <p> Продовжіть створення інтернет-магазину з попереднього уроку. </p>
-            <p>Реалізуйте можливість додавати товари в кошик та зберігайте кошик в куках сторінки.</p>
-            <ul>
-              <li class="dot">
-                Додати кнопку "Додати в кошик" для кожного товару.
-                Додайте кнопку "Додати в кошик" в функцію <code>getProductCard</code>.
-                Ця кнопка повинна мати унікальний <code>data-id</code> для кожного товару.
-              </li>
-              <li class="dot">
-                Створити функцію для обробки додавання товару в кошик.
-                При натисканні на кнопку "Додати в кошик" обробити подію, отримати ID товару та зберегти його в масиві
-                кошика.
-              </li>
-              <li class="dot">
-                Зберегти кошик у куках.
-                Використовуйте <code>document.cookie</code> для зберігання даних кошика в куках.
-              </li>
-              <li class="dot">
-                При завантаженні сторінки перевірити наявність куків.
-                Якщо кошик існує в куках, відновити його в масиві та показати користувачу.
-              </li>
-            </ul>
-            <iframe src="https://codesandbox.io/embed/76gckn?view=editor+%2B+preview&module=%2Findex.html&theme=light"
-              style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;" title="async-fakeapi"
-              allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-          </div>
-
-          <div class='task my-3'>
-            <h3> ЗАВДАННЯ 3</h3>
-            <p>Створіть програму, яка при кліці на кнопку "Змінити тему" буде змінювати тему сайту на світлу або темну і
-              зберігати поточну тему в кукі. При наступному завантаженні сторінки, потрібно відобразити останню
-              збережену тему, а у разі якщо жодної теми не збережно, відобразити білу тему сторінки.</p>
-            <p>Для зміни теми сторінки задайте для тега <b>body</b> готові CSS-класи <b>.light</b> та <b>.dark</b>.
-              Стилі для них вже додано в CSS.</p>
-            <p>Використайте готові функції <b>setCookie()</b> та <b>getCookie() для керування кукі-файлами.</b>.
-            </p>
-
-            <iframe src="https://codesandbox.io/embed/tdykzk?view=editor+%2B+preview&module=%2Findex.js&theme=light"
-              style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
-              title="toggle-theme-cookies"
-              allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-              sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-          </div>
-          <h5><b>Надіслати виконане завдання</b></h5>
-          <script type="text/javascript">
-            var submitted = false;
-          </script>
-          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-            onload="if(submitted) {$('#sendedModal').modal('show');}"></iframe>
-          <form
-            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeQIkQW3Dr4X5tnQjH_V_n1iK-twRTprv4WLIc1g_ZG7P3HBw/formResponse"
-            method="post" target="hidden_iframe" onsubmit="submitted=true;">
-            <input required class="d-none form-control my-3" name="entry.42502702" type="text" value="Саша">
-            <input required class="d-none form-control my-3" name="entry.559818029" type="text"
-              value="6. Асинхронність">
-            <input required class="form-control my-3" name="entry.215350378" placeholder="Номер завдання" value="">
-            <textarea required name="entry.339734998" class="w-100 form-control" rows=6
-              placeholder="Введіть ваш код або посилання на онлайн-редактор"></textarea>
-            <input type="submit" class="btn btn-lg ok-btn  m-3" value="Надіслати">
-          </form>
+          <!-- <a class="btn btn-lg ok-btn mt-3 mx-2" href="https://kahoot.it/challenge/08718070" target="_blank">
+            Вікторина - повторення JavaScript</a> -->
+            <div class="collapse-pres mt-4">
+              <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item "
+                  src="https://docs.google.com/presentation/d/e/2PACX-1vTXCMa5R59rPD4AMHgzX24DQjspR13HRjQVPuVAPYI-UjHcZNhkdD3RwonDQUrs5_Sjw0_TNhaDsXob/embed?start=false&loop=false&delayms=30000"
+                  frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
+                  webkitallowfullscreen="true"></iframe> </div>
+  
+            </div>
         </div>
-      </div> -->
+      </div>
 
 
 
