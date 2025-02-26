@@ -1,6 +1,6 @@
 /*!
   Highlight.js v11.10.0 (git: 366a8bd012)
-  (c) 2006-2024 Josh Goebel <hello@joshgoebel.com> and other contributors
+  (c) 2006-2025 Josh Goebel <hello@joshgoebel.com> and other contributors
   License: BSD-3-Clause
  */
 /* eslint-disable no-multi-assign */
