@@ -61,7 +61,7 @@
       <div class="header-title-js my-3 wow backInDown container">
 
         <h1 class="lesson-title-h1  wow fadeInUp ">
-          Робота з менеджерами пакетів. <span class="text-warning">Npm</span class="text-warning"></h1>
+          Вступ до  <span class="text-warning">React</span class="text-warning"></h1>
       </div>
 
       <!-- Go-lesson Button -->
@@ -105,100 +105,137 @@
         <div id="collapsePres2" class="collapse show">
           <div class="collapse-pres mt-4">
             <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item "
-                src="https://docs.google.com/presentation/d/e/2PACX-1vQhUE7Pi5ATSNcNv3I-oja1vzwZBmbD0rQkXGNf5Fr16LiNzIFxR6bTC_f70lNRj_esDaH0DYEarZR1/embed?start=false&loop=false&delayms=30000"
+                src="https://docs.google.com/presentation/d/e/2PACX-1vQVNDV9Ehium_eOKBhlWdGz4L9CvPX5PqZB4d2KJRvvXWQGiKnoZvZqbpVaHm_vIulhzZfEYFSte4yJ/embed?start=false&loop=false&delayms=30000"
                 frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true"
                 webkitallowfullscreen="true"></iframe> </div>
 
           </div>
-          <a class="btn btn-lg ok-btn mt-3 mx-2" href="https://nodejs.org/uk  " target="_blank">
-           Завантажити nodejs</a>
+          <a class="btn btn-lg ok-btn mt-3 mx-2" href="https://uk.react.dev/learn" target="_blank">
+           Документація React.dev</a>
 
         </div>
       </div>
       <!-- Завдання -->
       <div class="lesson-list-js wow fadeInUp" id="course">
         <a class="collapse-heading " data-toggle="collapse" data-target="#collapseTasks2" aria-expanded="false">
-          <h4 class="h4 font-weight-normal "><span class="font-weight-bold ">#2</span> Основи роботи з npm</h4>
+          <h4 class="h4 font-weight-normal "><span class="font-weight-bold ">#2</span> Створення першого проєкту на React</h4>
         </a>
 
         <div id='collapseTasks2' class="collapse show">
           <div class="accordion" id="accordionExample">
             <div class="card">
-                <div class="card-header" id="headingZero">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
-                            <h5>Налаштування npm та ініціалізація проєкту</h5>
-                        </button>
-                    </h2>
+              <div class="card-header" id="headingZero">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
+                    <h5>Встановлення середовища розробки</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseZero" class="collapse show" aria-labelledby="headingZero" data-parent="#accordionExample">
+                <div class="card-body">
+                  <ul>
+                    <li class="dot"><code>npm create vite@latest my-app --template react</code> - створення нового проєкту з ім'ям <b>my-app</b> за допомогою інструменту збірки Vite.</li>
+                    <li class="dot"><code>cd my-app</code> - перехід у папку проєкту.</li>
+                    <li class="dot"><code>code . </code> - відкрити VSCode у поточній папці (за потреби).</li>
+                    <li class="dot"><code>npm install</code> - встановлення залежностей.</li>
+                    <li class="dot"><code>npm run dev</code> - запуск локального сервера.</li>
+                  </ul>
                 </div>
-                <div id="collapseZero" class="collapse show" aria-labelledby="headingZero" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <ul>
-                            <li class="dot"><code>npm init</code> - створення нового файлу package.json з покроковими питаннями.</li>
-                            <li class="dot"><code>npm init -y</code> - швидке створення package.json без запитань.</li>
-                            <li class="dot"><code>npm install</code> - встановлення всіх залежностей з package.json.</li>
-                        </ul>
-                    </div>
-                </div>
+              </div>
             </div>
             <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                            <h5>Робота з пакетами</h5>
-                        </button>
-                    </h2>
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    <h5>Огляд структури проєкту</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <ul>
+                    <li class="dot"><code>src/main.jsx</code> - точка входу у застосунок.</li>
+                    <li class="dot"><code>src/App.jsx</code> - головний компонент.</li>
+                    <li class="dot"><code>src/index.css</code> - файл стилів.</li>
+                  </ul>
                 </div>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <ul>
-                            <li class="dot"><code>npm install package-name</code> - встановлення пакету локально.</li>
-                            <li class="dot"><code>npm install -g package-name</code> - встановлення пакету глобально.</li>
-                            <li class="dot"><code>npm uninstall package-name</code> - видалення встановленого пакету.</li>
-                            <li class="dot"><code>npm list</code> - перегляд встановлених пакетів.</li>
-                        </ul>
-                    </div>
-                </div>
+              </div>
             </div>
             <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <h5>Робота зі скриптами npm</h5>
-                        </button>
-                    </h2>
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h5>Створення першого компонента</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+<pre><code class="language-jsx">function App() {
+  return (
+    <div>
+      <h1>Привіт, React!</h1>
+      <p>Це мій перший React-компонент.</p>
+    </div>
+  );
+}
+export default App;</code></pre>
                 </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <ul>
-                            <li class="dot"><code>npm run script-name</code> - запуск скрипту, визначеного в package.json.</li>
-                            <li class="dot"><code>npm start</code> - запуск стандартного скрипту "start".</li>
-                            <li class="dot"><code>npm test</code> - запуск тестів, якщо вони є у проєкті.</li>
-                        </ul>
-                    </div>
-                </div>
+              </div>
             </div>
             <div class="card">
-                <div class="card-header" id="headingThree">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <h5>Оновлення та кеш npm</h5>
-                        </button>
-                    </h2>
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <h5>Додавання нового компонента</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+        <pre><code class="language-jsx">// Створіть у src новий файл Hello.jsx і додайте код:
+function Hello() {
+  return <h2>Я вивчаю React!</h2>;
+}
+export default Hello;
+
+// Підключіть його в App.jsx:
+import Hello from "./Hello";
+
+function App() {
+  return (
+    <div>
+      <h1>Привіт, React!</h1>
+      <Hello />
+    </div>
+  );
+}
+export default App;</code></pre>
                 </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <ul>
-                            <li class="dot"><code>npm update</code> - оновлення всіх локальних пакетів.</li>
-                            <li class="dot"><code>npm outdated</code> - перевірка наявності оновлень для встановлених пакетів.</li>
-                            <li class="dot"><code>npm cache clean --force</code> - очищення кешу npm.</li>
-                        </ul>
-                    </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingFour">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <h5>Домашнє завдання</h5>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                <div class="card-body">
+                  <ul>
+                    <li class="dot">Запустіть застосунок у браузері.</li>
+                    <li class="dot">Змініть текст у Hello.jsx.</li>
+                    <li class="dot">Додайте ще один компонент із власним текстом.</li>
+                  </ul>
                 </div>
+              </div>
             </div>
         </div>
-        <a class="btn btn-lg ok-btn mt-3 mx-2" href="https://devhints.io/npm" target="_blank">
-          Шпаргалка по командах npm</a>
+        
+        <!-- <a class="btn btn-lg ok-btn mt-3 mx-2" href="https://devhints.io/npm" target="_blank">
+          Шпаргалка по командах npm</a> -->
 
           
         </div>
@@ -209,7 +246,7 @@
     </main>
     <!-- Nav buttons -->
     <div class="page-nav-btn-wrapper">
-      <a href="../bom/" class="page-nav-left" title=" Середовище браузера. BOM">
+      <a href="../npm/" class="page-nav-left" title=" Робота з менеджерами пакетів (npm)">
         <span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd"
@@ -218,7 +255,7 @@
         </span>
         <span class="text-btn-nav">Попередня тема</span>
       </a>
-      <a href="../react-start/" class="page-nav-left page-nav-right" title="Вступ до React">
+      <!-- <a href="../git/" class="page-nav-left page-nav-right" title="Visual Studio Code та Git">
 
         <span class="text-btn-nav">Наступна тема</span>
         <span>
@@ -227,7 +264,7 @@
               d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
           </svg>
         </span>
-      </a>
+      </a> -->
     </div>
 
     <!-- /Nav buttons -->
